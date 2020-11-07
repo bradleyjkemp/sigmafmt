@@ -1,0 +1,27 @@
+builds:
+  - id: sigmafmt
+    binary: sigmafmt
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+
+brews:
+  -
+    github:
+      owner: bradleyjkemp
+      name: homebrew-formulae
+    homepage: "https://github.com/bradleyjkemp/sigmafmt"
+    description: "An opinionated formatter/linter for Sigma rules"
+
+archives:
+  - replacements:
+      darwin: macOS
+      linux: Linux
+      windows: Windows
+    format: zip
+
+snapshot:
+  name_template: "{{ .Tag }}-next"
