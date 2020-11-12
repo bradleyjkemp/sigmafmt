@@ -6,7 +6,10 @@ runs:
     - run: ./sigmafmt.sh
       shell: bash
       working-directory: ${{ github.action_path }}
-  # TODO: support passing list of paths to format
+inputs:
+  paths:
+    description: 'A space-delimited list of paths to format. If not specified, the entire repo will be formatted'
+    required: false
 branding:
   icon: "alert-triangle"
   color: "yellow"
