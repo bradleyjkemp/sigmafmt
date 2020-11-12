@@ -3,7 +3,15 @@ description: "Formatter for Sigma rules"
 runs:
   using: composite
   steps:
-    - run: go run $GITHUB_ACTION_PATH/.. --help
+    - run: echo $GITHUB_ACTION_PATH
+      shell: bash
+    - run: ls $GITHUB_ACTION_PATH
+      shell: bash
+    - run: ls $GITHUB_ACTION_PATH/..
+      shell: bash
+    - run: ls $GITHUB_ACTION_PATH/../..
+      shell: bash
+    - run: go run $GITHUB_ACTION_PATH/../.. --help
       shell: bash
 branding:
   icon: "alert-triangle"
