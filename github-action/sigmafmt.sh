@@ -9,7 +9,7 @@ then
 else
   RULES_PATH=$GITHUB_WORKSPACE/$INPUT_PATH
 fi
-
+echo "Linting path $RULES_PATH"
 output=$(go run github.com/bradleyjkemp/sigmafmt -l -v "$RULES_PATH")
 
 if [ -z "$output" ]
