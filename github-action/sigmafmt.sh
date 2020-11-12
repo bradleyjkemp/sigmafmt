@@ -1,4 +1,4 @@
-set -xe
+set -e
 
 # Pre-download modules so the `go run` output is clean
 go mod download
@@ -10,6 +10,6 @@ then
       echo "SUCCESS: all files formatted correctly"
 else
       echo "FAILURE: some files need re-formatting"
-      echo "$output"
+      echo $output
       exit 1
 fi
