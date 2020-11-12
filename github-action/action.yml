@@ -1,9 +1,10 @@
 name: "sigmafmt"
 description: "Formatter for Sigma rules"
 runs:
-  using: "docker"
-  image: "Dockerfile"
-  pre-entrypoint: setup.sh
+  using: composite
+  steps:
+    - run: go run .. --help
+      shell: bash
 branding:
   icon: "alert-triangle"
   color: "yellow"
