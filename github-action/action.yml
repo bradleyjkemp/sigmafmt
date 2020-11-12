@@ -3,7 +3,7 @@ description: "Formatter for Sigma rules"
 runs:
   using: composite
   steps:
-    - run: go run github.com/bradleyjkemp/sigmafmt --help
+    - run: cd $GITHUB_ACTION_PATH && go run github.com/bradleyjkemp/sigmafmt --help
       shell: bash
 branding:
   icon: "alert-triangle"
