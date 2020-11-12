@@ -1,0 +1,12 @@
+name: "sigmafmt"
+description: "GitHub action to run sigmafmt on all your Sigma rules"
+runs:
+  using: composite
+  steps:
+    - run: ./sigmafmt.sh
+      shell: bash
+      working-directory: ${{ github.action_path }}
+  # TODO: support passing list of paths to format
+branding:
+  icon: "alert-triangle"
+  color: "yellow"
