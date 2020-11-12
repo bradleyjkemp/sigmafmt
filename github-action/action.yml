@@ -5,8 +5,13 @@ runs:
   steps:
     - run: ./sigmafmt.sh
       shell: bash
+      env:
+        INPUT_PATH: ${{ inputs.path }} # workaround for https://github.com/actions/runner/issues/665
       working-directory: ${{ github.action_path }}
-  # TODO: support passing list of paths to format
+inputs:
+  path:
+    description: 'The path containing Sigma rules to format. If not specified, the entire repo will be formatted'
+    required: false
 branding:
   icon: "alert-triangle"
   color: "yellow"

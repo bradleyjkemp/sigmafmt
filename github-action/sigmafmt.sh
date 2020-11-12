@@ -3,14 +3,21 @@ set -e
 # Pre-download modules so the `go run` output is clean (doesn't include "downloading module X" lines)
 go mod download
 
-output=$(go run github.com/bradleyjkemp/sigmafmt -l -v "$GITHUB_WORKSPACE")
+if [ -z "$INPUT_PATH" ]
+then
+  RULES_PATH=$GITHUB_WORKSPACE
+else
+  RULES_PATH=$GITHUB_WORKSPACE/$INPUT_PATH
+fi
+echo "Linting path $RULES_PATH"
+output=$(go run github.com/bradleyjkemp/sigmafmt -l -v "$RULES_PATH")
 
 if [ -z "$output" ]
 then
-      echo "SUCCESS: all files formatted correctly"
+  echo "SUCCESS: all files formatted correctly"
 else
-      echo "FAILURE: some files need re-formatting"
-      echo "${output}"
-      # TODO: comment on the affected files in the PR
-      exit 1
+  echo "FAILURE: some files need re-formatting"
+  echo "${output}"
+  # TODO: comment on the affected files in the PR
+  exit 1
 fi
