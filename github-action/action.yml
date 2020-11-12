@@ -6,7 +6,7 @@ runs:
     - run: ./sigmafmt.sh
       shell: bash
       env:
-        INPUT_PATH: ${{ input.path }} # workaround for https://github.com/actions/runner/issues/665
+        INPUT_PATH: ${{ inputs.path }} # workaround for https://github.com/actions/runner/issues/665
       working-directory: ${{ github.action_path }}
 inputs:
   path:
