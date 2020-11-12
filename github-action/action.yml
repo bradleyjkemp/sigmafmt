@@ -3,9 +3,7 @@ description: "Formatter for Sigma rules"
 runs:
   using: composite
   steps:
-    - run: echo ${{ github.workspace }} && ls ${{ github.workspace }}
-      shell: bash
-    - run: sigmafmt.sh
+    - run: ./sigmafmt.sh
       shell: bash
       working-directory: ${{ github.action_path }}
 branding:
