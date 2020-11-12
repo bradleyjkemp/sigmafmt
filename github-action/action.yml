@@ -3,8 +3,9 @@ description: "Formatter for Sigma rules"
 runs:
   using: composite
   steps:
-    - run: cd $GITHUB_ACTION_PATH && go run github.com/bradleyjkemp/sigmafmt --help
+    - run: go run github.com/bradleyjkemp/sigmafmt -l -v ${{ github.workspace }}
       shell: bash
+      working-directory: ${{ github.action_path }}
 branding:
   icon: "alert-triangle"
   color: "yellow"
