@@ -12,6 +12,8 @@ var Rules = []Rule{
 	// Actual useful rules
 	canonicalKeyOrder,
 	ruleTitle,
+	validStatus,
+	validLevel,
 
 	// Essential internal cleanup steps:
 	undoPreserveWhitespace,
