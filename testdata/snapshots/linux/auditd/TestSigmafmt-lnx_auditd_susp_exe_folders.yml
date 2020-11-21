@@ -33,9 +33,6 @@ detection:
 references:
     - Internal Research
 level: medium
-
-
-
 status: experimental
 falsepositives:
     - Admin activity (especially in /tmp folders)

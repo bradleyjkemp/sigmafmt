@@ -24,8 +24,6 @@ author: Florian Roth, @0xrawsec
 date: 2018/06/03
 modified: 2020/08/26
 level: critical
-
-
 status: experimental
 fields:
     - TargetFilename

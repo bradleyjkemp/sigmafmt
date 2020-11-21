@@ -17,7 +17,7 @@ detection:
             - 'C:\\Windows\\addins\\*'
             - 'C:\\Windows\\cursors\\*'
             - 'C:\\Windows\\system32\tasks\\*'
-            # magic whitespace preserving comment
+
     condition: selection
 references:
     - https://car.mitre.org/wiki/CAR-2013-05-002

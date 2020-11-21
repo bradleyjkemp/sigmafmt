@@ -13,8 +13,6 @@ detection:
 references:
     - https://research.checkpoint.com/2020/apache-guacamole-rce/
 level: high
-
-
 status: experimental
 falsepositives:
     - Unknown

@@ -6,16 +6,23 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+const whitespacePreservingComment = `# magic whitespace preserving comment: github.com/bradleyjkemp/sigmafmt`
+
 var preserveWhitespace = rawRule{"essential.preserve_whitespace", func(contents []byte) ([]byte, []Message, error) {
+	// First get rid of any multiple trailing newlines in the file
+	contents = bytes.TrimRight(contents, "\n")
+
+	// Then split into lines in order to preserve empty ones
 	lines := bytes.Split(contents, []byte("\n"))
 	for i, line := range lines {
 		if i == len(lines)-1 {
-			// Don't modify an empty last line because that's handled by the yaml library anyway
+			// Don't preserve an empty last line because the yaml library always inserts one anyway
+			// (and so trying to preserve it means we end up with double trailing newlines)
 			continue
 		}
 
-		if len(line) == 0 {
-			lines[i] = []byte(`# magic whitespace preserving comment`)
+		if len(bytes.TrimSpace(line)) == 0 {
+			lines[i] = []byte(whitespacePreservingComment)
 		}
 	}
 	return bytes.Join(lines, []byte("\n")), nil, nil
@@ -37,7 +44,7 @@ var yamlRoundtrip = rawRule{"essential.yaml_roundtrip", func(contents []byte) ([
 var undoPreserveWhitespace = rawRule{"essential.undo_preserve_whitespace", func(contents []byte) ([]byte, []Message, error) {
 	lines := bytes.Split(contents, []byte("\n"))
 	for i, line := range lines {
-		if string(line) == `# magic whitespace preserving comment` {
+		if bytes.Contains(line, []byte(whitespacePreservingComment)) {
 			lines[i] = nil
 		}
 	}

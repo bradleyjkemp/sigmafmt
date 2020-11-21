@@ -23,8 +23,6 @@ author: Olaf Hartong, Florian Roth, Aleksey Potapov, oscd.community
 date: 2018/11/30
 modified: 2020/08/28
 level: high
-
-
 status: experimental
 falsepositives:
     - unknown

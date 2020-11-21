@@ -24,7 +24,6 @@ tags:
     - attack.t1005
     - attack.exfiltration
     - attack.t1537
-    # magic whitespace preserving comment
 level: low
 status: experimental
 

@@ -31,8 +31,6 @@ author: Florian Roth
 date: 2020/01/15
 modified: 2020/08/23
 level: critical
-
-
 status: experimental
 falsepositives:
     - Unknown

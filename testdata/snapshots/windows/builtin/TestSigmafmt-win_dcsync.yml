@@ -30,8 +30,6 @@ tags:
     - attack.t1003 # an old one
     - attack.t1003.006
 level: high
-
-
 status: experimental
 falsepositives:
     - Valid DC Sync that is not covered by the filters; please report

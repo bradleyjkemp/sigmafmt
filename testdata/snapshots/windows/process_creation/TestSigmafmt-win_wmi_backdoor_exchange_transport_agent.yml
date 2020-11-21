@@ -18,8 +18,6 @@ tags:
     - attack.t1546.003
     - attack.t1084 # an old one
 level: critical
-
-
 status: experimental
 falsepositives:
     - Unknown

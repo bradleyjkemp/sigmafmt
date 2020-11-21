@@ -38,8 +38,6 @@ tags:
     - attack.execution
     - attack.t1047
 level: high
-
-
 status: experimental
 fields:
     - ComputerName

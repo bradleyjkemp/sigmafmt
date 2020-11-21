@@ -25,8 +25,6 @@ tags:
     - attack.initial_access
     - attack.t1190
 level: critical
-
-
 status: experimental
 fields:
     - c-ip

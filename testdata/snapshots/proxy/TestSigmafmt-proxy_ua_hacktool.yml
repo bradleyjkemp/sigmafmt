@@ -45,7 +45,7 @@ detection:
             - '*webshag*'
             - '*webvulnscan*'
             - '* whcc/*'
-            # magic whitespace preserving comment
+
             # SQL Injection
             - '* Havij'
             - '*absinthe*'
@@ -56,7 +56,7 @@ detection:
             - '*sqlmap*'
             - '*sqlninja*'
             - '*uil2pn*'
-            # magic whitespace preserving comment
+
             # Hack tool
             - 'ruler' # https://www.crowdstrike.com/blog/using-outlook-forms-lateral-movement-persistence/
             - 'Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-PT; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)' # SQLi Dumper

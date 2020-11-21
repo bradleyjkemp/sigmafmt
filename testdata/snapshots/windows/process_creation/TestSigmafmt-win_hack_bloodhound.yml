@@ -43,8 +43,6 @@ tags:
     - attack.t1059.001
     - attack.t1086 # an old one
 level: high
-
-
 falsepositives:
     - Other programs that use these command line option and accepts an 'All' parameter
 

@@ -25,8 +25,6 @@ tags:
 author: Florian Roth
 date: 2019/09/06
 level: high
-
-
 status: experimental
 falsepositives:
     - Penetration Tests

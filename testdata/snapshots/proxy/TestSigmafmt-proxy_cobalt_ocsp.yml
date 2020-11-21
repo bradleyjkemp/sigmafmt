@@ -10,7 +10,7 @@ detection:
     selection:
         c-uri: '*/oscp/*'
         cs-host: 'ocsp.verisign.com'
-        # magic whitespace preserving comment
+
     condition: selection
 references:
     - https://github.com/rsmudge/Malleable-C2-Profiles/blob/master/normal/ocsp.profile

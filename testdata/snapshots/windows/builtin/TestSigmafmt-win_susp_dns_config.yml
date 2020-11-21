@@ -21,9 +21,6 @@ tags:
     - attack.t1574.002
 author: Florian Roth
 level: critical
-
-
-
 status: experimental
 falsepositives:
     - Unknown
