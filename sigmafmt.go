@@ -111,7 +111,6 @@ func formatRule(contents []byte) ([]byte, []rules.Message, error) {
 
 		contents = formatted
 		results = append(results, messages...)
-		fmt.Println("After running rule", rule.Name(), "contents are", string(contents))
 	}
 	return contents, results, nil
 }
