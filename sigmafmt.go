@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"os"
@@ -27,14 +28,14 @@ func main() {
 	flag.Parse()
 
 	for _, path := range flag.Args() {
-		if err := formatPath(path); err != nil {
+		if err := formatPath(path, os.Stdout); err != nil {
 			log.Fatal(err)
 		}
 	}
 }
 
 // Takes a file/directory and recursively formats all .yaml/.yml files within it
-func formatPath(root string) error {
+func formatPath(root string, stdout io.Writer) error {
 	return filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		switch {
 		case info == nil:
@@ -66,7 +67,7 @@ func formatPath(root string) error {
 			}
 		}
 		if *listAffected || *verbose {
-			fmt.Println(path)
+			fmt.Fprintln(stdout, path)
 		}
 		if *verbose {
 			for _, result := range results {
@@ -88,12 +89,12 @@ func formatPath(root string) error {
 			if err != nil {
 				return err
 			}
-			fmt.Println(diff)
+			fmt.Fprintln(stdout, diff)
 		}
 
 		// If no flags are given, print the formatted file
 		if !*writeAffected && !*listAffected && !*displayDiff {
-			fmt.Print(string(formatted))
+			fmt.Fprint(stdout, string(formatted))
 		}
 		return nil
 	})
@@ -110,6 +111,7 @@ func formatRule(contents []byte) ([]byte, []rules.Message, error) {
 
 		contents = formatted
 		results = append(results, messages...)
+		fmt.Println("After running rule", rule.Name(), "contents are", string(contents))
 	}
 	return contents, results, nil
 }

@@ -1,0 +1,29 @@
+title: CVE-2020-0688 Exchange Exploitation via Web Log
+id: fce2c2e2-0fb5-41ab-a14c-5391e1fd70a5
+description: Detects the exploitation of Microsoft Exchange vulnerability as described in CVE-2020-0688
+author: Florian Roth
+date: 2020/02/29
+logsource:
+    category: webserver
+detection:
+    selection1:
+        cs-method: 'GET'
+        c-uri|contains:
+            - '/ecp/'
+            - '/owa/'
+    selection2:
+        c-uri|contains: '__VIEWSTATE='
+    condition: selection1 and selection2
+references:
+    - https://www.trustedsec.com/blog/detecting-cve-20200688-remote-code-execution-vulnerability-on-microsoft-exchange-server/
+tags:
+    - attack.initial_access
+    - attack.t1190
+level: critical
+status: experimental
+fields:
+    - c-ip
+    - c-dns
+falsepositives:
+    - Unknown
+

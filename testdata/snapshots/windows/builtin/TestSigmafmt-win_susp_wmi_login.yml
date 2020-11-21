@@ -1,0 +1,22 @@
+title: Login with WMI
+id: 5af54681-df95-4c26-854f-2565e13cfab0
+description: Detection of logins performed with WMI
+author: Thomas Patzke
+date: 2019/12/04
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4624
+        ProcessName: "*\\WmiPrvSE.exe"
+    condition: selection
+tags:
+    - attack.execution
+    - attack.t1047
+level: low
+status: stable
+falsepositives:
+    - Monitoring tools
+    - Legitimate system administration
+

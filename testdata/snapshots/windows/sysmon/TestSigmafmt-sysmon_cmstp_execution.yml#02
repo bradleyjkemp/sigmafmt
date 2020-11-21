@@ -1,0 +1,27 @@
+action: global
+title: CMSTP Execution
+id: 9d26fede-b526-4413-b069-6e24b6d07167
+description: Detects various indicators of Microsoft Connection Manager Profile Installer execution
+detection:
+    condition: 1 of them
+references:
+    - https://web.archive.org/web/20190720093911/http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
+tags:
+    - attack.defense_evasion
+    - attack.execution
+    - attack.t1191 # an old one
+    - attack.t1218.003
+    - attack.g0069
+    - car.2019-04-001
+author: Nik Seetharaman
+date: 2018/07/16
+modified: 2020/08/28
+level: high
+status: stable
+fields:
+    - CommandLine
+    - ParentCommandLine
+    - Details
+falsepositives:
+    - Legitimate CMSTP use (unlikely in modern enterprise environments)
+
