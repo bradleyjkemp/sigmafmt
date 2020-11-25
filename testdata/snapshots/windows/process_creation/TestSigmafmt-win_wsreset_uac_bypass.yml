@@ -1,6 +1,7 @@
 title: Wsreset UAC Bypass
 id: bdc8918e-a1d5-49d1-9db7-ea0fd91aa2ae
 description: Detects a method that uses Wsreset.exe tool that can be used to reset the Windows Store to bypass UAC
+
 logsource:
     category: process_creation
     product: windows
@@ -9,6 +10,7 @@ detection:
         ParentImage|endswith:
             - '\WSreset.exe'
     condition: selection
+
 references:
     - https://lolbas-project.github.io/lolbas/Binaries/Wsreset/
     - https://www.activecyber.us/activelabs/windows-uac-bypass

@@ -1,6 +1,7 @@
 title: Telegram API Access
 id: b494b165-6634-483d-8c47-2026a6c52372
 description: Detects suspicious requests to Telegram API without the usual Telegram User-Agent
+
 author: Florian Roth
 date: 2018/06/05
 modified: 2020/09/03
@@ -16,6 +17,7 @@ detection:
             - '*Telegram*'
             - '*Bot*'
     condition: selection and not filter
+
 references:
     - https://researchcenter.paloaltonetworks.com/2018/03/unit42-telerat-another-android-trojan-leveraging-telegrams-bot-api-to-target-iranian-users/
     - https://blog.malwarebytes.com/threat-analysis/2016/11/telecrypt-the-ransomware-abusing-telegram-api-defeated/

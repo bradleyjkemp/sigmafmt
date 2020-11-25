@@ -1,6 +1,7 @@
 title: Application Whitelisting Bypass via Bginfo
 id: aaf46cdc-934e-4284-b329-34aa701e3771
 description: Execute VBscript code that is referenced within the *.bgi file.
+
 logsource:
     category: process_creation
     product: windows
@@ -11,6 +12,7 @@ detection:
             - '/popup'
             - '/nolicprompt'
     condition: selection
+
 references:
     - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Bginfo.yml
     - https://oddvar.moe/2017/05/18/bypassing-application-whitelisting-with-bginfo/

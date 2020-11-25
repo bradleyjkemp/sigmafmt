@@ -3,6 +3,7 @@ title: Operation Wocao Activity
 id: 74ad4314-482e-4c3e-b237-3f7ed3b9ca8d
 author: Florian Roth
 description: Detects activity mentioned in Operation Wocao report
+
 references:
     - https://www.fox-it.com/en/news/whitepapers/operation-wocao-shining-a-light-on-one-of-chinas-hidden-hacking-groups/
     - https://twitter.com/SBousseaden/status/1207671369963646976

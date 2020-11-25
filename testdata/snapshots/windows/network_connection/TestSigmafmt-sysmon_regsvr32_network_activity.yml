@@ -2,6 +2,7 @@ action: global
 title: Regsvr32 Network Activity
 id: c7e91a02-d771-4a6d-a700-42587e0b1095
 description: Detects network connections and DNS queries initiated by Regsvr32.exe
+
 detection:
     selection:
         Image|endswith: '\regsvr32.exe'

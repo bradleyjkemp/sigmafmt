@@ -1,6 +1,7 @@
 title: Empire UserAgent URI Combo
 id: b923f7d6-ac89-4a50-a71a-89fb846b4aa8
 description: Detects user agent and URI paths used by empire agents
+
 author: Florian Roth
 date: 2020/07/13
 modified: 2020/09/03
@@ -15,6 +16,7 @@ detection:
             - '/login/process.php'
         cs-method: 'POST'
     condition: selection
+
 references:
     - https://github.com/BC-SECURITY/Empire
 tags:

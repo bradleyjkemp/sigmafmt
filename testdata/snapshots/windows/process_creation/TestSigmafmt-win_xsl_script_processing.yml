@@ -1,6 +1,7 @@
 title: XSL Script Processing
 id: 05c36dd6-79d6-4a9a-97da-3db20298ab2d
 description: Extensible Stylesheet Language (XSL) files are commonly used to describe the processing and rendering of data within XML files, rule detects when adversaries abuse this functionality to execute arbitrary files while potentially bypassing application whitelisting defenses
+
 author: Timur Zinniatullin, oscd.community
 date: 2019/10/21
 modified: 2019/11/04
@@ -13,6 +14,7 @@ detection:
           CommandLine|contains: '/format' # wmic process list /FORMAT /?
         - Image|endswith: '\msxsl.exe'
     condition: selection
+
 references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1220/T1220.yaml
 tags:

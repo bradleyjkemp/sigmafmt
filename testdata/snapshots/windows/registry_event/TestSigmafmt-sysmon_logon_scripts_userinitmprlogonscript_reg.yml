@@ -1,6 +1,7 @@
 title: Logon Scripts (UserInitMprLogonScript) Registry
 id: 9ace0707-b560-49b8-b6ca-5148b42f39fb
 description: Detects creation or execution of UserInitMprLogonScript persistence method
+
 logsource:
     category: registry_event
     product: windows
@@ -8,6 +9,7 @@ detection:
     create_keywords_reg:
         TargetObject: '*UserInitMprLogonScript*'
     condition: create_keywords_reg
+
 references:
     - https://attack.mitre.org/techniques/T1037/
 tags:

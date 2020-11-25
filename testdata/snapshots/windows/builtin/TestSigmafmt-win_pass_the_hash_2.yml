@@ -1,6 +1,7 @@
 title: Pass the Hash Activity 2
 id: 8eef149c-bd26-49f2-9e5a-9b00e3af499b
 description: Detects the attack technique pass the hash which is used to move laterally inside the network
+
 logsource:
     product: windows
     service: security
@@ -18,6 +19,7 @@ detection:
     filter:
         AccountName: 'ANONYMOUS LOGON'
     condition: selection and not filter
+
 references:
     - https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Events
     - https://blog.binarydefense.com/reliably-detecting-pass-the-hash-through-event-log-analysis

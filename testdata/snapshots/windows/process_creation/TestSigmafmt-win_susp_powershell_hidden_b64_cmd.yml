@@ -1,6 +1,7 @@
 title: Malicious Base64 Encoded PowerShell Keywords in Command Lines
 id: f26c6093-6f14-4b12-800f-0fcb46f5ffd0
 description: Detects base64 encoded strings used in hidden malicious PowerShell command lines
+
 logsource:
     category: process_creation
     product: windows
@@ -59,6 +60,7 @@ detection:
             - '*bWVtbW92Z*'
             - '*ZW1tb3Zl*'
     condition: encoded and selection
+
 references:
     - http://www.leeholmes.com/blog/2017/09/21/searching-for-content-in-base-64-strings/
 tags:

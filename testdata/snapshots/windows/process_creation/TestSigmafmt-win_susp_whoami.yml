@@ -1,6 +1,7 @@
 title: Whoami Execution
 id: e28a5a99-da44-436d-b7a0-2afc20a5f413
 description: Detects the execution of whoami, which is often used by attackers after exloitation / privilege escalation but rarely used by administrators
+
 logsource:
     category: process_creation
     product: windows
@@ -10,6 +11,7 @@ detection:
     selection2:
         OriginalFileName: 'whoami.exe'
     condition: selection or selection2
+
 references:
     - https://brica.de/alerts/alert/public/1247926/agent-tesla-keylogger-delivered-inside-a-power-iso-daa-archive/
     - https://app.any.run/tasks/7eaba74e-c1ea-400f-9c17-5e30eee89906/

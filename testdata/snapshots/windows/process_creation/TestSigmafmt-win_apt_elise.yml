@@ -1,6 +1,7 @@
 title: Elise Backdoor
 id: e507feb7-5f73-4ef6-a970-91bb6f6d744f
 description: Detects Elise backdoor acitivty as used by APT32
+
 logsource:
     category: process_creation
     product: windows
@@ -11,6 +12,7 @@ detection:
     selection2:
         CommandLine: '*\AppData\Roaming\MICROS~1\Windows\Caches\NavShExt.dll,Setting'
     condition: 1 of them
+
 references:
     - https://community.rsa.com/community/products/netwitness/blog/2018/02/13/lotus-blossom-continues-asean-targeting
 tags:

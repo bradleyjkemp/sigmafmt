@@ -11,6 +11,7 @@ detection:
             - ' -hp'
             - ' -m'
     condition: selection
+
 references:
     - https://labs.sentinelone.com/the-anatomy-of-an-apt-attack-and-cobaltstrike-beacons-encoded-configuration/
 author: '@ROxPinTeddy'

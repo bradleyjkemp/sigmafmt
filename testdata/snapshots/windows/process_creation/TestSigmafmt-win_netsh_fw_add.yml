@@ -1,6 +1,7 @@
 title: Netsh Port or Application Allowed
 id: cd5cfd80-aa5f-44c0-9c20-108c4ae12e3c
 description: Allow Incoming Connections by Port or Application on Windows Firewall
+
 logsource:
     category: process_creation
     product: windows
@@ -12,6 +13,7 @@ detection:
         CommandLine:
             - '*firewall add*'
     condition: selection1 and selection2
+
 references:
     - https://attack.mitre.org/software/S0246/ (Lazarus HARDRAIN)
     - https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-RAT-and-Staging-Report.pdf

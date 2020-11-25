@@ -1,6 +1,7 @@
 title: CrackMapExec Command Execution
 id: 058f4380-962d-40a5-afce-50207d36d7e2
 description: Detect various execution methods of the CrackMapExec pentesting framework
+
 logsource:
     category: process_creation
     product: windows
@@ -18,6 +19,7 @@ detection:
             # cme/helpers/powershell.py:149 (PowerShell execution without obfuscation)
             - '*powershell.exe -noni -nop -w 1 -enc *'
     condition: selection
+
 references:
     - https://github.com/byt3bl33d3r/CrackMapExec
 tags:

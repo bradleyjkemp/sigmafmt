@@ -1,6 +1,7 @@
 title: Suspicious Scripting in a WMI Consumer
 id: fe21810c-2a8c-478f-8dd3-5a287fb2a0e0
 description: Detects suspicious scripting in WMI Event Consumers
+
 author: Florian Roth
 logsource:
     product: windows
@@ -20,6 +21,7 @@ detection:
             - '* -decode *'
             - '* -enc *'
     condition: selection
+
 references:
     - https://in.security/an-intro-into-abusing-and-identifying-wmi-event-subscriptions-for-persistence/
     - https://github.com/Neo23x0/signature-base/blob/master/yara/gen_susp_lnk_files.yar#L19

@@ -1,6 +1,7 @@
 title: GAC DLL Loaded Via Office Applications
 id: 90217a70-13fc-48e4-b3db-0d836c5824ac
 description: Detects any GAC DLL being loaded by an Office Product
+
 logsource:
     category: image_load
     product: windows
@@ -14,6 +15,7 @@ detection:
         ImageLoaded:
             - 'C:\Windows\Microsoft.NET\assembly\GAC_MSIL*'
     condition: selection
+
 references:
     - https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16
 author: Antonlovesdnb

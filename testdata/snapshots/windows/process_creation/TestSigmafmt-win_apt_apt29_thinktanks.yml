@@ -1,6 +1,7 @@
 title: APT29
 id: 033fe7d6-66d1-4240-ac6b-28908009c71f
 description: This method detects a suspicious powershell command line combination as used by APT29 in a campaign against US think tanks
+
 logsource:
     category: process_creation
     product: windows
@@ -8,6 +9,7 @@ detection:
     selection:
         CommandLine: '*-noni -ep bypass $*'
     condition: selection
+
 references:
     - https://cloudblogs.microsoft.com/microsoftsecure/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/
 author: Florian Roth

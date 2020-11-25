@@ -1,6 +1,7 @@
 title: Local Accounts Discovery
 id: 502b42de-4306-40b4-9596-6f590c81f073
 description: Local accounts, System Owner/User discovery using operating systems utilities
+
 author: Timur Zinniatullin, Daniil Yugoslavskiy, oscd.community
 date: 2019/10/21
 modified: 2020/09/01
@@ -44,6 +45,7 @@ detection:
             - '/times' # discovery only
             - '/workstations' # discovery only
     condition: (selection_1 and not filter_1) or ( selection_2 and not filter_2)
+
 references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1033/T1033.yaml
 tags:

@@ -1,6 +1,7 @@
 title: Rubeus Hack Tool
 id: 7ec2c172-dceb-4c10-92c9-87c1881b7e18
 description: Detects command line parameters used by Rubeus hack tool
+
 author: Florian Roth
 logsource:
     category: process_creation
@@ -18,6 +19,7 @@ detection:
             - '* asktgt /user:*'
             - '* harvest /interval:*'
     condition: selection
+
 references:
     - https://www.harmj0y.net/blog/redteaming/from-kekeo-to-rubeus/
 date: 2018/12/19

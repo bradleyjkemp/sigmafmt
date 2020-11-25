@@ -1,6 +1,7 @@
 title: Koadic Execution
 id: 5cddf373-ef00-4112-ad72-960ac29bac34
 description: Detects command line parameters used by Koadic hack tool
+
 logsource:
     category: process_creation
     product: windows
@@ -9,6 +10,7 @@ detection:
         CommandLine:
             - '*cmd.exe* /q /c chcp *'
     condition: selection1
+
 references:
     - https://unit42.paloaltonetworks.com/unit42-sofacy-groups-parallel-attacks/
     - https://github.com/zerosum0x0/koadic/blob/master/data/stager/js/stdlib.js#L955

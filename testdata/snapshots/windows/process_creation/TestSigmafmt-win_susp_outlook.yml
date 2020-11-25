@@ -1,6 +1,7 @@
 title: Suspicious Execution from Outlook
 id: e212d415-0e93-435f-9e1a-f29005bb4723
 description: Detects EnableUnsafeClientMailRules used for Script Execution from Outlook
+
 logsource:
     category: process_creation
     product: windows
@@ -11,6 +12,7 @@ detection:
         ParentImage: '*\outlook.exe'
         CommandLine: \\\\*\\*.exe
     condition: clientMailRules or outlookExec
+
 references:
     - https://github.com/sensepost/ruler
     - https://www.fireeye.com/blog/threat-research/2018/12/overruled-containing-a-potentially-destructive-adversary.html

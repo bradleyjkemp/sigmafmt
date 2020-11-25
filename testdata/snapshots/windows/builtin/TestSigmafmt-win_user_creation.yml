@@ -1,6 +1,7 @@
 title: Local User Creation
 id: 66b6be3d-55d0-4f47-9855-d69df21740ea
 description: Detects local user creation on windows servers, which shouldn't happen in an Active Directory environment. Apply this Sigma Use Case on your windows server logs and not on your DC logs.
+
 logsource:
     product: windows
     service: security
@@ -8,6 +9,7 @@ detection:
     selection:
         EventID: 4720
     condition: selection
+
 references:
     - https://patrick-bareiss.com/detecting-local-user-creation-in-ad-with-sigma/
 tags:

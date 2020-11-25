@@ -1,6 +1,7 @@
 title: Suspicious Control Panel DLL Load
 id: d7eb979b-c2b5-4a6f-a3a7-c87ce6763819
 description: Detects suspicious Rundll32 execution from control.exe as used by Equation Group and Exploit Kits
+
 author: Florian Roth
 date: 2017/04/15
 modified: 2020/09/05
@@ -14,6 +15,7 @@ detection:
     filter:
         CommandLine: '*Shell32.dll*'
     condition: selection and not filter
+
 references:
     - https://twitter.com/rikvduijn/status/853251879320662017
 tags:

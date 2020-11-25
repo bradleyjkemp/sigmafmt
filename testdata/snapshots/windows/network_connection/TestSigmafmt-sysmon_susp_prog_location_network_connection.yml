@@ -1,6 +1,7 @@
 title: Suspicious Program Location with Network Connections
 id: 7b434893-c57d-4f41-908d-6a17bf1ae98f
 description: Detects programs with network connections running in suspicious files system locations
+
 logsource:
     category: network_connection
     product: windows
@@ -21,6 +22,7 @@ detection:
             - '*\Windows\IME\\*'
             - '*\Windows\addins\\*'
     condition: selection
+
 references:
     - https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo
 author: Florian Roth

@@ -1,6 +1,7 @@
 title: Cisco Disabling Logging
 id: 9e8f6035-88bf-4a63-96b6-b17c0508257e
 description: Turn off logging locally or remote
+
 author: Austin Clark
 date: 2019/08/11
 logsource:
@@ -18,6 +19,7 @@ detection:
         - 'no logging'
         - 'no aaa new-model'
     condition: keywords
+
 tags:
     - attack.defense_evasion
     - attack.t1089 # an old one

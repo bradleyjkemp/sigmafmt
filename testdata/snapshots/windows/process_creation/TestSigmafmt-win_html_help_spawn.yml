@@ -1,6 +1,7 @@
 title: HTML Help Shell Spawn
 id: 52cad028-0ff0-4854-8f67-d25dfcbc78b4
 description: Detects a suspicious child process of a Microsoft HTML Help system when executing compiled HTML files (.chm)
+
 logsource:
     category: process_creation
     product: windows
@@ -16,6 +17,7 @@ detection:
             - '\wmic.exe'
             - '\rundll32.exe'
     condition: selection
+
 references:
     - https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/chm-badness-delivers-a-banking-trojan/
 author: Maxim Pavlunin

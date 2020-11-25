@@ -1,6 +1,7 @@
 title: Silence.EDA Detection
 id: 3ceb2083-a27f-449a-be33-14ec1b7cc973
 description: Detects Silence empireDNSagent
+
 author: Alina Stepchenkova, Group-IB, oscd.community
 date: 2019/11/01
 modified: 2020/09/01
@@ -25,6 +26,7 @@ detection:
             - '$Session.Dead = $True'
             - '$Session["Driver"] -eq'
     condition: empire and dnscat
+
 tags:
     - attack.command_and_control
     - attack.execution

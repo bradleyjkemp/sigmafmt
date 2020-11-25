@@ -1,6 +1,7 @@
 title: Suspicious DNS Query with B64 Encoded String
 id: 4153a907-2451-4e4f-a578-c52bb6881432
 description: Detects suspicious DNS queries using base64 encoding
+
 author: Florian Roth
 date: 2018/05/10
 modified: 2020/08/27
@@ -11,6 +12,7 @@ detection:
         query:
             - '*==.*'
     condition: selection
+
 references:
     - https://github.com/krmaxwell/dns-exfiltration
 tags:

@@ -1,6 +1,7 @@
 title: Active Directory Kerberos DLL Loaded Via Office Applications
 id: 7417e29e-c2e7-4cf6-a2e8-767228c64837
 description: Detects Kerberos DLL being loaded by an Office Product
+
 logsource:
     category: image_load
     product: windows
@@ -14,6 +15,7 @@ detection:
         ImageLoaded:
             - '*\kerberos.dll'
     condition: selection
+
 references:
     - https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16
 author: Antonlovesdnb

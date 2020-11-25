@@ -1,6 +1,7 @@
 title: Registry Persistence Mechanisms
 id: 36803969-5421-41ec-b92f-8500f79c23b0
 description: Detects persistence registry keys
+
 date: 2018/04/11
 modified: 2020/09/06
 author: Karneades
@@ -15,6 +16,7 @@ detection:
             - '*\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit\\*\MonitorProcess'
         EventType: SetValue
     condition: selection_reg1
+
 references:
     - https://oddvar.moe/2018/04/10/persistence-using-globalflags-in-image-file-execution-options-hidden-from-autoruns-exe/
 tags:

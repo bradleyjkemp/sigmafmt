@@ -1,6 +1,7 @@
 title: Taskmgr as Parent
 id: 3d7679bd-0c00-440c-97b0-3f204273e6c7
 description: Detects the creation of a process from Windows task manager
+
 logsource:
     category: process_creation
     product: windows
@@ -13,6 +14,7 @@ detection:
             - '*\mmc.exe'
             - '*\taskmgr.exe'
     condition: selection and not filter
+
 tags:
     - attack.defense_evasion
     - attack.t1036

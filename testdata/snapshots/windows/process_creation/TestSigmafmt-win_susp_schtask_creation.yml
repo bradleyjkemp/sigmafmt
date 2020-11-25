@@ -1,6 +1,7 @@
 title: Scheduled Task Creation
 id: 92626ddd-662c-49e3-ac59-f6535f12d189
 description: Detects the creation of scheduled tasks in user session
+
 author: Florian Roth
 date: 2019/01/16
 logsource:
@@ -13,6 +14,7 @@ detection:
     filter:
         User: NT AUTHORITY\SYSTEM
     condition: selection and not filter
+
 fields:
     - CommandLine
     - ParentCommandLine

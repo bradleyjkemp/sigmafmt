@@ -1,6 +1,7 @@
 title: AWS Config Disabling Channel/Recorder
 id: 07330162-dba1-4746-8121-a9647d49d297
 description: Detects AWS Config Service disabling
+
 author: vitaliy0x1
 date: 2020/01/21
 logsource:
@@ -13,6 +14,7 @@ detection:
             - DeleteDeliveryChannel
             - StopConfigurationRecorder
     condition: selection_source AND events
+
 tags:
     - attack.defense_evasion
     - attack.t1089 # an old one

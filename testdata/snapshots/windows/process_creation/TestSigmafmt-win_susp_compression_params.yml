@@ -1,6 +1,7 @@
 title: Suspicious Compression Tool Parameters
 id: 27a72a60-7e5e-47b1-9d17-909c9abafdcd
 description: Detects suspicious command line arguments of common data compression tools
+
 logsource:
     category: process_creation
     product: windows
@@ -20,6 +21,7 @@ detection:
     falsepositive:
         ParentImage: 'C:\Program*'
     condition: selection and not falsepositive
+
 references:
     - https://twitter.com/SBousseaden/status/1184067445612535811
 tags:

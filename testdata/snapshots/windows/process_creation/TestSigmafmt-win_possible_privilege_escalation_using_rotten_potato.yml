@@ -1,6 +1,7 @@
 title: Detection of Possible Rotten Potato
 id: 6c5808ee-85a2-4e56-8137-72e5876a5096
 description: Detection of child processes spawned with SYSTEM privileges by parents with LOCAL SERVICE or NETWORK SERVICE privileges
+
 logsource:
     category: process_creation
     product: windows
@@ -14,6 +15,7 @@ detection:
         Image|endswith: '\rundll32.exe'
         CommandLine|contains: 'DavSetCookie'
     condition: selection and not rundllexception
+
 references:
     - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
     - https://foxglovesecurity.com/2016/09/26/rotten-potato-privilege-escalation-from-service-accounts-to-system/

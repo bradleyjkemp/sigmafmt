@@ -1,6 +1,7 @@
 title: MITRE BZAR Indicators for Execution
 id: b640c0b8-87f8-4daa-aef8-95a24261dd1d
 description: 'Windows DCE-RPC functions which indicate an execution techniques on the remote system. All credit for the Zeek mapping of the suspicious endpoint/operation field goes to MITRE'
+
 author: '@neu5ron, SOC Prime'
 date: 2020/03/19
 logsource:
@@ -38,6 +39,7 @@ detection:
         endpoint: 'svcctl'
         operation: 'StartServiceW'
     condition: 1 of them
+
 references:
     - https://github.com/mitre-attack/bzar#indicators-for-attck-execution
 tags:

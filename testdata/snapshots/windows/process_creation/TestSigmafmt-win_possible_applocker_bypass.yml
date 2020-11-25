@@ -1,6 +1,7 @@
 title: Possible Applocker Bypass
 id: 82a19e3a-2bfe-4a91-8c0d-5d4c98fbb719
 description: Detects execution of executables that can be used to bypass Applocker whitelisting
+
 logsource:
     category: process_creation
     product: windows
@@ -17,6 +18,7 @@ detection:
             #- '\mshta.exe'
             #- '\csc.exe'
     condition: selection
+
 references:
     - https://github.com/subTee/ApplicationWhitelistBypassTechniques/blob/master/TheList.txt
     - https://room362.com/post/2014/2014-01-16-application-whitelist-bypass-using-ieexec-dot-exe/

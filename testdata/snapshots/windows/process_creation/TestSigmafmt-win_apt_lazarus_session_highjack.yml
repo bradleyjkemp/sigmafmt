@@ -1,6 +1,7 @@
 title: Lazarus Session Highjacker
 id: 3f7f5b0b-5b16-476c-a85f-ab477f6dd24b
 description: Detects executables launched outside their default directories as used by Lazarus Group (Bluenoroff)
+
 logsource:
     category: process_creation
     product: windows
@@ -14,6 +15,7 @@ detection:
             - 'C:\Windows\System32\\*'
             - 'C:\Windows\SysWOW64\\*'
     condition: selection and not filter
+
 references:
     - https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180244/Lazarus_Under_The_Hood_PDF_final.pdf
 tags:

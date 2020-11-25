@@ -1,6 +1,7 @@
 title: WMImplant Hack Tool
 id: 8028c2c3-e25a-46e3-827f-bbb5abf181d7
 description: Detects parameters used by WMImplant
+
 logsource:
     product: windows
     service: powershell
@@ -30,6 +31,7 @@ detection:
             - " vacant_system "
             - " logon_events "
     condition: selection
+
 references:
     - https://github.com/FortyNorthSecurity/WMImplant
 tags:

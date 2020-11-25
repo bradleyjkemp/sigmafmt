@@ -1,6 +1,7 @@
 title: Application Whitelisting Bypass via DLL Loaded by odbcconf.exe
 id: 65d2be45-8600-4042-b4c0-577a1ff8a60e
 description: Detects defence evasion attempt via odbcconf.exe execution to load DLL
+
 logsource:
     category: process_creation
     product: windows
@@ -14,6 +15,7 @@ detection:
         ParentImage|endswith: '\odbcconf.exe'
         Image|endswith: '\rundll32.exe'
     condition: selection_1 or selection_2
+
 references:
     - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OSBinaries/Odbcconf.yml
     - https://twitter.com/Hexacorn/status/1187143326673330176

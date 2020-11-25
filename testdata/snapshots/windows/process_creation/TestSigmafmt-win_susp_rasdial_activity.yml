@@ -1,6 +1,7 @@
 title: Suspicious RASdial Activity
 id: 6bba49bf-7f8c-47d6-a1bb-6b4dece4640e
 description: Detects suspicious process related to rasdial.exe
+
 logsource:
     category: process_creation
     product: windows
@@ -9,6 +10,7 @@ detection:
         Image|endswith:
             - rasdial.exe
     condition: selection
+
 references:
     - https://twitter.com/subTee/status/891298217907830785
 author: juju4

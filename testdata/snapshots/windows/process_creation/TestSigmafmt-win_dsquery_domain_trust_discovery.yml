@@ -1,6 +1,7 @@
 title: Domain Trust Discovery
 id: 77815820-246c-47b8-9741-e0def3f57308
 description: Detects a discovery of domain trusts
+
 logsource:
     category: process_creation
     product: windows
@@ -13,6 +14,7 @@ detection:
         - Image|endswith: '\nltest.exe'
           CommandLine|contains: 'domain_trusts'
     condition: selection
+
 references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1482/T1482.yaml
 author: Jakob Weinzettl, oscd.community

@@ -1,6 +1,7 @@
 title: Security Support Provider (SSP) Added to LSA Configuration
 id: eeb30123-9fbd-4ee8-aaa0-2e545bbed6dc
 description: Detects the addition of a SSP to the registry. Upon a reboot or API call, SSP DLLs gain access to encrypted and plaintext passwords stored in Windows.
+
 logsource:
     category: registry_event
     product: windows
@@ -13,6 +14,7 @@ detection:
         - Image: C:\Windows\system32\msiexec.exe
         - Image: C:\Windows\syswow64\MsiExec.exe
     condition: selection_registry and not exclusion_images
+
 references:
     - https://attack.mitre.org/techniques/T1101/
     - https://powersploit.readthedocs.io/en/latest/Persistence/Install-SSP/

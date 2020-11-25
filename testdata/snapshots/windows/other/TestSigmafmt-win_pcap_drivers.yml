@@ -1,6 +1,7 @@
 title: Windows Pcap Drivers
 id: 7b687634-ab20-11ea-bb37-0242ac130002
 description: Detects Windows Pcap driver installation based on a list of associated .sys files.
+
 author: Cian Heasley
 date: 2020/06/10
 logsource:
@@ -20,6 +21,7 @@ detection:
             - '*USBPcap*'
             - '*pktmon*'
     condition: selection
+
 references:
     - https://ragged-lab.blogspot.com/2020/06/capturing-pcap-driver-installations.html#more
 tags:

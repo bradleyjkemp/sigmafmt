@@ -1,6 +1,7 @@
 title: Fax Service DLL Search Order Hijack
 id: 828af599-4c53-4ed2-ba4a-a9f835c434ea
 description: The Fax service attempts to load ualapi.dll, which is non-existent. An attacker can then (side)load their own malicious DLL using this service.
+
 logsource:
     category: image_load
     product: windows
@@ -14,6 +15,7 @@ detection:
         ImageLoaded|startswith:
             - C:\Windows\WinSxS\
     condition: selection and not filter
+
 references:
     - https://windows-internals.com/faxing-your-way-to-system/
 author: NVISO

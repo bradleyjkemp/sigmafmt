@@ -1,6 +1,7 @@
 title: Admin User Remote Logon
 id: 0f63e1ef-1eb9-4226-9d54-8927ca08520a
 description: Detect remote login by Administrator user depending on internal pattern
+
 logsource:
     product: windows
     service: security
@@ -12,6 +13,7 @@ detection:
         AuthenticationPackageName: Negotiate
         AccountName: 'Admin-*'
     condition: selection
+
 references:
     - https://car.mitre.org/wiki/CAR-2016-04-005
 tags:

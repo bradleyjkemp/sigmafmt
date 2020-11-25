@@ -1,6 +1,7 @@
 title: Cisco Sniffing
 id: b9e1f193-d236-4451-aaae-2f3d2102120d
 description: Show when a monitor or a span/rspan is setup or modified
+
 author: Austin Clark
 date: 2019/08/11
 logsource:
@@ -15,6 +16,7 @@ detection:
         - 'set span'
         - 'set rspan'
     condition: keywords
+
 tags:
     - attack.credential_access
     - attack.discovery

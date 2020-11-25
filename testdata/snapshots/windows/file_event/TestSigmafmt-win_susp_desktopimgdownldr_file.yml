@@ -1,6 +1,7 @@
 title: Suspicious Desktopimgdownldr Target File
 id: fc4f4817-0c53-4683-a4ee-b17a64bc1039
 description: Detects a suspicious Microsoft desktopimgdownldr file creation that stores a file to a suspicious location or contains a file with a suspicious extension
+
 author: Florian Roth
 date: 2020/07/03
 logsource:
@@ -18,6 +19,7 @@ detection:
             - '.jpeg'
             - '.png'
     condition: selection and not filter1 and not filter2
+
 references:
     - https://labs.sentinelone.com/living-off-windows-land-a-new-native-file-downldr/
     - https://twitter.com/SBousseaden/status/1278977301745741825

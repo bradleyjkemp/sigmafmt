@@ -1,6 +1,7 @@
 title: File Created with System Process Name
 id: d5866ddf-ce8f-4aea-b28e-d96485a20d3d
 description: Detects the creation of a executable with a system process name in a suspicious folder
+
 author: Sander Wiebing
 date: 2020/05/26
 modified: 2020/08/23
@@ -44,6 +45,7 @@ detection:
             - 'C:\Windows\WinSxS\\*'
             - '\SystemRoot\System32\\*'
     condition: selection and not filter
+
 tags:
     - attack.defense_evasion
     - attack.t1036 # an old one

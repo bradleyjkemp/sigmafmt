@@ -1,6 +1,7 @@
 title: Microsoft Office Add-In Loading
 id: 8e1cb247-6cf6-42fa-b440-3f27d57e9936
 description: Detects add-ins that load when Microsoft Word or Excel starts (.wll/.xll are simply .dll fit for Word or Excel).
+
 logsource:
     category: file_event
     product: windows
@@ -17,6 +18,7 @@ detection:
             - .xlam
             - .xla
     condition: (wlldropped or xlldropped or generic)
+
 references:
     - Internal Research
 tags:

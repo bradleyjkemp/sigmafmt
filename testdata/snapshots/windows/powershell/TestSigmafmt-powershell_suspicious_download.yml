@@ -1,6 +1,7 @@
 title: Suspicious PowerShell Download
 id: 65531a81-a694-4e31-ae04-f8ba5bc33759
 description: Detects suspicious PowerShell download command
+
 logsource:
     product: windows
     service: powershell
@@ -14,6 +15,7 @@ detection:
             - 'System.Net.WebClient'
             - '.DownloadString('
     condition: downloadfile or downloadstring
+
 tags:
     - attack.execution
     - attack.t1059.001

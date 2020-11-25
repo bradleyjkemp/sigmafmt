@@ -1,6 +1,7 @@
 title: Malicious PowerShell Keywords
 id: f62176f3-8128-4faa-bf6c-83261322e5eb
 description: Detects keywords from well-known PowerShell exploitation frameworks
+
 logsource:
     product: windows
     service: powershell
@@ -29,6 +30,7 @@ detection:
             - "*Metasploit*"
             - "*Mimikatz*"
     condition: keywords
+
 references:
     - https://adsecurity.org/?p=2921
 tags:

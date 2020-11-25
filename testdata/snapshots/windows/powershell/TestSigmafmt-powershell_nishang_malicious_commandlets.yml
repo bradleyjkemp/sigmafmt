@@ -1,6 +1,7 @@
 title: Malicious Nishang PowerShell Commandlets
 id: f772cee9-b7c2-4cb2-8f07-49870adc02e0
 description: Detects Commandlet names and arguments from the Nishang exploitation framework
+
 date: 2019/05/16
 logsource:
     product: windows
@@ -82,6 +83,7 @@ detection:
         - FakeDC
         - Exploit
     condition: keywords
+
 references:
     - https://github.com/samratashok/nishang
 tags:

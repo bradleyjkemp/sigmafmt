@@ -1,6 +1,7 @@
 title: Cisco Local Accounts
 id: 6d844f0f-1c18-41af-8f19-33e7654edfc3
 description: Find local accounts being created or modified as well as remote authentication configurations
+
 author: Austin Clark
 date: 2019/08/12
 modified: 2020/09/02
@@ -15,6 +16,7 @@ detection:
         - 'username'
         - 'aaa'
     condition: keywords
+
 tags:
     - attack.persistence
     - attack.t1098

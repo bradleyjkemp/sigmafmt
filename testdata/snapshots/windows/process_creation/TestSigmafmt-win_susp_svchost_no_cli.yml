@@ -1,6 +1,7 @@
 title: Suspect Svchost Activity
 id: 16c37b52-b141-42a5-a3ea-bbe098444397
 description: It is extremely abnormal for svchost.exe to spawn without any CLI arguments and is normally observed when a malicious process spawns the process and injects code into the process memory space.
+
 logsource:
     category: process_creation
     product: windows
@@ -14,6 +15,7 @@ detection:
             - '\rpcnet.exe'
             - '\rpcnetp.exe'
     condition: (selection1 and selection2) and not filter
+
 references:
     - https://securitybytes.io/blue-team-fundamentals-part-two-windows-processes-759fe15965e2
 author: David Burkett

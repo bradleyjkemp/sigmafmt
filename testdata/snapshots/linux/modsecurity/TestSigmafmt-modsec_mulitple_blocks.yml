@@ -1,6 +1,7 @@
 title: Multiple Modsecurity Blocks
 id: a06eea10-d932-4aa6-8ba9-186df72c8d23
 description: Detects multiple blocks by the mod_security module (Web Application Firewall)
+
 author: Florian Roth
 date: 2017/02/28
 logsource:
@@ -13,6 +14,7 @@ detection:
         - 'mod_security-message: Access denied'
     timeframe: 120m
     condition: selection | count() > 6
+
 level: medium
 status: stable
 falsepositives:

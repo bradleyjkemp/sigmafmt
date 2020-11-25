@@ -1,6 +1,7 @@
 title: Connection Proxy
 id: 72f4ab3f-787d-495d-a55d-68c2ff46cf4c
 description: Detects setting proxy
+
 author: Ömer Günal
 date: 2020/06/17
 logsource:
@@ -10,6 +11,7 @@ detection:
         - 'http_proxy=*'
         - 'https_proxy=*'
     condition: keyword
+
 references:
     - https://attack.mitre.org/techniques/T1090/
 tags:

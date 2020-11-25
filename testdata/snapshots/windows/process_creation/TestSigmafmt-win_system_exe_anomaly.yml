@@ -1,6 +1,7 @@
 title: System File Execution Location Anomaly
 id: e4a6b256-3e47-40fc-89d2-7a477edd6915
 description: Detects a Windows program executable started in a suspicious folder
+
 logsource:
     category: process_creation
     product: windows
@@ -40,6 +41,7 @@ detection:
             - 'C:\Windows\WinSxS\\*'
             - '\SystemRoot\System32\\*'
     condition: selection and not filter
+
 references:
     - https://twitter.com/GelosSnake/status/934900723426439170
 author: Florian Roth, Patrick Bareiss

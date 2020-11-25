@@ -1,6 +1,7 @@
 title: COMPlus_ETWEnabled Registry Modification
 id: a4c90ea1-2634-4ca0-adbb-35eae169b6fc
 description: Potential adversaries stopping ETW providers recording loaded .NET assemblies.
+
 logsource:
     product: windows
     service: security
@@ -11,6 +12,7 @@ detection:
         ObjectValueName: 'ETWEnabled'
         NewValue: '0'
     condition: selection
+
 references:
     - https://twitter.com/_xpn_/status/1268712093928378368
     - https://social.msdn.microsoft.com/Forums/vstudio/en-US/0878832e-39d7-4eaf-8e16-a729c4c40975/what-can-i-use-e13c0d23ccbc4e12931bd9cc2eee27e4-for?forum=clr

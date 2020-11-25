@@ -1,6 +1,7 @@
 title: Windows Mangement Instrumentation DLL Loaded Via Microsoft Word
 id: a457f232-7df9-491d-898f-b5aabd2cbe2f
 description: Detects DLL's Loaded Via Word Containing VBA Macros Executing WMI Commands
+
 logsource:
     category: image_load
     product: windows
@@ -18,6 +19,7 @@ detection:
             - '*\wbemdisp.dll'
             - '*\wbemsvc.dll'
     condition: selection
+
 references:
     - https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16
     - https://www.carbonblack.com/2019/04/24/cb-tau-threat-intelligence-notification-emotet-utilizing-wmi-to-launch-powershell-encoded-code/

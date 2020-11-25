@@ -1,6 +1,7 @@
 title: Empire PowerShell UAC Bypass
 id: 3268b746-88d8-4cd3-bffc-30077d02c787
 description: Detects some Empire PowerShell UAC bypass methods
+
 logsource:
     category: process_creation
     product: windows
@@ -10,6 +11,7 @@ detection:
             - '* -NoP -NonI -w Hidden -c $x=$((gp HKCU:Software\\Microsoft\\Windows Update).Update)*'
             - '* -NoP -NonI -c $x=$((gp HKCU:Software\\Microsoft\\Windows Update).Update);*'
     condition: selection
+
 references:
     - https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/data/module_source/privesc/Invoke-EventVwrBypass.ps1#L64
     - https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/data/module_source/privesc/Invoke-FodHelperBypass.ps1#L64

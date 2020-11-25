@@ -1,6 +1,7 @@
 title: Shells Spawned by Web Servers
 id: 8202070f-edeb-4d31-a010-a26c72ac5600
 description: Web servers that spawn shell processes could be the result of a successfully placed web shell or an other attack
+
 author: Thomas Patzke
 date: 2019/01/16
 modified: 2020/03/25
@@ -22,6 +23,7 @@ detection:
             - '*\powershell.exe'
             - '*\bitsadmin.exe'
     condition: selection
+
 fields:
     - CommandLine
     - ParentCommandLine

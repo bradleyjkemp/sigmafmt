@@ -2,6 +2,7 @@ action: global
 title: SILENTTRINITY Stager Execution
 id: 03552375-cc2c-4883-bbe4-7958d5a980be
 description: Detects SILENTTRINITY stager use
+
 detection:
     selection:
         Description|contains: 'st2stager'

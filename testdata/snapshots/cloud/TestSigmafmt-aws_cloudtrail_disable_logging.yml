@@ -1,6 +1,7 @@
 title: AWS CloudTrail Important Change
 id: 4db60cc0-36fb-42b7-9b58-a5b53019fb74
 description: Detects disabling, deleting and updating of a Trail
+
 author: vitaliy0x1
 date: 2020/01/21
 logsource:
@@ -14,6 +15,7 @@ detection:
             - UpdateTrail
             - DeleteTrail
     condition: selection_source AND events
+
 references:
     - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/best-practices-security.html
 tags:

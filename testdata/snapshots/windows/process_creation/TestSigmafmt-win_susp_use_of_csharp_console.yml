@@ -1,6 +1,7 @@
 title: Suspicious Use of CSharp Interactive Console
 id: a9e416a8-e613-4f8b-88b8-a7d1d1af2f61
 description: Detects the execution of CSharp interactive console by PowerShell
+
 logsource:
     category: process_creation
     product: windows
@@ -10,6 +11,7 @@ detection:
         ParentImage|endswith: '\powershell.exe'
         OriginalFileName: 'csi.exe'
     condition: selection
+
 references:
     - https://redcanary.com/blog/detecting-attacks-leveraging-the-net-framework/
 author: Michael R. (@nahamike01)

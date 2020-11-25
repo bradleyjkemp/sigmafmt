@@ -1,6 +1,7 @@
 title: Renamed ProcDump
 id: 4a0b2c7e-7cb2-495d-8b63-5f268e7bfd67
 description: Detects the execution of a renamed ProcDump executable often used by attackers or malware
+
 logsource:
     product: windows
     category: process_creation
@@ -12,6 +13,7 @@ detection:
             - '*\procdump.exe'
             - '*\procdump64.exe'
     condition: selection and not filter
+
 references:
     - https://docs.microsoft.com/en-us/sysinternals/downloads/procdump
 author: Florian Roth

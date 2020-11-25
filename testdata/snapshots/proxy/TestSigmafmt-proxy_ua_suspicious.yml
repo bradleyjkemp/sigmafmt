@@ -1,6 +1,7 @@
 title: Suspicious User Agent
 id: 7195a772-4b3f-43a4-a210-6a003d65caa1
 description: Detects suspicious malformed user agent strings in proxy logs
+
 author: Florian Roth
 date: 2017/07/08
 modified: 2020/09/03
@@ -32,6 +33,7 @@ detection:
         c-useragent:
             - 'Mozilla/3.0 * Acrobat *' # Acrobat with linked content
     condition: ( selection1 or selection2 or selection3 ) and not falsepositives
+
 references:
     - https://github.com/fastly/waf_testbed/blob/master/templates/default/scanners-user-agents.data.erb
 tags:

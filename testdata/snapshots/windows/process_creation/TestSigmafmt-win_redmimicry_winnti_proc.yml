@@ -1,6 +1,7 @@
 title: RedMimicry Winnti Playbook Execute
 id: 95022b85-ff2a-49fa-939a-d7b8f56eeb9b
 description: Detects actions caused by the RedMimicry Winnti playbook
+
 logsource:
     product: windows
     category: process_creation
@@ -14,6 +15,7 @@ detection:
             - \Windows\Temp\tmp.bat
             - sigcmm-2.4.dll
     condition: selection
+
 references:
     - https://redmimicry.com
 author: Alexander Rausch

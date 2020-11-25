@@ -1,6 +1,7 @@
 title: Windows Defender AMSI Trigger Detected
 id: ea9bf0fa-edec-4fb8-8b78-b119f2528186
 description: Detects triggering of AMSI by Windows Defender.
+
 date: 2020/09/14
 author: Bhabesh Raj
 logsource:
@@ -11,6 +12,7 @@ detection:
         EventID: 1116
         DetectionSource: 'AMSI'
     condition: selection
+
 references:
     - https://docs.microsoft.com/en-us/windows/win32/amsi/how-amsi-helps
 level: high

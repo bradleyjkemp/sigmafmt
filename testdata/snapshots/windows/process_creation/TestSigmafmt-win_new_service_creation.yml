@@ -1,6 +1,7 @@
 title: New Service Creation
 id: 7fe71fc9-de3b-432a-8d57-8c809efc10ab
 description: Detects creation of a new service
+
 author: Timur Zinniatullin, Daniil Yugoslavskiy, oscd.community
 date: 2019/10/21
 modified: 2019/11/04
@@ -16,6 +17,7 @@ detection:
         - Image|endswith: '\powershell.exe'
           CommandLine|contains: 'new-service'
     condition: selection
+
 references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1050/T1050.yaml
 tags:

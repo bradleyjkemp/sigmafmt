@@ -3,6 +3,7 @@ package rules
 import (
 	"fmt"
 	"sort"
+	"strings"
 
 	"gopkg.in/yaml.v3"
 )
@@ -98,31 +99,90 @@ var canonicalKeyOrder = nodeRule{"canonical_key_order", func(node *yaml.Node) ([
 	return []Message{{Message: "YAML keys weren't in the canonical order", AutoFixed: true}}, nil
 }}
 
-// The order of these lines determines the "canonical" order that keys should appear in a rule
-// (if adding a new key, make sure to also add it to the map below)
-const (
-	titleOrder          = iota + 1
-	idOrder             = iota
-	descriptionOrder    = iota
-	logsourceOrder      = iota
-	detectionOrder      = iota
-	referencesOrder     = iota
-	tagsOrder           = iota
-	levelOrder          = iota
-	statusOrder         = iota
-	falsepositivesOrder = iota
+// Ensures there's whitespace between the groups of keys (as defined below)
+var whitespaceBetweenSections = nodeRule{"whitespace_between_sections", func(node *yaml.Node) ([]Message, error) {
+	switch {
+	case node.Kind != yaml.DocumentNode:
+		return nil, fmt.Errorf("expected a document node, got a %v", node.Kind)
+	case len(node.Content) != 1 || node.Content[0].Kind != yaml.MappingNode:
+		return nil, fmt.Errorf("expected Rule to consist of a single YAML map")
+	}
+
+	rule := node.Content[0].Content
+	if len(rule)%2 != 0 {
+		return nil, fmt.Errorf("internal, please report! expected an even number of elements in a mapping node")
+	}
+
+	// We start off looking for the first key in the first group
+	currentGroup := 0
+	currentKey := 0
+	keyNeedsWhitespace := false
+	for i := 0; i < len(rule); i += 2 {
+		key := rule[i]
+		if keyNeedsWhitespace {
+			// Add a single whitespace line before this node (if it doesn't already have one)
+			if !strings.HasPrefix(key.HeadComment, whitespacePreservingComment) {
+				if key.HeadComment == "" {
+					key.HeadComment = whitespacePreservingComment
+				} else {
+					key.HeadComment = whitespacePreservingComment + "\n" + key.HeadComment
+				}
+			}
+			keyNeedsWhitespace = false
+		}
+		if key.Value != canonicalKeyLayout[currentGroup][currentKey] {
+			// This is a non-canonical key so we leave it in this group
+			continue
+		}
+
+		// This key matches the one we're looking for so move our pointer on to the next one
+		currentKey++
+
+		if currentKey >= len(canonicalKeyLayout[currentGroup]) {
+			// This is the last canonical key in the group
+			currentGroup++
+			currentKey = 0
+			// The next key needs whitespace before it
+			keyNeedsWhitespace = true
+		}
+		if currentGroup >= len(canonicalKeyLayout) {
+			// We've gone through all the canonical keys we expect so we're done
+			break
+		}
+	}
+
+	return []Message{{Message: "YAML keys weren't in the canonical order", AutoFixed: true}}, nil
+}}
+
+var (
+	// The order of these lines determines the "canonical" order that keys should appear in a rule and the sections they should be split into
+	canonicalKeyLayout = [][]string{
+		{
+			"title",
+			"id",
+			"description",
+		},
+		{
+			"logsource",
+			"detection",
+		},
+		{
+			"references",
+			"tags",
+			"level",
+			"status",
+			"falsepositives",
+		},
+	}
+	canonicalKeyOrdering = map[string]int{}
 )
 
-var canonicalKeyOrdering = map[string]int{
-	// reserve 0 for non-canonical keys
-	"description":    descriptionOrder,
-	"detection":      detectionOrder,
-	"falsepositives": falsepositivesOrder,
-	"id":             idOrder,
-	"level":          levelOrder,
-	"logsource":      logsourceOrder,
-	"references":     referencesOrder,
-	"status":         statusOrder,
-	"tags":           tagsOrder,
-	"title":          titleOrder,
+func init() {
+	var order = 1 // reserve 0 for non-canonical keys
+	for _, group := range canonicalKeyLayout {
+		for _, key := range group {
+			canonicalKeyOrdering[key] = order
+			order++
+		}
+	}
 }

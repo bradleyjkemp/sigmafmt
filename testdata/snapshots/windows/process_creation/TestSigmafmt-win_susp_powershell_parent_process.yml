@@ -1,6 +1,7 @@
 title: Suspicious PowerShell Parent Process
 id: 754ed792-634f-40ae-b3bc-e0448d33f695
 description: Detects a suspicious parents of powershell.exe
+
 logsource:
     category: process_creation
     product: windows
@@ -45,6 +46,7 @@ detection:
         - Description: "Windows PowerShell"
         - Product: "PowerShell Core 6"
     condition: all of them
+
 references:
     - https://speakerdeck.com/heirhabarov/hunting-for-powershell-abuse?slide=26
 author: Teymur Kheirkhabarov, Harish Segar (rule)

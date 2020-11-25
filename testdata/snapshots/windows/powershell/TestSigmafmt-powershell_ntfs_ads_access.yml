@@ -1,6 +1,7 @@
 title: NTFS Alternate Data Stream
 id: 8c521530-5169-495d-a199-0a3a881ad24e
 description: Detects writing data into NTFS alternate data streams from powershell. Needs Script Block Logging.
+
 logsource:
     product: windows
     service: powershell
@@ -12,6 +13,7 @@ detection:
     keyword2:
         - "-stream"
     condition: keyword1 and keyword2
+
 references:
     - http://www.powertheshell.com/ntfsstreams/
 tags:

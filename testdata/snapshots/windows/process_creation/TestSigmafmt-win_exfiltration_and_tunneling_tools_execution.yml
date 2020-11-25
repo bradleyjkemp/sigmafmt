@@ -1,6 +1,7 @@
 title: Exfiltration and Tunneling Tools Execution
 id: c75309a3-59f8-4a8d-9c2c-4c927ad50555
 description: Execution of well known tools for data exfiltration and tunneling
+
 author: Daniil Yugoslavskiy, oscd.community
 date: 2019/10/24
 modified: 2020/08/29
@@ -15,6 +16,7 @@ detection:
             - '\stunnel.exe'
             - '\httptunnel.exe'
     condition: selection
+
 tags:
     - attack.command_and_control
     - attack.exfiltration

@@ -1,6 +1,7 @@
 title: Space After Filename
 id: 879c3015-c88b-4782-93d7-07adf92dbcb7
 description: Detects space after filename
+
 author: Ömer Günal
 date: 2020/06/17
 logsource:
@@ -11,6 +12,7 @@ detection:
     selection2:
         - 'mv * "* "'
     condition: selection1 and selection2
+
 references:
     - https://attack.mitre.org/techniques/T1064
 tags:

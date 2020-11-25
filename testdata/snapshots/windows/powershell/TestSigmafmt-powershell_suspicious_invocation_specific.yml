@@ -1,6 +1,7 @@
 title: Suspicious PowerShell Invocations - Specific
 id: fce5f582-cc00-41e1-941a-c6fabf0fdb8c
 description: Detects suspicious PowerShell invocation command parameters
+
 logsource:
     product: windows
     service: powershell
@@ -14,6 +15,7 @@ detection:
             - '*bypass -noprofile -windowstyle hidden (new-object system.net.webclient).download*'
             - '*iex(New-Object Net.WebClient).Download*'
     condition: keywords
+
 tags:
     - attack.execution
     - attack.t1059.001

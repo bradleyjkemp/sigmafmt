@@ -1,6 +1,7 @@
 title: Suspicious PowerShell Keywords
 id: 1f49f2ab-26bc-48b3-96cc-dcffbc93eadf
 description: Detects keywords that could indicate the use of some PowerShell exploitation framework
+
 date: 2019/02/11
 author: Florian Roth, Perez Diego (@darkquassar)
 logsource:
@@ -18,6 +19,7 @@ detection:
             - "Runtime.InteropServices.DllImportAttribute"
             - "SuspendThread"
     condition: keywords
+
 references:
     - https://posts.specterops.io/entering-a-covenant-net-command-and-control-e11038bcf462
     - https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-ReflectivePEInjection.ps1

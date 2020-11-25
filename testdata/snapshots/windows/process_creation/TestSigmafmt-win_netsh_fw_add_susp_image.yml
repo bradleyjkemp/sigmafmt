@@ -1,6 +1,7 @@
 title: Netsh Program Allowed with Suspcious Location
 id: a35f5a72-f347-4e36-8895-9869b0d5fc6d
 description: Detects Netsh commands that allows a suspcious application location on Windows Firewall
+
 logsource:
     category: process_creation
     product: windows
@@ -39,6 +40,7 @@ detection:
             - '*\Temporary Internet Files\Content.Outlook\\*'
             - '*\Local Settings\Temporary Internet Files\\*'
     condition: (selection1 or selection2) and susp_image
+
 references:
     - https://www.virusradar.com/en/Win32_Kasidet.AD/description
     - https://www.hybrid-analysis.com/sample/07e789f4f2f3259e7559fdccb36e96814c2dbff872a21e1fa03de9ee377d581f?environmentId=100

@@ -1,6 +1,7 @@
 title: Greenbug Campaign Indicators
 id: 3711eee4-a808-4849-8a14-faf733da3612
 description: Detects tools and process executions as observed in a Greenbug campaign in May 2020
+
 logsource:
     category: process_creation
     product: windows
@@ -34,6 +35,7 @@ detection:
             - 'CSIDL_COMMON_APPDATA\comms\comms.exe'
             - '\Programdata\VMware\Vmware.exe'
     condition: 1 of them
+
 references:
     - https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/greenbug-espionage-telco-south-asia
 author: Florian Roth

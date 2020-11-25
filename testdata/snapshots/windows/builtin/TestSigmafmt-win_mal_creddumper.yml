@@ -3,6 +3,7 @@ title: Credential Dumping Tools Service Execution
 author: Florian Roth, Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community
 id: 4976aa50-8f41-45c6-8b15-ab3fc10e79ed
 description: Detects well-known credential dumping tools execution via service execution events
+
 date: 2017/03/05
 modified: 2020/08/23
 detection:

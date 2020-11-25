@@ -1,6 +1,7 @@
 title: Suspicious Svchost Process
 id: 01d2e2a1-5f09-44f7-9fc1-24faa7479b6d
 description: Detects a suspicious svchost process start
+
 logsource:
     category: process_creation
     product: windows
@@ -17,6 +18,7 @@ detection:
     filter_null:
         ParentImage: null
     condition: selection and not filter and not filter_null
+
 tags:
     - attack.defense_evasion
     - attack.t1036 # an old one

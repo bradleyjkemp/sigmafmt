@@ -1,6 +1,7 @@
 title: Windows Shell Spawning Suspicious Program
 id: 3a6586ad-127a-4d3b-a677-1e6eacdf8fde
 description: Detects a suspicious child process of a Windows shell
+
 logsource:
     category: process_creation
     product: windows
@@ -23,6 +24,7 @@ detection:
     falsepositives:
         CurrentDirectory: '*\ccmcache\\*'
     condition: selection and not falsepositives
+
 references:
     - https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html
 author: Florian Roth

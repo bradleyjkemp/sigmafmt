@@ -1,6 +1,7 @@
 title: Dllhost Internet Connection
 id: cfed2f44-16df-4bf3-833a-79405198b277
 description: Detects Dllhost that communicates with public IP addresses
+
 logsource:
     category: network_connection
     product: windows
@@ -30,6 +31,7 @@ detection:
             - '172.31.*'
             - '127.*'
     condition: selection and not filter
+
 references:
     - https://github.com/Neo23x0/sigma/blob/master/rules/windows/network_connection/sysmon_rundll32_net_connections.yml
 author: bartblaze

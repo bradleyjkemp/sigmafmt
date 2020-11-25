@@ -1,6 +1,7 @@
 title: Logging Configuration Changes on Linux Host
 id: c830f15d-6f6e-430f-8074-6f73d6807841
 description: Detect changes of syslog daemons configuration files
+
 # Example config for this one (place it at the top of audit.rules)
 # -w /etc/syslog.conf -p wa -k etc_modify_syslogconfig
 # -w /etc/rsyslog.conf -p wa -k etc_modify_rsyslogconfig
@@ -18,6 +19,7 @@ detection:
             - /etc/rsyslog.conf
             - /etc/syslog-ng/syslog-ng.conf
     condition: selection
+
 references:
     - self experience
 tags:

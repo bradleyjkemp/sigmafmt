@@ -1,6 +1,7 @@
 title: Impacket Lateralization Detection
 id: 10c14723-61c7-4c75-92ca-9af245723ad2
 description: Detects wmiexec/dcomexec/atexec/smbexec from Impacket framework
+
 logsource:
     category: process_creation
     product: windows
@@ -38,6 +39,7 @@ detection:
         CommandLine:
             - 'cmd.exe /C *Windows\\Temp\\*&1'
     condition: (1 of selection_*)
+
 references:
     - https://github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py
     - https://github.com/SecureAuthCorp/impacket/blob/master/examples/atexec.py

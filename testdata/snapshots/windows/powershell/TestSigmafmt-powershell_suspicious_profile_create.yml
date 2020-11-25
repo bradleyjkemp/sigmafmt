@@ -1,6 +1,7 @@
 title: Powershell Profile.ps1 Modification
 id: b5b78988-486d-4a80-b991-930eff3ff8bf
 description: Detects a change in profile.ps1 of the Powershell profile
+
 logsource:
     product: windows
     service: sysmon
@@ -16,6 +17,7 @@ detection:
             - 'C:\Windows\System32\WindowsPowerShell\v1.0\'
             - '\profile.ps1'
     condition: event and (target1 or target2)
+
 references:
     - https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/
 author: HieuTT35

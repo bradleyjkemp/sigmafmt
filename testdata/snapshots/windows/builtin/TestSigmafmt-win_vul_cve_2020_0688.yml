@@ -1,6 +1,7 @@
 title: CVE-2020-0688 Exploitation via Eventlog
 id: d6266bf5-935e-4661-b477-78772735a7cb
 description: Detects the exploitation of Microsoft Exchange vulnerability as described in CVE-2020-0688
+
 logsource:
     product: windows
     service: application
@@ -12,6 +13,7 @@ detection:
     selection2:
         - '*&__VIEWSTATE=*'
     condition: selection1 and selection2
+
 references:
     - https://www.trustedsec.com/blog/detecting-cve-20200688-remote-code-execution-vulnerability-on-microsoft-exchange-server/
 author: Florian Roth

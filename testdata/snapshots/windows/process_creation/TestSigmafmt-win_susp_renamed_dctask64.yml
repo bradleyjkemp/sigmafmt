@@ -1,6 +1,7 @@
 title: Renamed ZOHO Dctask64
 id: 340a090b-c4e9-412e-bb36-b4b16fe96f9b
 description: Detects a renamed dctask64.exe used for process injection, command execution, process creation with a signed binary by ZOHO Corporation
+
 logsource:
     category: process_creation
     product: windows
@@ -10,6 +11,7 @@ detection:
     filter:
         Image|endswith: '\dctask64.exe'
     condition: selection and not filter
+
 references:
     - https://twitter.com/gN3mes1s/status/1222088214581825540
     - https://twitter.com/gN3mes1s/status/1222095963789111296

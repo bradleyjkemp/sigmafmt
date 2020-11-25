@@ -1,6 +1,7 @@
 title: Publicly Accessible RDP Service
 id: 1fc0809e-06bf-4de3-ad52-25e5263b7623
 description: Detects connections from routable IPs to an RDP listener - which is indicative of a publicly-accessible RDP service.
+
 logsource:
     product: zeek
     service: rdp
@@ -29,6 +30,7 @@ detection:
         #dst_ip:
         #- x.x.x.x
     condition: not selection #and not approved_rdp
+
 references:
     - https://attack.mitre.org/techniques/T1021/001/
 tags:

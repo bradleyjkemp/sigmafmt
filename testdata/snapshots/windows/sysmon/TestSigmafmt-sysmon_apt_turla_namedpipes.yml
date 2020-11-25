@@ -1,6 +1,7 @@
 title: Turla Group Named Pipes
 id: 739915e4-1e70-4778-8b8a-17db02f66db1
 description: Detects a named pipe used by Turla group samples
+
 logsource:
     product: windows
     service: sysmon
@@ -18,6 +19,7 @@ detection:
             - '\comnap' # https://www.gdatasoftware.com/blog/2015/01/23926-analysis-of-project-cobra
             # - '\rpc'  # may cause too many false positives : http://kb.palisade.com/index.php?pg=kb.page&id=483
     condition: selection
+
 references:
     - Internal Research
 date: 2017/11/06

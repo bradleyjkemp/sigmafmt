@@ -4,6 +4,7 @@ author: '@41thexplorer, Microsoft Defender ATP'
 date: 2019/11/12
 modified: 2020/08/27
 description: Detects TropicTrooper activity, an actor who targeted high-profile organizations in the energy and food and beverage sectors in Asia
+
 logsource:
     category: process_creation
     product: windows
@@ -11,6 +12,7 @@ detection:
     selection:
         CommandLine: '*abCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCc*'
     condition: selection
+
 references:
     - https://cloudblogs.microsoft.com/microsoftsecure/2018/11/28/windows-defender-atp-device-risk-score-exposes-new-cyberattack-drives-conditional-access-to-protect-networks/
 tags:

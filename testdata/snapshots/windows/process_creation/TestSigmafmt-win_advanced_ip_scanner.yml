@@ -1,6 +1,7 @@
 title: Advanced IP Scanner
 id: bef37fa2-f205-4a7b-b484-0759bfd5f86f
 description: Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+
 logsource:
     category: process_creation
     product: windows
@@ -8,6 +9,7 @@ detection:
     selection:
         Image|contains: '\advanced_ip_scanner'
     condition: selection
+
 references:
     - https://news.sophos.com/en-us/2019/12/09/snatch-ransomware-reboots-pcs-into-safe-mode-to-bypass-protection/
     - https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html

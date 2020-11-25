@@ -1,6 +1,7 @@
 title: MsiExec Web Install
 id: f7b5f842-a6af-4da5-9e95-e32478f3cd2f
 description: Detects suspicious msiexec process starts with web addreses as parameter
+
 logsource:
     category: process_creation
     product: windows
@@ -9,6 +10,7 @@ detection:
         CommandLine:
             - '* msiexec*://*'
     condition: selection
+
 references:
     - https://blog.trendmicro.com/trendlabs-security-intelligence/attack-using-windows-installer-msiexec-exe-leads-lokibot/
 tags:

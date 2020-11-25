@@ -1,6 +1,7 @@
 title: Cred Dump-Tools Named Pipes
 id: 961d0ba2-3eea-4303-a930-2cf78bbfcc5e
 description: Detects well-known credential dumping tools execution via specific named pipes
+
 author: Teymur Kheirkhabarov, oscd.community
 date: 2019/11/01
 modified: 2020/08/28
@@ -15,6 +16,7 @@ detection:
             - '\cachedump'
             - '\wceservicepipe'
     condition: selection
+
 references:
     - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
 tags:

@@ -1,6 +1,7 @@
 title: Suspicious Debugger Registration Cmdline
 id: ae215552-081e-44c7-805f-be16f975c8a2
 description: Detects the registration of a debugger for a program that is available in the logon screen (sticky key backdoor).
+
 logsource:
     category: process_creation
     product: windows
@@ -15,6 +16,7 @@ detection:
             - '*\CurrentVersion\Image File Execution Options\displayswitch.exe*'
             - '*\CurrentVersion\Image File Execution Options\atbroker.exe*'
     condition: selection
+
 references:
     - https://blogs.technet.microsoft.com/jonathantrull/2016/10/03/detecting-sticky-key-backdoors/
 tags:

@@ -1,6 +1,7 @@
 title: Run PowerShell Script from ADS
 id: 45a594aa-1fbd-4972-a809-ff5a99dd81b8
 description: Detects PowerShell script execution from Alternate Data Stream (ADS)
+
 logsource:
     category: process_creation
     product: windows
@@ -12,6 +13,7 @@ detection:
             - 'Get-Content'
             - '-Stream'
     condition: selection
+
 references:
     - https://github.com/p0shkatz/Get-ADS/blob/master/Get-ADS.ps1
 author: Sergey Soldatov, Kaspersky Lab, oscd.community

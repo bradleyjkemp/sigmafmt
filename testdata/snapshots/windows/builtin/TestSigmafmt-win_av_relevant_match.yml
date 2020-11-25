@@ -1,6 +1,7 @@
 title: Relevant Anti-Virus Event
 id: 78bc5783-81d9-4d73-ac97-59f6db4f72a8
 description: This detection method points out highly relevant Antivirus events
+
 author: Florian Roth
 date: 2017/02/19
 logsource:
@@ -34,6 +35,7 @@ detection:
             - "*Keygen*"
             - "*Crack*"
     condition: keywords and not 1 of filters
+
 level: high
 falsepositives:
     - Some software piracy tools (key generators, cracks) are classified as hack tools

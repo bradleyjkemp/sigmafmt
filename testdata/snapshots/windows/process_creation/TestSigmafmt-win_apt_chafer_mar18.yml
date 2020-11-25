@@ -2,6 +2,7 @@ action: global
 title: Chafer Activity
 id: 53ba33fd-3a50-4468-a5ef-c583635cfa92
 description: Detects Chafer activity attributed to OilRig as reported in Nyotron report in March 2018
+
 detection:
     condition: 1 of them
 references:

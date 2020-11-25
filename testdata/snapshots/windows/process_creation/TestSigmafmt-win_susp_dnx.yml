@@ -1,6 +1,7 @@
 title: Application Whitelisting Bypass via Dnx.exe
 id: 81ebd28b-9607-4478-bf06-974ed9d53ed7
 description: Execute C# code located in the consoleapp folder
+
 logsource:
     category: process_creation
     product: windows
@@ -8,6 +9,7 @@ detection:
     selection:
         Image|endswith: '\dnx.exe'
     condition: selection
+
 references:
     - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Csi.yml
     - https://enigma0x3.net/2016/11/17/bypassing-application-whitelisting-by-using-dnx-exe/

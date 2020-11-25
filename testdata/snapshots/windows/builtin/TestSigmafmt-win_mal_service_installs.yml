@@ -1,6 +1,7 @@
 title: Malicious Service Installations
 id: 5a105d34-05fc-401e-8553-272b45c1522d
 description: Detects known malicious service installs that only appear in cases of lateral movement, credential dumping and other suspicious activity
+
 author: Florian Roth, Daniil Yugoslavskiy, oscd.community (update)
 date: 2017/03/27
 modified: 2019/11/01
@@ -17,6 +18,7 @@ detection:
     malsvc_persistence:
         ServiceFileName|contains: 'net user'
     condition: selection and 1 of malsvc_*
+
 tags:
     - attack.persistence
     - attack.privilege_escalation

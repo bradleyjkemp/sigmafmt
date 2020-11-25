@@ -1,6 +1,7 @@
 title: Windows Credential Editor
 id: 7aa7009a-28b9-4344-8c1f-159489a390df
 description: Detects the use of Windows Credential Editor (WCE)
+
 author: Florian Roth
 logsource:
     category: process_creation
@@ -14,6 +15,7 @@ detection:
         CommandLine|endswith: '.exe -S'
         ParentImage|endswith: '\services.exe'
     condition: 1 of them
+
 references:
     - https://www.ampliasecurity.com/research/windows-credentials-editor/
 date: 2019/12/31

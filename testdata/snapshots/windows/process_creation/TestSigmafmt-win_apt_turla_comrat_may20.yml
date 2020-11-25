@@ -1,6 +1,7 @@
 title: Turla Group Commands May 2020
 id: 9e2e51c5-c699-4794-ba5a-29f5da40ac0c
 description: Detects commands used by Turla group as reported by ESET in May 2020
+
 logsource:
     category: process_creation
     product: windows
@@ -15,6 +16,7 @@ detection:
             - 'net use https://docs.live.net'
             - '@aol.co.uk'
     condition: 1 of them
+
 references:
     - https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
 tags:

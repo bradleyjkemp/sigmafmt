@@ -1,6 +1,7 @@
 title: Suspicious Camera and Microphone Access
 id: 62120148-6b7a-42be-8b91-271c04e281a3
 description: Detects Processes accessing the camera and microphone from suspicious folder
+
 author: Den Iuzvyk
 date: 2020/06/07
 reference:
@@ -25,6 +26,7 @@ detection:
             - '#C:#Users#Default#'
             - '#C:#Users#Desktop#'
     condition: all of selection_*
+
 tags:
     - attack.collection
     - attack.t1123

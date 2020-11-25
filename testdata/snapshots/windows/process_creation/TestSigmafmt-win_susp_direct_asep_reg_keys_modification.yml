@@ -1,6 +1,7 @@
 title: Direct Autorun Keys Modification
 id: 24357373-078f-44ed-9ac4-6d334a668a11
 description: Detects direct modification of autostart extensibility point (ASEP) in registry using reg.exe.
+
 logsource:
     category: process_creation
     product: windows
@@ -21,6 +22,7 @@ detection:
             - '\software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
             - '\system\CurrentControlSet\Control\SafeBoot\AlternateShell'
     condition: selection_1 and selection_2
+
 references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1060/T1060.yaml
 tags:

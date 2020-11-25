@@ -1,6 +1,7 @@
 title: dotNET DLL Loaded Via Office Applications
 id: ff0f2b05-09db-4095-b96d-1b75ca24894a
 description: Detects any assembly DLL being loaded by an Office Product
+
 logsource:
     category: image_load
     product: windows
@@ -14,6 +15,7 @@ detection:
         ImageLoaded:
             - 'C:\Windows\assembly\\*'
     condition: selection
+
 references:
     - https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16
 author: Antonlovesdnb

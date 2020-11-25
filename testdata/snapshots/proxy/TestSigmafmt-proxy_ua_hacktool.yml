@@ -1,6 +1,7 @@
 title: Hack Tool User Agent
 id: c42a3073-30fb-48ae-8c99-c23ada84b103
 description: Detects suspicious user agent strings user by hack tools in proxy logs
+
 author: Florian Roth
 date: 2017/07/08
 modified: 2020/09/03
@@ -61,6 +62,7 @@ detection:
             - 'ruler' # https://www.crowdstrike.com/blog/using-outlook-forms-lateral-movement-persistence/
             - 'Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-PT; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)' # SQLi Dumper
     condition: selection
+
 references:
     - https://github.com/fastly/waf_testbed/blob/master/templates/default/scanners-user-agents.data.erb
     - http://rules.emergingthreats.net/open/snort-2.9.0/rules/emerging-user_agents.rules

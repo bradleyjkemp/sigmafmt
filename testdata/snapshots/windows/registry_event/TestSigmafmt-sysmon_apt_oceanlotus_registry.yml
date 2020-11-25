@@ -1,6 +1,7 @@
 title: OceanLotus Registry Activity
 id: 4ac5fc44-a601-4c06-955b-309df8c4e9d4
 description: Detects registry keys created in OceanLotus (also known as APT32) attacks
+
 logsource:
     category: registry_event
     product: windows
@@ -23,6 +24,7 @@ detection:
             # HKCU\SOFTWARE\Classes\CLSID\{E3517E26-8E93-458D-A6DF-8030BC80528B}\
             - 'HKU\\*_Classes\CLSID\{E3517E26-8E93-458D-A6DF-8030BC80528B}\\*'
     condition: selection
+
 references:
     - https://www.welivesecurity.com/2019/03/20/fake-or-fake-keeping-up-with-oceanlotus-decoys/
 tags:

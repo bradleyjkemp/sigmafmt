@@ -1,6 +1,7 @@
 title: Suspicious Parent of Csc.exe
 id: b730a276-6b63-41b8-bcf8-55930c8fc6ee
 description: Detects a suspicious parent of csc.exe, which could by a sign of payload delivery
+
 logsource:
     category: process_creation
     product: windows
@@ -12,6 +13,7 @@ detection:
             - '*\cscript.exe'
             - '*\mshta.exe'
     condition: selection
+
 references:
     - https://twitter.com/SBousseaden/status/1094924091256176641
 author: Florian Roth

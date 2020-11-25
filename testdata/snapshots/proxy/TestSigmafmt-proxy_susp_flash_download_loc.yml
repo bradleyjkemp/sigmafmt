@@ -1,6 +1,7 @@
 title: Flash Player Update from Suspicious Location
 id: 4922a5dd-6743-4fc2-8e81-144374280997
 description: Detects a flashplayer update from an unofficial location
+
 author: Florian Roth
 date: 2017/10/25
 logsource:
@@ -13,6 +14,7 @@ detection:
     filter:
         c-uri-stem: '*.adobe.com/*'
     condition: selection and not filter
+
 references:
     - https://gist.github.com/roycewilliams/a723aaf8a6ac3ba4f817847610935cfb
 tags:

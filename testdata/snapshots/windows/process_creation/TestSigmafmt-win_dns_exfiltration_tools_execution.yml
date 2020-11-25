@@ -1,6 +1,7 @@
 title: DNS Exfiltration and Tunneling Tools Execution
 id: 98a96a5a-64a0-4c42-92c5-489da3866cb0
 description: Well-known DNS Exfiltration tools execution
+
 author: Daniil Yugoslavskiy, oscd.community
 date: 2019/10/24
 modified: 2020/08/29
@@ -12,6 +13,7 @@ detection:
         - Image|endswith: '*\iodine.exe'
         - Image|contains: '\dnscat2'
     condition: selection
+
 tags:
     - attack.command_and_control
     - attack.exfiltration

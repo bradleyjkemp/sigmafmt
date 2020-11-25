@@ -1,6 +1,7 @@
 title: Suspicious Outbound RDP Connections
 id: ed74fe75-7594-4b4b-ae38-e38e3fd2eb23
 description: Detects Non-Standard Tools Connecting to TCP port 3389 indicating possible lateral movement
+
 logsource:
     category: network_connection
     product: windows
@@ -30,6 +31,7 @@ detection:
             - '*\thor.exe'
             - '*\thor64.exe'
     condition: selection and not filter
+
 references:
     - https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708
 author: Markus Neis - Swisscom

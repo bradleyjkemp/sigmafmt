@@ -1,6 +1,7 @@
 title: Process Dump via Rundll32 and Comsvcs.dll
 id: 646ea171-dded-4578-8a4d-65e9822892e3
 description: Detects a process memory dump performed via ordinal function 24 in comsvcs.dll
+
 logsource:
     category: process_creation
     product: windows
@@ -10,6 +11,7 @@ detection:
             - 'comsvcs.dll,#24'
             - 'comsvcs.dll,MiniDump'
     condition: selection
+
 references:
     - https://twitter.com/shantanukhande/status/1229348874298388484
 author: Florian Roth

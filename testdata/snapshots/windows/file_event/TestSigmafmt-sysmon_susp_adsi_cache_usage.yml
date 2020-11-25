@@ -1,6 +1,7 @@
 title: Suspicious ADSI-Cache Usage By Unknown Tool
 id: 75bf09fa-1dd7-4d18-9af9-dd9e492562eb
 description: Detects the usage of ADSI (LDAP) operations by tools. This may also detect tools like LDAPFragger.
+
 date: 2019/03/24
 modified: 2020/08/23
 author: xknow @xknow_infosec
@@ -18,6 +19,7 @@ detection:
             - 'C:\windows\system32\WindowsPowerShell\v1.0\powershell.exe'
             - 'C:\Windows\CCM\CcmExec.exe'
     condition: selection_1 and not selection_2
+
 references:
     - https://medium.com/@ivecodoe/detecting-ldapfragger-a-newly-released-cobalt-strike-beacon-using-ldap-for-c2-communication-c274a7f00961
     - https://blog.fox-it.com/2020/03/19/ldapfragger-command-and-control-over-ldap-attributes/

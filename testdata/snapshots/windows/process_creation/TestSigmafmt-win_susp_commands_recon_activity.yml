@@ -1,6 +1,7 @@
 title: Reconnaissance Activity with Net Command
 id: 2887e914-ce96-435f-8105-593937e90757
 description: Detects a set of commands often used in recon stages by different attack groups
+
 logsource:
     category: process_creation
     product: windows
@@ -26,6 +27,7 @@ detection:
             - netstat -an
     timeframe: 15s
     condition: selection | count() by CommandLine > 4
+
 references:
     - https://twitter.com/haroonmeer/status/939099379834658817
     - https://twitter.com/c_APT_ure/status/939475433711722497

@@ -1,6 +1,7 @@
 title: MSHTA Spawning Windows Shell
 id: 03cc0c25-389f-4bf8-b48d-11878079f1ca
 description: Detects a Windows command line executable started from MSHTA
+
 logsource:
     category: process_creation
     product: windows
@@ -18,6 +19,7 @@ detection:
             - '*\regsvr32.exe'
             - '*\BITSADMIN*'
     condition: selection
+
 references:
     - https://www.trustedsec.com/july-2015/malicious-htas/
 author: Michael Haag

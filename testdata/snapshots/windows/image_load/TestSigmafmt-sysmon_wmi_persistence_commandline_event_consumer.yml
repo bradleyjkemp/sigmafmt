@@ -1,6 +1,7 @@
 title: WMI Persistence - Command Line Event Consumer
 id: 05936ce2-ee05-4dae-9d03-9a391cf2d2c6
 description: Detects WMI command line event consumers
+
 logsource:
     category: image_load
     product: windows
@@ -9,6 +10,7 @@ detection:
         Image: 'C:\Windows\System32\wbem\WmiPrvSE.exe'
         ImageLoaded|endswith: '\wbemcons.dll'
     condition: selection
+
 references:
     - https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/
 author: Thomas Patzke

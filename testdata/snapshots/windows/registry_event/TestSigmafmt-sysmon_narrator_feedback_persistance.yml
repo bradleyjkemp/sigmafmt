@@ -1,6 +1,7 @@
 title: Narrator's Feedback-Hub Persistence
 id: f663a6d9-9d1b-49b8-b2b1-0637914d199a
 description: Detects abusing Windows 10 Narrator's Feedback-Hub
+
 logsource:
     category: registry_event
     product: windows
@@ -11,6 +12,7 @@ detection:
     selection2:
         TargetObject|endswith: '\AppXypsaf9f1qserqevf0sws76dx4k9a5206\Shell\open\command\(Default)'
     condition: 1 of them
+
 references:
     - https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html
 tags:

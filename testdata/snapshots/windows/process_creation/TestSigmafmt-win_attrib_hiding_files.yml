@@ -1,6 +1,7 @@
 title: Hiding Files with Attrib.exe
 id: 4281cb20-2994-4580-aa63-c8b86d019934
 description: Detects usage of attrib.exe to hide files from users.
+
 author: Sami Ruohonen
 date: 2019/01/16
 modified: 2020/08/27
@@ -18,6 +19,7 @@ detection:
         CommandLine: +R +H +S +A \\*.cui
         ParentCommandLine: C:\WINDOWS\system32\\*.bat
     condition: selection and not (ini or intel)
+
 fields:
     - CommandLine
     - ParentCommandLine

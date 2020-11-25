@@ -1,6 +1,7 @@
 title: Download from Suspicious Dyndns Hosts
 id: 195c1119-ef07-4909-bb12-e66f5e07bf3c
 description: Detects download of certain file types from hosts with dynamic DNS names (selected list)
+
 author: Florian Roth
 date: 2017/11/08
 modified: 2020/09/03
@@ -99,6 +100,7 @@ detection:
             - '*.25u.com'
             - '*.slyip.net'
     condition: selection
+
 references:
     - https://www.alienvault.com/blogs/security-essentials/dynamic-dns-security-and-potential-threats
 tags:

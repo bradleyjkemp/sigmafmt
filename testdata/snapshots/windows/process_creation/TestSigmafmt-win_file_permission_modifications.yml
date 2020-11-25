@@ -1,6 +1,7 @@
 title: File or Folder Permissions Modifications
 id: 37ae075c-271b-459b-8d7b-55ad5f993dd8
 description: Detects a file or folder permissions modifications
+
 logsource:
     category: process_creation
     product: windows
@@ -14,6 +15,7 @@ detection:
         - Image|endswith: '\attrib.exe'
           CommandLine|contains: '-r'
     condition: selection
+
 references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1222/T1222.yaml
 author: Jakob Weinzettl, oscd.community

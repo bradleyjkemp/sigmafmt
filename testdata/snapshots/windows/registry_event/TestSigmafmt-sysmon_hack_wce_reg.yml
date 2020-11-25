@@ -1,6 +1,7 @@
 title: Windows Credential Editor Registry
 id: a6b33c02-8305-488f-8585-03cb2a7763f2
 description: Detects the use of Windows Credential Editor (WCE)
+
 author: Florian Roth
 logsource:
     category: registry_event
@@ -9,6 +10,7 @@ detection:
     selection:
         TargetObject|contains: Services\WCESERVICE\Start
     condition: selection
+
 references:
     - https://www.ampliasecurity.com/research/windows-credentials-editor/
 date: 2019/12/31

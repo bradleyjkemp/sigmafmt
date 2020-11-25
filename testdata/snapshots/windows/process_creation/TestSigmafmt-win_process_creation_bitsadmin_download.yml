@@ -1,6 +1,7 @@
 title: Bitsadmin Download
 id: d059842b-6b9d-4ed1-b5c3-5b89143c6ede
 description: Detects usage of bitsadmin downloading a file
+
 logsource:
     category: process_creation
     product: windows
@@ -14,6 +15,7 @@ detection:
         CommandLine:
             - '*copy bitsadmin.exe*'
     condition: selection1 or selection2
+
 references:
     - https://blog.netspi.com/15-ways-to-download-a-file/#bitsadmin
     - https://isc.sans.edu/diary/22264

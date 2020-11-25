@@ -1,6 +1,7 @@
 title: PowerShell Create Local User
 id: 243de76f-4725-4f2e-8225-a8a69b15ad61
 description: Detects creation of a local user via PowerShell
+
 logsource:
     product: windows
     service: powershell
@@ -10,6 +11,7 @@ detection:
         Message|contains:
             - 'New-LocalUser'
     condition: selection
+
 references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136/T1136.md
 tags:

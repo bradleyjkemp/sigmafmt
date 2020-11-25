@@ -1,6 +1,7 @@
 title: Netsh RDP Port Opening
 id: 01aeb693-138d-49d2-9403-c4f52d7d3d62
 description: Detects netsh commands that opens the port 3389 used for RDP, used in Sarwent Malware
+
 logsource:
     category: process_creation
     product: windows
@@ -18,6 +19,7 @@ detection:
             - protocol=TCP
             - localport=3389
     condition: 1 of them
+
 references:
     - https://labs.sentinelone.com/sarwent-malware-updates-command-detonation/
 date: 2020/05/23

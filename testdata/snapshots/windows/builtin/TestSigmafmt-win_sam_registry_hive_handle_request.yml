@@ -1,6 +1,7 @@
 title: SAM Registry Hive Handle Request
 id: f8748f2c-89dc-4d95-afb0-5a2dfdbad332
 description: Detects handles requested to SAM registry hive
+
 date: 2019/08/12
 modified: 2020/08/23
 author: Roberto Rodriguez @Cyb3rWard0g
@@ -13,6 +14,7 @@ detection:
         ObjectType: 'Key'
         ObjectName|endswith: '\SAM'
     condition: selection
+
 references:
     - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1012_query_registry/sam_registry_hive_access.md
 tags:

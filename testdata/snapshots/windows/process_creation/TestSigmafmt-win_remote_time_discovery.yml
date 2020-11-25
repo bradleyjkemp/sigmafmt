@@ -1,6 +1,7 @@
 title: Discovery of a System Time
 id: b243b280-65fe-48df-ba07-6ddea7646427
 description: "Identifies use of various commands to query a systems time. This technique may be used before executing a scheduled task or to discover the time zone of a target system."
+
 author: E.M. Anhaus (orignally from Atomic Blue Detections, Endgame), oscd.community
 date: 2019/10/24
 modified: 2019/11/11
@@ -18,6 +19,7 @@ detection:
         - Image|endswith: '\powershell.exe'
           CommandLine|contains: 'Get-Date'
     condition: selection
+
 references:
     - https://eqllib.readthedocs.io/en/latest/analytics/fcdb99c2-ac3c-4bde-b664-4b336329bed2.html
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1124/T1124.md

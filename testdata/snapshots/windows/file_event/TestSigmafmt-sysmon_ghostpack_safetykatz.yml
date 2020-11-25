@@ -1,6 +1,7 @@
 title: Detection of SafetyKatz
 id: e074832a-eada-4fd7-94a1-10642b130e16
 description: Detects possible SafetyKatz Behaviour
+
 logsource:
     category: file_event
     product: windows
@@ -8,6 +9,7 @@ detection:
     selection:
         TargetFilename: '*\Temp\debug.bin'
     condition: selection
+
 references:
     - https://github.com/GhostPack/SafetyKatz
 tags:

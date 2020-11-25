@@ -1,6 +1,7 @@
 title: Suspicious Curl Usage on Windows
 id: e218595b-bbe7-4ee5-8a96-f32a24ad3468
 description: Detects a suspicious curl process start on Windows and outputs the requested document to a local file
+
 author: Florian Roth
 date: 2020/07/03
 modified: 2020/09/05
@@ -15,6 +16,7 @@ detection:
     selection3:
         CommandLine|contains: ' -O '
     condition: ( selection1 or selection2 ) and selection3
+
 references:
     - https://twitter.com/reegun21/status/1222093798009790464
 tags:

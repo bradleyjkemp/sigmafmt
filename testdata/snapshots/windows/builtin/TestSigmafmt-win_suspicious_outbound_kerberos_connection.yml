@@ -1,6 +1,7 @@
 title: Suspicious Outbound Kerberos Connection
 id: eca91c7c-9214-47b9-b4c5-cb1d7e4f2350
 description: Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation.
+
 logsource:
     product: windows
     service: security
@@ -15,6 +16,7 @@ detection:
             - '\chrome.exe'
             - '\firefox.exe'
     condition: selection and not filter
+
 references:
     - https://github.com/GhostPack/Rubeus8
 author: Ilyas Ochkov, oscd.community

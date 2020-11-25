@@ -1,6 +1,7 @@
 title: Possible DNS Tunneling
 id: 1ec4b281-aa65-46a2-bdae-5fd830ed914e
 description: Normally, DNS logs contain a limited amount of different dns queries for a single domain. This rule detects a high amount of queries for a single domain, which can be an indicator that DNS is used to transfer data.
+
 author: Patrick Bareiss
 date: 2019/04/07
 modified: 2020/08/27
@@ -10,6 +11,7 @@ detection:
     selection:
         parent_domain: '*'
     condition: selection | count(dns_query) by parent_domain > 1000
+
 references:
     - https://zeltser.com/c2-dns-tunneling/
     - https://patrick-bareiss.com/detect-c2-traffic-over-dns-using-sigma/

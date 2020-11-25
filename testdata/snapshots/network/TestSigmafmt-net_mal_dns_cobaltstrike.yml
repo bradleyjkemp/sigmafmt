@@ -1,6 +1,7 @@
 title: Cobalt Strike DNS Beaconing
 id: 2975af79-28c4-4d2f-a951-9095f229df29
 description: Detects suspicious DNS queries known from Cobalt Strike beacons
+
 author: Florian Roth
 date: 2018/05/10
 modified: 2020/08/27
@@ -12,6 +13,7 @@ detection:
             - 'aaa.stage.*'
             - 'post.1*'
     condition: selection
+
 references:
     - https://www.icebrg.io/blog/footprints-of-fin7-tracking-actor-patterns
 tags:

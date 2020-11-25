@@ -1,6 +1,7 @@
 title: Suspicious WMI Execution
 id: 526be59f-a573-4eea-b5f7-f0973207634d
 description: Detects WMI executing suspicious commands
+
 logsource:
     category: process_creation
     product: windows
@@ -14,6 +15,7 @@ detection:
             - '* path FirewallProduct get *'
             - '* shadowcopy delete *'
     condition: selection
+
 references:
     - https://digital-forensics.sans.org/blog/2010/06/04/wmic-draft/
     - https://www.hybrid-analysis.com/sample/4be06ecd234e2110bd615649fe4a6fa95403979acf889d7e45a78985eb50acf9?environmentId=1

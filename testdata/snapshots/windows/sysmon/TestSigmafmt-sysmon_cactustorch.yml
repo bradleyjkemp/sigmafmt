@@ -1,6 +1,7 @@
 title: CACTUSTORCH Remote Thread Creation
 id: 2e4e488a-6164-4811-9ea1-f960c7359c40
 description: Detects remote thread creation from CACTUSTORCH as described in references.
+
 logsource:
     product: windows
     service: sysmon
@@ -16,6 +17,7 @@ detection:
         TargetImage: '*\SysWOW64\\*'
         StartModule: null
     condition: selection
+
 references:
     - https://twitter.com/SBousseaden/status/1090588499517079552
     - https://github.com/mdsecactivebreach/CACTUSTORCH

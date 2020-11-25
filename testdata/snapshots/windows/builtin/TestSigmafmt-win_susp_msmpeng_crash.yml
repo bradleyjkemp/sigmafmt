@@ -1,6 +1,7 @@
 title: Microsoft Malware Protection Engine Crash
 id: 6c82cf5c-090d-4d57-9188-533577631108
 description: This rule detects a suspicious crash of the Microsoft Malware Protection Engine
+
 logsource:
     product: windows
     service: application
@@ -16,6 +17,7 @@ detection:
             - '*MsMpEng.exe*'
             - '*mpengine.dll*'
     condition: 1 of selection* and all of keywords
+
 references:
     - https://bugs.chromium.org/p/project-zero/issues/detail?id=1252&desc=5
     - https://technet.microsoft.com/en-us/library/security/4022344

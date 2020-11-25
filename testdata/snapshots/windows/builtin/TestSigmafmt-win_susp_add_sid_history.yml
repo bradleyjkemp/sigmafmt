@@ -1,6 +1,7 @@
 title: Addition of SID History to Active Directory Object
 id: 2632954e-db1c-49cb-9936-67d1ef1d17d2
 description: An attacker can use the SID history attribute to gain additional privileges.
+
 logsource:
     product: windows
     service: security
@@ -18,6 +19,7 @@ detection:
     filter_null:
         SidHistory:
     condition: selection1 or (selection2 and not selection3 and not filter_null)
+
 references:
     - https://adsecurity.org/?p=1772
 author: Thomas Patzke, @atc_project (improvements)

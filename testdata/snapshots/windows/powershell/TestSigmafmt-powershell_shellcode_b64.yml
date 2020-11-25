@@ -1,6 +1,7 @@
 title: PowerShell ShellCode
 id: 16b37b70-6fcf-4814-a092-c36bd3aafcbd
 description: Detects Base64 encoded Shellcode
+
 logsource:
     product: windows
     service: powershell
@@ -14,6 +15,7 @@ detection:
         - '*OiCAAAAYInlM*'
         - '*OiJAAAAYInlM*'
     condition: selection and keyword1 and keyword2
+
 references:
     - https://twitter.com/cyb3rops/status/1063072865992523776
 tags:

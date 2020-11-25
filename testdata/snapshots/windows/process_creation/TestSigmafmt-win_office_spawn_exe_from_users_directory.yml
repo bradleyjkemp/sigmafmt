@@ -1,6 +1,7 @@
 title: MS Office Product Spawning Exe in User Dir
 id: aa3a6f94-890e-4e22-b634-ffdfd54792cc
 description: Detects an executable in the users directory started from Microsoft Word, Excel, Powerpoint, Publisher or Visio
+
 logsource:
     category: process_creation
     product: windows
@@ -16,6 +17,7 @@ detection:
         Image:
             - 'C:\users\\*.exe'
     condition: selection
+
 references:
     - sha256=23160972c6ae07f740800fa28e421a81d7c0ca5d5cab95bc082b4a986fbac57c
     - https://blog.morphisec.com/fin7-not-finished-morphisec-spots-new-campaign

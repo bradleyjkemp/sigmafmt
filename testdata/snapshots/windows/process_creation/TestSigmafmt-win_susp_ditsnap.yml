@@ -1,6 +1,7 @@
 title: DIT Snapshot Viewer Use
 id: d3b70aad-097e-409c-9df2-450f80dc476b
 description: Detects the use of Ditsnap tool. Seems to be a tool for ransomware groups.
+
 logsource:
     category: process_creation
     product: windows
@@ -12,6 +13,7 @@ detection:
         CommandLine|contains:
             - 'ditsnap.exe'
     condition: selection or selection2
+
 references:
     - https://thedfirreport.com/2020/06/21/snatch-ransomware/
     - https://github.com/yosqueoy/ditsnap

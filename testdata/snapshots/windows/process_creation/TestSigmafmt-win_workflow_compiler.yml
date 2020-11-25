@@ -1,6 +1,7 @@
 title: Microsoft Workflow Compiler
 id: 419dbf2b-8a9b-4bea-bf99-7544b050ec8d
 description: Detects invocation of Microsoft Workflow Compiler, which may permit the execution of arbitrary unsigned code.
+
 logsource:
     category: process_creation
     product: windows
@@ -8,6 +9,7 @@ detection:
     selection:
         Image: '*\Microsoft.Workflow.Compiler.exe'
     condition: selection
+
 references:
     - https://posts.specterops.io/arbitrary-unsigned-code-execution-vector-in-microsoft-workflow-compiler-exe-3d9294bc5efb
 tags:

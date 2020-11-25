@@ -1,6 +1,7 @@
 title: Suspicious Encoded PowerShell Command Line
 id: ca2092a1-c273-4878-9b4b-0d60115bf5ea
 description: Detects suspicious powershell process starts with base64 encoded commands (e.g. Emotet)
+
 logsource:
     category: process_creation
     product: windows
@@ -34,6 +35,7 @@ detection:
     falsepositive1:
         CommandLine: '* -ExecutionPolicy remotesigned *'
     condition: selection and not falsepositive1
+
 references:
     - https://app.any.run/tasks/6217d77d-3189-4db2-a957-8ab239f3e01e
 author: Florian Roth, Markus Neis

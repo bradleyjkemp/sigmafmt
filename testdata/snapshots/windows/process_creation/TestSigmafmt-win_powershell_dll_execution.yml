@@ -1,6 +1,7 @@
 title: Detection of PowerShell Execution via DLL
 id: 6812a10b-60ea-420c-832f-dfcc33b646ba
 description: Detects PowerShell Strings applied to rundll as seen in PowerShdll.dll
+
 logsource:
     category: process_creation
     product: windows
@@ -16,6 +17,7 @@ detection:
             - '*Default.GetString*'
             - '*FromBase64String*'
     condition: (selection1 or selection2) and selection3
+
 references:
     - https://github.com/p3nt4/PowerShdll/blob/master/README.md
 tags:

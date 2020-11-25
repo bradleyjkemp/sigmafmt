@@ -1,6 +1,7 @@
 title: FromBase64String Command Line
 id: e32d4572-9826-4738-b651-95fa63747e8a
 description: Detects suspicious FromBase64String expressions in command line arguments
+
 logsource:
     category: process_creation
     product: windows
@@ -8,6 +9,7 @@ detection:
     selection:
         CommandLine|contains: '::FromBase64String('
     condition: selection
+
 references:
     - https://gist.github.com/Neo23x0/6af876ee72b51676c82a2db8d2cd3639
 author: Florian Roth

@@ -1,6 +1,7 @@
 title: Findstr Launching .lnk File
 id: 33339be3-148b-4e16-af56-ad16ec6c7e7b
 description: Detects usage of findstr to identify and execute a lnk file as seen within the HHS redirect attack
+
 logsource:
     category: process_creation
     product: windows
@@ -9,6 +10,7 @@ detection:
         Image: '*\findstr.exe'
         CommandLine: '*.lnk'
     condition: selection
+
 references:
     - https://www.bleepingcomputer.com/news/security/hhsgov-open-redirect-used-by-coronavirus-phishing-to-spread-malware/
 tags:

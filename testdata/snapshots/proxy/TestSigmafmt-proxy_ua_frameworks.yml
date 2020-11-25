@@ -1,6 +1,7 @@
 title: Exploit Framework User Agent
 id: fdd1bfb5-f60b-4a35-910e-f36ed3d0b32f
 description: Detects suspicious user agent strings used by exploit / pentest framworks like Metasploit in proxy logs
+
 author: Florian Roth
 date: 2017/07/08
 modified: 2020/09/03
@@ -43,6 +44,7 @@ detection:
             - '*wordpress hash grabber*'
             - '*exploit*'
     condition: selection
+
 references:
     - https://blog.didierstevens.com/2015/03/16/quickpost-metasploit-user-agent-strings/
 tags:

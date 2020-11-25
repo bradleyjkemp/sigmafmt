@@ -1,6 +1,7 @@
 title: Wannacry Killswitch Domain
 id: c64c5175-5189-431b-a55e-6d9882158251
 description: Detects wannacry killswitch domain dns queries
+
 logsource:
     category: dns
 detection:
@@ -13,6 +14,7 @@ detection:
             - 'iuqssfsodp9ifjaposdfjhgosurijfaewrwergwea.com'
             - ''
     condition: selection
+
 references:
     - https://www.fireeye.com/blog/products-and-services/2017/05/wannacry-ransomware-campaign.html
 author: Mike Wade

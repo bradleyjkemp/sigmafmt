@@ -1,6 +1,7 @@
 title: Capture a Network Trace with netsh.exe
 id: d3c3861d-c504-4c77-ba55-224ba82d0118
 description: Detects capture a network trace via netsh.exe trace functionality
+
 logsource:
     category: process_creation
     product: windows
@@ -11,6 +12,7 @@ detection:
             - trace
             - start
     condition: selection
+
 references:
     - https://blogs.msdn.microsoft.com/canberrapfe/2012/03/30/capture-a-network-trace-without-installing-anything-capture-a-network-trace-of-a-reboot/
 author: Kutepov Anton, oscd.community

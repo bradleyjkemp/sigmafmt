@@ -1,6 +1,7 @@
 title: Suspicious Service Path Modification
 id: 138d3531-8793-4f50-a2cd-f291b2863d78
 description: Detects service path modification to powershell/cmd
+
 logsource:
     category: process_creation
     product: windows
@@ -15,6 +16,7 @@ detection:
             - 'powershell'
             - 'cmd'
     condition: selection_1 and selection_2
+
 references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1031/T1031.yaml
 tags:

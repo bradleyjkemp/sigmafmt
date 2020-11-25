@@ -1,6 +1,7 @@
 title: Rare Scheduled Task Creations
 id: b20f6158-9438-41be-83da-a5a16ac90c2b
 description: This rule detects rare scheduled task creations. Typically software gets installed on multiple systems and not only on a few. The aggregation and count function selects tasks with rare names.
+
 logsource:
     product: windows
     service: taskscheduler
@@ -9,6 +10,7 @@ detection:
         EventID: 106
     timeframe: 7d
     condition: selection | count() by TaskName < 5
+
 tags:
     - attack.persistence
     - attack.s0111

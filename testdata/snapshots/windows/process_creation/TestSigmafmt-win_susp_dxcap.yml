@@ -1,6 +1,7 @@
 title: Application Whitelisting Bypass via Dxcap.exe
 id: 60f16a96-db70-42eb-8f76-16763e333590
 description: Detects execution of of Dxcap.exe
+
 logsource:
     category: process_creation
     product: windows
@@ -11,6 +12,7 @@ detection:
             - '-c'
             - '.exe'
     condition: selection
+
 references:
     - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Dxcap.yml
     - https://twitter.com/harr0ey/status/992008180904419328

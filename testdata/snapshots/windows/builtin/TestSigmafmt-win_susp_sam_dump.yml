@@ -1,6 +1,7 @@
 title: SAM Dump to AppData
 id: 839dd1e8-eda8-4834-8145-01beeee33acd
 description: Detects suspicious SAM dump activity as cause by QuarksPwDump and other password dumpers
+
 logsource:
     product: windows
     service: system
@@ -11,6 +12,7 @@ detection:
         Message:
             - '*\AppData\Local\Temp\SAM-*.dmp *'
     condition: selection
+
 tags:
     - attack.credential_access
     - attack.t1003 # an old one

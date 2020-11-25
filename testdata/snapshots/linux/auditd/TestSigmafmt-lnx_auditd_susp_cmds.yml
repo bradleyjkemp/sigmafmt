@@ -1,6 +1,7 @@
 title: Suspicious Commands Linux
 id: 1543ae20-cbdf-4ec1-8d12-7664d667a825
 description: Detects relevant commands often related to malware or hacking activity
+
 author: Florian Roth
 date: 2017/12/12
 logsource:
@@ -24,6 +25,7 @@ detection:
         a0: 'cp'
         a1: '/bin/sh'
     condition: 1 of them
+
 references:
     - Internal Research - mostly derived from exploit code including code in MSF
 tags:

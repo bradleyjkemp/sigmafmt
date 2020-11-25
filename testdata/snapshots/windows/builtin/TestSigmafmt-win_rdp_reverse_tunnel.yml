@@ -1,6 +1,7 @@
 title: RDP over Reverse SSH Tunnel WFP
 id: 5bed80b6-b3e8-428e-a3ae-d3c757589e41
 description: Detects svchost hosting RDP termsvcs communicating with the loopback address
+
 logsource:
     product: windows
     service: security
@@ -18,6 +19,7 @@ detection:
             - '127.*'
             - '::1'
     condition: selection and ( sourceRDP or destinationRDP )
+
 references:
     - https://twitter.com/SBousseaden/status/1096148422984384514
     - https://github.com/sbousseaden/EVTX-ATTACK-SAMPLES/blob/master/Command%20and%20Control/DE_RDP_Tunnel_5156.evtx

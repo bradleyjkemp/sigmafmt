@@ -1,6 +1,7 @@
 title: Host Without Firewall
 id: 6b2066c8-3dc7-4db7-9db0-6cc1d7b0dde9
 description: Host Without Firewall. Alert means not complied. Sigma for Qualys vulnerability scanner. Scan type - Vulnerability Management.
+
 author: Alexandr Yampolskyi, SOC Prime
 date: 2019/03/19
 logsource:
@@ -10,6 +11,7 @@ detection:
         event.category: Security Policy
         host.scan.vuln_name: Firewall Product Not Detected*
     condition: selection
+
 references:
     - https://www.cisecurity.org/controls/cis-controls-list/
     - https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf

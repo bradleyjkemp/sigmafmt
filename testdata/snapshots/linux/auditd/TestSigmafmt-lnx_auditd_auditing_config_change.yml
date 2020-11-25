@@ -1,6 +1,7 @@
 title: Auditing Configuration Changes on Linux Host
 id: 977ef627-4539-4875-adf4-ed8f780c4922
 description: Detect changes in auditd configuration files
+
 # Example config for this one (place it at the top of audit.rules)
 # -w /etc/audit/ -p wa -k etc_modify_auditconfig
 # -w /etc/libaudit.conf -p wa -k etc_modify_libauditconfig
@@ -18,6 +19,7 @@ detection:
             - /etc/libaudit.conf
             - /etc/audisp/*
     condition: selection
+
 references:
     - https://github.com/Neo23x0/auditd/blob/master/audit.rules
     - self experience

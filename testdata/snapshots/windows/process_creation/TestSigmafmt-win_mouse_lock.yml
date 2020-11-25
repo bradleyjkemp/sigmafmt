@@ -1,6 +1,7 @@
 title: Mouse Lock Credential Gathering
 id: c9192ad9-75e5-43eb-8647-82a0a5b493e3
 description: In Kaspersky's 2020 Incident Response Analyst Report they listed legitimate tool "Mouse Lock" as being used for both credential access and collection in security incidents.
+
 author: Cian Heasley
 reference:
     - https://github.com/klsecservices/Publications/blob/master/Incident-Response-Analyst-Report-2020.pdf
@@ -14,6 +15,7 @@ detection:
         - Company|contains: 'Misc314'
         - CommandLine|contains: 'Mouse Lock_'
     condition: selection
+
 tags:
     - attack.collection
     - attack.credential_access

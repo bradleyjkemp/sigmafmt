@@ -2,6 +2,7 @@ action: global
 title: Adwind RAT / JRAT
 id: 1fac1481-2dbc-48b2-9096-753c49b4ec71
 description: Detects javaw.exe in AppData folder as used by Adwind / JRAT
+
 detection:
     condition: selection
 references:

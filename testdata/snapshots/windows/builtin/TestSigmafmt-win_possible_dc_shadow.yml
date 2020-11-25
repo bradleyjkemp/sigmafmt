@@ -1,6 +1,7 @@
 title: Possible DC Shadow
 id: 32e19d25-4aed-4860-a55a-be99cb0bf7ed
 description: Detects DCShadow via create new SPN
+
 author: Ilyas Ochkov, oscd.community, Chakib Gzenayi (@Chak092), Hosni Mribah
 date: 2019/10/25
 logsource:
@@ -15,6 +16,7 @@ detection:
         LDAPDisplayName: servicePrincipalName
         Value: 'GC/*'
     condition: selection1 OR selection2
+
 references:
     - https://github.com/Neo23x0/sigma/blob/ec5bb710499caae6667c7f7311ca9e92c03b9039/rules/windows/builtin/win_dcsync.yml
     - https://twitter.com/gentilkiwi/status/1003236624925413376

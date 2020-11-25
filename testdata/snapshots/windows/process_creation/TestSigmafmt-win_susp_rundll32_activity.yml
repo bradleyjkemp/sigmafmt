@@ -1,6 +1,7 @@
 title: Suspicious Rundll32 Activity
 id: e593cf51-88db-4ee1-b920-37e89012a3c9
 description: Detects suspicious process related to rundll32 based on arguments
+
 logsource:
     category: process_creation
     product: windows
@@ -21,6 +22,7 @@ detection:
             - '* javascript:*'
             - '*.RegisterXLL*'
     condition: selection
+
 references:
     - http://www.hexacorn.com/blog/2017/05/01/running-programs-via-proxy-jumping-on-a-edr-bypass-trampoline/
     - https://twitter.com/Hexacorn/status/885258886428725250

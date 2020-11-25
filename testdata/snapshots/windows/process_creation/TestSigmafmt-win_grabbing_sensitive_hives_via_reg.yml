@@ -1,6 +1,7 @@
 title: Grabbing Sensitive Hives via Reg Utility
 id: fd877b94-9bb5-4191-bb25-d79cbd93c167
 description: Dump sam, system or security hives using REG.exe utility
+
 author: Teymur Kheirkhabarov, Endgame, JHasenbusch, Daniil Yugoslavskiy, oscd.community
 date: 2019/10/22
 logsource:
@@ -22,6 +23,7 @@ detection:
             - '\sam'
             - '\security'
     condition: selection_1 and selection_2 and selection_3
+
 references:
     - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
     - https://eqllib.readthedocs.io/en/latest/analytics/aed95fc6-5e3f-49dc-8b35-06508613f979.html

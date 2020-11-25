@@ -103,7 +103,6 @@ func formatPath(root string, stdout io.Writer) error {
 // Takes the contents of a Sigma rule, runs all the linter rules, and returns the formatted output
 func formatRule(contents []byte) ([]byte, []rules.Message, error) {
 	var results []rules.Message
-	fmt.Println("Initial contents is", string(contents))
 	for _, rule := range rules.Rules {
 		formatted, messages, err := rule.Apply(contents)
 		if err != nil {

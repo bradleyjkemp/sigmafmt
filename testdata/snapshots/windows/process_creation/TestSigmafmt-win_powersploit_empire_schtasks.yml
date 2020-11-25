@@ -1,6 +1,7 @@
 title: Default PowerSploit and Empire Schtasks Persistence
 id: 56c217c3-2de2-479b-990f-5c109ba8458f
 description: Detects the creation of a schtask via PowerSploit or Empire Default Configuration.
+
 logsource:
     product: windows
     category: process_creation
@@ -14,6 +15,7 @@ detection:
             - '*schtasks*/Create*/SC *ONIDLE*/TN *Updater*/TR *powershell*'
             - '*schtasks*/Create*/SC *Updater*/TN *Updater*/TR *powershell*'
     condition: selection
+
 references:
     - https://github.com/0xdeadbeefJERKY/PowerSploit/blob/8690399ef70d2cad10213575ac67e8fa90ddf7c3/Persistence/Persistence.psm1
     - https://github.com/EmpireProject/Empire/blob/master/lib/modules/powershell/persistence/userland/schtasks.py

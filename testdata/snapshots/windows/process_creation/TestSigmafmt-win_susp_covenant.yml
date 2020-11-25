@@ -1,6 +1,7 @@
 title: Covenant Launcher Indicators
 id: c260b6db-48ba-4b4a-a76f-2f67644e99d2
 description: Detects suspicious command lines used in Covenant luanchers
+
 logsource:
     category: process_creation
     product: windows
@@ -14,6 +15,7 @@ detection:
             - 'GruntHTTP'
             - '-EncodedCommand cwB2ACAAbwAgA'
     condition: selection
+
 references:
     - https://posts.specterops.io/covenant-v0-5-eee0507b85ba
 author: Florian Roth

@@ -1,6 +1,7 @@
 title: Malicious PowerShell Commandlets
 id: 89819aa4-bbd6-46bc-88ec-c7f7fe30efa6
 description: Detects Commandlet names from well-known PowerShell exploitation frameworks
+
 logsource:
     product: windows
     service: powershell
@@ -106,6 +107,7 @@ detection:
     false_positives:
         - Get-SystemDriveInfo # http://bheltborg.dk/Windows/WinSxS/amd64_microsoft-windows-maintenancediagnostic_31bf3856ad364e35_10.0.10240.16384_none_91ef7543a4514b5e/CL_Utility.ps1
     condition: keywords and not false_positives
+
 references:
     - https://adsecurity.org/?p=2921
 tags:

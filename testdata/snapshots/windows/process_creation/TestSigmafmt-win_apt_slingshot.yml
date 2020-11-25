@@ -5,6 +5,7 @@ author: Florian Roth
 date: 2019/03/04
 modified: 2020/08/27
 description: Detects the deactivation of the Scheduled defragmentation task as seen by Slingshot APT group
+
 detection:
     condition: 1 of them
 references:

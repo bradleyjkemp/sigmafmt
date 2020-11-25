@@ -1,6 +1,7 @@
 title: Security Eventlog Cleared
 id: f2f01843-e7b8-4f95-a35a-d23584476423
 description: Some threat groups tend to delete the local 'Security' Eventlog using certain utitlities
+
 author: Florian Roth
 date: 2017/02/19
 modified: 2020/08/23
@@ -13,6 +14,7 @@ detection:
             - 517
             - 1102
     condition: selection
+
 tags:
     - attack.defense_evasion
     - attack.t1070 # an old one
