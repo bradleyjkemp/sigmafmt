@@ -13,8 +13,8 @@ detection:
 references:
     - https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Invoke-WebRequest
 tags:
-    - attack.defense_evasion
     - attack.command_and_control
+    - attack.defense_evasion
     - attack.t1071.001
 level: medium
 status: experimental

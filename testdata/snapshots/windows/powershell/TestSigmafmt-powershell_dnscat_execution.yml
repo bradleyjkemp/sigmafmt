@@ -13,9 +13,9 @@ detection:
         ScriptBlockText|contains: "Start-Dnscat2"
     condition: selection
 tags:
+    - attack.execution
     - attack.exfiltration
     - attack.t1048
-    - attack.execution
     - attack.t1059.001
     - attack.t1086 # an old one
 level: critical

@@ -31,8 +31,8 @@ detection:
     condition: ( selection_1 and selection_2 ) or ( selection_3 and selection_4 )
 tags:
     - attack.defense_evasion
-    - attack.t1027
     - attack.execution
+    - attack.t1027
     - attack.t1059.001
     - attack.t1086 #an old one
 level: high

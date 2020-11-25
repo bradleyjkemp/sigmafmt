@@ -14,8 +14,8 @@ references:
 author: Florian Roth
 date: 2018/11/23
 tags:
-    - attack.persistence
     - attack.g0010
+    - attack.persistence
     - attack.t1050 # an old one
     - attack.t1543.003
 level: critical

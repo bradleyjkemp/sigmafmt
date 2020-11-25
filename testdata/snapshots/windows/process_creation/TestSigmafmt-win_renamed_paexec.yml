@@ -21,10 +21,10 @@ references:
     - sha256=01a461ad68d11b5b5096f45eb54df9ba62c5af413fa9eb544eacb598373a26bc
     - https://summit.fireeye.com/content/dam/fireeye-www/summit/cds-2018/presentations/cds18-technical-s05-att&cking-fin7.pdf
 tags:
+    - FIN7
     - attack.defense_evasion
     - attack.t1036 # an old one
     - attack.t1036.003
-    - FIN7
     - car.2013-05-009
 level: medium
 status: experimental

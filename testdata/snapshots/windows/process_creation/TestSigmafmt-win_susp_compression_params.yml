@@ -24,10 +24,10 @@ references:
     - https://twitter.com/SBousseaden/status/1184067445612535811
 tags:
     - attack.collection
-    - attack.t1560.001
     - attack.exfiltration # an old one
-    - attack.t1020 # an old one
     - attack.t1002 # an old one
+    - attack.t1020 # an old one
+    - attack.t1560.001
 author: Florian Roth, Samir Bousseaden
 date: 2019/10/15
 modified: 2020/09/05

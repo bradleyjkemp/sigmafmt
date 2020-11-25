@@ -18,9 +18,9 @@ references:
     - https://twitter.com/cyb3rops/status/1063072865992523776
 tags:
     - attack.defense_evasion
+    - attack.execution
     - attack.privilege_escalation
     - attack.t1055
-    - attack.execution
     - attack.t1059.001
     - attack.t1086 #an old one
 author: David Ledbetter (shellcode), Florian Roth (rule)

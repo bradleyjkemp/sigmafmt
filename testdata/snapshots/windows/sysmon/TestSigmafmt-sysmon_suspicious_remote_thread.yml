@@ -68,8 +68,8 @@ references:
     - Personal research, statistical analysis
     - https://lolbas-project.github.io
 tags:
-    - attack.privilege_escalation
     - attack.defense_evasion
+    - attack.privilege_escalation
     - attack.t1055
 fields:
     - ComputerName

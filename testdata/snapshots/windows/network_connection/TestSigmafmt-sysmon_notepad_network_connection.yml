@@ -15,8 +15,8 @@ references:
     - https://blog.cobaltstrike.com/2013/08/08/why-is-notepad-exe-connecting-to-the-internet/
 tags:
     - attack.command_and_control
-    - attack.execution
     - attack.defense_evasion
+    - attack.execution
     - attack.t1055
 author: EagleEye Team
 date: 2020/05/14

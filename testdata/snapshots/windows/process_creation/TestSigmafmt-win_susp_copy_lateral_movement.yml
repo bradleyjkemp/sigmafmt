@@ -16,12 +16,12 @@ author: Florian Roth
 date: 2019/12/30
 modified: 2020/09/05
 tags:
-    - attack.lateral_movement
-    - attack.t1021.002
     - attack.command_and_control
-    - attack.t1105
+    - attack.lateral_movement
     - attack.s0106
+    - attack.t1021.002
     - attack.t1077 # an old one
+    - attack.t1105
 level: high
 status: experimental
 fields:

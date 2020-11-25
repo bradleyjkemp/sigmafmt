@@ -15,9 +15,9 @@ date: 2019/12/31
 modified: 2020/09/06
 tags:
     - attack.credential_access
+    - attack.s0005
     - attack.t1003 # an old one
     - attack.t1003.001
-    - attack.s0005
 level: critical
 falsepositives:
     - 'Another service that uses a single -s command line switch'

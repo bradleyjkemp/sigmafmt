@@ -8,13 +8,13 @@ logsource:
 references:
     - https://securelist.com/the-epic-turla-operation/65545/
 tags:
-    - attack.g0010
-    - attack.execution
-    - attack.t1059
-    - attack.lateral_movement
-    - attack.t1077 # an old one
-    - attack.t1021.002
     - attack.discovery
+    - attack.execution
+    - attack.g0010
+    - attack.lateral_movement
+    - attack.t1021.002
+    - attack.t1059
+    - attack.t1077 # an old one
     - attack.t1083
     - attack.t1135
 author: Markus Neis

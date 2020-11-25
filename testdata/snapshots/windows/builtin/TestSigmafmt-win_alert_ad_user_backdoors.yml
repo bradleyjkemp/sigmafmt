@@ -31,8 +31,8 @@ author: '@neu5ron'
 date: 2017/04/13
 modified: 2020/08/23
 tags:
-    - attack.t1098
     - attack.persistence
+    - attack.t1098
 level: high
 falsepositives:
     - Unknown

@@ -20,9 +20,9 @@ references:
 tags:
     - attack.defense_evasion
     - attack.persistence
-    - attack.t1197
     - attack.s0190
     - attack.t1036.003
+    - attack.t1197
 date: 2017/03/09
 modified: 2020/09/06
 author: Michael Haag

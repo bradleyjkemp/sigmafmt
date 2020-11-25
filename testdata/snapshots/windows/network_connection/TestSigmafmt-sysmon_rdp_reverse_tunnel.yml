@@ -20,10 +20,10 @@ date: 2019/02/16
 modified: 2020/08/24
 tags:
     - attack.command_and_control
-    - attack.t1572
     - attack.lateral_movement
     - attack.t1021.001
     - attack.t1076 # an old one
+    - attack.t1572
     - car.2013-07-002
 level: high
 status: experimental

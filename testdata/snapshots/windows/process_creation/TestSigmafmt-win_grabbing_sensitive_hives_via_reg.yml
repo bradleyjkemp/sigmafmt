@@ -28,10 +28,10 @@ references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.md
 tags:
     - attack.credential_access
+    - attack.t1003 # an old one
     - attack.t1003.002
     - attack.t1003.004
     - attack.t1003.005
-    - attack.t1003 # an old one
     - car.2013-07-001
 level: medium
 status: experimental

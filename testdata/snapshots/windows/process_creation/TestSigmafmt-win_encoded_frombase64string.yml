@@ -12,10 +12,10 @@ detection:
     condition: selection
 tags:
     - attack.defense_evasion
-    - attack.t1140
     - attack.execution
     - attack.t1059.001
     - attack.t1086 # an old one
+    - attack.t1140
 level: critical
 status: experimental
 fields:

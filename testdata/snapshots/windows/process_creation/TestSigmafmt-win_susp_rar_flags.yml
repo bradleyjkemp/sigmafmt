@@ -18,9 +18,9 @@ date: 2020/05/12
 modified: 2020/08/28
 tags:
     - attack.collection
-    - attack.t1560.001
     - attack.exfiltration # an old one  
     - attack.t1002 # an old one  
+    - attack.t1560.001
 level: medium
 status: experimental
 falsepositives:

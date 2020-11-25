@@ -20,11 +20,11 @@ author: Alexander Rausch
 date: 2020/06/24
 modified: 2020/09/06
 tags:
-    - attack.execution
     - attack.defense_evasion
+    - attack.execution
     - attack.t1059 # an old one
-    - attack.t1106
     - attack.t1059.003
+    - attack.t1106
     - attack.t1218.011
 level: high
 falsepositives:

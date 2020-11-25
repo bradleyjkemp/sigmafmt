@@ -43,8 +43,8 @@ tags:
     - attack.initial_access
     - attack.persistence
     - attack.t1078
-    - attack.t1190
     - attack.t1133
+    - attack.t1190
 level: medium
 falsepositives:
     - Legitimate logon attempts over the internet

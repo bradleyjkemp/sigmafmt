@@ -19,8 +19,8 @@ date: 2020/07/14
 tags:
     - attack.execution
     - attack.lateral_movement
-    - attack.t1047
     - attack.t1035 # an old one
+    - attack.t1047
     - attack.t1569.002
 level: high
 status: experimental

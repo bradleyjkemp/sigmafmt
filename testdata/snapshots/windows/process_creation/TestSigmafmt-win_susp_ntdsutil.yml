@@ -14,8 +14,8 @@ author: Thomas Patzke
 date: 2019/01/16
 tags:
     - attack.credential_access
-    - attack.t1003.003
     - attack.t1003 # an old one    
+    - attack.t1003.003
 level: high
 status: experimental
 falsepositives:

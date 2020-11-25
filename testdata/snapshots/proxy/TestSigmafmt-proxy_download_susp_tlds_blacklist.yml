@@ -101,12 +101,12 @@ references:
     - https://www.spamhaus.org/statistics/tlds/
     - https://krebsonsecurity.com/2018/06/bad-men-at-work-please-dont-click/
 tags:
-    - attack.initial_access
-    - attack.t1566
     - attack.execution
+    - attack.initial_access
     - attack.t1203
-    - attack.t1204.002
     - attack.t1204 # an old one
+    - attack.t1204.002
+    - attack.t1566
 level: low
 status: experimental
 fields:

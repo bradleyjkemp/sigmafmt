@@ -17,10 +17,10 @@ author: Florian Roth
 date: 2020/01/30
 modified: 2020/08/29
 tags:
-    - attack.privilege_escalation
     - attack.defense_evasion
-    - attack.t1548.002
+    - attack.privilege_escalation
     - attack.t1088 # an old one
+    - attack.t1548.002
 level: high
 status: experimental
 fields:

@@ -21,8 +21,8 @@ date: 2020/01/28
 modified: 2020/08/30
 tags:
     - attack.defense_evasion
-    - attack.t1055.001
     - attack.t1055 # an old one
+    - attack.t1055.001
 level: high
 status: experimental
 fields:

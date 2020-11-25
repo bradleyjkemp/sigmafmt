@@ -24,13 +24,13 @@ author: Florian Roth
 date: 2019/02/21
 modified: 2020/08/27
 tags:
-    - attack.lateral_movement
-    - attack.g0010
     - attack.credential_access
+    - attack.exfiltration
+    - attack.g0010
+    - attack.lateral_movement
+    - attack.t1002 # an old one
     - attack.t1003 # an old one
     - attack.t1003.001
-    - attack.exfiltration
-    - attack.t1002 # an old one
     - attack.t1560.001
 level: critical
 falsepositives:

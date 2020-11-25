@@ -5,8 +5,8 @@ description: Detects the usage and installation of a backdoor that uses an optio
 references:
     - https://blogs.technet.microsoft.com/jonathantrull/2016/10/03/detecting-sticky-key-backdoors/
 tags:
-    - attack.privilege_escalation
     - attack.persistence
+    - attack.privilege_escalation
     - attack.t1015 # an old one
     - attack.t1546.008
     - car.2014-11-003

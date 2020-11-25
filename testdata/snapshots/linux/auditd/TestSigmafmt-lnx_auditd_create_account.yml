@@ -14,9 +14,9 @@ detection:
 references:
     - 'MITRE Attack technique T1136; Create Account '
 tags:
+    - attack.persistence
     - attack.t1136 # an old one
     - attack.t1136.001
-    - attack.persistence
 level: medium
 status: experimental
 falsepositives:

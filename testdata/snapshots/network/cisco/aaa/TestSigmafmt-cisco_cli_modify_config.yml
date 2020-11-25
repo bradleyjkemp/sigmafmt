@@ -22,14 +22,14 @@ detection:
         - 'archive maximum'
     condition: keywords
 tags:
-    - attack.persistence
     - attack.impact
-    - attack.t1490
-    - attack.t1505
-    - attack.t1493 # an old one
-    - attack.t1565.002
-    - attack.t1168 # an old one
+    - attack.persistence
     - attack.t1053
+    - attack.t1168 # an old one
+    - attack.t1490
+    - attack.t1493 # an old one
+    - attack.t1505
+    - attack.t1565.002
 level: medium
 status: experimental
 falsepositives:

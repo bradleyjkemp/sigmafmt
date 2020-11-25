@@ -19,8 +19,8 @@ detection:
     condition: selection and not filter and not filter_null
 tags:
     - attack.defense_evasion
-    - attack.t1036.005
     - attack.t1036 # an old one
+    - attack.t1036.005
 author: Florian Roth
 date: 2017/08/15
 modified: 2020/08/28

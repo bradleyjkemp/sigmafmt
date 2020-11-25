@@ -20,8 +20,8 @@ date: 2018/03/23
 modified: 2020/10/16
 tags:
     - attack.defense_evasion
-    - attack.t1140
     - attack.t1027
+    - attack.t1140
 fields:
     - ParentCommandLine
 level: high

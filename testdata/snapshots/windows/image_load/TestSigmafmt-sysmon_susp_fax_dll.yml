@@ -20,10 +20,10 @@ author: NVISO
 date: 2020/05/04
 modified: 2020/08/23
 tags:
-    - attack.persistence
     - attack.defense_evasion
-    - attack.t1073 # an old one
+    - attack.persistence
     - attack.t1038 # an old one
+    - attack.t1073 # an old one
     - attack.t1574.001
     - attack.t1574.002
 level: high

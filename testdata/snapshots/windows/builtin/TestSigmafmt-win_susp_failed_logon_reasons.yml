@@ -23,10 +23,10 @@ detection:
 references:
     - https://twitter.com/SBousseaden/status/1101431884540710913
 tags:
-    - attack.persistence
     - attack.defense_evasion
-    - attack.privilege_escalation
     - attack.initial_access
+    - attack.persistence
+    - attack.privilege_escalation
     - attack.t1078
 level: high
 falsepositives:

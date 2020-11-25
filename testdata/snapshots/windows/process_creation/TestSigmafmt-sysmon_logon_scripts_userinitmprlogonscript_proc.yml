@@ -19,9 +19,9 @@ detection:
 references:
     - https://attack.mitre.org/techniques/T1037/
 tags:
+    - attack.persistence
     - attack.t1037 # an old one
     - attack.t1037.001
-    - attack.persistence
 author: Tom Ueltschi (@c_APT_ure)
 date: 2019/01/12
 modified: 2020/08/26

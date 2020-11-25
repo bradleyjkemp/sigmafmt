@@ -14,8 +14,8 @@ detection:
     condition: selection and not filter
 tags:
     - attack.lateral_movement
-    - attack.t1077 # an old one
     - attack.t1021.002
+    - attack.t1077 # an old one
 author: Florian Roth
 date: 2017/03/04
 modified: 2020/08/23

@@ -15,8 +15,8 @@ detection:
 references:
     - https://securelist.com/blog/research/77725/from-shamoon-to-stonedrill/
 tags:
-    - attack.persistence
     - attack.g0064
+    - attack.persistence
     - attack.t1050 # an old one
     - attack.t1543.003
 level: high

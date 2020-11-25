@@ -16,8 +16,8 @@ references:
     - https://twitter.com/bh4b3sh/status/1303674603819081728
 tags:
     - attack.credential_access
-    - attack.t1003.001
     - attack.s0349
+    - attack.t1003.001
 level: critical
 status: stable
 falsepositives:

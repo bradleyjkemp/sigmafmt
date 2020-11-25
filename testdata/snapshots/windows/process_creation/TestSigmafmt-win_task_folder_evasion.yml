@@ -24,11 +24,11 @@ modified: 2020/08/29
 author: Sreeman
 tags:
     - attack.defense_evasion
-    - attack.persistence
     - attack.execution
-    - attack.t1574.002
+    - attack.persistence
     - attack.t1059 # an old one
     - attack.t1064 # an old one
+    - attack.t1574.002
 level: high
 status: experimental
 fields:

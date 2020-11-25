@@ -28,8 +28,8 @@ references:
     - https://blog.dylan.codes/evading-sysmon-and-windows-event-logging/
     - https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4673
 tags:
-    - attack.t1089 # an old one
     - attack.defense_evasion
+    - attack.t1089 # an old one
     - attack.t1562.001
 date: 2019/04/08
 author: xknow (@xknow_infosec), xorxes (@xor_xes)

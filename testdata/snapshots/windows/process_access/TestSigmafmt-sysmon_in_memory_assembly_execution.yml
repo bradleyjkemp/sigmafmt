@@ -28,11 +28,11 @@ detection:
 references:
     - https://azure.microsoft.com/en-ca/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center/
 tags:
-    - attack.privilege_escalation
     - attack.defense_evasion
+    - attack.privilege_escalation
+    - attack.t1055 # an old one
     - attack.t1055.001
     - attack.t1055.002
-    - attack.t1055 # an old one
 fields:
     - ComputerName
     - User

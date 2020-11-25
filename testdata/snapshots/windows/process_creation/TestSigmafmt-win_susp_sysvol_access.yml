@@ -16,8 +16,8 @@ date: 2018/04/09
 modified: 2020/08/28
 tags:
     - attack.credential_access
-    - attack.t1552.006
     - attack.t1003 # an old one
+    - attack.t1552.006
 level: medium
 status: experimental
 falsepositives:

@@ -18,10 +18,10 @@ detection:
     condition: selection | count(Image) by ParentImage > 100
 tags:
     - attack.command_and_control
-    - attack.t1071
-    - attack.t1071.004
     - attack.t1001.003
     - attack.t1041
+    - attack.t1071
+    - attack.t1071.004
 level: high
 status: experimental
 fields:

@@ -42,9 +42,9 @@ references:
     - http://security-research.dyndns.org/pub/slides/FIRST2017/FIRST-2017_Tom-Ueltschi_Sysmon_FINAL_notes.pdf
 tags:
     - attack.credential_access
-    - attack.t1003.001
-    - attack.t1003 # an old one
     - attack.s0002
+    - attack.t1003 # an old one
+    - attack.t1003.001
     - car.2019-04-004
 level: high
 status: experimental

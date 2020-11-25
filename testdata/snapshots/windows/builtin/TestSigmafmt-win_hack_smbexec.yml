@@ -16,11 +16,11 @@ detection:
 references:
     - https://blog.ropnop.com/using-credentials-to-own-windows-boxes-part-2-psexec-and-services/
 tags:
-    - attack.lateral_movement
     - attack.execution
-    - attack.t1077 # an old one
+    - attack.lateral_movement
     - attack.t1021.002
     - attack.t1035 # an old one
+    - attack.t1077 # an old one
     - attack.t1569.002
 fields:
     - ServiceName

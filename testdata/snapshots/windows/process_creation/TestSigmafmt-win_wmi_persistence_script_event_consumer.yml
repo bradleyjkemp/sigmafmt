@@ -17,8 +17,8 @@ modified: 2020/08/29
 tags:
     - attack.persistence
     - attack.privilege_escalation
-    - attack.t1546.003
     - attack.t1047 # an old one
+    - attack.t1546.003
 level: high
 status: experimental
 falsepositives:

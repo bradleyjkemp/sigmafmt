@@ -21,12 +21,12 @@ detection:
     condition: keywords
 tags:
     - attack.collection
-    - attack.lateral_movement
     - attack.command_and_control
     - attack.exfiltration
+    - attack.lateral_movement
+    - attack.t1002 # an old one
     - attack.t1074
     - attack.t1105
-    - attack.t1002 # an old one
     - attack.t1560.001
 level: low
 status: experimental

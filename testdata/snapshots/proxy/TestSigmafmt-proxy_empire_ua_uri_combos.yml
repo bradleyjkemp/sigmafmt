@@ -18,10 +18,10 @@ detection:
 references:
     - https://github.com/BC-SECURITY/Empire
 tags:
-    - attack.defense_evasion
     - attack.command_and_control
-    - attack.t1071.001
+    - attack.defense_evasion
     - attack.t1043 # an old one
+    - attack.t1071.001
 level: high
 status: experimental
 fields:

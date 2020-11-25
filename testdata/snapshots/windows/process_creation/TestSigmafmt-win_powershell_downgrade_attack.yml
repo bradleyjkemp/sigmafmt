@@ -23,8 +23,8 @@ references:
 tags:
     - attack.defense_evasion
     - attack.execution
-    - attack.t1086 # an old one
     - attack.t1059.001
+    - attack.t1086 # an old one
 level: medium
 status: experimental
 author: Harish Segar (rule)

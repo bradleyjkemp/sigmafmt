@@ -20,8 +20,8 @@ references:
     - https://www.verfassungsschutz.de/embed/broschuere-2020-06-bfv-cyber-brief-2020-01.pdf
     - https://unit42.paloaltonetworks.com/operation-ke3chang-resurfaces-with-new-tidepool-malware/
 tags:
-    - attack.g0004
     - attack.defense_evasion
+    - attack.g0004
     - attack.t1089 # an old one
     - attack.t1562.001
 author: Markus Neis, Swisscom

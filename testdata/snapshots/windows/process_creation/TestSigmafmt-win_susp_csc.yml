@@ -18,12 +18,12 @@ author: Florian Roth
 date: 2019/02/11
 modified: 2020/09/05
 tags:
+    - attack.defense_evasion
     - attack.execution
     - attack.t1059.005
     - attack.t1059.007
-    - attack.defense_evasion
-    - attack.t1500
     - attack.t1218.005
+    - attack.t1500
 level: high
 status: experimental
 falsepositives:

@@ -15,10 +15,10 @@ references:
     - https://www.virustotal.com/en/file/9b4971349ae85aa09c0a69852ed3e626c954954a3927b3d1b6646f139b930022/analysis/
     - https://www.hybrid-analysis.com/sample/9b4971349ae85aa09c0a69852ed3e626c954954a3927b3d1b6646f139b930022?environmentId=100
 tags:
-    - attack.execution
     - attack.defense_evasion
-    - attack.t1218.011
+    - attack.execution
     - attack.t1085 # an old one
+    - attack.t1218.011
 level: high
 status: experimental
 fields:

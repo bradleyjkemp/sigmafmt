@@ -19,8 +19,8 @@ references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1002/T1002.yaml
 tags:
     - attack.exfiltration
-    - attack.t1560
     - attack.t1002 # an old one
+    - attack.t1560
 level: low
 status: experimental
 falsepositives:

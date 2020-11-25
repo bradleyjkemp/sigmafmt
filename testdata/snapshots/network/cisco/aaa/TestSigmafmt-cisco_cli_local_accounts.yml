@@ -17,9 +17,9 @@ detection:
     condition: keywords
 tags:
     - attack.persistence
+    - attack.t1098
     - attack.t1136 # an old one
     - attack.t1136.001
-    - attack.t1098
 level: high
 status: experimental
 falsepositives:

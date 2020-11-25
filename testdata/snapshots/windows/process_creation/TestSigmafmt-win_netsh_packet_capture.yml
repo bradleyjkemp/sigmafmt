@@ -17,8 +17,8 @@ author: Kutepov Anton, oscd.community
 date: 2019/10/24
 modified: 2020/09/01
 tags:
-    - attack.discovery
     - attack.credential_access
+    - attack.discovery
     - attack.t1040
 level: medium
 status: experimental

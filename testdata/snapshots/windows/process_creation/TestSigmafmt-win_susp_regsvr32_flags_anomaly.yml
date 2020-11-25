@@ -17,8 +17,8 @@ references:
     - https://twitter.com/sbousseaden/status/1282441816986484737?s=12
 tags:
     - attack.defense_evasion
-    - attack.t1218.010
     - attack.t1117 # an old one 
+    - attack.t1218.010
 level: high
 status: experimental
 fields:

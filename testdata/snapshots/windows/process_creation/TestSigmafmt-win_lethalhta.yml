@@ -13,9 +13,9 @@ references:
     - https://codewhitesec.blogspot.com/2018/07/lethalhta.html
 tags:
     - attack.defense_evasion
-    - attack.t1218.005
     - attack.execution # an old one
     - attack.t1170 # an old one
+    - attack.t1218.005
 author: Markus Neis
 date: 2018/06/07
 level: high

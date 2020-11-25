@@ -18,8 +18,8 @@ modified: 2020/08/30
 author: Fatih Sirin
 tags:
     - attack.defense_evasion
-    - attack.t1562.004
     - attack.s0108
+    - attack.t1562.004
 level: medium
 status: experimental
 falsepositives:

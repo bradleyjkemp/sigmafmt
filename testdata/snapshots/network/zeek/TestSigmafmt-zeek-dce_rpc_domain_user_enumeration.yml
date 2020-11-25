@@ -26,9 +26,9 @@ date: 2020/05/03
 modified: 2020/09/02
 tags:
     - attack.discovery
+    - attack.t1082
     - attack.t1087 # an old one
     - attack.t1087.002
-    - attack.t1082
 level: medium
 status: experimental
 falsepositives:

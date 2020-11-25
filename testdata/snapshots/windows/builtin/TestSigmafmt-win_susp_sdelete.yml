@@ -22,15 +22,15 @@ references:
     - https://www.jpcert.or.jp/english/pub/sr/ir_research.html
     - https://technet.microsoft.com/en-us/en-en/sysinternals/sdelete.aspx
 tags:
-    - attack.impact
     - attack.defense_evasion
-    - attack.t1107 # an old one
-    - attack.t1070.004
-    - attack.t1066 # an old one
+    - attack.impact
+    - attack.s0195
     - attack.t1027.005
+    - attack.t1066 # an old one
+    - attack.t1070.004
+    - attack.t1107 # an old one
     - attack.t1485
     - attack.t1553.002
-    - attack.s0195
 level: medium
 status: experimental
 falsepositives:

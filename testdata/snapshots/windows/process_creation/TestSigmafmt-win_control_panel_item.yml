@@ -22,11 +22,11 @@ detection:
             - '*CurrentVersion\\Control Panel\\CPLs*'
     condition: (selection1 and not filter) or (selection2 and selection3)
 tags:
-    - attack.execution
     - attack.defense_evasion
-    - attack.t1218.002
-    - attack.t1196 # an old one
+    - attack.execution
     - attack.persistence
+    - attack.t1196 # an old one
+    - attack.t1218.002
     - attack.t1546
 author: Kyaw Min Thein, Furkan Caliskan (@caliskanfurkan_)
 date: 2020/06/22

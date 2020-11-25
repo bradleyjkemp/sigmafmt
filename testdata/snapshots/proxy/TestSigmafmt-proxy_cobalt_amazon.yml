@@ -23,10 +23,10 @@ references:
     - https://github.com/rsmudge/Malleable-C2-Profiles/blob/master/normal/amazon.profile
     - https://www.hybrid-analysis.com/sample/ee5eca8648e45e2fea9dac0d920ef1a1792d8690c41ee7f20343de1927cc88b9?environmentId=100
 tags:
-    - attack.defense_evasion
     - attack.command_and_control
-    - attack.t1071.001
+    - attack.defense_evasion
     - attack.t1043 # an old one
+    - attack.t1071.001
 level: high
 status: experimental
 falsepositives:

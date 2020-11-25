@@ -14,9 +14,9 @@ references:
 date: 2019/01/29
 modified: 2020/09/01
 tags:
-    - attack.lateral_movement
-    - attack.defense_evasion
     - attack.command_and_control
+    - attack.defense_evasion
+    - attack.lateral_movement
     - attack.t1090
 author: Florian Roth
 level: medium

@@ -24,8 +24,8 @@ fields:
     - User
 tags:
     - attack.defense_evasion
-    - attack.t1564.001
     - attack.t1158 # an old one
+    - attack.t1564.001
 level: low
 status: experimental
 falsepositives:

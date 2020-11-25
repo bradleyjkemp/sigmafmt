@@ -16,8 +16,8 @@ detection:
 references:
     - https://www.bitdefender.com/files/News/CaseStudies/study/262/Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive.pdf
 tags:
-    - attack.execution
     - attack.defense_evasion
+    - attack.execution
     - attack.t1036 # an old one
     - attack.t1036.003
 author: Markus Neis, Swisscom

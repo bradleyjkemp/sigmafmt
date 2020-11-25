@@ -19,8 +19,8 @@ references:
     - https://securelist.com/apt-slingshot/84312/
     - https://twitter.com/cyb3rops/status/972186477512839170
 tags:
-    - attack.g0020
     - attack.defense_evasion
+    - attack.g0020
     - attack.t1085 # an old one
     - attack.t1218.011
 level: critical

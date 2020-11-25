@@ -14,6 +14,7 @@ var Rules = []Rule{
 	ruleTitle,
 	validStatus,
 	validLevel,
+	tagsInAlphabeticalOrder,
 
 	// Essential internal cleanup steps:
 	undoPreserveWhitespace,

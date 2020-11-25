@@ -15,11 +15,11 @@ references:
     - https://patrick-bareiss.com/detect-c2-traffic-over-dns-using-sigma/
 tags:
     - attack.command_and_control
-    - attack.t1071 # an old one
-    - attack.t1071.004
     - attack.exfiltration
     - attack.t1048 # an old one
     - attack.t1048.003
+    - attack.t1071 # an old one
+    - attack.t1071.004
 level: high
 status: experimental
 falsepositives:

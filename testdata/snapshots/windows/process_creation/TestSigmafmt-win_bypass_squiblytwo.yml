@@ -27,12 +27,12 @@ references:
     - https://twitter.com/mattifestation/status/986280382042595328
 tags:
     - attack.defense_evasion
-    - attack.t1047
-    - attack.t1220
     - attack.execution
+    - attack.t1047
+    - attack.t1059 # an old one
     - attack.t1059.005
     - attack.t1059.007
-    - attack.t1059 # an old one
+    - attack.t1220
 level: medium
 status: experimental
 author: Markus Neis / Florian Roth

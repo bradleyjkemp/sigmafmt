@@ -22,8 +22,8 @@ detection:
     condition: selection and not filter
 tags:
     - attack.persistence
-    - attack.t1505.003
     - attack.t1100 # an old one
+    - attack.t1505.003
 level: medium
 status: experimental
 fields:

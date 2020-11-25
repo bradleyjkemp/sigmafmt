@@ -24,12 +24,12 @@ date: 2019/02/01
 modified: 2020/08/28
 tags:
     - attack.defense_evasion
-    - attack.t1093 # an old one
-    - attack.t1055.012
     - attack.execution
-    - attack.t1064 # an old one
+    - attack.t1055.012
     - attack.t1059.005
     - attack.t1059.007
+    - attack.t1064 # an old one
+    - attack.t1093 # an old one
     - attack.t1218.005
 level: high
 status: experimental

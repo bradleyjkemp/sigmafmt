@@ -7,9 +7,9 @@ references:
 tags:
     - attack.defense_evasion
     - attack.execution
+    - attack.g0069
     - attack.t1191 # an old one
     - attack.t1218.003
-    - attack.g0069
     - car.2019-04-001
 author: Nik Seetharaman
 date: 2018/07/16

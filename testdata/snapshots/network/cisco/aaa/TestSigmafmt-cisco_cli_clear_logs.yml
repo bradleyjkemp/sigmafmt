@@ -21,8 +21,8 @@ detection:
     condition: keywords
 tags:
     - attack.defense_evasion
-    - attack.t1146 # an old one
     - attack.t1070.003
+    - attack.t1146 # an old one
 level: high
 status: experimental
 falsepositives:

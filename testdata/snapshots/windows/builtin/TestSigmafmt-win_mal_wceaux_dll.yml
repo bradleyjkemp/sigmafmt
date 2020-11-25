@@ -20,8 +20,8 @@ references:
     - https://jpcertcc.github.io/ToolAnalysisResultSheet
 tags:
     - attack.credential_access
-    - attack.t1003
     - attack.s0005
+    - attack.t1003
 level: critical
 status: experimental
 falsepositives:

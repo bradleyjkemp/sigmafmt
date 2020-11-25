@@ -16,16 +16,16 @@ references:
     - https://nxlog.co/documentation/nxlog-user-guide/applocker.html
 tags:
     - attack.execution
-    - attack.t1086 # an old one
-    - attack.t1064 # an old one
-    - attack.t1204 # an old one
     - attack.t1035 # an old one
-    - attack.t1204.002
     - attack.t1059.001
     - attack.t1059.003
     - attack.t1059.005
     - attack.t1059.006
     - attack.t1059.007
+    - attack.t1064 # an old one
+    - attack.t1086 # an old one
+    - attack.t1204 # an old one
+    - attack.t1204.002
 author: Pushkarev Dmitry
 date: 2020/06/28
 modified: 2020/08/23

@@ -18,9 +18,9 @@ detection:
         SubjectUserName: '*$'
     condition: selection and (1 of selection_group*) and not filter
 tags:
+    - attack.persistence
     - attack.privilege_escalation
     - attack.t1078
-    - attack.persistence
     - attack.t1098
 level: medium
 status: stable

@@ -27,8 +27,8 @@ detection:
     condition: all of selection_*
 tags:
     - attack.collection
-    - attack.t1125
     - attack.t1123
+    - attack.t1125
 level: high
 falsepositives:
     - Unlikely, there could be conferencing software running from a Temp folder accessing the devices

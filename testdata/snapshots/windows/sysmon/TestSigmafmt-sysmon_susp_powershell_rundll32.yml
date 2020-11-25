@@ -17,10 +17,10 @@ date: 2018/06/25
 tags:
     - attack.defense_evasion
     - attack.execution
-    - attack.t1085 # an old one
-    - attack.t1218.011
-    - attack.t1086 # an old one
     - attack.t1059.001
+    - attack.t1085 # an old one
+    - attack.t1086 # an old one
+    - attack.t1218.011
 level: high
 status: experimental
 falsepositives:

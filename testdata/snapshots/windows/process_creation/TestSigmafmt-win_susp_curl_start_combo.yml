@@ -14,10 +14,10 @@ author: Sreeman
 date: 2020/01/13
 modified: 2020/09/05
 tags:
-    - attack.execution
-    - attack.t1218
     - attack.command_and_control
+    - attack.execution
     - attack.t1105
+    - attack.t1218
 level: medium
 status: experimental
 fields:

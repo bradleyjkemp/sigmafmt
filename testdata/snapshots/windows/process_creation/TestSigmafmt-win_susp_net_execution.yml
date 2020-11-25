@@ -30,18 +30,18 @@ date: 2019/01/16
 modified: 2020/08/30
 tags:
     - attack.discovery
-    - attack.t1049
+    - attack.lateral_movement
+    - attack.s0039
     - attack.t1018
-    - attack.t1135
-    - attack.t1201
+    - attack.t1021.002
+    - attack.t1049
     - attack.t1069.001
     - attack.t1069.002
+    - attack.t1077 # an old one
     - attack.t1087.001
     - attack.t1087.002
-    - attack.lateral_movement
-    - attack.t1021.002
-    - attack.t1077 # an old one
-    - attack.s0039
+    - attack.t1135
+    - attack.t1201
 level: low
 status: experimental
 fields:

@@ -18,8 +18,8 @@ references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1042/T1042.yaml
 tags:
     - attack.persistence
-    - attack.t1546.001
     - attack.t1042 # an old one
+    - attack.t1546.001
 level: low
 status: experimental
 fields:

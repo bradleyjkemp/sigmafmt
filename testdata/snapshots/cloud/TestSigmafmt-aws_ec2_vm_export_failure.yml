@@ -21,8 +21,8 @@ references:
     - https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#export-instance
 tags:
     - attack.collection
-    - attack.t1005
     - attack.exfiltration
+    - attack.t1005
     - attack.t1537
 level: low
 status: experimental

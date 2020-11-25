@@ -18,10 +18,10 @@ author: '@neu5ron'
 date: 2019/02/07
 tags:
     - attack.defense_evasion
-    - attack.t1070
     - attack.persistence
-    - attack.t1542.003
     - attack.t1067 # an old one
+    - attack.t1070
+    - attack.t1542.003
 level: medium
 status: experimental
 

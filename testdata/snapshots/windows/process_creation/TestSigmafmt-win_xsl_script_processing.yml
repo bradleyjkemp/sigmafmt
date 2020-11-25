@@ -17,8 +17,8 @@ references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1220/T1220.yaml
 tags:
     - attack.defense_evasion
-    - attack.t1220
     - attack.execution # an old one
+    - attack.t1220
 level: medium
 status: experimental
 falsepositives:

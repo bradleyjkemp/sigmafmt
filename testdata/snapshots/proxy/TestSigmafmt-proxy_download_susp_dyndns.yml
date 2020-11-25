@@ -102,8 +102,8 @@ detection:
 references:
     - https://www.alienvault.com/blogs/security-essentials/dynamic-dns-security-and-potential-threats
 tags:
-    - attack.defense_evasion
     - attack.command_and_control
+    - attack.defense_evasion
     - attack.t1105
     - attack.t1568
 level: medium

@@ -16,9 +16,9 @@ modified: 2020/08/26
 tags:
     - attack.execution
     - attack.g0016
-    - attack.t1086 # an old one
     - attack.t1059 # an old one
     - attack.t1059.001
+    - attack.t1086 # an old one
 level: critical
 falsepositives:
     - unknown

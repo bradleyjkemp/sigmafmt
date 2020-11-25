@@ -15,10 +15,10 @@ detection:
         DeviceDescription: 'USB Mass Storage Device'
     condition: selection or selection2
 tags:
+    - attack.initial_access
+    - attack.lateral_movement
     - attack.t1091
     - attack.t1200
-    - attack.lateral_movement
-    - attack.initial_access
 level: low
 status: experimental
 falsepositives:

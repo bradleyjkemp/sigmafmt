@@ -7,15 +7,15 @@ references:
     - https://www.fox-it.com/en/news/whitepapers/operation-wocao-shining-a-light-on-one-of-chinas-hidden-hacking-groups/
     - https://twitter.com/SBousseaden/status/1207671369963646976
 tags:
-    - attack.discovery
-    - attack.t1012
     - attack.defense_evasion
-    - attack.t1036.004
-    - attack.t1036 # an old one
-    - attack.t1027
+    - attack.discovery
     - attack.execution
-    - attack.t1053.005
+    - attack.t1012
+    - attack.t1027
+    - attack.t1036 # an old one
+    - attack.t1036.004
     - attack.t1053 # an old one
+    - attack.t1053.005
     - attack.t1059.001
     - attack.t1086 # an old one
 level: high

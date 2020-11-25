@@ -34,8 +34,8 @@ references:
     - https://github.com/neo23x0/sigma/blob/d42e87edd741dd646db946f30964f331f92f50e6/rules/windows/builtin/win_lm_namedpipe.yml
 tags:
     - attack.lateral_movement
-    - attack.t1077 # an old one
     - attack.t1021.002
+    - attack.t1077 # an old one
 level: high
 falsepositives:
     - update the excluded named pipe to filter out any newly observed legit named pipe

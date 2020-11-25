@@ -19,8 +19,8 @@ author: 'Furkan Caliskan (@caliskanfurkan_)'
 date: 2020/07/04
 tags:
     - attack.credential_access
-    - attack.t1003.003
     - attack.t1003 # an old one
+    - attack.t1003.003
 level: high
 status: experimental
 falsepositives:

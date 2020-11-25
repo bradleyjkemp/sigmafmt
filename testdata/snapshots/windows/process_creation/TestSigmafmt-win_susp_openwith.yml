@@ -17,8 +17,8 @@ date: 2019/10/12
 modified: 2019/11/04
 tags:
     - attack.defense_evasion
-    - attack.t1218
     - attack.execution # an old one
+    - attack.t1218
 level: high
 status: experimental
 falsepositives:

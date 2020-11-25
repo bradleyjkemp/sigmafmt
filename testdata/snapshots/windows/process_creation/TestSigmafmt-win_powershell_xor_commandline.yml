@@ -19,10 +19,10 @@ detection:
     condition: selection and filter
 tags:
     - attack.defense_evasion
-    - attack.t1086 # an old one
-    - attack.t1059.001
-    - attack.t1140
     - attack.t1027
+    - attack.t1059.001
+    - attack.t1086 # an old one
+    - attack.t1140
 level: medium
 status: experimental
 falsepositives:

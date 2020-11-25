@@ -20,10 +20,10 @@ references:
     - sha256=23160972c6ae07f740800fa28e421a81d7c0ca5d5cab95bc082b4a986fbac57c
     - https://blog.morphisec.com/fin7-not-finished-morphisec-spots-new-campaign
 tags:
+    - FIN7
     - attack.execution
     - attack.t1204 # an old one
     - attack.t1204.002
-    - FIN7
     - car.2013-05-002
 author: Jason Lynch
 date: 2019/04/02

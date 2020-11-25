@@ -24,9 +24,9 @@ detection:
 references:
     - https://blog.dylan.codes/evading-sysmon-and-windows-event-logging/
 tags:
+    - attack.defense_evasion
     - attack.t1089 # an old one
     - attack.t1562.001
-    - attack.defense_evasion
 level: medium
 status: experimental
 falsepositives:

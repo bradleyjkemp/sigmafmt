@@ -15,9 +15,9 @@ detection:
     condition: selection
 tags:
     - attack.discovery
+    - attack.t1087 # an old one 
     - attack.t1087.001
     - attack.t1087.002
-    - attack.t1087 # an old one 
 level: medium
 status: experimental
 fields:

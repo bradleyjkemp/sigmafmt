@@ -27,9 +27,9 @@ fields:
     - ParentCommandLine
 tags:
     - attack.persistence
-    - attack.t1505.003
     - attack.privilege_escalation # an old one
     - attack.t1100 # an old one
+    - attack.t1505.003
 level: high
 status: experimental
 falsepositives:

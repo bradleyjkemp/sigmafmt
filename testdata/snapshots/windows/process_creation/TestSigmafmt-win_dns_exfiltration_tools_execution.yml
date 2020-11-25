@@ -13,14 +13,14 @@ detection:
         - Image|contains: '\dnscat2'
     condition: selection
 tags:
-    - attack.exfiltration
-    - attack.t1048.001
-    - attack.t1048 # an old one
     - attack.command_and_control
-    - attack.t1071.004
+    - attack.exfiltration
+    - attack.t1048 # an old one
+    - attack.t1048.001
     - attack.t1071 # an old one
-    - attack.t1132.001
+    - attack.t1071.004
     - attack.t1132 # an old one
+    - attack.t1132.001
 level: high
 status: experimental
 falsepositives:

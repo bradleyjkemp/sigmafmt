@@ -23,8 +23,8 @@ detection:
 references:
     - https://ragged-lab.blogspot.com/2020/06/capturing-pcap-driver-installations.html#more
 tags:
-    - attack.discovery
     - attack.credential_access
+    - attack.discovery
     - attack.t1040
 level: medium
 status: experimental

@@ -16,9 +16,9 @@ detection:
             - '*new-object net.webclient).downloadfile(*'
     condition: selection
 tags:
-    - attack.t1086 # an old one
     - attack.execution
     - attack.t1059.001
+    - attack.t1086 # an old one
 level: medium
 status: experimental
 fields:

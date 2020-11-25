@@ -13,11 +13,11 @@ detection:
 references:
     - https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
 tags:
-    - attack.defense_evasion
     - attack.command_and_control
-    - attack.t1071.001
-    - attack.t1043 # an old one
+    - attack.defense_evasion
     - attack.g0010
+    - attack.t1043 # an old one
+    - attack.t1071.001
 level: critical
 status: experimental
 falsepositives:

@@ -81,8 +81,8 @@ references:
 author: Florian Roth
 date: 2017/06/12
 tags:
-    - attack.s0013
     - attack.defense_evasion
+    - attack.s0013
     - attack.t1073 # an old one
     - attack.t1574.002
 level: high

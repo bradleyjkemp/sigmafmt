@@ -16,9 +16,9 @@ references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1002/T1002.yaml
     - https://eqllib.readthedocs.io/en/latest/analytics/1ec33c93-3d0b-4a28-8014-dbdaae5c60ae.html
 tags:
+    - attack.collection
     - attack.exfiltration # an old one
     - attack.t1002 # an old one
-    - attack.collection
     - attack.t1560.001
 level: low
 status: experimental

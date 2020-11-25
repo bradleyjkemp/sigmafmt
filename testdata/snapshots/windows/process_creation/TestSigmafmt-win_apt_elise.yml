@@ -14,10 +14,10 @@ detection:
 references:
     - https://community.rsa.com/community/products/netwitness/blog/2018/02/13/lotus-blossom-continues-asean-targeting
 tags:
+    - attack.execution
     - attack.g0030
     - attack.g0050
     - attack.s0081
-    - attack.execution
     - attack.t1059 # an old one
     - attack.t1059.003
 author: Florian Roth

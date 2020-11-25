@@ -12,8 +12,8 @@ detection:
             - 21
     condition: selector
 tags:
-    - attack.t1084 # an old one
     - attack.persistence
+    - attack.t1084 # an old one
     - attack.t1546.003
 author: Tom Ueltschi (@c_APT_ure)
 date: 2019/01/12

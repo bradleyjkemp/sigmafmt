@@ -37,17 +37,17 @@ fields:
     - CommandLine
     - ParentCommandLine
 tags:
-    - attack.defense_evasion
-    - attack.t1140
     - attack.command_and_control
-    - attack.t1105
-    - attack.s0160
+    - attack.defense_evasion
     - attack.g0007
     - attack.g0010
     - attack.g0045
     - attack.g0049
     - attack.g0075
     - attack.g0096
+    - attack.s0160
+    - attack.t1105
+    - attack.t1140
 level: high
 status: experimental
 falsepositives:

@@ -15,8 +15,8 @@ references:
     - https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/guardduty__whitelist_ip/main.py#L9
 tags:
     - attack.defense_evasion
-    - attack.t1562.001
     - attack.t1089 # an old one
+    - attack.t1562.001
 level: high
 status: experimental
 falsepositives:

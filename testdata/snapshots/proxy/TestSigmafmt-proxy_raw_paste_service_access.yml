@@ -18,12 +18,12 @@ references:
     - https://www.virustotal.com/gui/domain/paste.ee/relations
 tags:
     - attack.command_and_control
-    - attack.t1071.001
+    - attack.defense_evasion
     - attack.t1043 # an old one
+    - attack.t1071.001
+    - attack.t1102 # an old one
     - attack.t1102.001
     - attack.t1102.003
-    - attack.defense_evasion
-    - attack.t1102 # an old one
 level: high
 status: experimental
 fields:

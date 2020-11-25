@@ -18,12 +18,12 @@ references:
     - https://eqllib.readthedocs.io/en/latest/analytics/e584f1a1-c303-4885-8a66-21360c90995b.html
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1191/T1191.md
 tags:
-    - attack.privilege_escalation
     - attack.defense_evasion
-    - attack.t1548.002
-    - attack.t1218.003
-    - attack.t1191 # an old one
+    - attack.privilege_escalation
     - attack.t1088 # an old one
+    - attack.t1191 # an old one
+    - attack.t1218.003
+    - attack.t1548.002
 level: high
 status: experimental
 fields:

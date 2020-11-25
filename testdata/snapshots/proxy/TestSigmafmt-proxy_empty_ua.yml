@@ -14,8 +14,8 @@ detection:
 references:
     - https://twitter.com/Carlos_Perez/status/883455096645931008
 tags:
-    - attack.defense_evasion
     - attack.command_and_control
+    - attack.defense_evasion
     - attack.t1071.001
 level: medium
 status: experimental

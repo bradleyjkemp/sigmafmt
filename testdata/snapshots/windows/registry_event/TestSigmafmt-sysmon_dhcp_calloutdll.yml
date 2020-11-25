@@ -20,8 +20,8 @@ author: Dimitrios Slamaris
 tags:
     - attack.defense_evasion
     - attack.t1073 # an old one
-    - attack.t1574.002
     - attack.t1112
+    - attack.t1574.002
 level: high
 status: experimental
 falsepositives:

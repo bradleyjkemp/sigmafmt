@@ -16,9 +16,9 @@ references:
     - https://onedrive.live.com/view.aspx?resid=D026B4699190F1E6!2843&ithint=file%2cpptx&app=PowerPoint&authkey=!AMvCRTKB_V1J5ow
     - https://cyberwardog.blogspot.com/2017/03/chronicles-of-threat-hunter-hunting-for_22.html
 tags:
-    - attack.t1003
-    - attack.s0002
     - attack.credential_access
+    - attack.s0002
+    - attack.t1003
     - car.2019-04-004
 author: Sherif Eldeeb
 date: 2017/10/18

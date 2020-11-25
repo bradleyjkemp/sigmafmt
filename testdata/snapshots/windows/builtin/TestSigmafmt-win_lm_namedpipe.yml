@@ -37,8 +37,8 @@ references:
     - https://twitter.com/menasec1/status/1104489274387451904
 tags:
     - attack.lateral_movement
-    - attack.t1077 # an old one
     - attack.t1021.002
+    - attack.t1077 # an old one
 level: high
 falsepositives:
     - update the excluded named pipe to filter out any newly observed legit named pipe

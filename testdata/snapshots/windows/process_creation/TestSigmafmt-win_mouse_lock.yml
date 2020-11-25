@@ -15,8 +15,8 @@ detection:
         - CommandLine|contains: 'Mouse Lock_'
     condition: selection
 tags:
-    - attack.credential_access
     - attack.collection
+    - attack.credential_access
     - attack.t1056.002
 level: medium
 status: experimental

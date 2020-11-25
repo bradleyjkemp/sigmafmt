@@ -39,8 +39,8 @@ fields:
     - ParentCommandLine
 tags:
     - attack.discovery
-    - attack.t1012
     - attack.t1007
+    - attack.t1012
 level: low
 status: experimental
 

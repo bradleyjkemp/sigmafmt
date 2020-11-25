@@ -25,9 +25,9 @@ references:
     - https://adsecurity.org/?p=2921
     - https://github.com/p3nt4/PowerShdll
 tags:
-    - attack.t1086 # an old one
-    - attack.t1059.001
     - attack.execution
+    - attack.t1059.001
+    - attack.t1086 # an old one
 level: high
 status: experimental
 falsepositives:

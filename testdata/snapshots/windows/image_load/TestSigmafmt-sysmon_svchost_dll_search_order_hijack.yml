@@ -22,12 +22,12 @@ author: SBousseaden
 date: 2019/10/28
 modified: 2020/08/23
 tags:
-    - attack.persistence
     - attack.defense_evasion
-    - attack.t1073 # an old one
-    - attack.t1574.002
+    - attack.persistence
     - attack.t1038 # an old one
+    - attack.t1073 # an old one
     - attack.t1574.001
+    - attack.t1574.002
 level: high
 status: experimental
 falsepositives:

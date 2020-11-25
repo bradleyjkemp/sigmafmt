@@ -12,10 +12,10 @@ detection:
 references:
     - https://blog.trendmicro.com/trendlabs-security-intelligence/attack-using-windows-installer-msiexec-exe-leads-lokibot/
 tags:
-    - attack.defense_evasion
-    - attack.t1218.007
     - attack.command_and_control
+    - attack.defense_evasion
     - attack.t1105
+    - attack.t1218.007
 author: Florian Roth
 date: 2018/02/09
 modified: 2020/08/30

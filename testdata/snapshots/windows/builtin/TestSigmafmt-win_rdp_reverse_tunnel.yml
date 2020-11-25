@@ -25,14 +25,14 @@ author: Samir Bousseaden
 date: 2019/02/16
 modified: 2020/08/23
 tags:
-    - attack.defense_evasion
     - attack.command_and_control
+    - attack.defense_evasion
     - attack.lateral_movement
+    - attack.t1021.001
     - attack.t1076 # an old one
     - attack.t1090 # an old one
     - attack.t1090.001
     - attack.t1090.002
-    - attack.t1021.001
     - car.2013-07-002
 level: high
 status: experimental

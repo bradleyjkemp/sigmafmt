@@ -16,8 +16,8 @@ references:
     - https://twitter.com/Oddvarmoe/status/1270633613449723905
 tags:
     - attack.execution
-    - attack.t1059.003
     - attack.t1059 # an old one
+    - attack.t1059.003
 level: high
 status: experimental
 falsepositives:
