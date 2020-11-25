@@ -1,29 +1,16 @@
 package rules
 
 import (
-	"fmt"
 	"sort"
 	"strings"
 
 	"gopkg.in/yaml.v3"
 )
 
-var tagsInAlphabeticalOrder = nodeRule{"tags_alphabetical_order", func(node *yaml.Node) ([]Message, error) {
-	switch {
-	case node.Kind != yaml.DocumentNode:
-		return nil, fmt.Errorf("expected a document node, got a %v", node.Kind)
-	case len(node.Content) != 1 || node.Content[0].Kind != yaml.MappingNode:
-		return nil, fmt.Errorf("expected Rule to consist of a single YAML map")
-	}
-
-	rule := node.Content[0].Content
-	if len(rule)%2 != 0 {
-		return nil, fmt.Errorf("internal, please report! expected an even number of elements in a mapping node")
-	}
-
+var tagsInAlphabeticalOrder = nodeRule{"tags_alphabetical_order", func(rule *yaml.Node) ([]Message, error) {
 	var tags *yaml.Node
-	for i := 1; i < len(rule); i += 2 {
-		key, value := rule[i-1], rule[i]
+	for i := 1; i < len(rule.Content); i += 2 {
+		key, value := rule.Content[i-1], rule.Content[i]
 		if key.Value == "tags" {
 			tags = value
 			break

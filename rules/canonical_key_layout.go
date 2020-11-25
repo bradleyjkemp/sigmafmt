@@ -1,30 +1,18 @@
 package rules
 
 import (
-	"fmt"
 	"sort"
 	"strings"
 
 	"gopkg.in/yaml.v3"
 )
 
-var canonicalKeyOrder = nodeRule{"canonical_key_order", func(node *yaml.Node) ([]Message, error) {
-	switch {
-	case node.Kind != yaml.DocumentNode:
-		return nil, fmt.Errorf("expected a document node, got a %v", node.Kind)
-	case len(node.Content) != 1 || node.Content[0].Kind != yaml.MappingNode:
-		return nil, fmt.Errorf("expected Rule to consist of a single YAML map")
-	}
-
-	rule := node.Content[0].Content
-	if len(rule)%2 != 0 {
-		return nil, fmt.Errorf("internal, please report! expected an even number of elements in a mapping node")
-	}
+var canonicalKeyOrder = nodeRule{"canonical_key_order", func(rule *yaml.Node) ([]Message, error) {
 	var keys []*yaml.Node
 	originalKeyOrder := map[*yaml.Node]int{}
 	values := map[string]*yaml.Node{}
-	for i := 1; i < len(rule); i += 2 {
-		key, value := rule[i-1], rule[i]
+	for i := 1; i < len(rule.Content); i += 2 {
+		key, value := rule.Content[i-1], rule.Content[i]
 		keys = append(keys, key)
 		originalKeyOrder[key] = i - 1
 		values[key.Value] = value
@@ -90,35 +78,23 @@ var canonicalKeyOrder = nodeRule{"canonical_key_order", func(node *yaml.Node) ([
 	}
 
 	sort.SliceStable(keys, lessThan)
-	node.Content[0].Content = []*yaml.Node{}
+	rule.Content = []*yaml.Node{}
 	for _, key := range keys {
-		node.Content[0].Content = append(node.Content[0].Content, key)
-		node.Content[0].Content = append(node.Content[0].Content, values[key.Value])
+		rule.Content = append(rule.Content, key)
+		rule.Content = append(rule.Content, values[key.Value])
 	}
 
 	return []Message{{Message: "YAML keys weren't in the canonical order", AutoFixed: true}}, nil
 }}
 
 // Ensures there's whitespace between the groups of keys (as defined below)
-var whitespaceBetweenSections = nodeRule{"whitespace_between_sections", func(node *yaml.Node) ([]Message, error) {
-	switch {
-	case node.Kind != yaml.DocumentNode:
-		return nil, fmt.Errorf("expected a document node, got a %v", node.Kind)
-	case len(node.Content) != 1 || node.Content[0].Kind != yaml.MappingNode:
-		return nil, fmt.Errorf("expected Rule to consist of a single YAML map")
-	}
-
-	rule := node.Content[0].Content
-	if len(rule)%2 != 0 {
-		return nil, fmt.Errorf("internal, please report! expected an even number of elements in a mapping node")
-	}
-
+var whitespaceBetweenSections = nodeRule{"whitespace_between_sections", func(rule *yaml.Node) ([]Message, error) {
 	// We start off looking for the first key in the first group
 	currentGroup := 0
 	currentKey := 0
 	keyNeedsWhitespace := false
-	for i := 0; i < len(rule); i += 2 {
-		key := rule[i]
+	for i := 0; i < len(rule.Content); i += 2 {
+		key := rule.Content[i]
 		if keyNeedsWhitespace {
 			// Add a single whitespace line before this node (if it doesn't already have one)
 			if !strings.HasPrefix(key.HeadComment, whitespacePreservingComment) {
