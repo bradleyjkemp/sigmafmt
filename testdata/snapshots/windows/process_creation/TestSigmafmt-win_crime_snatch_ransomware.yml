@@ -1,6 +1,13 @@
 title: Snatch Ransomware
-id: 5325945e-f1f0-406e-97b8-65104d393fff
 description: Detects specific process characteristics of Snatch ransomware word document droppers
+level: critical
+status: experimental
+falsepositives:
+    - Scripts that shutdown the system immediatly and reboot them in safe mode are unlikely
+references:
+    - https://news.sophos.com/en-us/2019/12/09/snatch-ransomware-reboots-pcs-into-safe-mode-to-bypass-protection/
+author: Florian Roth
+date: 2020/08/26
 
 logsource:
     category: process_creation
@@ -13,19 +20,12 @@ detection:
             - 'net stop SuperBackupMan'
     condition: selection
 
-references:
-    - https://news.sophos.com/en-us/2019/12/09/snatch-ransomware-reboots-pcs-into-safe-mode-to-bypass-protection/
-author: Florian Roth
-date: 2020/08/26
-tags:
-    - attack.execution
-    - attack.t1204
-level: critical
-status: experimental
+id: 5325945e-f1f0-406e-97b8-65104d393fff
 fields:
     - ComputerName
     - User
     - Image
-falsepositives:
-    - Scripts that shutdown the system immediatly and reboot them in safe mode are unlikely
+tags:
+    - attack.execution
+    - attack.t1204
 

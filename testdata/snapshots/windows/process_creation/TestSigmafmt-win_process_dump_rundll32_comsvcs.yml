@@ -1,6 +1,13 @@
 title: Process Dump via Rundll32 and Comsvcs.dll
-id: 646ea171-dded-4578-8a4d-65e9822892e3
 description: Detects a process memory dump performed via ordinal function 24 in comsvcs.dll
+level: high
+status: experimental
+falsepositives:
+    - Unlikely, because no one should dump the process memory in that way
+references:
+    - https://twitter.com/shantanukhande/status/1229348874298388484
+author: Florian Roth
+date: 2020/02/18
 
 logsource:
     category: process_creation
@@ -12,10 +19,7 @@ detection:
             - 'comsvcs.dll,MiniDump'
     condition: selection
 
-references:
-    - https://twitter.com/shantanukhande/status/1229348874298388484
-author: Florian Roth
-date: 2020/02/18
+id: 646ea171-dded-4578-8a4d-65e9822892e3
 modified: 2020/09/06
 tags:
     - attack.credential_access
@@ -24,8 +28,4 @@ tags:
     - attack.t1003.001
     - attack.t1036
     - car.2013-05-009
-level: high
-status: experimental
-falsepositives:
-    - Unlikely, because no one should dump the process memory in that way
 

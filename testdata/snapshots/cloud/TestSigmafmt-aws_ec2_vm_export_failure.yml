@@ -1,6 +1,9 @@
 title: AWS EC2 VM Export Failure
-id: 54b9a76a-3c71-4673-b4b3-2edb4566ea7b
 description: An attempt to export an AWS EC2 instance has been detected. A VM Export might indicate an attempt to extract information from an instance.
+level: low
+status: experimental
+references:
+    - https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#export-instance
 author: Diogo Braz
 date: 2020/04/16
 
@@ -19,13 +22,10 @@ detection:
         responseElements: '*Failure*'
     condition: selection and (filter1 or filter2 or filter3)
 
-references:
-    - https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#export-instance
+id: 54b9a76a-3c71-4673-b4b3-2edb4566ea7b
 tags:
     - attack.collection
     - attack.exfiltration
     - attack.t1005
     - attack.t1537
-level: low
-status: experimental
 

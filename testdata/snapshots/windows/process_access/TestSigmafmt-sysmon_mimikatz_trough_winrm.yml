@@ -1,6 +1,14 @@
 title: Mimikatz through Windows Remote Management
-id: aa35a627-33fb-4d04-a165-d33b4afca3e8
 description: Detects usage of mimikatz through WinRM protocol by monitoring access to lsass process by wsmprovhost.exe.
+level: high
+status: stable
+falsepositives:
+    - low
+references:
+    - https://pentestlab.blog/2018/05/15/lateral-movement-winrm/
+author: Patryk Prauze - ING Tech
+date: 2019/05/20
+modified: 2020/08/24
 
 logsource:
     category: process_access
@@ -11,11 +19,7 @@ detection:
         SourceImage: 'C:\Windows\system32\wsmprovhost.exe'
     condition: selection
 
-references:
-    - https://pentestlab.blog/2018/05/15/lateral-movement-winrm/
-author: Patryk Prauze - ING Tech
-date: 2019/05/20
-modified: 2020/08/24
+id: aa35a627-33fb-4d04-a165-d33b4afca3e8
 tags:
     - attack.credential_access
     - attack.execution
@@ -27,8 +31,4 @@ tags:
     - attack.t1028 #an old one
     - attack.t1059.001
     - attack.t1086 #an old one
-level: high
-status: stable
-falsepositives:
-    - low
 

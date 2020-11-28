@@ -1,9 +1,14 @@
 title: Remote PowerShell Session
-id: 96b9f619-aa91-478f-bacb-c3e50f8df575
 description: Detects remote PowerShell sessions
+level: high
+status: experimental
+falsepositives:
+    - Legitimate use remote PowerShell sessions
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
+author: Roberto Rodriguez @Cyb3rWard0g
 date: 2019/08/10
 modified: 2020/08/24
-author: Roberto Rodriguez @Cyb3rWard0g
 
 logsource:
     product: windows
@@ -17,8 +22,7 @@ detection:
         HostApplication|contains: 'wsmprovhost.exe'
     condition: selection
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
+id: 96b9f619-aa91-478f-bacb-c3e50f8df575
 tags:
     - attack.execution
     - attack.lateral_movement
@@ -26,8 +30,4 @@ tags:
     - attack.t1028 #an old one
     - attack.t1059.001
     - attack.t1086 #an old one
-level: high
-status: experimental
-falsepositives:
-    - Legitimate use remote PowerShell sessions
 

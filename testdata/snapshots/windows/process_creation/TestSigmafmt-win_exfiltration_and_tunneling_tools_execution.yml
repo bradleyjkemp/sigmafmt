@@ -1,9 +1,11 @@
 title: Exfiltration and Tunneling Tools Execution
-id: c75309a3-59f8-4a8d-9c2c-4c927ad50555
 description: Execution of well known tools for data exfiltration and tunneling
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate Administrator using tools
 author: Daniil Yugoslavskiy, oscd.community
 date: 2019/10/24
-modified: 2020/08/29
 
 logsource:
     category: process_creation
@@ -17,6 +19,8 @@ detection:
             - '\httptunnel.exe'
     condition: selection
 
+id: c75309a3-59f8-4a8d-9c2c-4c927ad50555
+modified: 2020/08/29
 tags:
     - attack.command_and_control
     - attack.exfiltration
@@ -24,8 +28,4 @@ tags:
     - attack.t1043 # an old one
     - attack.t1071.001
     - attack.t1572
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate Administrator using tools
 

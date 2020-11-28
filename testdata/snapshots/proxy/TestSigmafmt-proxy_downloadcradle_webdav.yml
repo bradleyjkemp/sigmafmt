@@ -1,6 +1,13 @@
 title: Windows WebDAV User Agent
-id: e09aed7a-09e0-4c9a-90dd-f0d52507347e
 description: Detects WebDav DownloadCradle
+level: high
+status: experimental
+falsepositives:
+    - Administrative scripts that download files from the Internet
+    - Administrative scripts that retrieve certain website contents
+    - Legitimate WebDAV administration
+references:
+    - https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html
 author: Florian Roth
 date: 2018/04/06
 modified: 2020/09/03
@@ -12,22 +19,15 @@ detection:
         c-useragent: 'Microsoft-WebDAV-MiniRedir/*'
         cs-method: 'GET'
     condition: selection
-
-references:
-    - https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html
-tags:
-    - attack.command_and_control
-    - attack.t1043 # an old one
-    - attack.t1071.001
-level: high
-status: experimental
 fields:
     - ClientIP
     - c-uri
     - c-useragent
     - cs-method
-falsepositives:
-    - Administrative scripts that download files from the Internet
-    - Administrative scripts that retrieve certain website contents
-    - Legitimate WebDAV administration
+
+id: e09aed7a-09e0-4c9a-90dd-f0d52507347e
+tags:
+    - attack.command_and_control
+    - attack.t1043 # an old one
+    - attack.t1071.001
 

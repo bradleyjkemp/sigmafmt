@@ -1,6 +1,14 @@
 title: Bitsadmin Download
-id: d059842b-6b9d-4ed1-b5c3-5b89143c6ede
 description: Detects usage of bitsadmin downloading a file
+level: medium
+status: experimental
+falsepositives:
+    - Some legitimate apps use this, but limited.
+references:
+    - https://blog.netspi.com/15-ways-to-download-a-file/#bitsadmin
+    - https://isc.sans.edu/diary/22264
+author: Michael Haag
+date: 2017/03/09
 
 logsource:
     category: process_creation
@@ -16,23 +24,15 @@ detection:
             - '*copy bitsadmin.exe*'
     condition: selection1 or selection2
 
-references:
-    - https://blog.netspi.com/15-ways-to-download-a-file/#bitsadmin
-    - https://isc.sans.edu/diary/22264
+id: d059842b-6b9d-4ed1-b5c3-5b89143c6ede
+modified: 2020/09/06
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.defense_evasion
     - attack.persistence
     - attack.s0190
     - attack.t1036.003
     - attack.t1197
-date: 2017/03/09
-modified: 2020/09/06
-author: Michael Haag
-level: medium
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Some legitimate apps use this, but limited.
 

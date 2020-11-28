@@ -1,6 +1,13 @@
 title: MSHTA Spwaned by SVCHOST
-id: ed5d72a6-f8f4-479d-ba79-02f6a80d7471
 description: Detects MSHTA.EXE spwaned by SVCHOST as seen in LethalHTA and described in report
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://codewhitesec.blogspot.com/2018/07/lethalhta.html
+author: Markus Neis
+date: 2018/06/07
 
 logsource:
     category: process_creation
@@ -11,17 +18,10 @@ detection:
         Image: '*\mshta.exe'
     condition: selection
 
-references:
-    - https://codewhitesec.blogspot.com/2018/07/lethalhta.html
+id: ed5d72a6-f8f4-479d-ba79-02f6a80d7471
 tags:
     - attack.defense_evasion
     - attack.execution # an old one
     - attack.t1170 # an old one
     - attack.t1218.005
-author: Markus Neis
-date: 2018/06/07
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

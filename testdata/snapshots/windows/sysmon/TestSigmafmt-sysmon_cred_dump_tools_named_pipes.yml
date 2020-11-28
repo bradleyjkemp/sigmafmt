@@ -1,6 +1,11 @@
 title: Cred Dump-Tools Named Pipes
-id: 961d0ba2-3eea-4303-a930-2cf78bbfcc5e
 description: Detects well-known credential dumping tools execution via specific named pipes
+level: critical
+status: experimental
+falsepositives:
+    - Legitimate Administrator using tool for password recovery
+references:
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
 author: Teymur Kheirkhabarov, oscd.community
 date: 2019/11/01
 modified: 2020/08/28
@@ -17,8 +22,7 @@ detection:
             - '\wceservicepipe'
     condition: selection
 
-references:
-    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
+id: 961d0ba2-3eea-4303-a930-2cf78bbfcc5e
 tags:
     - attack.credential_access
     - attack.t1003 # an old one
@@ -26,8 +30,4 @@ tags:
     - attack.t1003.002
     - attack.t1003.004
     - attack.t1003.005
-level: critical
-status: experimental
-falsepositives:
-    - Legitimate Administrator using tool for password recovery
 

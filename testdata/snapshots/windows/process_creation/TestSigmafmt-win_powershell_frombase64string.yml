@@ -1,6 +1,13 @@
 title: FromBase64String Command Line
-id: e32d4572-9826-4738-b651-95fa63747e8a
 description: Detects suspicious FromBase64String expressions in command line arguments
+level: high
+status: experimental
+falsepositives:
+    - Administrative script libraries
+references:
+    - https://gist.github.com/Neo23x0/6af876ee72b51676c82a2db8d2cd3639
+author: Florian Roth
+date: 2020/01/29
 
 logsource:
     category: process_creation
@@ -10,18 +17,11 @@ detection:
         CommandLine|contains: '::FromBase64String('
     condition: selection
 
-references:
-    - https://gist.github.com/Neo23x0/6af876ee72b51676c82a2db8d2cd3639
-author: Florian Roth
-date: 2020/01/29
+id: e32d4572-9826-4738-b651-95fa63747e8a
 modified: 2020/09/06
 tags:
     - attack.defense_evasion
     - attack.t1027
     - attack.t1059.001
     - attack.t1140
-level: high
-status: experimental
-falsepositives:
-    - Administrative script libraries
 

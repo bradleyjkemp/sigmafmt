@@ -1,6 +1,14 @@
 title: CMSTP UAC Bypass via COM Object Access
-id: 4b60e6f2-bf39-47b4-b4ea-398e33cfe253
 description: Detects UAC Bypass Attempt Using Microsoft Connection Manager Profile Installer Autoelevate-capable COM Objects
+level: high
+status: stable
+falsepositives:
+    - Legitimate CMSTP use (unlikely in modern enterprise environments)
+references:
+    - https://web.archive.org/web/20190720093911/http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
+    - https://twitter.com/hFireF0X/status/897640081053364225
+author: Nik Seetharaman
+date: 2019/01/16
 
 logsource:
     category: process_creation
@@ -14,9 +22,12 @@ detection:
             - '{3E000D72-A845-4CD9-BD83-80C07C3B881F}'
     condition: selection1 and selection2
 
-references:
-    - https://web.archive.org/web/20190720093911/http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
-    - https://twitter.com/hFireF0X/status/897640081053364225
+id: 4b60e6f2-bf39-47b4-b4ea-398e33cfe253
+modified: 2019/07/31
+fields:
+    - CommandLine
+    - ParentCommandLine
+    - Hashes
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -27,15 +38,4 @@ tags:
     - attack.t1218.003
     - attack.t1548.002
     - car.2019-04-001
-author: Nik Seetharaman
-modified: 2019/07/31
-date: 2019/01/16
-level: high
-status: stable
-fields:
-    - CommandLine
-    - ParentCommandLine
-    - Hashes
-falsepositives:
-    - Legitimate CMSTP use (unlikely in modern enterprise environments)
 

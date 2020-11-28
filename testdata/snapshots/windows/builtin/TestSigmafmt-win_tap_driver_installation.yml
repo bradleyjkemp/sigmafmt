@@ -1,7 +1,10 @@
 action: global
 title: Tap Driver Installation
-id: 8e4cf0e5-aa5d-4dc3-beff-dc26917744a9
 description: Well-known TAP software installation. Possible preparation for data exfiltration using tunnelling techniques
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate OpenVPN TAP insntallation
 author: Daniil Yugoslavskiy, Ian Davis, oscd.community
 date: 2019/10/24
 
@@ -10,11 +13,8 @@ detection:
         ImagePath|contains: 'tap0901'
     condition: selection and selection_1
 
+id: 8e4cf0e5-aa5d-4dc3-beff-dc26917744a9
 tags:
     - attack.exfiltration
     - attack.t1048
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate OpenVPN TAP insntallation
 

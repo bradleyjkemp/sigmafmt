@@ -1,6 +1,13 @@
 title: Renamed SysInternals Debug View
-id: cd764533-2e07-40d6-a718-cfeec7f2da7f
 description: Detects suspicious renamed SysInternals DebugView execution
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://www.epicturla.com/blog/sysinturla
+author: Florian Roth
+date: 2020/05/28
 
 logsource:
     category: process_creation
@@ -15,12 +22,5 @@ detection:
         Image|endswith: '\Dbgview.exe'
     condition: selection and not filter
 
-references:
-    - https://www.epicturla.com/blog/sysinturla
-author: Florian Roth
-date: 2020/05/28
-level: high
-status: experimental
-falsepositives:
-    - Unknown
+id: cd764533-2e07-40d6-a718-cfeec7f2da7f
 

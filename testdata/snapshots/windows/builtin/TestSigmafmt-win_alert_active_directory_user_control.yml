@@ -1,6 +1,12 @@
 title: Enabled User Right in AD to Control User Objects
-id: 311b6ce2-7890-4383-a8c2-663a9f6b43cd
 description: Detects scenario where if a user is assigned the SeEnableDelegationPrivilege right in Active Directory it would allow control of other AD user objects.
+level: high
+falsepositives:
+    - Unknown
+references:
+    - https://www.harmj0y.net/blog/activedirectory/the-most-dangerous-user-right-you-probably-have-never-heard-of/
+author: '@neu5ron'
+date: 2017/07/30
 
 logsource:
     product: windows
@@ -14,15 +20,9 @@ detection:
             - '*SeEnableDelegationPrivilege*'
     condition: all of them
 
-references:
-    - https://www.harmj0y.net/blog/activedirectory/the-most-dangerous-user-right-you-probably-have-never-heard-of/
-author: '@neu5ron'
-date: 2017/07/30
+id: 311b6ce2-7890-4383-a8c2-663a9f6b43cd
 modified: 2020/08/23
 tags:
     - attack.persistence
     - attack.t1098
-level: high
-falsepositives:
-    - Unknown
 

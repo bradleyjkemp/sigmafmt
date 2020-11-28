@@ -1,9 +1,11 @@
 title: Control Panel Items
-id: 0ba863e6-def5-4e50-9cea-4dd8c7dc46a4
 description: Detects the malicious use of a control panel item
-reference:
-    - https://attack.mitre.org/techniques/T1196/
-    - https://ired.team/offensive-security/code-execution/code-execution-through-control-panel-add-ins
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+author: Kyaw Min Thein, Furkan Caliskan (@caliskanfurkan_)
+date: 2020/06/22
 
 logsource:
     product: windows
@@ -23,6 +25,11 @@ detection:
             - '*CurrentVersion\\Control Panel\\CPLs*'
     condition: (selection1 and not filter) or (selection2 and selection3)
 
+id: 0ba863e6-def5-4e50-9cea-4dd8c7dc46a4
+reference:
+    - https://attack.mitre.org/techniques/T1196/
+    - https://ired.team/offensive-security/code-execution/code-execution-through-control-panel-add-ins
+modified: 2020/08/29
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -30,11 +37,4 @@ tags:
     - attack.t1196 # an old one
     - attack.t1218.002
     - attack.t1546
-author: Kyaw Min Thein, Furkan Caliskan (@caliskanfurkan_)
-date: 2020/06/22
-modified: 2020/08/29
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

@@ -1,9 +1,14 @@
 title: WMI Modules Loaded
-id: 671bb7e3-a020-4824-a00e-2ee5b55f385e
 description: Detects non wmiprvse loading WMI modules
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1047_windows_management_instrumentation/wmi_wmi_module_load.md
+author: Roberto Rodriguez @Cyb3rWard0g
 date: 2019/08/10
 modified: 2019/11/10
-author: Roberto Rodriguez @Cyb3rWard0g
 
 logsource:
     category: image_load
@@ -34,18 +39,13 @@ detection:
             - '\windows\system32\MoUsoCoreWorker.exe' # c:\windows\System32\MoUsoCoreWorker.exe on win10 20H04 at least
     condition: selection and not filter
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1047_windows_management_instrumentation/wmi_wmi_module_load.md
-tags:
-    - attack.execution
-    - attack.t1047
-level: high
-status: experimental
+id: 671bb7e3-a020-4824-a00e-2ee5b55f385e
 fields:
     - ComputerName
     - User
     - Image
     - ImageLoaded
-falsepositives:
-    - Unknown
+tags:
+    - attack.execution
+    - attack.t1047
 

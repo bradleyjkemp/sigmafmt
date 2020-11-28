@@ -1,6 +1,10 @@
 title: Multiple Suspicious Resp Codes Caused by Single Client
-id: 6fdfc796-06b3-46e8-af08-58f3505318af
 description: Detects possible exploitation activity or bugs in a web application
+level: medium
+status: experimental
+falsepositives:
+    - Unstable application
+    - Application that misuses the response codes
 author: Thomas Patzke
 date: 2017/02/19
 modified: 2020/09/03
@@ -16,18 +20,14 @@ detection:
             - 500
     condition: selection | count() by clientip > 10
     timeframe: 10m
-
-tags:
-    - attack.initial_access
-    - attack.t1190
-level: medium
-status: experimental
 fields:
     - client_ip
     - vhost
     - url
     - response
-falsepositives:
-    - Unstable application
-    - Application that misuses the response codes
+
+id: 6fdfc796-06b3-46e8-af08-58f3505318af
+tags:
+    - attack.initial_access
+    - attack.t1190
 

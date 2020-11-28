@@ -1,6 +1,13 @@
 title: Suspicious Program Location Process Starts
-id: f50bfd8b-e2a3-4c15-9373-7900b5a4c6d5
 description: Detects programs running in suspicious files system locations
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo
+author: Florian Roth
+date: 2019/01/15
 
 logsource:
     category: process_creation
@@ -17,15 +24,8 @@ detection:
             - '*\Windows\debug\\*'
     condition: selection
 
-references:
-    - https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo
+id: f50bfd8b-e2a3-4c15-9373-7900b5a4c6d5
 tags:
     - attack.defense_evasion
     - attack.t1036
-author: Florian Roth
-date: 2019/01/15
-level: high
-status: experimental
-falsepositives:
-    - unknown
 

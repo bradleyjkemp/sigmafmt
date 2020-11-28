@@ -1,6 +1,13 @@
 title: OceanLotus Registry Activity
-id: 4ac5fc44-a601-4c06-955b-309df8c4e9d4
 description: Detects registry keys created in OceanLotus (also known as APT32) attacks
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://www.welivesecurity.com/2019/03/20/fake-or-fake-keeping-up-with-oceanlotus-decoys/
+author: megan201296
+date: 2019/04/14
 
 logsource:
     category: registry_event
@@ -25,16 +32,9 @@ detection:
             - 'HKU\\*_Classes\CLSID\{E3517E26-8E93-458D-A6DF-8030BC80528B}\\*'
     condition: selection
 
-references:
-    - https://www.welivesecurity.com/2019/03/20/fake-or-fake-keeping-up-with-oceanlotus-decoys/
+id: 4ac5fc44-a601-4c06-955b-309df8c4e9d4
+modified: 2020/09/06
 tags:
     - attack.defense_evasion
     - attack.t1112
-author: megan201296
-date: 2019/04/14
-modified: 2020/09/06
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

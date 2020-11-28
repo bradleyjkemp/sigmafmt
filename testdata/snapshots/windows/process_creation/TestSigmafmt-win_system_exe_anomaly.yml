@@ -1,6 +1,13 @@
 title: System File Execution Location Anomaly
-id: e4a6b256-3e47-40fc-89d2-7a477edd6915
 description: Detects a Windows program executable started in a suspicious folder
+level: high
+status: experimental
+falsepositives:
+    - Exotic software
+references:
+    - https://twitter.com/GelosSnake/status/934900723426439170
+author: Florian Roth, Patrick Bareiss
+date: 2017/11/27
 
 logsource:
     category: process_creation
@@ -42,19 +49,12 @@ detection:
             - '\SystemRoot\System32\\*'
     condition: selection and not filter
 
-references:
-    - https://twitter.com/GelosSnake/status/934900723426439170
-author: Florian Roth, Patrick Bareiss
-date: 2017/11/27
-tags:
-    - attack.defense_evasion
-    - attack.t1036
-level: high
-status: experimental
+id: e4a6b256-3e47-40fc-89d2-7a477edd6915
 fields:
     - ComputerName
     - User
     - Image
-falsepositives:
-    - Exotic software
+tags:
+    - attack.defense_evasion
+    - attack.t1036
 

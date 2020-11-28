@@ -1,6 +1,12 @@
 title: Overwriting the File with Dev Zero or Null
-id: 37222991-11e9-4b6d-8bdf-60fbe48f753e
 description: Detects overwriting (effectively wiping/deleting) the file
+level: low
+status: stable
+falsepositives:
+    - Appending null bytes to files
+    - Legitimate overwrite of files
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1485/T1485.yaml
 author: Jakob Weinzettl, oscd.community
 date: 2019/10/23
 
@@ -16,15 +22,9 @@ detection:
             - 'if=/dev/zero'
     condition: selection
 
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1485/T1485.yaml
+id: 37222991-11e9-4b6d-8bdf-60fbe48f753e
 
 tags:
     - attack.impact
     - attack.t1485
-level: low
-status: stable
-falsepositives:
-    - Appending null bytes to files
-    - Legitimate overwrite of files
 

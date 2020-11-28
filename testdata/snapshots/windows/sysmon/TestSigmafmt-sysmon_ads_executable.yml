@@ -1,6 +1,13 @@
 title: Executable in ADS
-id: b69888d4-380c-45ce-9cf9-d9ce46e67821
 description: Detects the creation of an ADS data stream that contains an executable (non-empty imphash)
+level: critical
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://twitter.com/0xrawsec/status/1002478725605273600?s=21
+author: Florian Roth, @0xrawsec
+date: 2018/06/03
 
 logsource:
     product: windows
@@ -15,21 +22,14 @@ detection:
         Imphash: null
     condition: selection and not 1 of filter*
 
-references:
-    - https://twitter.com/0xrawsec/status/1002478725605273600?s=21
+id: b69888d4-380c-45ce-9cf9-d9ce46e67821
+modified: 2020/08/26
+fields:
+    - TargetFilename
+    - Image
 tags:
     - attack.defense_evasion
     - attack.s0139
     - attack.t1027 # an old one
     - attack.t1564.004
-author: Florian Roth, @0xrawsec
-date: 2018/06/03
-modified: 2020/08/26
-level: critical
-status: experimental
-fields:
-    - TargetFilename
-    - Image
-falsepositives:
-    - unknown
 

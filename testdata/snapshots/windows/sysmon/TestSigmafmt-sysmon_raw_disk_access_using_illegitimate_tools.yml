@@ -1,6 +1,11 @@
 title: Raw Disk Access Using Illegitimate Tools
-id: db809f10-56ce-4420-8c86-d6a7d793c79c
 description: Raw disk access using illegitimate tools, possible defence evasion
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate Administrator using tool for raw access or ongoing forensic investigation
+references:
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
 author: Teymur Kheirkhabarov, oscd.community
 date: 2019/10/22
 
@@ -30,18 +35,13 @@ detection:
             - '\lsass.exe'
     condition: selection and not filter_1 and not filter_2
 
-references:
-    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
-tags:
-    - attack.defense_evasion
-    - attack.t1006
+id: db809f10-56ce-4420-8c86-d6a7d793c79c
 fields:
     - ComputerName
     - Image
     - ProcessID
     - Device
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate Administrator using tool for raw access or ongoing forensic investigation
+tags:
+    - attack.defense_evasion
+    - attack.t1006
 

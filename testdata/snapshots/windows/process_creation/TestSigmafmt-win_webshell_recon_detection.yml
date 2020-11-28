@@ -1,6 +1,9 @@
 title: Webshell Recon Detection Via CommandLine & Processes
-id: f64e5c19-879c-4bae-b471-6d84c8339677
 description: Looking for processes spawned by web server components that indicate reconnaissance by popular public domain webshells for whether perl, python or wget are installed.
+level: high
+status: experimental
+falsepositives:
+    - unknown
 author: Cian Heasley
 reference:
     - https://ragged-lab.blogspot.com/2020/07/webshells-automating-reconnaissance.html
@@ -27,17 +30,14 @@ detection:
             - '*perl -h*'
     condition: selection
 
+id: f64e5c19-879c-4bae-b471-6d84c8339677
+fields:
+    - Image
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.persistence
     - attack.privilege_escalation # an old one
     - attack.t1100 # an old one
     - attack.t1505.003
-level: high
-status: experimental
-fields:
-    - Image
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - unknown
 

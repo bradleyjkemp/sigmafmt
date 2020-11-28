@@ -1,6 +1,13 @@
 title: Suspicious Program Location with Network Connections
-id: 7b434893-c57d-4f41-908d-6a17bf1ae98f
 description: Detects programs with network connections running in suspicious files system locations
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo
+author: Florian Roth
+date: 2017/03/19
 
 logsource:
     category: network_connection
@@ -23,12 +30,5 @@ detection:
             - '*\Windows\addins\\*'
     condition: selection
 
-references:
-    - https://docs.google.com/spreadsheets/d/17pSTDNpa0sf6pHeRhusvWG6rThciE8CsXTSlDUAZDyo
-author: Florian Roth
-date: 2017/03/19
-level: high
-status: experimental
-falsepositives:
-    - unknown
+id: 7b434893-c57d-4f41-908d-6a17bf1ae98f
 

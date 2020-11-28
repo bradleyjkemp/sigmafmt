@@ -1,6 +1,14 @@
 title: Logon Scripts (UserInitMprLogonScript) Registry
-id: 9ace0707-b560-49b8-b6ca-5148b42f39fb
 description: Detects creation or execution of UserInitMprLogonScript persistence method
+level: high
+status: experimental
+falsepositives:
+    - exclude legitimate logon scripts
+    - penetration tests, red teaming
+references:
+    - https://attack.mitre.org/techniques/T1037/
+author: Tom Ueltschi (@c_APT_ure)
+date: 2019/01/12
 
 logsource:
     category: registry_event
@@ -10,19 +18,11 @@ detection:
         TargetObject: '*UserInitMprLogonScript*'
     condition: create_keywords_reg
 
-references:
-    - https://attack.mitre.org/techniques/T1037/
+id: 9ace0707-b560-49b8-b6ca-5148b42f39fb
+modified: 2020/07/01
 tags:
     - attack.lateral_movement
     - attack.persistence
     - attack.t1037 # an old one
     - attack.t1037.001
-author: Tom Ueltschi (@c_APT_ure)
-date: 2019/01/12
-modified: 2020/07/01
-level: high
-status: experimental
-falsepositives:
-    - exclude legitimate logon scripts
-    - penetration tests, red teaming
 

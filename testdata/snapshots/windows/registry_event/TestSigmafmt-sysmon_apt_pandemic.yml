@@ -1,18 +1,17 @@
 action: global
 title: Pandemic Registry Key
-id: 47e0852a-cf81-4494-a8e6-31864f8c86ed
 description: Detects Pandemic Windows Implant
-
+level: critical
+status: experimental
+falsepositives:
+    - unknown
 references:
     - https://wikileaks.org/vault7/#Pandemic
     - https://twitter.com/MalwareJake/status/870349480356454401
-tags:
-    - attack.lateral_movement
-    - attack.t1105
-level: critical
-status: experimental
 author: Florian Roth
 date: 2017/06/01
+
+id: 47e0852a-cf81-4494-a8e6-31864f8c86ed
 fields:
     - EventID
     - CommandLine
@@ -20,6 +19,7 @@ fields:
     - Image
     - User
     - TargetObject
-falsepositives:
-    - unknown
+tags:
+    - attack.lateral_movement
+    - attack.t1105
 

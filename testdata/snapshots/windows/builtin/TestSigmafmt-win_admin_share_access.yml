@@ -1,6 +1,11 @@
 title: Access to ADMIN$ Share
-id: 098d7118-55bc-4912-a836-dc6483a8d150
 description: Detects access to $ADMIN share
+level: low
+status: experimental
+falsepositives:
+    - Legitimate administrative activity
+author: Florian Roth
+date: 2017/03/04
 
 logsource:
     product: windows
@@ -14,15 +19,10 @@ detection:
         SubjectUserName: '*$'
     condition: selection and not filter
 
+id: 098d7118-55bc-4912-a836-dc6483a8d150
+modified: 2020/08/23
 tags:
     - attack.lateral_movement
     - attack.t1021.002
     - attack.t1077 # an old one
-author: Florian Roth
-date: 2017/03/04
-modified: 2020/08/23
-level: low
-status: experimental
-falsepositives:
-    - Legitimate administrative activity
 

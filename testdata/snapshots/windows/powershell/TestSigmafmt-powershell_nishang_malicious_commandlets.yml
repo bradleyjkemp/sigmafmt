@@ -1,6 +1,12 @@
 title: Malicious Nishang PowerShell Commandlets
-id: f772cee9-b7c2-4cb2-8f07-49870adc02e0
 description: Detects Commandlet names and arguments from the Nishang exploitation framework
+level: high
+status: experimental
+falsepositives:
+    - Penetration testing
+references:
+    - https://github.com/samratashok/nishang
+author: Alec Costello
 date: 2019/05/16
 
 logsource:
@@ -84,15 +90,9 @@ detection:
         - Exploit
     condition: keywords
 
-references:
-    - https://github.com/samratashok/nishang
+id: f772cee9-b7c2-4cb2-8f07-49870adc02e0
 tags:
     - attack.execution
     - attack.t1059.001
     - attack.t1086 #an old one
-author: Alec Costello
-level: high
-status: experimental
-falsepositives:
-    - Penetration testing
 

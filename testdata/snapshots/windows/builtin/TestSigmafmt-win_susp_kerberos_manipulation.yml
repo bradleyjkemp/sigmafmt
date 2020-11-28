@@ -1,6 +1,8 @@
 title: Kerberos Manipulation
-id: f7644214-0eb0-4ace-9455-331ec4c09253
 description: This method triggers on rare Kerberos Failure Codes caused by manipulations of Kerberos messages
+level: high
+falsepositives:
+    - Faulty legacy applications
 author: Florian Roth
 date: 2017/02/10
 
@@ -47,10 +49,8 @@ detection:
             - '0x44'
     condition: selection
 
+id: f7644214-0eb0-4ace-9455-331ec4c09253
 tags:
     - attack.credential_access
     - attack.t1212
-level: high
-falsepositives:
-    - Faulty legacy applications
 

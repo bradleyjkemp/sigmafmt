@@ -1,6 +1,9 @@
 title: Download EXE from Suspicious TLD
-id: b5de2919-b74a-4805-91a7-5049accbaefe
 description: Detects executable downloads from suspicious remote systems
+level: low
+status: experimental
+falsepositives:
+    - All kind of software downloads
 author: Florian Roth
 date: 2017/03/13
 modified: 2020/09/03
@@ -50,7 +53,11 @@ detection:
             - '*.es'
             # Extend this list as needed
     condition: selection and not filter
+fields:
+    - ClientIP
+    - c-uri
 
+id: b5de2919-b74a-4805-91a7-5049accbaefe
 tags:
     - attack.execution
     - attack.initial_access
@@ -58,11 +65,4 @@ tags:
     - attack.t1204 # an old one
     - attack.t1204.002
     - attack.t1566
-level: low
-status: experimental
-fields:
-    - ClientIP
-    - c-uri
-falsepositives:
-    - All kind of software downloads
 

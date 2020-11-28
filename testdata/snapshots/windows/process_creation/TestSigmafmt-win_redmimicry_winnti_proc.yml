@@ -1,6 +1,12 @@
 title: RedMimicry Winnti Playbook Execute
-id: 95022b85-ff2a-49fa-939a-d7b8f56eeb9b
 description: Detects actions caused by the RedMimicry Winnti playbook
+level: high
+falsepositives:
+    - Unknown
+references:
+    - https://redmimicry.com
+author: Alexander Rausch
+date: 2020/06/24
 
 logsource:
     product: windows
@@ -16,10 +22,7 @@ detection:
             - sigcmm-2.4.dll
     condition: selection
 
-references:
-    - https://redmimicry.com
-author: Alexander Rausch
-date: 2020/06/24
+id: 95022b85-ff2a-49fa-939a-d7b8f56eeb9b
 modified: 2020/09/06
 tags:
     - attack.defense_evasion
@@ -28,7 +31,4 @@ tags:
     - attack.t1059.003
     - attack.t1106
     - attack.t1218.011
-level: high
-falsepositives:
-    - Unknown
 

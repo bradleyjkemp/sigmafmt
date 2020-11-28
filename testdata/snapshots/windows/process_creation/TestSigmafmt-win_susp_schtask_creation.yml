@@ -1,6 +1,10 @@
 title: Scheduled Task Creation
-id: 92626ddd-662c-49e3-ac59-f6535f12d189
 description: Detects the creation of scheduled tasks in user session
+level: low
+status: experimental
+falsepositives:
+    - Administrative activity
+    - Software installation
 author: Florian Roth
 date: 2019/01/16
 
@@ -14,10 +18,11 @@ detection:
     filter:
         User: NT AUTHORITY\SYSTEM
     condition: selection and not filter
+
+id: 92626ddd-662c-49e3-ac59-f6535f12d189
 fields:
     - CommandLine
     - ParentCommandLine
-
 tags:
     - attack.execution
     - attack.persistence
@@ -26,9 +31,4 @@ tags:
     - attack.t1053 # an old one 
     - attack.t1053.005
     - car.2013-08-001
-level: low
-status: experimental
-falsepositives:
-    - Administrative activity
-    - Software installation
 

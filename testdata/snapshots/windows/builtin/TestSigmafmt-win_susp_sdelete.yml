@@ -1,6 +1,13 @@
 title: Secure Deletion with SDelete
-id: 39a80702-d7ca-4a83-b776-525b1f86a36d
 description: Detects renaming of file while deletion with SDelete tool
+level: medium
+status: experimental
+falsepositives:
+    - Legitime usage of SDelete
+references:
+    - https://jpcertcc.github.io/ToolAnalysisResultSheet
+    - https://www.jpcert.or.jp/english/pub/sr/ir_research.html
+    - https://technet.microsoft.com/en-us/en-en/sysinternals/sdelete.aspx
 author: Thomas Patzke
 date: 2017/06/14
 modified: 2020/08/2
@@ -19,10 +26,7 @@ detection:
             - '*.ZZZ'
     condition: selection
 
-references:
-    - https://jpcertcc.github.io/ToolAnalysisResultSheet
-    - https://www.jpcert.or.jp/english/pub/sr/ir_research.html
-    - https://technet.microsoft.com/en-us/en-en/sysinternals/sdelete.aspx
+id: 39a80702-d7ca-4a83-b776-525b1f86a36d
 tags:
     - attack.defense_evasion
     - attack.impact
@@ -33,8 +37,4 @@ tags:
     - attack.t1107 # an old one
     - attack.t1485
     - attack.t1553.002
-level: medium
-status: experimental
-falsepositives:
-    - Legitime usage of SDelete
 

@@ -1,7 +1,13 @@
 title: Bloodhound and Sharphound Hack Tool
-id: f376c8a7-a2d0-4ddc-aa0c-16c17236d962
 description: Detects command line parameters used by Bloodhound and Sharphound hack tools
+level: high
+falsepositives:
+    - Other programs that use these command line option and accepts an 'All' parameter
+references:
+    - https://github.com/BloodHoundAD/BloodHound
+    - https://github.com/BloodHoundAD/SharpHound
 author: Florian Roth
+date: 2019/12/20
 
 logsource:
     category: process_creation
@@ -27,10 +33,7 @@ detection:
             - ' --NoSaveCache '
     condition: 1 of them
 
-references:
-    - https://github.com/BloodHoundAD/BloodHound
-    - https://github.com/BloodHoundAD/SharpHound
-date: 2019/12/20
+id: f376c8a7-a2d0-4ddc-aa0c-16c17236d962
 modified: 2019/12/21
 tags:
     - attack.discovery
@@ -44,7 +47,4 @@ tags:
     - attack.t1087.001
     - attack.t1087.002
     - attack.t1482
-level: high
-falsepositives:
-    - Other programs that use these command line option and accepts an 'All' parameter
 

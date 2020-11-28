@@ -1,6 +1,13 @@
 title: CrackMapExec Command Execution
-id: 058f4380-962d-40a5-afce-50207d36d7e2
 description: Detect various execution methods of the CrackMapExec pentesting framework
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/byt3bl33d3r/CrackMapExec
+author: Thomas Patzke
+date: 2020/05/22
 
 logsource:
     category: process_creation
@@ -20,8 +27,11 @@ detection:
             - '*powershell.exe -noni -nop -w 1 -enc *'
     condition: selection
 
-references:
-    - https://github.com/byt3bl33d3r/CrackMapExec
+id: 058f4380-962d-40a5-afce-50207d36d7e2
+fields:
+    - ComputerName
+    - User
+    - CommandLine
 tags:
     - attack.execution
     - attack.s0106
@@ -30,14 +40,4 @@ tags:
     - attack.t1059.001
     - attack.t1059.003
     - attack.t1086 # an old one
-author: Thomas Patzke
-date: 2020/05/22
-level: high
-status: experimental
-fields:
-    - ComputerName
-    - User
-    - CommandLine
-falsepositives:
-    - Unknown
 

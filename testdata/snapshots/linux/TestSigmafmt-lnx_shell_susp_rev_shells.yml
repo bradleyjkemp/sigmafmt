@@ -1,6 +1,11 @@
 title: Suspicious Reverse Shell Command Line
-id: 738d9bcf-6999-4fdb-b4ac-3033037db8ab
 description: Detects suspicious shell commands or program code that may be exected or used in command line to establish a reverse shell
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://alamot.github.io/reverse_shells/
 author: Florian Roth
 date: 2019/04/02
 
@@ -35,13 +40,8 @@ detection:
         - 'xterm -display 1'
     condition: keywords
 
-references:
-    - https://alamot.github.io/reverse_shells/
+id: 738d9bcf-6999-4fdb-b4ac-3033037db8ab
 tags:
     - attack.execution
     - attack.t1059.004
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

@@ -1,6 +1,11 @@
 title: Empty User Agent
-id: 21e44d78-95e7-421b-a464-ffd8395659c4
 description: Detects suspicious empty user agent strings in proxy logs
+level: medium
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://twitter.com/Carlos_Perez/status/883455096645931008
 author: Florian Roth
 date: 2017/07/08
 modified: 2020/09/03
@@ -12,19 +17,14 @@ detection:
         # Empty string - as used by Powershell's (New-Object Net.WebClient).DownloadString
         c-useragent: ''
     condition: selection
-
-references:
-    - https://twitter.com/Carlos_Perez/status/883455096645931008
-tags:
-    - attack.command_and_control
-    - attack.defense_evasion
-    - attack.t1071.001
-level: medium
-status: experimental
 fields:
     - ClientIP
     - c-uri
     - c-useragent
-falsepositives:
-    - Unknown
+
+id: 21e44d78-95e7-421b-a464-ffd8395659c4
+tags:
+    - attack.command_and_control
+    - attack.defense_evasion
+    - attack.t1071.001
 

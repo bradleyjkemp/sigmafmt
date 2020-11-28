@@ -1,6 +1,13 @@
 title: Netsh Port Forwarding
-id: 322ed9ec-fcab-4f67-9a34-e7c6aef43614
 description: Detects netsh commands that configure a port forwarding
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate administration
+references:
+    - https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html
+author: Florian Roth
+date: 2019/01/29
 
 logsource:
     category: process_creation
@@ -11,18 +18,11 @@ detection:
             - netsh interface portproxy add v4tov4 *
     condition: selection
 
-references:
-    - https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html
-date: 2019/01/29
+id: 322ed9ec-fcab-4f67-9a34-e7c6aef43614
 modified: 2020/09/01
 tags:
     - attack.command_and_control
     - attack.defense_evasion
     - attack.lateral_movement
     - attack.t1090
-author: Florian Roth
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate administration
 

@@ -1,9 +1,14 @@
 title: SysKey Registry Keys Access
-id: 9a4ff3b8-6187-4fd2-8e8b-e0eae1129495
 description: Detects handle requests and access operations to specific registry keys to calculate the SysKey
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/hunters-forge/ThreatHunter-Playbook/blob/master/playbooks/windows/07_discovery/T1012_query_registry/syskey_registry_keys_access.md
+author: Roberto Rodriguez @Cyb3rWard0g
 date: 2019/08/12
 modified: 2019/11/10
-author: Roberto Rodriguez @Cyb3rWard0g
 
 logsource:
     product: windows
@@ -21,13 +26,8 @@ detection:
             - 'lsa\Data'
     condition: selection
 
-references:
-    - https://github.com/hunters-forge/ThreatHunter-Playbook/blob/master/playbooks/windows/07_discovery/T1012_query_registry/syskey_registry_keys_access.md
+id: 9a4ff3b8-6187-4fd2-8e8b-e0eae1129495
 tags:
     - attack.discovery
     - attack.t1012
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

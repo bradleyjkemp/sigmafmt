@@ -1,6 +1,13 @@
 title: Rundll32 Internet Connection
-id: cdc8da7d-c303-42f8-b08c-b4ab47230263
 description: Detects a rundll32 that communicates with public IP addresses
+level: medium
+status: experimental
+falsepositives:
+    - Communication to other corporate systems that use IP addresses from public address spaces
+references:
+    - https://www.hybrid-analysis.com/sample/759fb4c0091a78c5ee035715afe3084686a8493f39014aea72dae36869de9ff6?environmentId=100
+author: Florian Roth
+date: 2017/11/04
 
 logsource:
     category: network_connection
@@ -32,18 +39,11 @@ detection:
             - '127.*'
     condition: selection and not filter
 
-references:
-    - https://www.hybrid-analysis.com/sample/759fb4c0091a78c5ee035715afe3084686a8493f39014aea72dae36869de9ff6?environmentId=100
-author: Florian Roth
-date: 2017/11/04
+id: cdc8da7d-c303-42f8-b08c-b4ab47230263
 modified: 2020/08/24
 tags:
     - attack.defense_evasion
     - attack.execution
     - attack.t1085 # an old one
     - attack.t1218.011
-level: medium
-status: experimental
-falsepositives:
-    - Communication to other corporate systems that use IP addresses from public address spaces
 

@@ -1,6 +1,15 @@
 title: Tasks Folder Evasion
-id: cc4e02ba-9c06-48e2-b09e-2500cace9ae0
 description: The Tasks folder in system32 and syswow64 are globally writable paths. Adversaries can take advantage of this and load or influence any script hosts or ANY .NET Application in Tasks to load and execute a custom assembly into cscript, wscript, regsvr32, mshta, eventvwr
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://twitter.com/subTee/status/1216465628946563073
+    - https://gist.github.com/am0nsec/8378da08f848424e4ab0cc5b317fdd26
+author: Sreeman
+date: 2020/01/13
+modified: 2020/08/29
 
 logsource:
     product: Windows
@@ -17,12 +26,10 @@ detection:
             - ' C:\Windows\SysWow64\Tasks\'
     condition: selection1 and selection2
 
-references:
-    - https://twitter.com/subTee/status/1216465628946563073
-    - https://gist.github.com/am0nsec/8378da08f848424e4ab0cc5b317fdd26
-date: 2020/01/13
-modified: 2020/08/29
-author: Sreeman
+id: cc4e02ba-9c06-48e2-b09e-2500cace9ae0
+fields:
+    - CommandLine
+    - ParentProcess
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -30,11 +37,4 @@ tags:
     - attack.t1059 # an old one
     - attack.t1064 # an old one
     - attack.t1574.002
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentProcess
-falsepositives:
-    - Unknown
 

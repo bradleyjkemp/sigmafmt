@@ -1,6 +1,15 @@
 title: Default PowerSploit and Empire Schtasks Persistence
-id: 56c217c3-2de2-479b-990f-5c109ba8458f
 description: Detects the creation of a schtask via PowerSploit or Empire Default Configuration.
+level: high
+status: experimental
+falsepositives:
+    - False positives are possible, depends on organisation and processes
+references:
+    - https://github.com/0xdeadbeefJERKY/PowerSploit/blob/8690399ef70d2cad10213575ac67e8fa90ddf7c3/Persistence/Persistence.psm1
+    - https://github.com/EmpireProject/Empire/blob/master/lib/modules/powershell/persistence/userland/schtasks.py
+    - https://github.com/EmpireProject/Empire/blob/master/lib/modules/powershell/persistence/elevated/schtasks.py
+author: Markus Neis, @Karneades
+date: 2018/03/06
 
 logsource:
     product: windows
@@ -16,12 +25,7 @@ detection:
             - '*schtasks*/Create*/SC *Updater*/TN *Updater*/TR *powershell*'
     condition: selection
 
-references:
-    - https://github.com/0xdeadbeefJERKY/PowerSploit/blob/8690399ef70d2cad10213575ac67e8fa90ddf7c3/Persistence/Persistence.psm1
-    - https://github.com/EmpireProject/Empire/blob/master/lib/modules/powershell/persistence/userland/schtasks.py
-    - https://github.com/EmpireProject/Empire/blob/master/lib/modules/powershell/persistence/elevated/schtasks.py
-author: Markus Neis, @Karneades
-date: 2018/03/06
+id: 56c217c3-2de2-479b-990f-5c109ba8458f
 tags:
     - attack.execution
     - attack.g0022
@@ -34,8 +38,4 @@ tags:
     - attack.t1059.001
     - attack.t1086 # an old one
     - car.2013-08-001
-level: high
-status: experimental
-falsepositives:
-    - False positives are possible, depends on organisation and processes
 

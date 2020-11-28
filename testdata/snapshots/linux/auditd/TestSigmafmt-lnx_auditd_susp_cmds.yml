@@ -1,6 +1,11 @@
 title: Suspicious Commands Linux
-id: 1543ae20-cbdf-4ec1-8d12-7664d667a825
 description: Detects relevant commands often related to malware or hacking activity
+level: medium
+status: experimental
+falsepositives:
+    - Admin activity
+references:
+    - Internal Research - mostly derived from exploit code including code in MSF
 author: Florian Roth
 date: 2017/12/12
 
@@ -26,13 +31,8 @@ detection:
         a1: '/bin/sh'
     condition: 1 of them
 
-references:
-    - Internal Research - mostly derived from exploit code including code in MSF
+id: 1543ae20-cbdf-4ec1-8d12-7664d667a825
 tags:
     - attack.execution
     - attack.t1059.004
-level: medium
-status: experimental
-falsepositives:
-    - Admin activity
 

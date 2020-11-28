@@ -1,14 +1,20 @@
 action: global
 title: Turla Group Lateral Movement
-id: c601f20d-570a-4cde-a7d6-e17f99cb8e7f
 description: Detects automated lateral movement by Turla group
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://securelist.com/the-epic-turla-operation/65545/
+author: Markus Neis
+date: 2017/11/07
 
 logsource:
     category: process_creation
     product: windows
 
-references:
-    - https://securelist.com/the-epic-turla-operation/65545/
+id: c601f20d-570a-4cde-a7d6-e17f99cb8e7f
+modified: 2020/08/27
 tags:
     - attack.discovery
     - attack.execution
@@ -19,10 +25,4 @@ tags:
     - attack.t1077 # an old one
     - attack.t1083
     - attack.t1135
-author: Markus Neis
-date: 2017/11/07
-modified: 2020/08/27
-status: experimental
-falsepositives:
-    - Unknown
 

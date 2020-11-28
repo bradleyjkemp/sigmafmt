@@ -1,6 +1,13 @@
 title: Telegram API Access
-id: b494b165-6634-483d-8c47-2026a6c52372
 description: Detects suspicious requests to Telegram API without the usual Telegram User-Agent
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate use of Telegram bots in the company
+references:
+    - https://researchcenter.paloaltonetworks.com/2018/03/unit42-telerat-another-android-trojan-leveraging-telegrams-bot-api-to-target-iranian-users/
+    - https://blog.malwarebytes.com/threat-analysis/2016/11/telecrypt-the-ransomware-abusing-telegram-api-defeated/
+    - https://www.welivesecurity.com/2016/12/13/rise-telebots-analyzing-disruptive-killdisk-attacks/
 author: Florian Roth
 date: 2018/06/05
 modified: 2020/09/03
@@ -17,11 +24,12 @@ detection:
             - '*Telegram*'
             - '*Bot*'
     condition: selection and not filter
+fields:
+    - ClientIP
+    - c-uri
+    - c-useragent
 
-references:
-    - https://researchcenter.paloaltonetworks.com/2018/03/unit42-telerat-another-android-trojan-leveraging-telegrams-bot-api-to-target-iranian-users/
-    - https://blog.malwarebytes.com/threat-analysis/2016/11/telecrypt-the-ransomware-abusing-telegram-api-defeated/
-    - https://www.welivesecurity.com/2016/12/13/rise-telebots-analyzing-disruptive-killdisk-attacks/
+id: b494b165-6634-483d-8c47-2026a6c52372
 tags:
     - attack.command_and_control
     - attack.defense_evasion
@@ -29,12 +37,4 @@ tags:
     - attack.t1071.001
     - attack.t1102 # an old one
     - attack.t1102.002
-level: medium
-status: experimental
-fields:
-    - ClientIP
-    - c-uri
-    - c-useragent
-falsepositives:
-    - Legitimate use of Telegram bots in the company
 

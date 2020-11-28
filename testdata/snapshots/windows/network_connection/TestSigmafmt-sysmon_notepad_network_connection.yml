@@ -1,6 +1,14 @@
 title: Notepad Making Network Connection
-id: e81528db-fc02-45e8-8e98-4e84aba1f10b
 description: Detects suspicious network connection by Notepad
+level: high
+status: experimental
+falsepositives:
+    - None observed so far
+references:
+    - https://www.sans.org/cyber-security-summit/archives/file/summit-archive-1492186586.pdf
+    - https://blog.cobaltstrike.com/2013/08/08/why-is-notepad-exe-connecting-to-the-internet/
+author: EagleEye Team
+date: 2020/05/14
 
 logsource:
     category: network_connection
@@ -12,19 +20,11 @@ detection:
         DestinationPort: '9100'
     condition: selection and not filter
 
-references:
-    - https://www.sans.org/cyber-security-summit/archives/file/summit-archive-1492186586.pdf
-    - https://blog.cobaltstrike.com/2013/08/08/why-is-notepad-exe-connecting-to-the-internet/
+id: e81528db-fc02-45e8-8e98-4e84aba1f10b
+modified: 2020/08/24
 tags:
     - attack.command_and_control
     - attack.defense_evasion
     - attack.execution
     - attack.t1055
-author: EagleEye Team
-date: 2020/05/14
-modified: 2020/08/24
-level: high
-status: experimental
-falsepositives:
-    - None observed so far
 

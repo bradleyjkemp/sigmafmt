@@ -1,6 +1,9 @@
 title: Webshell ReGeorg Detection Via Web Logs
-id: 2ea44a60-cfda-11ea-87d0-0242ac130003
 description: Certain strings in the uri_query field when combined with null referer and null user agent can indicate activity associated with the webshell ReGeorg.
+level: high
+status: experimental
+falsepositives:
+    - web applications that use the same URL parameters as ReGeorg
 author: Cian Heasley
 date: 2020/08/04
 modified: 2020/09/03
@@ -23,18 +26,15 @@ detection:
         useragent: null
         method: POST
     condition: selection and filter
-
-tags:
-    - attack.persistence
-    - attack.t1100
-    - attack.t1505.003
-level: high
-status: experimental
 fields:
     - uri_query
     - referer
     - method
     - useragent
-falsepositives:
-    - web applications that use the same URL parameters as ReGeorg
+
+id: 2ea44a60-cfda-11ea-87d0-0242ac130003
+tags:
+    - attack.persistence
+    - attack.t1100
+    - attack.t1505.003
 

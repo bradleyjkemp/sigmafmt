@@ -1,6 +1,11 @@
 title: Creation Of An User Account
-id: 759d0d51-bc99-4b5e-9add-8f5b2c8e7512
 description: Detects the creation of a new user account. Such accounts may be used for persistence that do not require persistent remote access tools to be deployed on the system.
+level: medium
+status: experimental
+falsepositives:
+    - Admin activity
+references:
+    - 'MITRE Attack technique T1136; Create Account '
 author: Marie Euler
 date: 2020/05/18
 
@@ -13,14 +18,9 @@ detection:
         exe: '*/useradd'
     condition: selection
 
-references:
-    - 'MITRE Attack technique T1136; Create Account '
+id: 759d0d51-bc99-4b5e-9add-8f5b2c8e7512
 tags:
     - attack.persistence
     - attack.t1136 # an old one
     - attack.t1136.001
-level: medium
-status: experimental
-falsepositives:
-    - Admin activity
 

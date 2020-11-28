@@ -1,6 +1,11 @@
 title: Network Sniffing
-id: ba1f7802-adc7-48b4-9ecb-81e227fddfd5
 description: Network sniffing refers to using the network interface on a system to monitor or capture information sent over a wired or wireless connection. An adversary may place a network interface into promiscuous mode to passively access data in transit over the network, or use span ports to capture a larger amount of data.
+level: low
+status: experimental
+falsepositives:
+    - Admin activity
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1040/T1040.yaml
 author: Timur Zinniatullin, oscd.community
 date: 2019/10/21
 modified: 2019/11/04
@@ -14,15 +19,6 @@ detection:
           CommandLine|contains: '-i'
         - Image|endswith: '\windump.exe'
     condition: selection
-
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1040/T1040.yaml
-tags:
-    - attack.credential_access
-    - attack.discovery
-    - attack.t1040
-level: low
-status: experimental
 fields:
     - Image
     - CommandLine
@@ -31,6 +27,10 @@ fields:
     - Hashes
     - ParentProcessGuid
     - ParentCommandLine
-falsepositives:
-    - Admin activity
+
+id: ba1f7802-adc7-48b4-9ecb-81e227fddfd5
+tags:
+    - attack.credential_access
+    - attack.discovery
+    - attack.t1040
 

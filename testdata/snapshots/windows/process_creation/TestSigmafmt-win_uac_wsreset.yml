@@ -1,6 +1,11 @@
 title: Bypass UAC via WSReset.exe
-id: d797268e-28a9-49a7-b9a8-2f5039011c5c
 description: Identifies use of WSReset.exe to bypass User Account Control. Adversaries use this technique to execute privileged processes.
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://eqllib.readthedocs.io/en/latest/analytics/532b5ed4-7930-11e9-8f5c-d46d6d62a49e.html
 author: E.M. Anhaus (orignally from Atomic Blue Detections, Tony Lambert), oscd.community
 date: 2019/10/24
 modified: 2019/11/11
@@ -15,14 +20,9 @@ detection:
         Image|endswith: '\conhost.exe'
     condition: selection and not filter
 
-references:
-    - https://eqllib.readthedocs.io/en/latest/analytics/532b5ed4-7930-11e9-8f5c-d46d6d62a49e.html
+id: d797268e-28a9-49a7-b9a8-2f5039011c5c
 tags:
     - attack.privilege_escalation
     - attack.t1088 # an old one
     - attack.t1548.002
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

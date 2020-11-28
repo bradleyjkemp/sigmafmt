@@ -1,6 +1,11 @@
 title: System Owner or User Discovery
-id: 9a0d8ca0-2385-4020-b6c6-cb6153ca56f3
 description: Adversaries may use the information from System Owner/User Discovery during automated discovery to shape follow-on behaviors, including whether or not the adversary fully infects the target and/or attempts specific actions.
+level: low
+status: experimental
+falsepositives:
+    - Admin activity
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1033/T1033.yaml
 author: Timur Zinniatullin, oscd.community
 date: 2019/10/21
 
@@ -16,13 +21,8 @@ detection:
             - 'who'
     condition: selection
 
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1033/T1033.yaml
+id: 9a0d8ca0-2385-4020-b6c6-cb6153ca56f3
 tags:
     - attack.discovery
     - attack.t1033
-level: low
-status: experimental
-falsepositives:
-    - Admin activity
 

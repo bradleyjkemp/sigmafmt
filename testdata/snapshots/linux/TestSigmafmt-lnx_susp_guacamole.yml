@@ -1,6 +1,11 @@
 title: Guacamole Two Users Sharing Session Anomaly
-id: 1edd77db-0669-4fef-9598-165bda82826d
 description: Detects suspicious session with two users present
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://research.checkpoint.com/2020/apache-guacamole-rce/
 author: Florian Roth
 date: 2020/07/03
 
@@ -12,10 +17,5 @@ detection:
         - '(2 users now present)'
     condition: selection
 
-references:
-    - https://research.checkpoint.com/2020/apache-guacamole-rce/
-level: high
-status: experimental
-falsepositives:
-    - Unknown
+id: 1edd77db-0669-4fef-9598-165bda82826d
 

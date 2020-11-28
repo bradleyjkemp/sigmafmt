@@ -1,6 +1,13 @@
 title: Domain Trust Discovery
-id: 77815820-246c-47b8-9741-e0def3f57308
 description: Detects a discovery of domain trusts
+level: medium
+status: experimental
+falsepositives:
+    - Administration of systems
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1482/T1482.yaml
+author: Jakob Weinzettl, oscd.community
+date: 2019/10/23
 
 logsource:
     category: process_creation
@@ -15,16 +22,9 @@ detection:
           CommandLine|contains: 'domain_trusts'
     condition: selection
 
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1482/T1482.yaml
-author: Jakob Weinzettl, oscd.community
-date: 2019/10/23
+id: 77815820-246c-47b8-9741-e0def3f57308
 modified: 2019/11/08
 tags:
     - attack.discovery
     - attack.t1482
-level: medium
-status: experimental
-falsepositives:
-    - Administration of systems
 

@@ -1,6 +1,13 @@
 title: Suspicious Parent of Csc.exe
-id: b730a276-6b63-41b8-bcf8-55930c8fc6ee
 description: Detects a suspicious parent of csc.exe, which could by a sign of payload delivery
+level: high
+status: experimental
+falsepositives:
+    - Unkown
+references:
+    - https://twitter.com/SBousseaden/status/1094924091256176641
+author: Florian Roth
+date: 2019/02/11
 
 logsource:
     category: process_creation
@@ -14,10 +21,7 @@ detection:
             - '*\mshta.exe'
     condition: selection
 
-references:
-    - https://twitter.com/SBousseaden/status/1094924091256176641
-author: Florian Roth
-date: 2019/02/11
+id: b730a276-6b63-41b8-bcf8-55930c8fc6ee
 modified: 2020/09/05
 tags:
     - attack.defense_evasion
@@ -26,8 +30,4 @@ tags:
     - attack.t1059.007
     - attack.t1218.005
     - attack.t1500
-level: high
-status: experimental
-falsepositives:
-    - Unkown
 

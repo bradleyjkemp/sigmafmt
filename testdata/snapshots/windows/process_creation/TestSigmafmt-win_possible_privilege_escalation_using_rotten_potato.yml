@@ -1,6 +1,14 @@
 title: Detection of Possible Rotten Potato
-id: 6c5808ee-85a2-4e56-8137-72e5876a5096
 description: Detection of child processes spawned with SYSTEM privileges by parents with LOCAL SERVICE or NETWORK SERVICE privileges
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
+    - https://foxglovesecurity.com/2016/09/26/rotten-potato-privilege-escalation-from-service-accounts-to-system/
+author: Teymur Kheirkhabarov
+date: 2019/10/26
 
 logsource:
     category: process_creation
@@ -16,20 +24,12 @@ detection:
         CommandLine|contains: 'DavSetCookie'
     condition: selection and not rundllexception
 
-references:
-    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
-    - https://foxglovesecurity.com/2016/09/26/rotten-potato-privilege-escalation-from-service-accounts-to-system/
+id: 6c5808ee-85a2-4e56-8137-72e5876a5096
+modified: 2020/09/01
 tags:
     - attack.privilege_escalation
     - attack.t1134 # an old one
     - attack.t1134.002
-author: Teymur Kheirkhabarov
-date: 2019/10/26
-modified: 2020/09/01
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 enrichment:
     - EN_0001_cache_sysmon_event_id_1_info # http://bit.ly/314zc6x
     - EN_0002_enrich_sysmon_event_id_1_with_parent_info # http://bit.ly/2KmSC0l

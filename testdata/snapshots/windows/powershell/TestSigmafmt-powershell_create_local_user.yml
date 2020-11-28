@@ -1,6 +1,13 @@
 title: PowerShell Create Local User
-id: 243de76f-4725-4f2e-8225-a8a69b15ad61
 description: Detects creation of a local user via PowerShell
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate user creation
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136/T1136.md
+author: '@ROxPinTeddy'
+date: 2020/04/11
 
 logsource:
     product: windows
@@ -12,8 +19,8 @@ detection:
             - 'New-LocalUser'
     condition: selection
 
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136/T1136.md
+id: 243de76f-4725-4f2e-8225-a8a69b15ad61
+modified: 2020/08/24
 tags:
     - attack.execution
     - attack.persistence
@@ -21,11 +28,4 @@ tags:
     - attack.t1086 # an old one
     - attack.t1136 # an old one    
     - attack.t1136.001
-author: '@ROxPinTeddy'
-date: 2020/04/11
-modified: 2020/08/24
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate user creation
 

@@ -1,6 +1,13 @@
 title: Windows Registry Persistence COM Search Order Hijacking
-id: a0ff33d8-79e4-4cef-b4f3-9dc4133ccd12
 description: Detects potential COM object hijacking leveraging the COM Search Order
+level: medium
+status: experimental
+falsepositives:
+    - Some installed utilities (i.e. OneDrive) may serve new COM objects at user-level
+references:
+    - https://www.cyberbit.com/blog/endpoint-security/com-hijacking-windows-overlooked-security-vulnerability/
+author: Maxime Thiebaut (@0xThiebaut)
+date: 2020/04/14
 
 logsource:
     category: registry_event
@@ -17,17 +24,10 @@ detection:
             - '*\AppData\Local\Microsoft\TeamsMeetingAddin\\*\Microsoft.Teams.AddinLoader.dll'
     condition: selection and not filter
 
-references:
-    - https://www.cyberbit.com/blog/endpoint-security/com-hijacking-windows-overlooked-security-vulnerability/
-author: Maxime Thiebaut (@0xThiebaut)
-date: 2020/04/14
+id: a0ff33d8-79e4-4cef-b4f3-9dc4133ccd12
 modified: 2020/09/06
 tags:
     - attack.persistence
     - attack.t1038 # an old one
     - attack.t1574.001
-level: medium
-status: experimental
-falsepositives:
-    - Some installed utilities (i.e. OneDrive) may serve new COM objects at user-level
 

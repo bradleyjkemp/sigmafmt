@@ -1,6 +1,11 @@
 title: Suspicious VSFTPD Error Messages
-id: 377f33a1-4b36-4ee1-acee-1dbe4b43cfbe
 description: Detects suspicious VSFTPD error messages that indicate a fatal or suspicious error that could be caused by exploiting attempts
+level: medium
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/dagwieers/vsftpd/
 author: Florian Roth
 date: 2017/07/05
 
@@ -28,13 +33,8 @@ detection:
         - 'vsf_sysutil_read_loop'
     condition: keywords
 
-references:
-    - https://github.com/dagwieers/vsftpd/
+id: 377f33a1-4b36-4ee1-acee-1dbe4b43cfbe
 tags:
     - attack.initial_access
     - attack.t1190
-level: medium
-status: experimental
-falsepositives:
-    - Unknown
 

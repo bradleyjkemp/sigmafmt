@@ -1,6 +1,14 @@
 title: Microsoft Malware Protection Engine Crash
-id: 6c82cf5c-090d-4d57-9188-533577631108
 description: This rule detects a suspicious crash of the Microsoft Malware Protection Engine
+level: high
+status: experimental
+falsepositives:
+    - MsMpEng.exe can crash when C:\ is full
+references:
+    - https://bugs.chromium.org/p/project-zero/issues/detail?id=1252&desc=5
+    - https://technet.microsoft.com/en-us/library/security/4022344
+author: Florian Roth
+date: 2017/05/09
 
 logsource:
     product: windows
@@ -18,18 +26,10 @@ detection:
             - '*mpengine.dll*'
     condition: 1 of selection* and all of keywords
 
-references:
-    - https://bugs.chromium.org/p/project-zero/issues/detail?id=1252&desc=5
-    - https://technet.microsoft.com/en-us/library/security/4022344
+id: 6c82cf5c-090d-4d57-9188-533577631108
 tags:
     - attack.defense_evasion
     - attack.t1089 # an old one
     - attack.t1211
     - attack.t1562.001
-date: 2017/05/09
-author: Florian Roth
-level: high
-status: experimental
-falsepositives:
-    - MsMpEng.exe can crash when C:\ is full
 

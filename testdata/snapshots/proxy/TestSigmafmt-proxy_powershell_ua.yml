@@ -1,6 +1,12 @@
 title: Windows PowerShell User Agent
-id: c8557060-9221-4448-8794-96320e6f3e74
 description: Detects Windows PowerShell Web Access
+level: medium
+status: experimental
+falsepositives:
+    - Administrative scripts that download files from the Internet
+    - Administrative scripts that retrieve certain website contents
+references:
+    - https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Invoke-WebRequest
 author: Florian Roth
 date: 2017/03/13
 modified: 2020/09/03
@@ -11,20 +17,14 @@ detection:
     selection:
         c-useragent: '* WindowsPowerShell/*'
     condition: selection
-
-references:
-    - https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Invoke-WebRequest
-tags:
-    - attack.command_and_control
-    - attack.defense_evasion
-    - attack.t1071.001
-level: medium
-status: experimental
 fields:
     - ClientIP
     - c-uri
     - c-useragent
-falsepositives:
-    - Administrative scripts that download files from the Internet
-    - Administrative scripts that retrieve certain website contents
+
+id: c8557060-9221-4448-8794-96320e6f3e74
+tags:
+    - attack.command_and_control
+    - attack.defense_evasion
+    - attack.t1071.001
 

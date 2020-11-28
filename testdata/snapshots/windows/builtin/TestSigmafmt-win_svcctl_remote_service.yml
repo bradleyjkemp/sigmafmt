@@ -1,6 +1,10 @@
 title: Remote Service Activity via SVCCTL Named Pipe
-id: 586a8d6b-6bfe-4ad9-9d78-888cd2fe50c3
 description: Detects remote service activity via remote access to the svcctl named pipe
+level: medium
+falsepositives:
+    - pentesting
+references:
+    - https://blog.menasec.net/2019/03/threat-hunting-26-remote-windows.html
 author: Samir Bousseaden
 date: 2019/04/03
 
@@ -16,14 +20,10 @@ detection:
         Accesses: '*WriteData*'
     condition: selection
 
-references:
-    - https://blog.menasec.net/2019/03/threat-hunting-26-remote-windows.html
+id: 586a8d6b-6bfe-4ad9-9d78-888cd2fe50c3
 tags:
     - attack.lateral_movement
     - attack.persistence
     - attack.t1021.002
     - attack.t1077 # an old one
-level: medium
-falsepositives:
-    - pentesting
 

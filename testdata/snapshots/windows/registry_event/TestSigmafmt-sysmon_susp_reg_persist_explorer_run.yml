@@ -1,6 +1,11 @@
 title: Registry Persistence via Explorer Run Key
-id: b7916c2a-fa2f-4795-9477-32b731f70f11
 description: Detects a possible persistence mechanism using RUN key for Windows Explorer and pointing to a suspicious folder
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://researchcenter.paloaltonetworks.com/2018/07/unit42-upatre-continues-evolve-new-anti-analysis-techniques/
 author: Florian Roth
 date: 2018/07/18
 modified: 2020/09/06
@@ -21,18 +26,13 @@ detection:
             - 'C:\Users\Default\\*'
     condition: selection
 
-references:
-    - https://researchcenter.paloaltonetworks.com/2018/07/unit42-upatre-continues-evolve-new-anti-analysis-techniques/
+id: b7916c2a-fa2f-4795-9477-32b731f70f11
+fields:
+    - Image
+    - ParentImage
 tags:
     - attack.persistence
     - attack.t1060 # an old one
     - attack.t1547.001
     - capec.270
-level: high
-status: experimental
-fields:
-    - Image
-    - ParentImage
-falsepositives:
-    - Unknown
 

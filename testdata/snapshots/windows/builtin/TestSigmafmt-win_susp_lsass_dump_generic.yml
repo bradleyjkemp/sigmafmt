@@ -1,6 +1,12 @@
 title: Generic Password Dumper Activity on LSASS
-id: 4a1b6da0-d94f-4fc3-98fc-2d9cb9e5ee76
 description: Detects process handle on LSASS process with certain access mask
+level: high
+status: experimental
+falsepositives:
+    - Legitimate software accessing LSASS process for legitimate reason; update the whitelist with it
+references:
+    - https://cyberwardog.blogspot.com/2017/03/chronicles-of-threat-hunter-hunting-for_22.html
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
 author: Roberto Rodriguez, Teymur Kheirkhabarov, Dimitrios Slamaris, Mark Russinovich, Aleksey Potapov, oscd.community (update)
 date: 2019/11/01
 modified: 2019/11/07
@@ -46,22 +52,16 @@ detection:
             - '\VsTskMgr.exe' # McAfee Enterprise
     condition: selection_1 or selection_2 and not filter
 
-references:
-    - https://cyberwardog.blogspot.com/2017/03/chronicles-of-threat-hunter-hunting-for_22.html
-    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
-tags:
-    - attack.credential_access
-    - attack.t1003 # an old one
-    - attack.t1003.001
-    - car.2019-04-004
-level: high
-status: experimental
+id: 4a1b6da0-d94f-4fc3-98fc-2d9cb9e5ee76
 fields:
     - ComputerName
     - SubjectDomainName
     - SubjectUserName
     - ProcessName
     - ProcessID
-falsepositives:
-    - Legitimate software accessing LSASS process for legitimate reason; update the whitelist with it
+tags:
+    - attack.credential_access
+    - attack.t1003 # an old one
+    - attack.t1003.001
+    - car.2019-04-004
 

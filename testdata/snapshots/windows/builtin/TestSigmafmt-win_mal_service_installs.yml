@@ -1,9 +1,10 @@
 title: Malicious Service Installations
-id: 5a105d34-05fc-401e-8553-272b45c1522d
 description: Detects known malicious service installs that only appear in cases of lateral movement, credential dumping and other suspicious activity
+level: critical
+falsepositives:
+    - Penetration testing
 author: Florian Roth, Daniil Yugoslavskiy, oscd.community (update)
 date: 2017/03/27
-modified: 2019/11/01
 
 logsource:
     product: windows
@@ -19,6 +20,8 @@ detection:
         ServiceFileName|contains: 'net user'
     condition: selection and 1 of malsvc_*
 
+id: 5a105d34-05fc-401e-8553-272b45c1522d
+modified: 2019/11/01
 tags:
     - attack.persistence
     - attack.privilege_escalation
@@ -28,7 +31,4 @@ tags:
     - attack.t1543.003
     - attack.t1569.002
     - car.2013-09-005
-level: critical
-falsepositives:
-    - Penetration testing
 

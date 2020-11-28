@@ -1,6 +1,13 @@
 title: Greenbug Campaign Indicators
-id: 3711eee4-a808-4849-8a14-faf733da3612
 description: Detects tools and process executions as observed in a Greenbug campaign in May 2020
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/greenbug-espionage-telco-south-asia
+author: Florian Roth
+date: 2020/05/20
 
 logsource:
     category: process_creation
@@ -36,10 +43,7 @@ detection:
             - '\Programdata\VMware\Vmware.exe'
     condition: 1 of them
 
-references:
-    - https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/greenbug-espionage-telco-south-asia
-author: Florian Roth
-date: 2020/05/20
+id: 3711eee4-a808-4849-8a14-faf733da3612
 modified: 2020/08/27
 tags:
     - attack.command_and_control
@@ -51,8 +55,4 @@ tags:
     - attack.t1059.001
     - attack.t1086 #an old one
     - attack.t1105
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

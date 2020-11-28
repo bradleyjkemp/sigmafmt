@@ -1,8 +1,13 @@
 title: Windows Defender Threat Detected
-id: 57b649ef-ff42-4fb0-8bf6-62da243a1708
 description: Detects all actions taken by Windows Defender malware detection engines
-date: 2020/07/28
+level: high
+status: stable
+falsepositives:
+    - unlikely
+references:
+    - https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus
 author: Ján Trenčanský
+date: 2020/07/28
 
 logsource:
     product: windows
@@ -16,10 +21,5 @@ detection:
             - 1117
     condition: selection
 
-references:
-    - https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus
-level: high
-status: stable
-falsepositives:
-    - unlikely
+id: 57b649ef-ff42-4fb0-8bf6-62da243a1708
 

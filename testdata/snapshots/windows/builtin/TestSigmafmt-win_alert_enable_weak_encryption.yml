@@ -1,6 +1,13 @@
 title: Weak Encryption Enabled and Kerberoast
-id: f6de9536-0441-4b3f-a646-f4e00f300ffd
 description: Detects scenario where weak encryption is enabled for a user profile which could be used for hash/password cracking.
+level: high
+falsepositives:
+    - Unknown
+references:
+    - https://adsecurity.org/?p=2053
+    - https://www.harmj0y.net/blog/activedirectory/roasting-as-reps/
+author: '@neu5ron'
+date: 2017/07/30
 
 logsource:
     product: windows
@@ -19,16 +26,9 @@ detection:
             - '*Enabled*'
     condition: selection and keywords and filters
 
-references:
-    - https://adsecurity.org/?p=2053
-    - https://www.harmj0y.net/blog/activedirectory/roasting-as-reps/
-author: '@neu5ron'
-date: 2017/07/30
+id: f6de9536-0441-4b3f-a646-f4e00f300ffd
 tags:
     - attack.defense_evasion
     - attack.t1089 # an old one
     - attack.t1562.001
-level: high
-falsepositives:
-    - Unknown
 

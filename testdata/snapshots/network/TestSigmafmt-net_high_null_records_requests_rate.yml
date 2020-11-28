@@ -1,6 +1,9 @@
 title: High NULL Records Requests Rate
-id: 44ae5117-9c44-40cf-9c7c-7edad385ca70
 description: Extremely high rate of NULL record type DNS requests from host per short period of time. Possible result of iodine tool execution
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate high DNS NULL requests rate to domain name which should be added to whitelist
 author: Daniil Yugoslavskiy, oscd.community
 date: 2019/10/24
 modified: 2020/08/27
@@ -13,6 +16,7 @@ detection:
     condition: selection | count() by src_ip > 50
     timeframe: 1m
 
+id: 44ae5117-9c44-40cf-9c7c-7edad385ca70
 tags:
     - attack.command_and_control
     - attack.exfiltration
@@ -20,8 +24,4 @@ tags:
     - attack.t1048.003
     - attack.t1071 # an old one
     - attack.t1071.004
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate high DNS NULL requests rate to domain name which should be added to whitelist
 

@@ -1,12 +1,18 @@
 action: global
 title: Operation Wocao Activity
-id: 74ad4314-482e-4c3e-b237-3f7ed3b9ca8d
-author: Florian Roth
 description: Detects activity mentioned in Operation Wocao report
-
+level: high
+status: experimental
+falsepositives:
+    - Administrators that use checkadmin.exe tool to enumerate local administrators
 references:
     - https://www.fox-it.com/en/news/whitepapers/operation-wocao-shining-a-light-on-one-of-chinas-hidden-hacking-groups/
     - https://twitter.com/SBousseaden/status/1207671369963646976
+author: Florian Roth
+date: 2019/12/20
+
+id: 74ad4314-482e-4c3e-b237-3f7ed3b9ca8d
+modified: 2020/08/26
 tags:
     - attack.defense_evasion
     - attack.discovery
@@ -19,10 +25,4 @@ tags:
     - attack.t1053.005
     - attack.t1059.001
     - attack.t1086 # an old one
-level: high
-status: experimental
-date: 2019/12/20
-modified: 2020/08/26
-falsepositives:
-    - Administrators that use checkadmin.exe tool to enumerate local administrators
 

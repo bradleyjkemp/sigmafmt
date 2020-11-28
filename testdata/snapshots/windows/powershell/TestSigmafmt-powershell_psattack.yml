@@ -1,6 +1,13 @@
 title: PowerShell PSAttack
-id: b7ec41a4-042c-4f31-a5db-d0fcde9fa5c5
 description: Detects the use of PSAttack PowerShell hack tool
+level: high
+status: experimental
+falsepositives:
+    - Pentesters
+references:
+    - https://adsecurity.org/?p=2921
+author: Sean Metcalf (source), Florian Roth (rule)
+date: 2017/03/05
 
 logsource:
     product: windows
@@ -13,16 +20,9 @@ detection:
         - 'PS ATTACK!!!'
     condition: all of them
 
-references:
-    - https://adsecurity.org/?p=2921
+id: b7ec41a4-042c-4f31-a5db-d0fcde9fa5c5
 tags:
     - attack.execution
     - attack.t1059.001
     - attack.t1086 #an old one
-author: Sean Metcalf (source), Florian Roth (rule)
-date: 2017/03/05
-level: high
-status: experimental
-falsepositives:
-    - Pentesters
 

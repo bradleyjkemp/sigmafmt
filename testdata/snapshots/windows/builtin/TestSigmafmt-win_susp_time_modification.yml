@@ -1,7 +1,14 @@
 title: Unauthorized System Time Modification
-id: faa031b5-21ed-4e02-8881-2591f98d82ed
 description: Detect scenarios where a potentially unauthorized application or user is modifying the system time.
+level: medium
+status: experimental
+falsepositives:
+    - HyperV or other virtualization technologies with binary not listed in filter portion of detection
+references:
+    - Private Cuckoo Sandbox (from many years ago, no longer have hash, NDA as well)
+    - Live environment caused by malware
 author: '@neu5ron'
+date: 2019/02/05
 
 logsource:
     product: windows
@@ -19,17 +26,10 @@ detection:
         SubjectUserSid: 'S-1-5-19'
     condition: selection and not ( filter1 or filter2 or filter3 )
 
-references:
-    - Private Cuckoo Sandbox (from many years ago, no longer have hash, NDA as well)
-    - Live environment caused by malware
-date: 2019/02/05
+id: faa031b5-21ed-4e02-8881-2591f98d82ed
 midified: 2020/01/27
 tags:
     - attack.defense_evasion
     - attack.t1070.006
     - attack.t1099 # an old one
-level: medium
-status: experimental
-falsepositives:
-    - HyperV or other virtualization technologies with binary not listed in filter portion of detection
 

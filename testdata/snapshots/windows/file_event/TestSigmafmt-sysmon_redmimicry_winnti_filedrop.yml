@@ -1,6 +1,12 @@
 title: RedMimicry Winnti Playbook Dropped File
-id: 130c9e58-28ac-4f83-8574-0a4cc913b97e
 description: Detects actions caused by the RedMimicry Winnti playbook
+level: high
+falsepositives:
+    - Unknown
+references:
+    - https://redmimicry.com
+author: Alexander Rausch
+date: 2020/06/24
 
 logsource:
     product: windows
@@ -13,14 +19,8 @@ detection:
             - \Windows\Temp\tmp.bat
     condition: selection
 
-references:
-    - https://redmimicry.com
-author: Alexander Rausch
-date: 2020/06/24
+id: 130c9e58-28ac-4f83-8574-0a4cc913b97e
 tags:
     - attack.defense_evasion
     - attack.t1027
-level: high
-falsepositives:
-    - Unknown
 

@@ -1,7 +1,14 @@
 title: HH.exe Execution
-id: 68c8acb4-1b60-4890-8e82-3ddf7a6dba84
 description: Identifies usage of hh.exe executing recently modified .chm files.
+level: high
+status: experimental
+falsepositives:
+    - unlike
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1223/T1223.yaml
+    - https://eqllib.readthedocs.io/en/latest/analytics/b25aa548-7937-11e9-8f5c-d46d6d62a49e.html
 author: E.M. Anhaus (orignally from Atomic Blue Detections, Dan Beavin), oscd.community
+date: 2019/10/24
 
 logsource:
     category: process_creation
@@ -12,22 +19,15 @@ detection:
         CommandLine|contains: '.chm'
     condition: selection
 
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1223/T1223.yaml
-    - https://eqllib.readthedocs.io/en/latest/analytics/b25aa548-7937-11e9-8f5c-d46d6d62a49e.html
-date: 2019/10/24
+id: 68c8acb4-1b60-4890-8e82-3ddf7a6dba84
 modified: 2019/11/11
+fields:
+    - ComputerName
+    - User
+    - CommandLine
 tags:
     - attack.defense_evasion
     - attack.execution # an old one
     - attack.t1218.001
     - attack.t1223 # an old one
-level: high
-status: experimental
-fields:
-    - ComputerName
-    - User
-    - CommandLine
-falsepositives:
-    - unlike
 

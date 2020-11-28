@@ -1,6 +1,14 @@
 title: Powershell Profile.ps1 Modification
-id: b5b78988-486d-4a80-b991-930eff3ff8bf
 description: Detects a change in profile.ps1 of the Powershell profile
+level: high
+status: experimental
+falsepositives:
+    - System administrator create Powershell profile manually
+references:
+    - https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/
+author: HieuTT35
+date: 2019/10/24
+modified: 2020/08/24
 
 logsource:
     product: windows
@@ -18,17 +26,9 @@ detection:
             - '\profile.ps1'
     condition: event and (target1 or target2)
 
-references:
-    - https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/
-author: HieuTT35
-date: 2019/10/24
-modified: 2020/08/24
+id: b5b78988-486d-4a80-b991-930eff3ff8bf
 tags:
     - attack.persistence
     - attack.privilege_escalation
     - attack.t1546.013
-level: high
-status: experimental
-falsepositives:
-    - System administrator create Powershell profile manually
 

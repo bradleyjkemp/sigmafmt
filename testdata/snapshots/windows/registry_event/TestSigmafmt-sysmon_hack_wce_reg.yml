@@ -1,7 +1,12 @@
 title: Windows Credential Editor Registry
-id: a6b33c02-8305-488f-8585-03cb2a7763f2
 description: Detects the use of Windows Credential Editor (WCE)
+level: critical
+falsepositives:
+    - 'Another service that uses a single -s command line switch'
+references:
+    - https://www.ampliasecurity.com/research/windows-credentials-editor/
 author: Florian Roth
+date: 2019/12/31
 
 logsource:
     category: registry_event
@@ -11,16 +16,11 @@ detection:
         TargetObject|contains: Services\WCESERVICE\Start
     condition: selection
 
-references:
-    - https://www.ampliasecurity.com/research/windows-credentials-editor/
-date: 2019/12/31
+id: a6b33c02-8305-488f-8585-03cb2a7763f2
 modified: 2020/09/06
 tags:
     - attack.credential_access
     - attack.s0005
     - attack.t1003 # an old one
     - attack.t1003.001
-level: critical
-falsepositives:
-    - 'Another service that uses a single -s command line switch'
 

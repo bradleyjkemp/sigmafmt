@@ -1,6 +1,11 @@
 title: Restore Public AWS RDS Instance
-id: c3f265c7-ff03-4056-8ab2-d486227b4599
 description: Detects the recovery of a new public database instance from a snapshot. It may be a part of data exfiltration.
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/rds__explore_snapshots/main.py#L10
 author: faloker
 date: 2020/02/12
 modified: 2020/09/01
@@ -16,13 +21,8 @@ detection:
         - eventName: RestoreDBInstanceFromDBSnapshot
     condition: all of them
 
-references:
-    - https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/rds__explore_snapshots/main.py#L10
+id: c3f265c7-ff03-4056-8ab2-d486227b4599
 tags:
     - attack.exfiltration
     - attack.t1020
-level: high
-status: experimental
-falsepositives:
-    - unknown
 

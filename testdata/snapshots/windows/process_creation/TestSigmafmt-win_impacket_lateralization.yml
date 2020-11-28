@@ -1,6 +1,17 @@
 title: Impacket Lateralization Detection
-id: 10c14723-61c7-4c75-92ca-9af245723ad2
 description: Detects wmiexec/dcomexec/atexec/smbexec from Impacket framework
+level: critical
+status: experimental
+falsepositives:
+    - pentesters
+references:
+    - https://github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py
+    - https://github.com/SecureAuthCorp/impacket/blob/master/examples/atexec.py
+    - https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbexec.py
+    - https://github.com/SecureAuthCorp/impacket/blob/master/examples/dcomexec.py
+author: Ecco
+date: 2019/09/03
+modified: 2020/09/01
 
 logsource:
     category: process_creation
@@ -40,14 +51,7 @@ detection:
             - 'cmd.exe /C *Windows\\Temp\\*&1'
     condition: (1 of selection_*)
 
-references:
-    - https://github.com/SecureAuthCorp/impacket/blob/master/examples/wmiexec.py
-    - https://github.com/SecureAuthCorp/impacket/blob/master/examples/atexec.py
-    - https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbexec.py
-    - https://github.com/SecureAuthCorp/impacket/blob/master/examples/dcomexec.py
-author: Ecco
-date: 2019/09/03
-modified: 2020/09/01
+id: 10c14723-61c7-4c75-92ca-9af245723ad2
 fields:
     - CommandLine
     - ParentCommandLine
@@ -58,8 +62,4 @@ tags:
     - attack.t1021.003
     - attack.t1047
     - attack.t1175 # an old one
-level: critical
-status: experimental
-falsepositives:
-    - pentesters
 

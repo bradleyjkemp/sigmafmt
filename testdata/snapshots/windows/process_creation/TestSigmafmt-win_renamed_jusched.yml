@@ -1,6 +1,13 @@
 title: Renamed jusched.exe
-id: edd8a48c-1b9f-4ba1-83aa-490338cd1ccb
 description: Detects renamed jusched.exe used by cobalt group
+level: high
+status: experimental
+falsepositives:
+    - penetration tests, red teaming
+references:
+    - https://www.bitdefender.com/files/News/CaseStudies/study/262/Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive.pdf
+author: Markus Neis, Swisscom
+date: 2019/06/04
 
 logsource:
     category: process_creation
@@ -15,18 +22,11 @@ detection:
             - '\jusched.exe'
     condition: (selection1 or selection2) and not filter
 
-references:
-    - https://www.bitdefender.com/files/News/CaseStudies/study/262/Bitdefender-WhitePaper-An-APT-Blueprint-Gaining-New-Visibility-into-Financial-Threats-interactive.pdf
+id: edd8a48c-1b9f-4ba1-83aa-490338cd1ccb
+modified: 2020/09/06
 tags:
     - attack.defense_evasion
     - attack.execution
     - attack.t1036 # an old one
     - attack.t1036.003
-author: Markus Neis, Swisscom
-date: 2019/06/04
-modified: 2020/09/06
-level: high
-status: experimental
-falsepositives:
-    - penetration tests, red teaming
 

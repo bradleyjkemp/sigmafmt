@@ -1,6 +1,9 @@
 title: Silence.EDA Detection
-id: 3ceb2083-a27f-449a-be33-14ec1b7cc973
 description: Detects Silence empireDNSagent
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
 author: Alina Stepchenkova, Group-IB, oscd.community
 date: 2019/11/01
 modified: 2020/09/01
@@ -27,6 +30,7 @@ detection:
             - '$Session["Driver"] -eq'
     condition: empire and dnscat
 
+id: 3ceb2083-a27f-449a-be33-14ec1b7cc973
 tags:
     - attack.command_and_control
     - attack.execution
@@ -39,8 +43,4 @@ tags:
     - attack.t1086 # an old one
     - attack.t1529
     - attack.t1572
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

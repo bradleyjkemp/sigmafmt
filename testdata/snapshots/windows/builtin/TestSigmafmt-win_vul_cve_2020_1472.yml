@@ -1,6 +1,13 @@
 title: Vulnerable Netlogon Secure Channel Connection Allowed
-id: a0cb7110-edf0-47a4-9177-541a4083128a
 description: Detects that a vulnerable Netlogon secure channel connection was allowed, which could be an indicator of CVE-2020-1472.
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://support.microsoft.com/en-us/help/4557222/how-to-manage-the-changes-in-netlogon-secure-channel-connections-assoc
+author: NVISO
+date: 2020/09/15
 
 logsource:
     product: windows
@@ -11,16 +18,9 @@ detection:
             - 5829
     condition: selection
 
-references:
-    - https://support.microsoft.com/en-us/help/4557222/how-to-manage-the-changes-in-netlogon-secure-channel-connections-assoc
-author: NVISO
-date: 2020/09/15
-tags:
-    - attack.privilege_escalation
-level: high
-status: experimental
+id: a0cb7110-edf0-47a4-9177-541a4083128a
 fields:
     - SAMAccountName
-falsepositives:
-    - Unknown
+tags:
+    - attack.privilege_escalation
 

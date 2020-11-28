@@ -1,8 +1,13 @@
 title: Hurricane Panda Activity
-id: 0eb2107b-a596-422e-b123-b389d5594ed7
+description: Detects Hurricane Panda Activity
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://www.crowdstrike.com/blog/crowdstrike-discovers-use-64-bit-zero-day-privilege-escalation-exploit-cve-2014-4113-hurricane-panda/
 author: Florian Roth
 date: 2019/03/04
-description: Detects Hurricane Panda Activity
 
 logsource:
     category: process_creation
@@ -14,14 +19,9 @@ detection:
             - '*\Win64.exe*'
     condition: selection
 
-references:
-    - https://www.crowdstrike.com/blog/crowdstrike-discovers-use-64-bit-zero-day-privilege-escalation-exploit-cve-2014-4113-hurricane-panda/
+id: 0eb2107b-a596-422e-b123-b389d5594ed7
 tags:
     - attack.g0009
     - attack.privilege_escalation
     - attack.t1068
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

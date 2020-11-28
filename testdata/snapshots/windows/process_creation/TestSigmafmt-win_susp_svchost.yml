@@ -1,6 +1,11 @@
 title: Suspicious Svchost Process
-id: 01d2e2a1-5f09-44f7-9fc1-24faa7479b6d
 description: Detects a suspicious svchost process start
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+author: Florian Roth
+date: 2017/08/15
 
 logsource:
     category: process_creation
@@ -19,18 +24,13 @@ detection:
         ParentImage: null
     condition: selection and not filter and not filter_null
 
+id: 01d2e2a1-5f09-44f7-9fc1-24faa7479b6d
+modified: 2020/08/28
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.defense_evasion
     - attack.t1036 # an old one
     - attack.t1036.005
-author: Florian Roth
-date: 2017/08/15
-modified: 2020/08/28
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Unknown
 

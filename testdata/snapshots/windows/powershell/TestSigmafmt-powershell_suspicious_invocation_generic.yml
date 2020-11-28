@@ -1,6 +1,12 @@
 title: Suspicious PowerShell Invocations - Generic
-id: 3d304fda-78aa-43ed-975c-d740798a49c1
 description: Detects suspicious PowerShell invocation command parameters
+level: high
+status: experimental
+falsepositives:
+    - Penetration tests
+    - Very special / sneaky PowerShell scripts
+author: Florian Roth (rule)
+date: 2017/03/12
 
 logsource:
     product: windows
@@ -18,15 +24,9 @@ detection:
         - ' -noninteractive '
     condition: all of them
 
+id: 3d304fda-78aa-43ed-975c-d740798a49c1
 tags:
     - attack.execution
     - attack.t1059.001
     - attack.t1086 #an old one
-author: Florian Roth (rule)
-date: 2017/03/12
-level: high
-status: experimental
-falsepositives:
-    - Penetration tests
-    - Very special / sneaky PowerShell scripts
 

@@ -1,6 +1,10 @@
 title: Account Tampering - Suspicious Failed Logon Reasons
-id: 9eb99343-d336-4020-a3cd-67f3819e68ee
 description: This method uses uncommon error codes on failed logons to determine suspicious activity and tampering with accounts that have been disabled or somehow restricted.
+level: high
+falsepositives:
+    - User using a disabled account
+references:
+    - https://twitter.com/SBousseaden/status/1101431884540710913
 author: Florian Roth
 date: 2017/02/19
 modified: 2020/08/23
@@ -22,15 +26,11 @@ detection:
             - '0xC000015B' # The user has not been granted the requested logon type (aka logon right) at this machine
     condition: selection
 
-references:
-    - https://twitter.com/SBousseaden/status/1101431884540710913
+id: 9eb99343-d336-4020-a3cd-67f3819e68ee
 tags:
     - attack.defense_evasion
     - attack.initial_access
     - attack.persistence
     - attack.privilege_escalation
     - attack.t1078
-level: high
-falsepositives:
-    - User using a disabled account
 

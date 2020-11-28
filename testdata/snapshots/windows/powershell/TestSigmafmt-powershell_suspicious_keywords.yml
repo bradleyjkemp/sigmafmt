@@ -1,8 +1,15 @@
 title: Suspicious PowerShell Keywords
-id: 1f49f2ab-26bc-48b3-96cc-dcffbc93eadf
 description: Detects keywords that could indicate the use of some PowerShell exploitation framework
-date: 2019/02/11
+level: high
+status: experimental
+falsepositives:
+    - Penetration tests
+references:
+    - https://posts.specterops.io/entering-a-covenant-net-command-and-control-e11038bcf462
+    - https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-ReflectivePEInjection.ps1
+    - https://github.com/hlldz/Invoke-Phant0m/blob/master/Invoke-Phant0m.ps1
 author: Florian Roth, Perez Diego (@darkquassar)
+date: 2019/02/11
 
 logsource:
     product: windows
@@ -20,16 +27,9 @@ detection:
             - "SuspendThread"
     condition: keywords
 
-references:
-    - https://posts.specterops.io/entering-a-covenant-net-command-and-control-e11038bcf462
-    - https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-ReflectivePEInjection.ps1
-    - https://github.com/hlldz/Invoke-Phant0m/blob/master/Invoke-Phant0m.ps1
+id: 1f49f2ab-26bc-48b3-96cc-dcffbc93eadf
 tags:
     - attack.execution
     - attack.t1059.001
     - attack.t1086 #an old one
-level: high
-status: experimental
-falsepositives:
-    - Penetration tests
 

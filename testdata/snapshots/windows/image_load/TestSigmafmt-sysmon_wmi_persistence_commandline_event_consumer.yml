@@ -1,6 +1,13 @@
 title: WMI Persistence - Command Line Event Consumer
-id: 05936ce2-ee05-4dae-9d03-9a391cf2d2c6
 description: Detects WMI command line event consumers
+level: high
+status: experimental
+falsepositives:
+    - Unknown (data set is too small; further testing needed)
+references:
+    - https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/
+author: Thomas Patzke
+date: 2018/03/07
 
 logsource:
     category: image_load
@@ -11,17 +18,10 @@ detection:
         ImageLoaded|endswith: '\wbemcons.dll'
     condition: selection
 
-references:
-    - https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/
-author: Thomas Patzke
-date: 2018/03/07
+id: 05936ce2-ee05-4dae-9d03-9a391cf2d2c6
 modified: 2020/08/23
 tags:
     - attack.persistence
     - attack.t1084 # an old one
     - attack.t1546.003
-level: high
-status: experimental
-falsepositives:
-    - Unknown (data set is too small; further testing needed)
 

@@ -1,11 +1,12 @@
 title: Webshell Detection With Command Line Keywords
-id: bed2a484-9348-4143-8a8a-b801c979301c
 description: Detects certain command line parameters often used during reconnaissance activity via web shells
+level: high
+falsepositives:
+    - unknown
 author: Florian Roth
 reference:
     - https://www.fireeye.com/blog/threat-research/2013/08/breaking-down-the-china-chopper-web-shell-part-ii.html
 date: 2017/01/01
-modified: 2019/10/26
 
 logsource:
     category: process_creation
@@ -28,15 +29,14 @@ detection:
             - '*cd /d*' # https://www.computerhope.com/cdhlp.htm
     condition: selection
 
+id: bed2a484-9348-4143-8a8a-b801c979301c
+modified: 2019/10/26
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.persistence
     - attack.privilege_escalation # an old one
     - attack.t1100 # an old one
     - attack.t1505.003
-fields:
-    - CommandLine
-    - ParentCommandLine
-level: high
-falsepositives:
-    - unknown
 

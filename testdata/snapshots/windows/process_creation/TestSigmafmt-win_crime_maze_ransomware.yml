@@ -1,6 +1,15 @@
 title: Maze Ransomware
-id: 29fd07fc-9cfd-4331-b7fd-cc18dfa21052
 description: Detects specific process characteristics of Maze ransomware word document droppers
+level: critical
+status: experimental
+falsepositives:
+    - Unlikely
+references:
+    - https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html
+    - https://app.any.run/tasks/51e7185c-52d7-4efb-ac0d-e86340053473/
+    - https://app.any.run/tasks/65a79440-373a-4725-8d74-77db9f2abda4/
+author: Florian Roth
+date: 2020/05/08
 
 logsource:
     category: process_creation
@@ -23,13 +32,12 @@ detection:
         CommandLine|contains: '\..\..\system32'
     condition: 1 of them
 
-references:
-    - https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html
-    - https://app.any.run/tasks/51e7185c-52d7-4efb-ac0d-e86340053473/
-    - https://app.any.run/tasks/65a79440-373a-4725-8d74-77db9f2abda4/
-author: Florian Roth
-date: 2020/05/08
+id: 29fd07fc-9cfd-4331-b7fd-cc18dfa21052
 modified: 2020/08/29
+fields:
+    - ComputerName
+    - User
+    - Image
 tags:
     - attack.execution
     - attack.impact
@@ -37,12 +45,4 @@ tags:
     - attack.t1204 # an old one
     - attack.t1204.002
     - attack.t1490
-level: critical
-status: experimental
-fields:
-    - ComputerName
-    - User
-    - Image
-falsepositives:
-    - Unlikely
 

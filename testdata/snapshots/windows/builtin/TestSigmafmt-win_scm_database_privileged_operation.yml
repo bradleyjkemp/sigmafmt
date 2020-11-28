@@ -1,8 +1,13 @@
 title: SCM Database Privileged Operation
-id: dae8171c-5ec6-4396-b210-8466585b53e9
 description: Detects non-system users performing privileged operation os the SCM database
-date: 2019/08/15
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1000_local_admin_check/local_admin_remote_check_openscmanager.md
 author: Roberto Rodriguez @Cyb3rWard0g
+date: 2019/08/15
 
 logsource:
     product: windows
@@ -16,10 +21,5 @@ detection:
         SubjectLogonId: "0x3e4"
     condition: selection
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1000_local_admin_check/local_admin_remote_check_openscmanager.md
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
+id: dae8171c-5ec6-4396-b210-8466585b53e9
 

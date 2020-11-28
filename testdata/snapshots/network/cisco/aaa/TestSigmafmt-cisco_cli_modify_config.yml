@@ -1,6 +1,9 @@
 title: Cisco Modify Configuration
-id: 671ffc77-50a7-464f-9e3d-9ea2b493b26b
 description: Modifications to a config that will serve an adversary's impacts or persistence
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate administrators may run these commands
 author: Austin Clark
 date: 2019/08/12
 modified: 2020/09/02
@@ -23,6 +26,7 @@ detection:
         - 'archive maximum'
     condition: keywords
 
+id: 671ffc77-50a7-464f-9e3d-9ea2b493b26b
 tags:
     - attack.impact
     - attack.persistence
@@ -32,8 +36,4 @@ tags:
     - attack.t1493 # an old one
     - attack.t1505
     - attack.t1565.002
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate administrators may run these commands
 

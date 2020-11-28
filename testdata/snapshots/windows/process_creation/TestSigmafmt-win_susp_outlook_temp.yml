@@ -1,6 +1,9 @@
 title: Execution in Outlook Temp Folder
-id: a018fdc3-46a3-44e5-9afb-2cd4af1d4b39
 description: Detects a suspicious program execution in Outlook temp folder
+level: high
+status: experimental
+falsepositives:
+    - Unknown
 author: Florian Roth
 date: 2019/10/01
 
@@ -12,15 +15,12 @@ detection:
         Image: '*\Temporary Internet Files\Content.Outlook\\*'
     condition: selection
 
+id: a018fdc3-46a3-44e5-9afb-2cd4af1d4b39
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.initial_access
     - attack.t1193 #an old one
     - attack.t1566.001
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Unknown
 

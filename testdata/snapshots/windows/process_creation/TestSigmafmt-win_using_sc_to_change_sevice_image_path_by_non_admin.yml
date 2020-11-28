@@ -1,6 +1,14 @@
 title: Possible Privilege Escalation via Weak Service Permissions
-id: d937b75f-a665-4480-88a5-2f20e9f9b22a
 description: Detection of sc.exe utility spawning by user with Medium integrity level to change service ImagePath or FailureCommand
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
+    - https://pentestlab.blog/2017/03/30/weak-service-permissions/
+author: Teymur Kheirkhabarov
+date: 2019/10/26
 
 logsource:
     category: process_creation
@@ -19,19 +27,11 @@ detection:
             - 'command'
     condition: scbynonadmin and (binpath or failurecommand)
 
-references:
-    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
-    - https://pentestlab.blog/2017/03/30/weak-service-permissions/
+id: d937b75f-a665-4480-88a5-2f20e9f9b22a
+modified: 2020/08/29
 tags:
     - attack.defense_evasion
     - attack.persistence
     - attack.privilege_escalation
     - attack.t1574.011
-author: Teymur Kheirkhabarov
-date: 2019/10/26
-modified: 2020/08/29
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

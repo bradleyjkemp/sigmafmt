@@ -1,6 +1,9 @@
 title: External Disk Drive or USB Storage Device
-id: f69a87ea-955e-4fb4-adb2-bb9fd6685632
 description: Detects external diskdrives or plugged in USB devices
+level: low
+status: experimental
+falsepositives:
+    - Legitimate administrative activity
 author: Keith Wright
 date: 2019/11/20
 
@@ -16,13 +19,10 @@ detection:
         DeviceDescription: 'USB Mass Storage Device'
     condition: selection or selection2
 
+id: f69a87ea-955e-4fb4-adb2-bb9fd6685632
 tags:
     - attack.initial_access
     - attack.lateral_movement
     - attack.t1091
     - attack.t1200
-level: low
-status: experimental
-falsepositives:
-    - Legitimate administrative activity
 

@@ -1,7 +1,12 @@
 title: Rubeus Hack Tool
-id: 7ec2c172-dceb-4c10-92c9-87c1881b7e18
 description: Detects command line parameters used by Rubeus hack tool
+level: critical
+falsepositives:
+    - unlikely
+references:
+    - https://www.harmj0y.net/blog/redteaming/from-kekeo-to-rubeus/
 author: Florian Roth
+date: 2018/12/19
 
 logsource:
     category: process_creation
@@ -20,9 +25,7 @@ detection:
             - '* harvest /interval:*'
     condition: selection
 
-references:
-    - https://www.harmj0y.net/blog/redteaming/from-kekeo-to-rubeus/
-date: 2018/12/19
+id: 7ec2c172-dceb-4c10-92c9-87c1881b7e18
 tags:
     - attack.credential_access
     - attack.lateral_movement
@@ -31,7 +34,4 @@ tags:
     - attack.t1550.003
     - attack.t1558 # an old one
     - attack.t1558.003
-level: critical
-falsepositives:
-    - unlikely
 

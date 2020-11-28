@@ -1,6 +1,11 @@
 title: Office Security Settings Changed
-id: a166f74e-bf44-409d-b9ba-ea4b2dd8b3cd
 description: Detects registry changes to Office macro settings
+level: high
+status: experimental
+falsepositives:
+    - Valid Macros and/or internal documents
+references:
+    - Internal Research
 author: Trent Liffick (@tliffick)
 date: 2020/05/22
 modified: 2020/07/01
@@ -20,13 +25,8 @@ detection:
             - CreateValue
     condition: sec_settings
 
-references:
-    - Internal Research
+id: a166f74e-bf44-409d-b9ba-ea4b2dd8b3cd
 tags:
     - attack.defense_evasion
     - attack.t1112
-level: high
-status: experimental
-falsepositives:
-    - Valid Macros and/or internal documents
 

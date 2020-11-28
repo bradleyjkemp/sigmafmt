@@ -1,6 +1,14 @@
 title: UAC Bypass via Sdclt
-id: 5b872a46-3b90-45c1-8419-f675db8053aa
 description: Detects changes to HKCU:\Software\Classes\exefile\shell\runas\command\isolatedCommand
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://enigma0x3.net/2017/03/17/fileless-uac-bypass-using-sdclt-exe/
+author: Omer Yampel
+date: 2017/03/17
+modified: 2020/09/06
 
 logsource:
     category: registry_event
@@ -11,19 +19,11 @@ detection:
         TargetObject: 'HKU\\*_Classes\exefile\shell\runas\command\isolatedCommand'
     condition: selection
 
-references:
-    - https://enigma0x3.net/2017/03/17/fileless-uac-bypass-using-sdclt-exe/
-author: Omer Yampel
-date: 2017/03/17
-modified: 2020/09/06
+id: 5b872a46-3b90-45c1-8419-f675db8053aa
 tags:
     - attack.defense_evasion
     - attack.privilege_escalation
     - attack.t1088 # an old one
     - attack.t1548.002
     - car.2019-04-001
-level: high
-status: experimental
-falsepositives:
-    - unknown
 

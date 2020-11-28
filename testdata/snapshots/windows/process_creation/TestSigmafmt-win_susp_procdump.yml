@@ -1,6 +1,14 @@
 title: Suspicious Use of Procdump
-id: 5afee48e-67dd-4e03-a783-f74259dcf998
 description: Detects suspicious uses of the SysInternals Procdump utility by using a special command line parameter in combination with the lsass.exe process. This way we're also able to catch cases in which the attacker has renamed the procdump executable.
+level: high
+status: experimental
+falsepositives:
+    - Unlikely, because no one should dump an lsass process memory
+    - Another tool that uses the command line switches of Procdump
+references:
+    - Internal Research
+author: Florian Roth
+date: 2018/10/30
 
 logsource:
     category: process_creation
@@ -17,10 +25,7 @@ detection:
             - '* -ma ls*'
     condition: ( selection1 and selection2 ) or selection3
 
-references:
-    - Internal Research
-author: Florian Roth
-date: 2018/10/30
+id: 5afee48e-67dd-4e03-a783-f74259dcf998
 modified: 2019/10/14
 tags:
     - attack.credential_access
@@ -29,9 +34,4 @@ tags:
     - attack.t1003.001
     - attack.t1036
     - car.2013-05-009
-level: high
-status: experimental
-falsepositives:
-    - Unlikely, because no one should dump an lsass process memory
-    - Another tool that uses the command line switches of Procdump
 

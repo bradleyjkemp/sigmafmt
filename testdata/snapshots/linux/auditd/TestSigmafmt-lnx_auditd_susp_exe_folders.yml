@@ -1,6 +1,12 @@
 title: Program Executions in Suspicious Folders
-id: a39d7fa7-3fbd-4dc2-97e1-d87f546b1bbc
 description: Detects program executions in suspicious non-program folders related to malware or hacking activity
+level: medium
+status: experimental
+falsepositives:
+    - Admin activity (especially in /tmp folders)
+    - Crazy web applications
+references:
+    - Internal Research
 author: Florian Roth
 date: 2018/01/23
 
@@ -32,11 +38,5 @@ detection:
             - '/var/named/*'
     condition: selection
 
-references:
-    - Internal Research
-level: medium
-status: experimental
-falsepositives:
-    - Admin activity (especially in /tmp folders)
-    - Crazy web applications
+id: a39d7fa7-3fbd-4dc2-97e1-d87f546b1bbc
 

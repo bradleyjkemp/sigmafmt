@@ -1,6 +1,14 @@
 title: Windows Shell Spawning Suspicious Program
-id: 3a6586ad-127a-4d3b-a677-1e6eacdf8fde
 description: Detects a suspicious child process of a Windows shell
+level: high
+status: experimental
+falsepositives:
+    - Administrative scripts
+    - Microsoft SCCM
+references:
+    - https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html
+author: Florian Roth
+date: 2018/04/06
 
 logsource:
     category: process_creation
@@ -25,11 +33,11 @@ detection:
         CurrentDirectory: '*\ccmcache\\*'
     condition: selection and not falsepositives
 
-references:
-    - https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html
-author: Florian Roth
-date: 2018/04/06
+id: 3a6586ad-127a-4d3b-a677-1e6eacdf8fde
 modified: 2020/09/06
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -37,12 +45,4 @@ tags:
     - attack.t1059.005
     - attack.t1064 # an old one
     - attack.t1218
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Administrative scripts
-    - Microsoft SCCM
 

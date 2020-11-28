@@ -1,6 +1,13 @@
 title: Malicious PowerShell Keywords
-id: f62176f3-8128-4faa-bf6c-83261322e5eb
 description: Detects keywords from well-known PowerShell exploitation frameworks
+level: high
+status: experimental
+falsepositives:
+    - Penetration tests
+references:
+    - https://adsecurity.org/?p=2921
+author: Sean Metcalf (source), Florian Roth (rule)
+date: 2017/03/05
 
 logsource:
     product: windows
@@ -31,16 +38,9 @@ detection:
             - "*Mimikatz*"
     condition: keywords
 
-references:
-    - https://adsecurity.org/?p=2921
+id: f62176f3-8128-4faa-bf6c-83261322e5eb
 tags:
     - attack.execution
     - attack.t1059.001
     - attack.t1086 #an old one
-author: Sean Metcalf (source), Florian Roth (rule)
-date: 2017/03/05
-level: high
-status: experimental
-falsepositives:
-    - Penetration tests
 

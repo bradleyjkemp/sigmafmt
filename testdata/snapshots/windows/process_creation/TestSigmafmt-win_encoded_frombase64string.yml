@@ -1,6 +1,9 @@
 title: Encoded FromBase64String
-id: fdb62a13-9a81-4e5c-a38f-ea93a16f6d7c
 description: Detects a base64 encoded FromBase64String keyword in a process command line
+level: critical
+status: experimental
+falsepositives:
+    - unknown
 author: Florian Roth
 date: 2019/08/24
 
@@ -12,17 +15,14 @@ detection:
         CommandLine|base64offset|contains: '::FromBase64String'
     condition: selection
 
+id: fdb62a13-9a81-4e5c-a38f-ea93a16f6d7c
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.defense_evasion
     - attack.execution
     - attack.t1059.001
     - attack.t1086 # an old one
     - attack.t1140
-level: critical
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - unknown
 

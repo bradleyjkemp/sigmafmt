@@ -1,6 +1,10 @@
 title: First Time Seen Remote Named Pipe - Zeek
-id: 021310d9-30a6-480a-84b7-eaa69aeb92bb
 description: This detection excludes known namped pipes accessible remotely and notify on newly observed ones, may help to detect lateral movement and remote exec using named pipes
+level: high
+falsepositives:
+    - update the excluded named pipe to filter out any newly observed legit named pipe
+references:
+    - https://github.com/neo23x0/sigma/blob/d42e87edd741dd646db946f30964f331f92f50e6/rules/windows/builtin/win_lm_namedpipe.yml
 author: 'Samir Bousseaden, @neu5ron'
 date: 2020/04/02
 
@@ -32,13 +36,9 @@ detection:
             - 'MsFteWds'
     condition: selection1 and not selection2
 
-references:
-    - https://github.com/neo23x0/sigma/blob/d42e87edd741dd646db946f30964f331f92f50e6/rules/windows/builtin/win_lm_namedpipe.yml
+id: 021310d9-30a6-480a-84b7-eaa69aeb92bb
 tags:
     - attack.lateral_movement
     - attack.t1021.002
     - attack.t1077 # an old one
-level: high
-falsepositives:
-    - update the excluded named pipe to filter out any newly observed legit named pipe
 

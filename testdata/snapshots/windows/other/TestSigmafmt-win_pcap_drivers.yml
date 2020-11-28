@@ -1,6 +1,11 @@
 title: Windows Pcap Drivers
-id: 7b687634-ab20-11ea-bb37-0242ac130002
 description: Detects Windows Pcap driver installation based on a list of associated .sys files.
+level: medium
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://ragged-lab.blogspot.com/2020/06/capturing-pcap-driver-installations.html#more
 author: Cian Heasley
 date: 2020/06/10
 
@@ -22,14 +27,7 @@ detection:
             - '*pktmon*'
     condition: selection
 
-references:
-    - https://ragged-lab.blogspot.com/2020/06/capturing-pcap-driver-installations.html#more
-tags:
-    - attack.credential_access
-    - attack.discovery
-    - attack.t1040
-level: medium
-status: experimental
+id: 7b687634-ab20-11ea-bb37-0242ac130002
 fields:
     - EventID
     - ServiceFileName
@@ -37,6 +35,8 @@ fields:
     - Computer_Name
     - Originating_Computer
     - ServiceName
-falsepositives:
-    - unknown
+tags:
+    - attack.credential_access
+    - attack.discovery
+    - attack.t1040
 

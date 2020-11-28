@@ -1,6 +1,11 @@
 title: Taskmgr as Parent
-id: 3d7679bd-0c00-440c-97b0-3f204273e6c7
 description: Detects the creation of a process from Windows task manager
+level: low
+status: experimental
+falsepositives:
+    - Administrative activity
+author: Florian Roth
+date: 2018/03/13
 
 logsource:
     category: process_creation
@@ -15,17 +20,12 @@ detection:
             - '*\taskmgr.exe'
     condition: selection and not filter
 
-tags:
-    - attack.defense_evasion
-    - attack.t1036
-author: Florian Roth
-date: 2018/03/13
-level: low
-status: experimental
+id: 3d7679bd-0c00-440c-97b0-3f204273e6c7
 fields:
     - Image
     - CommandLine
     - ParentCommandLine
-falsepositives:
-    - Administrative activity
+tags:
+    - attack.defense_evasion
+    - attack.t1036
 

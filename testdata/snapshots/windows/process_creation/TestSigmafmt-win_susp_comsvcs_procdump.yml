@@ -1,6 +1,15 @@
 title: Process Dump via Comsvcs DLL
-id: 09e6d5c0-05b8-4ff8-9eeb-043046ec774c
 description: Detects process memory dump via comsvcs.dll and rundll32
+level: medium
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://modexp.wordpress.com/2019/08/30/minidumpwritedump-via-com-services-dll/
+    - https://twitter.com/SBousseaden/status/1167417096374050817
+author: Modexp (idea)
+date: 2019/09/02
+modified: 2020/09/05
 
 logsource:
     category: process_creation
@@ -16,12 +25,7 @@ detection:
             - '*comsvcs*MiniDumpW*full*'
     condition: (rundll_image or rundll_ofn) and selection
 
-references:
-    - https://modexp.wordpress.com/2019/08/30/minidumpwritedump-via-com-services-dll/
-    - https://twitter.com/SBousseaden/status/1167417096374050817
-author: Modexp (idea)
-date: 2019/09/02
-modified: 2020/09/05
+id: 09e6d5c0-05b8-4ff8-9eeb-043046ec774c
 fields:
     - CommandLine
     - ParentCommandLine
@@ -31,8 +35,4 @@ tags:
     - attack.t1003 # an old one
     - attack.t1003.001
     - attack.t1218.011
-level: medium
-status: experimental
-falsepositives:
-    - unknown
 

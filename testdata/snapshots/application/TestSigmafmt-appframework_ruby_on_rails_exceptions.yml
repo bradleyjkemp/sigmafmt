@@ -1,6 +1,15 @@
 title: Ruby on Rails Framework Exceptions
-id: 0d2c3d4c-4b48-4ac3-8f23-ea845746bb1a
 description: Detects suspicious Ruby on Rails exceptions that could indicate exploitation attempts
+level: medium
+status: stable
+falsepositives:
+    - Application bugs
+    - Penetration testing
+references:
+    - http://edgeguides.rubyonrails.org/security.html
+    - http://guides.rubyonrails.org/action_controller_overview.html
+    - https://stackoverflow.com/questions/25892194/does-rails-come-with-a-not-authorized-exception
+    - https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/exception_wrapper.rb
 author: Thomas Patzke
 date: 2017/08/06
 modified: 2020/09/01
@@ -17,17 +26,8 @@ detection:
         - ActionController::ParameterMissing
     condition: keywords
 
-references:
-    - http://edgeguides.rubyonrails.org/security.html
-    - http://guides.rubyonrails.org/action_controller_overview.html
-    - https://stackoverflow.com/questions/25892194/does-rails-come-with-a-not-authorized-exception
-    - https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/exception_wrapper.rb
+id: 0d2c3d4c-4b48-4ac3-8f23-ea845746bb1a
 tags:
     - attack.initial_access
     - attack.t1190
-level: medium
-status: stable
-falsepositives:
-    - Application bugs
-    - Penetration testing
 

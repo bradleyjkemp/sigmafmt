@@ -1,6 +1,10 @@
 title: StoneDrill Service Install
-id: 9e987c6c-4c1e-40d8-bd85-dd26fba8fdd6
 description: This method detects a service install of the malicious Microsoft Network Realtime Inspection Service service described in StoneDrill report by Kaspersky
+level: high
+falsepositives:
+    - Unlikely
+references:
+    - https://securelist.com/blog/research/77725/from-shamoon-to-stonedrill/
 author: Florian Roth
 date: 2017/03/07
 
@@ -14,14 +18,10 @@ detection:
         ServiceFileName: '* LocalService'
     condition: selection
 
-references:
-    - https://securelist.com/blog/research/77725/from-shamoon-to-stonedrill/
+id: 9e987c6c-4c1e-40d8-bd85-dd26fba8fdd6
 tags:
     - attack.g0064
     - attack.persistence
     - attack.t1050 # an old one
     - attack.t1543.003
-level: high
-falsepositives:
-    - Unlikely
 

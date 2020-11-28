@@ -1,6 +1,11 @@
 title: Flash Player Update from Suspicious Location
-id: 4922a5dd-6743-4fc2-8e81-144374280997
 description: Detects a flashplayer update from an unofficial location
+level: high
+status: experimental
+falsepositives:
+    - Unknown flash download locations
+references:
+    - https://gist.github.com/roycewilliams/a723aaf8a6ac3ba4f817847610935cfb
 author: Florian Roth
 date: 2017/10/25
 
@@ -15,8 +20,7 @@ detection:
         c-uri-stem: '*.adobe.com/*'
     condition: selection and not filter
 
-references:
-    - https://gist.github.com/roycewilliams/a723aaf8a6ac3ba4f817847610935cfb
+id: 4922a5dd-6743-4fc2-8e81-144374280997
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -26,8 +30,4 @@ tags:
     - attack.t1189
     - attack.t1204 # an old one
     - attack.t1204.002
-level: high
-status: experimental
-falsepositives:
-    - Unknown flash download locations
 

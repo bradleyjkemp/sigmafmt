@@ -1,7 +1,14 @@
 title: Suspicious Scripting in a WMI Consumer
-id: fe21810c-2a8c-478f-8dd3-5a287fb2a0e0
 description: Detects suspicious scripting in WMI Event Consumers
+level: high
+status: experimental
+falsepositives:
+    - Administrative scripts
+references:
+    - https://in.security/an-intro-into-abusing-and-identifying-wmi-event-subscriptions-for-persistence/
+    - https://github.com/Neo23x0/signature-base/blob/master/yara/gen_susp_lnk_files.yar#L19
 author: Florian Roth
+date: 2019/04/15
 
 logsource:
     product: windows
@@ -22,19 +29,12 @@ detection:
             - '* -enc *'
     condition: selection
 
-references:
-    - https://in.security/an-intro-into-abusing-and-identifying-wmi-event-subscriptions-for-persistence/
-    - https://github.com/Neo23x0/signature-base/blob/master/yara/gen_susp_lnk_files.yar#L19
-date: 2019/04/15
+id: fe21810c-2a8c-478f-8dd3-5a287fb2a0e0
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.execution
     - attack.t1059.005
     - attack.t1086 # an old one
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Administrative scripts
 

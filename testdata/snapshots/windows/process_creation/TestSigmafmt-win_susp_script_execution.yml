@@ -1,9 +1,11 @@
 title: WSF/JSE/JS/VBA/VBE File Execution
-id: 1e33157c-53b1-41ad-bbcc-780b80b58288
 description: Detects suspicious file execution by wscript and cscript
+level: medium
+status: experimental
+falsepositives:
+    - Will need to be tuned. I recommend adding the user profile path in CommandLine if it is getting too noisy.
 author: Michael Haag
 date: 2019/01/16
-modified: 2020/08/28
 
 logsource:
     category: process_creation
@@ -20,16 +22,14 @@ detection:
             - '.vba'
     condition: selection
 
+id: 1e33157c-53b1-41ad-bbcc-780b80b58288
+modified: 2020/08/28
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.execution
     - attack.t1059.005
     - attack.t1059.007
     - attack.t1064 # an old one     
-level: medium
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Will need to be tuned. I recommend adding the user profile path in CommandLine if it is getting too noisy.
 

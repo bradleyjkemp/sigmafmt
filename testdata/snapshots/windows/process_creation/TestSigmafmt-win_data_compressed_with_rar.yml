@@ -1,6 +1,12 @@
 title: Data Compressed - rar.exe
-id: 6f3e2987-db24-4c78-a860-b4f4095a7095
 description: An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration in order to make it portable and minimize the amount of data sent over the network
+level: low
+status: experimental
+falsepositives:
+    - highly likely if rar is default archiver in the monitored environment
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1002/T1002.yaml
+    - https://eqllib.readthedocs.io/en/latest/analytics/1ec33c93-3d0b-4a28-8014-dbdaae5c60ae.html
 author: Timur Zinniatullin, E.M. Anhaus, oscd.community
 date: 2019/10/21
 modified: 2020/08/29
@@ -13,17 +19,6 @@ detection:
         Image|endswith: '\rar.exe'
         CommandLine|contains: ' a '
     condition: selection
-
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1002/T1002.yaml
-    - https://eqllib.readthedocs.io/en/latest/analytics/1ec33c93-3d0b-4a28-8014-dbdaae5c60ae.html
-tags:
-    - attack.collection
-    - attack.exfiltration # an old one
-    - attack.t1002 # an old one
-    - attack.t1560.001
-level: low
-status: experimental
 fields:
     - Image
     - CommandLine
@@ -32,6 +27,11 @@ fields:
     - Hashes
     - ParentProcessGuid
     - ParentCommandLine
-falsepositives:
-    - highly likely if rar is default archiver in the monitored environment
+
+id: 6f3e2987-db24-4c78-a860-b4f4095a7095
+tags:
+    - attack.collection
+    - attack.exfiltration # an old one
+    - attack.t1002 # an old one
+    - attack.t1560.001
 

@@ -1,6 +1,10 @@
 title: Rare Service Installs
-id: 66bfef30-22a5-4fcd-ad44-8d81e60922ae
 description: Detects rare service installs that only appear a few times per time frame and could reveal password dumpers, backdoor installs or other types of malicious services
+level: low
+status: experimental
+falsepositives:
+    - Software installation
+    - Software updates
 author: Florian Roth
 date: 2017/03/08
 
@@ -13,15 +17,11 @@ detection:
     condition: selection | count() by ServiceFileName < 5
     timeframe: 7d
 
+id: 66bfef30-22a5-4fcd-ad44-8d81e60922ae
 tags:
     - attack.persistence
     - attack.privilege_escalation
     - attack.t1050 # an old one
     - attack.t1543.003
     - car.2013-09-005
-level: low
-status: experimental
-falsepositives:
-    - Software installation
-    - Software updates
 

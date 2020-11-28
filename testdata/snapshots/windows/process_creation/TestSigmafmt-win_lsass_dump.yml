@@ -1,6 +1,13 @@
 title: LSASS Memory Dumping
-id: ffa6861c-4461-4f59-8a41-578c39f3f23e
 description: Detect creation of dump files containing the memory space of lsass.exe, which contains sensitive credentials. Identifies usage of Sysinternals procdump.exe to export the memory space of lsass.exe which contains sensitive credentials.
+level: high
+status: experimental
+falsepositives:
+    - Unlikely
+references:
+    - https://eqllib.readthedocs.io/en/latest/analytics/1e1ef6be-12fc-11e9-8d76-4d6bb837cda4.html
+    - https://eqllib.readthedocs.io/en/latest/analytics/210b4ea4-12fc-11e9-8d76-4d6bb837cda4.html
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.yaml
 author: E.M. Anhaus (orignally from Atomic Blue Detections, Tony Lambert), oscd.community
 date: 2019/10/24
 modified: 2019/11/11
@@ -21,20 +28,13 @@ detection:
         CommandLine|contains: 'lsass'
     condition: selection1 and not selection2 or selection3
 
-references:
-    - https://eqllib.readthedocs.io/en/latest/analytics/1e1ef6be-12fc-11e9-8d76-4d6bb837cda4.html
-    - https://eqllib.readthedocs.io/en/latest/analytics/210b4ea4-12fc-11e9-8d76-4d6bb837cda4.html
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1003/T1003.yaml
-tags:
-    - attack.credential_access
-    - attack.t1003 # an old one
-    - attack.t1003.001
-level: high
-status: experimental
+id: ffa6861c-4461-4f59-8a41-578c39f3f23e
 fields:
     - ComputerName
     - User
     - CommandLine
-falsepositives:
-    - Unlikely
+tags:
+    - attack.credential_access
+    - attack.t1003 # an old one
+    - attack.t1003.001
 

@@ -1,6 +1,13 @@
 title: RDP Login from Localhost
-id: 51e33403-2a37-4d66-a574-1fda1782cc31
 description: RDP login with localhost source address may be a tunnelled login
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html
+author: Thomas Patzke
+date: 2019/01/28
 
 logsource:
     product: windows
@@ -14,18 +21,11 @@ detection:
             - "127.0.0.1"
     condition: selection
 
-references:
-    - https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html
-date: 2019/01/28
+id: 51e33403-2a37-4d66-a574-1fda1782cc31
 modified: 2019/01/29
 tags:
     - attack.lateral_movement
     - attack.t1021.001
     - attack.t1076 # an old one
     - car.2013-07-002
-author: Thomas Patzke
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

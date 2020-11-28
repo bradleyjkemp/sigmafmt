@@ -1,6 +1,12 @@
 title: Suspicious Esentutl Use
-id: 56a8189f-11b2-48c8-8ca7-c54b03c2fbf7
 description: Detects flags often used with the LOLBAS Esentutl for malicious activity. It could be used in rare cases by administrators to access locked files or during maintenance.
+level: high
+status: experimental
+falsepositives:
+    - Administrative activity
+references:
+    - https://lolbas-project.github.io/
+    - https://twitter.com/chadtilbury/status/1264226341408452610
 author: Florian Roth
 date: 2020/05/23
 
@@ -14,19 +20,13 @@ detection:
             - ' /y '
     condition: selection
 
-references:
-    - https://lolbas-project.github.io/
-    - https://twitter.com/chadtilbury/status/1264226341408452610
+id: 56a8189f-11b2-48c8-8ca7-c54b03c2fbf7
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.defense_evasion
     - attack.execution
     - attack.s0404
     - attack.t1218
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Administrative activity
 

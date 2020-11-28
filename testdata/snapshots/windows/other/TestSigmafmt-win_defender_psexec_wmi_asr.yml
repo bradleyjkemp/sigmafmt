@@ -1,6 +1,14 @@
 title: PSExec and WMI Process Creations Block
-id: 97b9ce1e-c5ab-11ea-87d0-0242ac130003
 description: Detects blocking of process creations originating from PSExec and WMI commands
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction?WT.mc_id=twitter#block-process-creations-originating-from-psexec-and-wmi-commands
+    - https://twitter.com/duff22b/status/1280166329660497920
+author: Bhabesh Raj
+date: 2020/07/14
 
 logsource:
     product: windows_defender
@@ -13,19 +21,11 @@ detection:
             - '\psexesvc.exe'
     condition: selection
 
-references:
-    - https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction?WT.mc_id=twitter#block-process-creations-originating-from-psexec-and-wmi-commands
-    - https://twitter.com/duff22b/status/1280166329660497920
-author: Bhabesh Raj
-date: 2020/07/14
+id: 97b9ce1e-c5ab-11ea-87d0-0242ac130003
 tags:
     - attack.execution
     - attack.lateral_movement
     - attack.t1035 # an old one
     - attack.t1047
     - attack.t1569.002
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

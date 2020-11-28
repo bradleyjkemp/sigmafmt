@@ -1,6 +1,14 @@
 title: Ke3chang Registry Key Modifications
-id: 7b544661-69fc-419f-9a59-82ccc328f205
 description: Detects Registry modifcations performaed by Ke3chang malware in campaigns running in 2019 and 2020
+level: critical
+status: experimental
+falsepositives:
+    - Will need to be looked for combinations of those processes
+references:
+    - https://www.verfassungsschutz.de/embed/broschuere-2020-06-bfv-cyber-brief-2020-01.pdf
+    - https://unit42.paloaltonetworks.com/operation-ke3chang-resurfaces-with-new-tidepool-malware/
+author: Markus Neis, Swisscom
+date: 2020/06/18
 
 logsource:
     category: process_creation
@@ -18,18 +26,10 @@ detection:
             - '-Property DWORD -name IEHarden -value 0 -Force'
     condition: selection1
 
-references:
-    - https://www.verfassungsschutz.de/embed/broschuere-2020-06-bfv-cyber-brief-2020-01.pdf
-    - https://unit42.paloaltonetworks.com/operation-ke3chang-resurfaces-with-new-tidepool-malware/
+id: 7b544661-69fc-419f-9a59-82ccc328f205
 tags:
     - attack.defense_evasion
     - attack.g0004
     - attack.t1089 # an old one
     - attack.t1562.001
-author: Markus Neis, Swisscom
-date: 2020/06/18
-level: critical
-status: experimental
-falsepositives:
-    - Will need to be looked for combinations of those processes
 

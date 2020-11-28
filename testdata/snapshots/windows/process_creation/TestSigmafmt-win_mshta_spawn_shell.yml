@@ -1,6 +1,15 @@
 title: MSHTA Spawning Windows Shell
-id: 03cc0c25-389f-4bf8-b48d-11878079f1ca
 description: Detects a Windows command line executable started from MSHTA
+level: high
+status: experimental
+falsepositives:
+    - Printer software / driver installations
+    - HP software
+references:
+    - https://www.trustedsec.com/july-2015/malicious-htas/
+author: Michael Haag
+date: 2019/01/16
+modified: 2020/09/01
 
 logsource:
     category: process_creation
@@ -20,11 +29,7 @@ detection:
             - '*\BITSADMIN*'
     condition: selection
 
-references:
-    - https://www.trustedsec.com/july-2015/malicious-htas/
-author: Michael Haag
-date: 2019/01/16
-modified: 2020/09/01
+id: 03cc0c25-389f-4bf8-b48d-11878079f1ca
 fields:
     - CommandLine
     - ParentCommandLine
@@ -35,9 +40,4 @@ tags:
     - car.2013-02-003
     - car.2013-03-001
     - car.2014-04-003
-level: high
-status: experimental
-falsepositives:
-    - Printer software / driver installations
-    - HP software
 

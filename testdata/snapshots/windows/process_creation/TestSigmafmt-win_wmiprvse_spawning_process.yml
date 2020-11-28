@@ -1,9 +1,14 @@
 title: Wmiprvse Spawning Process
-id: d21374ff-f574-44a7-9998-4a8c8bf33d7d
 description: Detects wmiprvse spawning processes
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1047_windows_management_instrumentation/wmi_win32_process_create_remote.md
+author: Roberto Rodriguez @Cyb3rWard0g
 date: 2019/08/15
 modified: 2020/11/05
-author: Roberto Rodriguez @Cyb3rWard0g
 
 logsource:
     category: process_creation
@@ -19,13 +24,8 @@ detection:
             - '\WerFault.exe'
     condition: selection and not filter
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1047_windows_management_instrumentation/wmi_win32_process_create_remote.md
+id: d21374ff-f574-44a7-9998-4a8c8bf33d7d
 tags:
     - attack.execution
     - attack.t1047
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

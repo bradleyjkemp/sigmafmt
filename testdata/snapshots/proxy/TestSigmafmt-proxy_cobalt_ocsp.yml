@@ -1,6 +1,11 @@
 title: CobaltStrike Malleable (OCSP) Profile
-id: 37325383-740a-403d-b1a2-b2b4ab7992e7
 description: Detects Malleable (OCSP) Profile with Typo (OSCP) in URL
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/rsmudge/Malleable-C2-Profiles/blob/master/normal/ocsp.profile
 author: Markus Neis
 date: 2019/11/12
 modified: 2020/09/02
@@ -14,15 +19,10 @@ detection:
 
     condition: selection
 
-references:
-    - https://github.com/rsmudge/Malleable-C2-Profiles/blob/master/normal/ocsp.profile
+id: 37325383-740a-403d-b1a2-b2b4ab7992e7
 tags:
     - attack.command_and_control
     - attack.defense_evasion
     - attack.t1043 # an old one
     - attack.t1071.001
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

@@ -1,6 +1,14 @@
 title: Application Whitelisting Bypass via Bginfo
-id: aaf46cdc-934e-4284-b329-34aa701e3771
 description: Execute VBscript code that is referenced within the *.bgi file.
+level: medium
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Bginfo.yml
+    - https://oddvar.moe/2017/05/18/bypassing-application-whitelisting-with-bginfo/
+author: Beyu Denis, oscd.community
+date: 2019/10/26
 
 logsource:
     category: process_creation
@@ -13,11 +21,7 @@ detection:
             - '/nolicprompt'
     condition: selection
 
-references:
-    - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Bginfo.yml
-    - https://oddvar.moe/2017/05/18/bypassing-application-whitelisting-with-bginfo/
-author: Beyu Denis, oscd.community
-date: 2019/10/26
+id: aaf46cdc-934e-4284-b329-34aa701e3771
 modified: 2020/09/05
 tags:
     - attack.defense_evasion
@@ -25,8 +29,4 @@ tags:
     - attack.t1059.005
     - attack.t1202
     - attack.t1218
-level: medium
-status: experimental
-falsepositives:
-    - Unknown
 

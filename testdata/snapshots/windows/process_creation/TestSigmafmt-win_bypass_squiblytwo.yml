@@ -1,6 +1,14 @@
 title: SquiblyTwo
-id: 8d63dadf-b91b-4187-87b6-34a1114577ea
 description: Detects WMI SquiblyTwo Attack with possible renamed WMI by looking for imphash
+level: medium
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://subt0x11.blogspot.ch/2018/04/wmicexe-whitelisting-bypass-hacking.html
+    - https://twitter.com/mattifestation/status/986280382042595328
+author: Markus Neis / Florian Roth
+date: 2019/01/16
 
 logsource:
     category: process_creation
@@ -24,9 +32,8 @@ detection:
             - '* /format:http*'
     condition: 1 of them
 
-references:
-    - https://subt0x11.blogspot.ch/2018/04/wmicexe-whitelisting-bypass-hacking.html
-    - https://twitter.com/mattifestation/status/986280382042595328
+id: 8d63dadf-b91b-4187-87b6-34a1114577ea
+modified: 2020/08/27
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -35,11 +42,4 @@ tags:
     - attack.t1059.005
     - attack.t1059.007
     - attack.t1220
-level: medium
-status: experimental
-author: Markus Neis / Florian Roth
-date: 2019/01/16
-modified: 2020/08/27
-falsepositives:
-    - Unknown
 

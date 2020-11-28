@@ -1,9 +1,11 @@
 title: Mimikatz Use
-id: 06d71506-7beb-4f22-8888-e2e5e2ca7fd8
 description: This method detects mimikatz keywords in different Eventlogs (some of them only appear in older Mimikatz version that are however still used by different threat groups)
+level: critical
+falsepositives:
+    - Naughty administrators
+    - Penetration test
 author: Florian Roth
 date: 2017/01/10
-modified: 2019/10/11
 
 logsource:
     product: windows
@@ -22,6 +24,8 @@ detection:
             - "* s::l *"
     condition: keywords
 
+id: 06d71506-7beb-4f22-8888-e2e5e2ca7fd8
+modified: 2019/10/11
 tags:
     - attack.credential_access
     - attack.lateral_movement
@@ -33,8 +37,4 @@ tags:
     - attack.t1003.006
     - car.2013-07-001
     - car.2019-04-004
-level: critical
-falsepositives:
-    - Naughty administrators
-    - Penetration test
 

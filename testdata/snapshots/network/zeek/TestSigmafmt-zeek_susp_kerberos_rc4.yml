@@ -1,7 +1,12 @@
 title: Kerberos Network Traffic RC4 Ticket Encryption
-id: 503fe26e-b5f2-4944-a126-eab405cc06e5
-date: 2020/02/12
 description: Detects kerberos TGS request using RC4 encryption which may be indicative of kerberoasting
+level: medium
+status: experimental
+falsepositives:
+    - normal enterprise SPN requests activity
+references:
+    - https://adsecurity.org/?p=3458
+date: 2020/02/12
 
 logsource:
     product: zeek
@@ -14,14 +19,9 @@ detection:
         service: '$*'
     condition: selection and not computer_acct
 
-references:
-    - https://adsecurity.org/?p=3458
+id: 503fe26e-b5f2-4944-a126-eab405cc06e5
 tags:
     - attack.credential_access
     - attack.t1208 # an old one
     - attack.t1558.003
-level: medium
-status: experimental
-falsepositives:
-    - normal enterprise SPN requests activity
 

@@ -1,6 +1,13 @@
 title: Mustang Panda Dropper
-id: 2d87d610-d760-45ee-a7e6-7a6f2a65de00
 description: Detects specific process parameters as used by Mustang Panda droppers
+level: high
+status: experimental
+falsepositives:
+    - Unlikely
+references:
+    - https://app.any.run/tasks/7ca5661d-a67b-43ec-98c1-dd7a8103c256/
+    - https://app.any.run/tasks/b12cccf3-1c22-4e28-9d3e-c7a6062f3914/
+    - https://www.anomali.com/blog/china-based-apt-mustang-panda-targets-minority-groups-public-and-private-sector-organizations
 author: Florian Roth
 date: 2019/10/30
 
@@ -19,16 +26,9 @@ detection:
         Image:
             - '*Temp\winwsh.exe'
     condition: 1 of them
-
-references:
-    - https://app.any.run/tasks/7ca5661d-a67b-43ec-98c1-dd7a8103c256/
-    - https://app.any.run/tasks/b12cccf3-1c22-4e28-9d3e-c7a6062f3914/
-    - https://www.anomali.com/blog/china-based-apt-mustang-panda-targets-minority-groups-public-and-private-sector-organizations
-level: high
-status: experimental
 fields:
     - CommandLine
     - ParentCommandLine
-falsepositives:
-    - Unlikely
+
+id: 2d87d610-d760-45ee-a7e6-7a6f2a65de00
 

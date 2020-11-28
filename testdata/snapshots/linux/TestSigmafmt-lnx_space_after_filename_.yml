@@ -1,6 +1,11 @@
 title: Space After Filename
-id: 879c3015-c88b-4782-93d7-07adf92dbcb7
 description: Detects space after filename
+level: low
+status: experimental
+falsepositives:
+    - Typos
+references:
+    - https://attack.mitre.org/techniques/T1064
 author: Ömer Günal
 date: 2020/06/17
 
@@ -13,12 +18,7 @@ detection:
         - 'mv * "* "'
     condition: selection1 and selection2
 
-references:
-    - https://attack.mitre.org/techniques/T1064
+id: 879c3015-c88b-4782-93d7-07adf92dbcb7
 tags:
     - attack.execution
-level: low
-status: experimental
-falsepositives:
-    - Typos
 

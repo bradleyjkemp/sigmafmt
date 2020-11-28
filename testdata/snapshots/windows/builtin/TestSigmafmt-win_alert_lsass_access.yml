@@ -1,6 +1,14 @@
 title: LSASS Access Detected via Attack Surface Reduction
-id: a0a278fe-2c0e-4de2-ac3c-c68b08a9ba98
 description: Detects Access to LSASS Process
+level: high
+status: experimental
+falsepositives:
+    - Google Chrome GoogleUpdate.exe
+    - Some Taskmgr.exe related activity
+references:
+    - https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?WT.mc_id=twitter
+author: Markus Neis
+date: 2018/08/26
 
 logsource:
     product: windows_defender
@@ -11,18 +19,10 @@ detection:
         Path: '*\lsass.exe'
     condition: selection
 
-references:
-    - https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-exploit-guard/attack-surface-reduction-exploit-guard?WT.mc_id=twitter
-author: Markus Neis
-date: 2018/08/26
+id: a0a278fe-2c0e-4de2-ac3c-c68b08a9ba98
 tags:
     - attack.credential_access
     - attack.t1003 # an old one
     # Defender Attack Surface Reduction
     - attack.t1003.001
-level: high
-status: experimental
-falsepositives:
-    - Google Chrome GoogleUpdate.exe
-    - Some Taskmgr.exe related activity
 

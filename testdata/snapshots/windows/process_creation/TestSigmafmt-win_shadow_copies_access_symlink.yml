@@ -1,6 +1,11 @@
 title: Shadow Copies Access via Symlink
-id: 40b19fa6-d835-400c-b301-41f3a2baacaf
 description: Shadow Copies storage symbolic link creation using operating systems utilities
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate administrator working with shadow copies, access for backup purposes
+references:
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
 author: Teymur Kheirkhabarov, oscd.community
 date: 2019/10/22
 
@@ -14,15 +19,10 @@ detection:
             - HarddiskVolumeShadowCopy
     condition: selection
 
-references:
-    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
+id: 40b19fa6-d835-400c-b301-41f3a2baacaf
 tags:
     - attack.credential_access
     - attack.t1003 # an old one
     - attack.t1003.002
     - attack.t1003.003
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate administrator working with shadow copies, access for backup purposes
 

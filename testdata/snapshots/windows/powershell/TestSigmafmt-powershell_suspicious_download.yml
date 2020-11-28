@@ -1,6 +1,11 @@
 title: Suspicious PowerShell Download
-id: 65531a81-a694-4e31-ae04-f8ba5bc33759
 description: Detects suspicious PowerShell download command
+level: medium
+status: experimental
+falsepositives:
+    - PowerShell scripts that download content from the Internet
+author: Florian Roth
+date: 2017/03/05
 
 logsource:
     product: windows
@@ -16,14 +21,9 @@ detection:
             - '.DownloadString('
     condition: downloadfile or downloadstring
 
+id: 65531a81-a694-4e31-ae04-f8ba5bc33759
 tags:
     - attack.execution
     - attack.t1059.001
     - attack.t1086 #an old one
-author: Florian Roth
-date: 2017/03/05
-level: medium
-status: experimental
-falsepositives:
-    - PowerShell scripts that download content from the Internet
 

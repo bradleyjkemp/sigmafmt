@@ -1,6 +1,11 @@
 title: Persistence and Execution at Scale via GPO Scheduled Task
-id: a8f29a7b-b137-4446-80a0-b804272f3da2
 description: Detect lateral movement using GPO scheduled task, usually used to deploy ransomware at scale
+level: high
+falsepositives:
+    - if the source IP is not localhost then it's super suspicious, better to monitor both local and remote changes to GPO scheduledtasks
+references:
+    - https://twitter.com/menasec1/status/1106899890377052160
+    - https://www.secureworks.com/blog/ransomware-as-a-distraction
 author: Samir Bousseaden
 date: 2019/04/03
 
@@ -16,15 +21,10 @@ detection:
         Accesses: '*WriteData*'
     condition: selection
 
-references:
-    - https://twitter.com/menasec1/status/1106899890377052160
-    - https://www.secureworks.com/blog/ransomware-as-a-distraction
+id: a8f29a7b-b137-4446-80a0-b804272f3da2
 tags:
     - attack.lateral_movement
     - attack.persistence
     - attack.t1053 # an old one
     - attack.t1053.005
-level: high
-falsepositives:
-    - if the source IP is not localhost then it's super suspicious, better to monitor both local and remote changes to GPO scheduledtasks
 

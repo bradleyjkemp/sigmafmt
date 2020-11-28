@@ -1,6 +1,14 @@
 title: Executables Started in Suspicious Folder
-id: 7a38aa19-86a9-4af7-ac51-6bfe4e59f254
 description: Detects process starts of binaries from a suspicious folder
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/mbevilacqua/appcompatprocessor/blob/master/AppCompatSearch.txt
+    - https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses
+    - https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/
+    - https://github.com/ThreatHuntingProject/ThreatHunting/blob/master/hunts/suspicious_process_creation_via_windows_event_logs.md
 author: Florian Roth
 date: 2017/10/14
 modified: 2019/02/21
@@ -30,16 +38,8 @@ detection:
             - C:\Windows\System32\Tasks\\*
     condition: selection
 
-references:
-    - https://github.com/mbevilacqua/appcompatprocessor/blob/master/AppCompatSearch.txt
-    - https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses
-    - https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/
-    - https://github.com/ThreatHuntingProject/ThreatHunting/blob/master/hunts/suspicious_process_creation_via_windows_event_logs.md
+id: 7a38aa19-86a9-4af7-ac51-6bfe4e59f254
 tags:
     - attack.defense_evasion
     - attack.t1036
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

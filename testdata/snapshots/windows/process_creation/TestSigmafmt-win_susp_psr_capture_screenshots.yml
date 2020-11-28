@@ -1,6 +1,14 @@
 title: Psr.exe Capture Screenshots
-id: 2158f96f-43c2-43cb-952a-ab4580f32382
 description: The psr.exe captures desktop screenshots and saves them on the local machine
+level: medium
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/LOLUtilz/OSBinaries/Psr.yml
+    - https://www.sans.org/summit-archives/file/summit-archive-1493861893.pdf
+author: Beyu Denis, oscd.community
+date: 2019/10/12
 
 logsource:
     category: process_creation
@@ -11,17 +19,9 @@ detection:
         CommandLine|contains: '/start'
     condition: selection
 
-references:
-    - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/LOLUtilz/OSBinaries/Psr.yml
-    - https://www.sans.org/summit-archives/file/summit-archive-1493861893.pdf
-author: Beyu Denis, oscd.community
-date: 2019/10/12
+id: 2158f96f-43c2-43cb-952a-ab4580f32382
 modified: 2020/08/28
 tags:
     - attack.collection
     - attack.t1113
-level: medium
-status: experimental
-falsepositives:
-    - Unknown
 

@@ -1,6 +1,11 @@
 title: Covenant Launcher Indicators
-id: c260b6db-48ba-4b4a-a76f-2f67644e99d2
 description: Detects suspicious command lines used in Covenant luanchers
+level: high
+status: experimental
+references:
+    - https://posts.specterops.io/covenant-v0-5-eee0507b85ba
+author: Florian Roth
+date: 2020/06/04
 
 logsource:
     category: process_creation
@@ -16,16 +21,11 @@ detection:
             - '-EncodedCommand cwB2ACAAbwAgA'
     condition: selection
 
-references:
-    - https://posts.specterops.io/covenant-v0-5-eee0507b85ba
-author: Florian Roth
-date: 2020/06/04
+id: c260b6db-48ba-4b4a-a76f-2f67644e99d2
 tags:
     - attack.defense_evasion
     - attack.execution
     - attack.t1059.001
     - attack.t1086 # an old one
     - attack.t1564.003
-level: high
-status: experimental
 

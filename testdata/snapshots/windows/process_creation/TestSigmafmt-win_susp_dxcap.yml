@@ -1,6 +1,14 @@
 title: Application Whitelisting Bypass via Dxcap.exe
-id: 60f16a96-db70-42eb-8f76-16763e333590
 description: Detects execution of of Dxcap.exe
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate execution of dxcap.exe by legitimate user
+references:
+    - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Dxcap.yml
+    - https://twitter.com/harr0ey/status/992008180904419328
+author: Beyu Denis, oscd.community
+date: 2019/10/26
 
 logsource:
     category: process_creation
@@ -13,18 +21,10 @@ detection:
             - '.exe'
     condition: selection
 
-references:
-    - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/OtherMSBinaries/Dxcap.yml
-    - https://twitter.com/harr0ey/status/992008180904419328
-author: Beyu Denis, oscd.community
-date: 2019/10/26
+id: 60f16a96-db70-42eb-8f76-16763e333590
 modified: 2019/11/04
 tags:
     - attack.defense_evasion
     - attack.execution # an old one
     - attack.t1218
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate execution of dxcap.exe by legitimate user
 

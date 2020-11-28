@@ -1,6 +1,13 @@
 title: Turla Group Commands May 2020
-id: 9e2e51c5-c699-4794-ba5a-29f5da40ac0c
 description: Detects commands used by Turla group as reported by ESET in May 2020
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
+author: Florian Roth
+date: 2020/05/26
 
 logsource:
     category: process_creation
@@ -17,8 +24,8 @@ detection:
             - '@aol.co.uk'
     condition: 1 of them
 
-references:
-    - https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
+id: 9e2e51c5-c699-4794-ba5a-29f5da40ac0c
+modified: 2020/08/27
 tags:
     - attack.execution
     - attack.g0010
@@ -27,11 +34,4 @@ tags:
     - attack.t1053.005
     - attack.t1059.001
     - attack.t1086 # an old one
-author: Florian Roth
-date: 2020/05/26
-modified: 2020/08/27
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

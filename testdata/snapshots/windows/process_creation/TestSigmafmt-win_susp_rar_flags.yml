@@ -1,6 +1,14 @@
 title: Rar with Password or Compression Level
-id: faa48cae-6b25-4f00-a094-08947fef582f
 description: Detects the use of rar.exe, on the command line, to create an archive with password protection or with a specific compression level. This is pretty indicative of malicious actions.
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate use of Winrar command line version
+    - Other command line tools, that use these flags
+references:
+    - https://labs.sentinelone.com/the-anatomy-of-an-apt-attack-and-cobaltstrike-beacons-encoded-configuration/
+author: '@ROxPinTeddy'
+date: 2020/05/12
 
 logsource:
     category: process_creation
@@ -12,19 +20,11 @@ detection:
             - ' -m'
     condition: selection
 
-references:
-    - https://labs.sentinelone.com/the-anatomy-of-an-apt-attack-and-cobaltstrike-beacons-encoded-configuration/
-author: '@ROxPinTeddy'
-date: 2020/05/12
+id: faa48cae-6b25-4f00-a094-08947fef582f
 modified: 2020/08/28
 tags:
     - attack.collection
     - attack.exfiltration # an old one  
     - attack.t1002 # an old one  
     - attack.t1560.001
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate use of Winrar command line version
-    - Other command line tools, that use these flags
 

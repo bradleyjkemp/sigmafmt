@@ -1,6 +1,9 @@
 title: Cisco Collect Data
-id: cd072b25-a418-4f98-8ebc-5093fb38fe1a
 description: Collect pertinent data from the configuration files
+level: low
+status: experimental
+falsepositives:
+    - Commonly run by administrators
 author: Austin Clark
 date: 2019/08/11
 modified: 2020/09/02
@@ -23,6 +26,7 @@ detection:
         - 'more'
     condition: keywords
 
+id: cd072b25-a418-4f98-8ebc-5093fb38fe1a
 tags:
     - attack.collection
     - attack.credential_access
@@ -33,8 +37,4 @@ tags:
     - attack.t1087 # an old one
     - attack.t1087.001
     - attack.t1552.001
-level: low
-status: experimental
-falsepositives:
-    - Commonly run by administrators
 

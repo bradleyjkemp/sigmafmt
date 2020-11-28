@@ -1,6 +1,13 @@
 title: Narrator's Feedback-Hub Persistence
-id: f663a6d9-9d1b-49b8-b2b1-0637914d199a
 description: Detects abusing Windows 10 Narrator's Feedback-Hub
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html
+author: Dmitriy Lifanov, oscd.community
+date: 2019/10/25
 
 logsource:
     category: registry_event
@@ -13,17 +20,10 @@ detection:
         TargetObject|endswith: '\AppXypsaf9f1qserqevf0sws76dx4k9a5206\Shell\open\command\(Default)'
     condition: 1 of them
 
-references:
-    - https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html
+id: f663a6d9-9d1b-49b8-b2b1-0637914d199a
+modified: 2020/09/06
 tags:
     - attack.persistence
     - attack.t1060 # an old one
     - attack.t1547.001
-author: Dmitriy Lifanov, oscd.community
-date: 2019/10/25
-modified: 2020/09/06
-level: high
-status: experimental
-falsepositives:
-    - unknown
 

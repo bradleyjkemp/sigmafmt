@@ -1,6 +1,11 @@
 title: MITRE BZAR Indicators for Execution
-id: b640c0b8-87f8-4daa-aef8-95a24261dd1d
 description: 'Windows DCE-RPC functions which indicate an execution techniques on the remote system. All credit for the Zeek mapping of the suspicious endpoint/operation field goes to MITRE'
+level: medium
+falsepositives:
+    - 'Windows administrator tasks or troubleshooting'
+    - 'Windows management scripts or software'
+references:
+    - https://github.com/mitre-attack/bzar#indicators-for-attck-execution
 author: '@neu5ron, SOC Prime'
 date: 2020/03/19
 
@@ -40,8 +45,7 @@ detection:
         operation: 'StartServiceW'
     condition: 1 of them
 
-references:
-    - https://github.com/mitre-attack/bzar#indicators-for-attck-execution
+id: b640c0b8-87f8-4daa-aef8-95a24261dd1d
 tags:
     - attack.execution
     - attack.t1035 # an old one
@@ -49,8 +53,4 @@ tags:
     - attack.t1053 # an old one
     - attack.t1053.002
     - attack.t1569.002
-level: medium
-falsepositives:
-    - 'Windows administrator tasks or troubleshooting'
-    - 'Windows management scripts or software'
 

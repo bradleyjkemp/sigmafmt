@@ -1,6 +1,11 @@
 title: Apache Threading Error
-id: e9a2b582-3f6a-48ac-b4a1-6849cdc50b3c
 description: Detects an issue in apache logs that reports threading related errors
+level: medium
+status: experimental
+falsepositives:
+    - https://bz.apache.org/bugzilla/show_bug.cgi?id=46185
+references:
+    - https://github.com/hannob/apache-uaf/blob/master/README.md
 author: Florian Roth
 date: 2019/01/22
 
@@ -11,10 +16,5 @@ detection:
         - '__pthread_tpp_change_priority: Assertion `new_prio == -1 || (new_prio >= fifo_min_prio && new_prio <= fifo_max_prio)'
     condition: keywords
 
-references:
-    - https://github.com/hannob/apache-uaf/blob/master/README.md
-level: medium
-status: experimental
-falsepositives:
-    - https://bz.apache.org/bugzilla/show_bug.cgi?id=46185
+id: e9a2b582-3f6a-48ac-b4a1-6849cdc50b3c
 

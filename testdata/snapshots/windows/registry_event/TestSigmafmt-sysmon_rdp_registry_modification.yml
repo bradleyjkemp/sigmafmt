@@ -1,9 +1,14 @@
 title: RDP Registry Modification
-id: 41904ebe-d56c-4904-b9ad-7a77bdf154b3
 description: Detects potential malicious modification of the property value of fDenyTSConnections and UserAuthentication to enable remote desktop connections.
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1112_Modify_Registry/enable_rdp_registry.md
+author: Roberto Rodriguez @Cyb3rWard0g
 date: 2019/09/12
 modified: 2019/11/10
-author: Roberto Rodriguez @Cyb3rWard0g
 
 logsource:
     category: registry_event
@@ -16,18 +21,13 @@ detection:
         Details: 'DWORD (0x00000000)'
     condition: selection
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1112_Modify_Registry/enable_rdp_registry.md
-tags:
-    - attack.defense_evasion
-    - attack.t1112
-level: high
-status: experimental
+id: 41904ebe-d56c-4904-b9ad-7a77bdf154b3
 fields:
     - ComputerName
     - Image
     - EventType
     - TargetObject
-falsepositives:
-    - Unknown
+tags:
+    - attack.defense_evasion
+    - attack.t1112
 

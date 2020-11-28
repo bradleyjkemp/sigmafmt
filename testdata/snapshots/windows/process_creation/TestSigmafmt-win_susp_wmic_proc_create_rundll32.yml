@@ -1,6 +1,13 @@
 title: Suspicious WMI Execution Using Rundll32
-id: 3c89a1e8-0fba-449e-8f1b-8409d6267ec8
 description: Detects WMI executing rundll32
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://thedfirreport.com/2020/10/08/ryuks-return/
+author: Florian Roth
+date: 2020/10/12
 
 logsource:
     category: process_creation
@@ -12,18 +19,11 @@ detection:
             - 'rundll32'
     condition: selection
 
-references:
-    - https://thedfirreport.com/2020/10/08/ryuks-return/
-author: Florian Roth
-date: 2020/10/12
+id: 3c89a1e8-0fba-449e-8f1b-8409d6267ec8
 fields:
     - CommandLine
     - ParentCommandLine
 tags:
     - attack.execution
     - attack.t1047
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

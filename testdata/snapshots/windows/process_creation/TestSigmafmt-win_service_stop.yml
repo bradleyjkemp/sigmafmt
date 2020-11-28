@@ -1,9 +1,11 @@
 title: Stop Windows Service
-id: eb87818d-db5d-49cc-a987-d5da331fbd90
 description: Detects a windows service to be stopped
+level: low
+status: experimental
+falsepositives:
+    - Administrator shutting down the service due to upgrade or removal purposes
 author: Jakob Weinzettl, oscd.community
 date: 2019/10/23
-modified: 2019/11/08
 
 logsource:
     category: process_creation
@@ -17,15 +19,13 @@ detection:
           CommandLine|contains: 'stop'
     condition: selection
 
-tags:
-    - attack.impact
-    - attack.t1489
-level: low
-status: experimental
+id: eb87818d-db5d-49cc-a987-d5da331fbd90
+modified: 2019/11/08
 fields:
     - ComputerName
     - User
     - CommandLine
-falsepositives:
-    - Administrator shutting down the service due to upgrade or removal purposes
+tags:
+    - attack.impact
+    - attack.t1489
 

@@ -1,6 +1,13 @@
 title: Detection of SafetyKatz
-id: e074832a-eada-4fd7-94a1-10642b130e16
 description: Detects possible SafetyKatz Behaviour
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/GhostPack/SafetyKatz
+author: Markus Neis
+date: 2018/07/24
 
 logsource:
     category: file_event
@@ -10,17 +17,10 @@ detection:
         TargetFilename: '*\Temp\debug.bin'
     condition: selection
 
-references:
-    - https://github.com/GhostPack/SafetyKatz
+id: e074832a-eada-4fd7-94a1-10642b130e16
+modified: 2020/08/23
 tags:
     - attack.credential_access
     - attack.t1003 # an old one
     - attack.t1003.001
-author: Markus Neis
-date: 2018/07/24
-modified: 2020/08/23
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

@@ -1,6 +1,14 @@
 title: DIT Snapshot Viewer Use
-id: d3b70aad-097e-409c-9df2-450f80dc476b
 description: Detects the use of Ditsnap tool. Seems to be a tool for ransomware groups.
+level: high
+status: experimental
+falsepositives:
+    - Legitimate admin usage
+references:
+    - https://thedfirreport.com/2020/06/21/snatch-ransomware/
+    - https://github.com/yosqueoy/ditsnap
+author: 'Furkan Caliskan (@caliskanfurkan_)'
+date: 2020/07/04
 
 logsource:
     category: process_creation
@@ -14,17 +22,9 @@ detection:
             - 'ditsnap.exe'
     condition: selection or selection2
 
-references:
-    - https://thedfirreport.com/2020/06/21/snatch-ransomware/
-    - https://github.com/yosqueoy/ditsnap
-author: 'Furkan Caliskan (@caliskanfurkan_)'
-date: 2020/07/04
+id: d3b70aad-097e-409c-9df2-450f80dc476b
 tags:
     - attack.credential_access
     - attack.t1003 # an old one
     - attack.t1003.003
-level: high
-status: experimental
-falsepositives:
-    - Legitimate admin usage
 

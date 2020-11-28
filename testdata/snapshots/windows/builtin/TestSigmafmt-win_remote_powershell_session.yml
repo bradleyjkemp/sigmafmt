@@ -1,8 +1,13 @@
 title: Remote PowerShell Sessions
-id: 13acf386-b8c6-4fe0-9a6e-c4756b974698
 description: Detects basic PowerShell Remoting by monitoring for network inbound connections to ports 5985 OR 5986
-date: 2019/09/12
+level: high
+status: experimental
+falsepositives:
+    - Legitimate use of remote PowerShell execution
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
 author: Roberto Rodriguez @Cyb3rWard0g
+date: 2019/09/12
 
 logsource:
     product: windows
@@ -16,14 +21,9 @@ detection:
         LayerRTID: 44
     condition: selection
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
+id: 13acf386-b8c6-4fe0-9a6e-c4756b974698
 tags:
     - attack.execution
     - attack.t1059.001
     - attack.t1086 # an old one
-level: high
-status: experimental
-falsepositives:
-    - Legitimate use of remote PowerShell execution
 

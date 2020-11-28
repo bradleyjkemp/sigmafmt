@@ -1,6 +1,13 @@
 title: Turla Group Named Pipes
-id: 739915e4-1e70-4778-8b8a-17db02f66db1
 description: Detects a named pipe used by Turla group samples
+level: critical
+status: experimental
+falsepositives:
+    - Unkown
+references:
+    - Internal Research
+author: Markus Neis
+date: 2017/11/06
 
 logsource:
     product: windows
@@ -20,14 +27,7 @@ detection:
             # - '\rpc'  # may cause too many false positives : http://kb.palisade.com/index.php?pg=kb.page&id=483
     condition: selection
 
-references:
-    - Internal Research
-date: 2017/11/06
+id: 739915e4-1e70-4778-8b8a-17db02f66db1
 tags:
     - attack.g0010
-author: Markus Neis
-level: critical
-status: experimental
-falsepositives:
-    - Unkown
 

@@ -1,6 +1,9 @@
 title: AWS Config Disabling Channel/Recorder
-id: 07330162-dba1-4746-8121-a9647d49d297
 description: Detects AWS Config Service disabling
+level: high
+status: experimental
+falsepositives:
+    - Valid change in AWS Config Service
 author: vitaliy0x1
 date: 2020/01/21
 
@@ -15,12 +18,9 @@ detection:
             - StopConfigurationRecorder
     condition: selection_source AND events
 
+id: 07330162-dba1-4746-8121-a9647d49d297
 tags:
     - attack.defense_evasion
     - attack.t1089 # an old one
     - attack.t1562.001
-level: high
-status: experimental
-falsepositives:
-    - Valid change in AWS Config Service
 

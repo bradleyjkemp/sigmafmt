@@ -1,10 +1,10 @@
 title: Suspicious Camera and Microphone Access
-id: 62120148-6b7a-42be-8b91-271c04e281a3
 description: Detects Processes accessing the camera and microphone from suspicious folder
+level: high
+falsepositives:
+    - Unlikely, there could be conferencing software running from a Temp folder accessing the devices
 author: Den Iuzvyk
 date: 2020/06/07
-reference:
-    - https://medium.com/@7a616368/can-you-track-processes-accessing-the-camera-and-microphone-7e6885b37072
 
 logsource:
     category: registry_event
@@ -27,11 +27,11 @@ detection:
             - '#C:#Users#Desktop#'
     condition: all of selection_*
 
+id: 62120148-6b7a-42be-8b91-271c04e281a3
+reference:
+    - https://medium.com/@7a616368/can-you-track-processes-accessing-the-camera-and-microphone-7e6885b37072
 tags:
     - attack.collection
     - attack.t1123
     - attack.t1125
-level: high
-falsepositives:
-    - Unlikely, there could be conferencing software running from a Temp folder accessing the devices
 

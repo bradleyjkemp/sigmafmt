@@ -1,9 +1,14 @@
 title: Remote PowerShell Session
-id: 734f8d9b-42b8-41b2-bcf5-abaf49d5a3c8
 description: Detects remote PowerShell sections by monitoring for wsmprovhost as a parent or child process (sign of an active ps remote session)
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate usage of remote Powershell, e.g. for monitoring purposes
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
+author: Roberto Rodriguez @Cyb3rWard0g
 date: 2019/09/12
 modified: 2019/11/10
-author: Roberto Rodriguez @Cyb3rWard0g
 
 logsource:
     category: process_creation
@@ -14,18 +19,13 @@ detection:
         - ParentImage|endswith: '\wsmprovhost.exe'
     condition: selection
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
-tags:
-    - attack.execution
-    - attack.t1059.001
-    - attack.t1086 # an old one
-level: medium
-status: experimental
+id: 734f8d9b-42b8-41b2-bcf5-abaf49d5a3c8
 fields:
     - ComputerName
     - User
     - CommandLine
-falsepositives:
-    - Legitimate usage of remote Powershell, e.g. for monitoring purposes
+tags:
+    - attack.execution
+    - attack.t1059.001
+    - attack.t1086 # an old one
 

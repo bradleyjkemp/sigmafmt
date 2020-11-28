@@ -1,6 +1,11 @@
 title: SSHD Error Message CVE-2018-15473
-id: 4c9d903d-4939-4094-ade0-3cb748f4d7da
 description: Detects exploitation attempt using public exploit code for CVE-2018-15473
+level: medium
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/Rhynorater/CVE-2018-15473-Exploit
 author: Florian Roth
 date: 2017/08/24
 
@@ -12,10 +17,5 @@ detection:
         - 'error: buffer_get_ret: trying to get more bytes 1907 than in buffer 308 [preauth]'
     condition: keywords
 
-references:
-    - https://github.com/Rhynorater/CVE-2018-15473-Exploit
-level: medium
-status: experimental
-falsepositives:
-    - Unknown
+id: 4c9d903d-4939-4094-ade0-3cb748f4d7da
 

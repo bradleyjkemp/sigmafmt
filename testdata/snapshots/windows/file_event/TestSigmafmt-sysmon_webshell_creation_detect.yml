@@ -1,6 +1,13 @@
 title: Windows Webshell Creation
-id: 39f1f9f2-9636-45de-98f6-a4046aa8e4b9
 description: Possible webshell file creation on a static web site
+level: critical
+status: experimental
+falsepositives:
+    - Legitimate administrator or developer creating legitimate executable files in a web application folder
+references:
+    - PT ESC rule and personal experience
+author: Beyu Denis, oscd.community
+date: 2019/10/22
 
 logsource:
     product: windows
@@ -33,17 +40,10 @@ detection:
     # we shold prefer something like : selection_1 and not false_positives and ((selection_2 and selection_3) or (selection_4 and selection_5) or selection_6)
     condition: (selection_2 and selection_3 and not false_positives) or (selection_4 and selection_5 and not false_positives) or (selection_6 and not false_positives)
 
-references:
-    - PT ESC rule and personal experience
-author: Beyu Denis, oscd.community
-date: 2019/10/22
+id: 39f1f9f2-9636-45de-98f6-a4046aa8e4b9
 modified: 2020/08/23
 tags:
     - attack.persistence
     - attack.t1100 # an old one
     - attack.t1505.003
-level: critical
-status: experimental
-falsepositives:
-    - Legitimate administrator or developer creating legitimate executable files in a web application folder
 

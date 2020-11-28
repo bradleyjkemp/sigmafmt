@@ -1,8 +1,13 @@
 title: AD Object WriteDAC Access
-id: 028c7842-4243-41cd-be6f-12f3cf1a26c7
 description: Detects WRITE_DAC access to a domain object
-date: 2019/09/12
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1222_file_permissions_modification/ad_replication_user_backdoor.md
 author: Roberto Rodriguez @Cyb3rWard0g
+date: 2019/09/12
 
 logsource:
     product: windows
@@ -17,14 +22,9 @@ detection:
             - 'domainDNS'
     condition: selection
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1222_file_permissions_modification/ad_replication_user_backdoor.md
+id: 028c7842-4243-41cd-be6f-12f3cf1a26c7
 tags:
     - attack.defense_evasion
     - attack.t1222 # an old one
     - attack.t1222.001
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

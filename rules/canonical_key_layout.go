@@ -129,21 +129,23 @@ var whitespaceBetweenSections = nodeRule{"whitespace_between_sections", func(rul
 var (
 	// The order of these lines determines the "canonical" order that keys should appear in a rule and the sections they should be split into
 	canonicalKeyLayout = [][]string{
-		{
+		{ // Human useful metadata: what is this rule? how bad is it?
 			"title",
-			"id",
 			"description",
-		},
-		{
-			"logsource",
-			"detection",
-		},
-		{
-			"references",
-			"tags",
 			"level",
 			"status",
 			"falsepositives",
+			"references",
+			"author",
+			"date",
+		},
+		{ // The detection itself: what data does this look at? what does it match on?
+			"logsource",
+			"detection",
+		},
+		{ // Machine useful metadata (i.e. humans don't care about IDs, tags are mainly useful for indexing)
+			"id",
+			"tags",
 		},
 	}
 	canonicalKeyOrdering = map[string]int{}

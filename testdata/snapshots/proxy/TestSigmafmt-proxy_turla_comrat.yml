@@ -1,6 +1,11 @@
 title: Turla ComRAT
-id: 7857f021-007f-4928-8b2c-7aedbe64bb82
 description: Detects Turla ComRAT patterns
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
 author: Florian Roth
 date: 2020/05/26
 modified: 2020/09/03
@@ -12,16 +17,11 @@ detection:
         c-uri|contains: '/index/index.php?h='
     condition: selection
 
-references:
-    - https://www.welivesecurity.com/wp-content/uploads/2020/05/ESET_Turla_ComRAT.pdf
+id: 7857f021-007f-4928-8b2c-7aedbe64bb82
 tags:
     - attack.command_and_control
     - attack.defense_evasion
     - attack.g0010
     - attack.t1043 # an old one
     - attack.t1071.001
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

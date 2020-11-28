@@ -1,6 +1,15 @@
 title: Koadic Execution
-id: 5cddf373-ef00-4112-ad72-960ac29bac34
 description: Detects command line parameters used by Koadic hack tool
+level: high
+status: experimental
+falsepositives:
+    - Pentest
+references:
+    - https://unit42.paloaltonetworks.com/unit42-sofacy-groups-parallel-attacks/
+    - https://github.com/zerosum0x0/koadic/blob/master/data/stager/js/stdlib.js#L955
+    - https://blog.f-secure.com/hunting-for-koadic-a-com-based-rootkit/
+author: wagga
+date: 2020/01/12
 
 logsource:
     category: process_creation
@@ -11,10 +20,11 @@ detection:
             - '*cmd.exe* /q /c chcp *'
     condition: selection1
 
-references:
-    - https://unit42.paloaltonetworks.com/unit42-sofacy-groups-parallel-attacks/
-    - https://github.com/zerosum0x0/koadic/blob/master/data/stager/js/stdlib.js#L955
-    - https://blog.f-secure.com/hunting-for-koadic-a-com-based-rootkit/
+id: 5cddf373-ef00-4112-ad72-960ac29bac34
+modified: 2020/09/01
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.execution
     - attack.t1059 # an old one
@@ -22,14 +32,4 @@ tags:
     - attack.t1059.005
     - attack.t1059.007
     - attack.t1064 # an old one
-date: 2020/01/12
-modified: 2020/09/01
-author: wagga
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Pentest
 

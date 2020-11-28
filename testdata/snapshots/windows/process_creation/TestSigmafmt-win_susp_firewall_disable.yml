@@ -1,6 +1,15 @@
 title: Firewall Disabled via Netsh
-id: 57c4bf16-227f-4394-8ec7-1b745ee061c3
 description: Detects netsh commands that turns off the Windows firewall
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate administration
+references:
+    - https://www.winhelponline.com/blog/enable-and-disable-windows-firewall-quickly-using-command-line/
+    - https://app.any.run/tasks/210244b9-0b6b-4a2c-83a3-04bd3175d017/
+author: Fatih Sirin
+date: 2019/11/01
+modified: 2020/08/30
 
 logsource:
     category: process_creation
@@ -12,18 +21,9 @@ detection:
             - netsh advfirewall set * state off
     condition: selection
 
-references:
-    - https://www.winhelponline.com/blog/enable-and-disable-windows-firewall-quickly-using-command-line/
-    - https://app.any.run/tasks/210244b9-0b6b-4a2c-83a3-04bd3175d017/
-date: 2019/11/01
-modified: 2020/08/30
-author: Fatih Sirin
+id: 57c4bf16-227f-4394-8ec7-1b745ee061c3
 tags:
     - attack.defense_evasion
     - attack.s0108
     - attack.t1562.004
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate administration
 

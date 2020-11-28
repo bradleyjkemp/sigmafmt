@@ -1,6 +1,12 @@
 title: Disabling Security Tools
-id: e3a8a052-111f-4606-9aee-f28ebeb76776
 description: Detects disabling security tools
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate administration activities
+references:
+    - https://attack.mitre.org/techniques/T1089/
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1089/T1089.md
 author: Ömer Günal
 date: 2020/06/17
 
@@ -25,13 +31,7 @@ detection:
             - 'systemctl disable falcon-sensor.service'
     condition: keywords
 
-references:
-    - https://attack.mitre.org/techniques/T1089/
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1089/T1089.md
+id: e3a8a052-111f-4606-9aee-f28ebeb76776
 tags:
     - attack.defense_evasion
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate administration activities
 

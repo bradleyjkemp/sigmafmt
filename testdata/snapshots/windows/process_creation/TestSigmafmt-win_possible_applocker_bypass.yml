@@ -1,6 +1,15 @@
 title: Possible Applocker Bypass
-id: 82a19e3a-2bfe-4a91-8c0d-5d4c98fbb719
 description: Detects execution of executables that can be used to bypass Applocker whitelisting
+level: low
+status: experimental
+falsepositives:
+    - False positives depend on scripts and administrative tools used in the monitored environment
+    - Using installutil to add features for .NET applications (primarly would occur in developer environments)
+references:
+    - https://github.com/subTee/ApplicationWhitelistBypassTechniques/blob/master/TheList.txt
+    - https://room362.com/post/2014/2014-01-16-application-whitelist-bypass-using-ieexec-dot-exe/
+author: juju4
+date: 2019/01/16
 
 logsource:
     category: process_creation
@@ -19,11 +28,7 @@ detection:
             #- '\csc.exe'
     condition: selection
 
-references:
-    - https://github.com/subTee/ApplicationWhitelistBypassTechniques/blob/master/TheList.txt
-    - https://room362.com/post/2014/2014-01-16-application-whitelist-bypass-using-ieexec-dot-exe/
-author: juju4
-date: 2019/01/16
+id: 82a19e3a-2bfe-4a91-8c0d-5d4c98fbb719
 modified: 2020/09/01
 tags:
     - attack.defense_evasion
@@ -36,9 +41,4 @@ tags:
     - attack.t1218.004
     - attack.t1218.005
     - attack.t1218.009
-level: low
-status: experimental
-falsepositives:
-    - False positives depend on scripts and administrative tools used in the monitored environment
-    - Using installutil to add features for .NET applications (primarly would occur in developer environments)
 

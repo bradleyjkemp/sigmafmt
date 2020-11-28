@@ -1,6 +1,14 @@
 title: Active Directory User Backdoors
-id: 300bac00-e041-4ee2-9c36-e262656a6ecc
 description: Detects scenarios where one can control another users or computers account without having to use their credentials.
+level: high
+falsepositives:
+    - Unknown
+references:
+    - https://msdn.microsoft.com/en-us/library/cc220234.aspx
+    - https://adsecurity.org/?p=3466
+    - https://www.harmj0y.net/blog/redteaming/another-word-on-delegation/
+author: '@neu5ron'
+date: 2017/04/13
 
 logsource:
     product: windows
@@ -25,17 +33,9 @@ detection:
         AttributeLDAPDisplayName: 'msDS-AllowedToActOnBehalfOfOtherIdentity'
     condition: (selection1 and not filter1 and not filter_null) or selection2 or selection3 or selection4
 
-references:
-    - https://msdn.microsoft.com/en-us/library/cc220234.aspx
-    - https://adsecurity.org/?p=3466
-    - https://www.harmj0y.net/blog/redteaming/another-word-on-delegation/
-author: '@neu5ron'
-date: 2017/04/13
+id: 300bac00-e041-4ee2-9c36-e262656a6ecc
 modified: 2020/08/23
 tags:
     - attack.persistence
     - attack.t1098
-level: high
-falsepositives:
-    - Unknown
 

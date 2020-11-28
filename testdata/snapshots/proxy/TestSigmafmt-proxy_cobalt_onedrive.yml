@@ -1,6 +1,11 @@
 title: CobaltStrike Malleable OneDrive Browsing Traffic Profile
-id: c9b33401-cc6a-4cf6-83bb-57ddcb2407fc
 description: Detects Malleable OneDrive Profile
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/rsmudge/Malleable-C2-Profiles/blob/master/normal/onedrive_getonly.profile
 author: Markus Neis
 date: 2019/11/12
 modified: 2020/09/02
@@ -16,15 +21,10 @@ detection:
         c-uri: 'http*://onedrive.live.com/*'
     condition: selection and not filter
 
-references:
-    - https://github.com/rsmudge/Malleable-C2-Profiles/blob/master/normal/onedrive_getonly.profile
+id: c9b33401-cc6a-4cf6-83bb-57ddcb2407fc
 tags:
     - attack.command_and_control
     - attack.defense_evasion
     - attack.t1043 # an old one
     - attack.t1071.001
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

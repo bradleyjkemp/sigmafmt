@@ -1,6 +1,13 @@
 title: Possible SPN Enumeration
-id: 1eeed653-dbc8-4187-ad0c-eeebb20e6599
 description: Detects Service Principal Name Enumeration used for Kerberoasting
+level: medium
+status: experimental
+falsepositives:
+    - Administrator Activity
+references:
+    - https://p16.praetorian.com/blog/how-to-use-kerberoasting-t1208-for-privilege-escalation
+author: Markus Neis, keepwatch
+date: 2018/11/14
 
 logsource:
     category: process_creation
@@ -14,16 +21,9 @@ detection:
         CommandLine: '*-q*'
     condition: (selection_image or selection_desc) and cmd
 
-references:
-    - https://p16.praetorian.com/blog/how-to-use-kerberoasting-t1208-for-privilege-escalation
-author: Markus Neis, keepwatch
-date: 2018/11/14
+id: 1eeed653-dbc8-4187-ad0c-eeebb20e6599
 tags:
     - attack.credential_access
     - attack.t1208 # an old one
     - attack.t1558.003
-level: medium
-status: experimental
-falsepositives:
-    - Administrator Activity
 

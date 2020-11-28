@@ -1,6 +1,14 @@
 title: Empire PowerShell UAC Bypass
-id: 3268b746-88d8-4cd3-bffc-30077d02c787
 description: Detects some Empire PowerShell UAC bypass methods
+level: critical
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/data/module_source/privesc/Invoke-EventVwrBypass.ps1#L64
+    - https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/data/module_source/privesc/Invoke-FodHelperBypass.ps1#L64
+author: Ecco
+date: 2019/08/30
 
 logsource:
     category: process_creation
@@ -12,11 +20,7 @@ detection:
             - '* -NoP -NonI -c $x=$((gp HKCU:Software\\Microsoft\\Windows Update).Update);*'
     condition: selection
 
-references:
-    - https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/data/module_source/privesc/Invoke-EventVwrBypass.ps1#L64
-    - https://github.com/EmpireProject/Empire/blob/e37fb2eef8ff8f5a0a689f1589f424906fe13055/data/module_source/privesc/Invoke-FodHelperBypass.ps1#L64
-author: Ecco
-date: 2019/08/30
+id: 3268b746-88d8-4cd3-bffc-30077d02c787
 fields:
     - CommandLine
     - ParentCommandLine
@@ -26,8 +30,4 @@ tags:
     - attack.t1088 # an old one
     - attack.t1548.002
     - car.2019-04-001
-level: critical
-status: experimental
-falsepositives:
-    - unknown
 

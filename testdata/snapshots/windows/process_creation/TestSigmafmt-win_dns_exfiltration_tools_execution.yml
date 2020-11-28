@@ -1,9 +1,11 @@
 title: DNS Exfiltration and Tunneling Tools Execution
-id: 98a96a5a-64a0-4c42-92c5-489da3866cb0
 description: Well-known DNS Exfiltration tools execution
+level: high
+status: experimental
+falsepositives:
+    - Legitimate usage of iodine or dnscat2 — DNS Exfiltration tools (unlikely)
 author: Daniil Yugoslavskiy, oscd.community
 date: 2019/10/24
-modified: 2020/08/29
 
 logsource:
     category: process_creation
@@ -14,6 +16,8 @@ detection:
         - Image|contains: '\dnscat2'
     condition: selection
 
+id: 98a96a5a-64a0-4c42-92c5-489da3866cb0
+modified: 2020/08/29
 tags:
     - attack.command_and_control
     - attack.exfiltration
@@ -23,8 +27,4 @@ tags:
     - attack.t1071.004
     - attack.t1132 # an old one
     - attack.t1132.001
-level: high
-status: experimental
-falsepositives:
-    - Legitimate usage of iodine or dnscat2 — DNS Exfiltration tools (unlikely)
 

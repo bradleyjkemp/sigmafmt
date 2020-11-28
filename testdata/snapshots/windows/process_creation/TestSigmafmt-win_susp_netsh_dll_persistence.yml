@@ -1,6 +1,13 @@
 title: Suspicious Netsh DLL Persistence
-id: 56321594-9087-49d9-bf10-524fe8479452
 description: Detects persitence via netsh helper
+level: high
+status: testing
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1128/T1128.md
+author: Victor Sergeev, oscd.community
+date: 2019/10/25
 
 logsource:
     category: process_creation
@@ -13,23 +20,16 @@ detection:
             - 'helper'
     condition: selection
 
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1128/T1128.md
-tags:
-    - attack.persistence
-    - attack.s0108
-    - attack.t1128 # an old one
-    - attack.t1546.007
-date: 2019/10/25
+id: 56321594-9087-49d9-bf10-524fe8479452
 modified: 2020/08/30
-author: Victor Sergeev, oscd.community
-level: high
-status: testing
 fields:
     - ComputerName
     - User
     - CommandLine
     - ParentCommandLine
-falsepositives:
-    - Unknown
+tags:
+    - attack.persistence
+    - attack.s0108
+    - attack.t1128 # an old one
+    - attack.t1546.007
 

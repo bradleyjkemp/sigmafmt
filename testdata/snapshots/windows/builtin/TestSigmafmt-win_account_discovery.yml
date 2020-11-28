@@ -1,6 +1,13 @@
 title: AD Privileged Users or Groups Reconnaissance
-id: 35ba1d85-724d-42a3-889f-2e2362bcaf23
 description: Detect priv users or groups recon based on 4661 eventid and known privileged users or groups SIDs
+level: high
+status: experimental
+falsepositives:
+    - if source account name is not an admin then its super suspicious
+references:
+    - https://blog.menasec.net/2019/02/threat-hunting-5-detecting-enumeration.html
+author: Samir Bousseaden
+date: 2019/04/03
 
 logsource:
     product: windows
@@ -25,17 +32,10 @@ detection:
             - '*admin*'
     condition: selection
 
-references:
-    - https://blog.menasec.net/2019/02/threat-hunting-5-detecting-enumeration.html
+id: 35ba1d85-724d-42a3-889f-2e2362bcaf23
+modified: 2020/08/23
 tags:
     - attack.discovery
     - attack.t1087 # an old one
     - attack.t1087.002
-author: Samir Bousseaden
-date: 2019/04/03
-modified: 2020/08/23
-level: high
-status: experimental
-falsepositives:
-    - if source account name is not an admin then its super suspicious
 

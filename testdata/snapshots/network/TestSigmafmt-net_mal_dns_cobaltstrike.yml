@@ -1,6 +1,11 @@
 title: Cobalt Strike DNS Beaconing
-id: 2975af79-28c4-4d2f-a951-9095f229df29
 description: Detects suspicious DNS queries known from Cobalt Strike beacons
+level: high
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://www.icebrg.io/blog/footprints-of-fin7-tracking-actor-patterns
 author: Florian Roth
 date: 2018/05/10
 modified: 2020/08/27
@@ -14,14 +19,9 @@ detection:
             - 'post.1*'
     condition: selection
 
-references:
-    - https://www.icebrg.io/blog/footprints-of-fin7-tracking-actor-patterns
+id: 2975af79-28c4-4d2f-a951-9095f229df29
 tags:
     - attack.command_and_control
     - attack.t1071 # an old one
     - attack.t1071.004
-level: high
-status: experimental
-falsepositives:
-    - Unknown
 

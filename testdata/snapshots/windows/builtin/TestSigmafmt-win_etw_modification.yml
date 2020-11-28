@@ -1,18 +1,9 @@
 title: COMPlus_ETWEnabled Registry Modification
-id: a4c90ea1-2634-4ca0-adbb-35eae169b6fc
 description: Potential adversaries stopping ETW providers recording loaded .NET assemblies.
-
-logsource:
-    product: windows
-    service: security
-detection:
-    selection:
-        EventID: 4657
-        ObjectName|endswith: '\SOFTWARE\Microsoft\.NETFramework'
-        ObjectValueName: 'ETWEnabled'
-        NewValue: '0'
-    condition: selection
-
+level: critical
+status: experimental
+falsepositives:
+    - unknown
 references:
     - https://twitter.com/_xpn_/status/1268712093928378368
     - https://social.msdn.microsoft.com/Forums/vstudio/en-US/0878832e-39d7-4eaf-8e16-a729c4c40975/what-can-i-use-e13c0d23ccbc4e12931bd9cc2eee27e4-for?forum=clr
@@ -25,11 +16,20 @@ references:
     - https://github.com/dotnet/runtime/blob/4f9ae42d861fcb4be2fcd5d3d55d5f227d30e723/docs/coding-guidelines/clr-jit-coding-conventions.md#1412-disabling-code
 author: Roberto Rodriguez (Cyb3rWard0g), OTR (Open Threat Research)
 date: 2020/06/05
+
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4657
+        ObjectName|endswith: '\SOFTWARE\Microsoft\.NETFramework'
+        ObjectValueName: 'ETWEnabled'
+        NewValue: '0'
+    condition: selection
+
+id: a4c90ea1-2634-4ca0-adbb-35eae169b6fc
 tags:
     - attack.defense_evasion
     - attack.t1112
-level: critical
-status: experimental
-falsepositives:
-    - unknown
 

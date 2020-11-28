@@ -1,9 +1,13 @@
 title: New Service Creation
-id: 7fe71fc9-de3b-432a-8d57-8c809efc10ab
 description: Detects creation of a new service
+level: low
+status: experimental
+falsepositives:
+    - Legitimate administrator or user creates a service for legitimate reason
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1050/T1050.yaml
 author: Timur Zinniatullin, Daniil Yugoslavskiy, oscd.community
 date: 2019/10/21
-modified: 2019/11/04
 
 logsource:
     category: process_creation
@@ -18,15 +22,11 @@ detection:
           CommandLine|contains: 'new-service'
     condition: selection
 
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1050/T1050.yaml
+id: 7fe71fc9-de3b-432a-8d57-8c809efc10ab
+modified: 2019/11/04
 tags:
     - attack.persistence
     - attack.privilege_escalation
     - attack.t1050 # an old one
     - attack.t1543.003
-level: low
-status: experimental
-falsepositives:
-    - Legitimate administrator or user creates a service for legitimate reason
 

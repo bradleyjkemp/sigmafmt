@@ -1,6 +1,12 @@
 title: Mimikatz In-Memory
-id: c0478ead-5336-46c2-bd5e-b4c84bc3a36e
 description: Detects certain DLL loads when Mimikatz gets executed
+level: medium
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://securityriskadvisors.com/blog/post/detecting-in-memory-mimikatz/
+date: 2017/03/13
 
 logsource:
     category: image_load
@@ -27,17 +33,11 @@ detection:
     condition: selector | near dllload1 and dllload2 and not exclusion
     timeframe: 30s
 
-references:
-    - https://securityriskadvisors.com/blog/post/detecting-in-memory-mimikatz/
+id: c0478ead-5336-46c2-bd5e-b4c84bc3a36e
 tags:
     - attack.credential_access
     - attack.lateral_movement
     - attack.s0002
     - attack.t1003
     - car.2019-04-004
-date: 2017/03/13
-level: medium
-status: experimental
-falsepositives:
-    - unknown
 

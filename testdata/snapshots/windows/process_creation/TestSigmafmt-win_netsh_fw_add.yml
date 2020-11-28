@@ -1,6 +1,14 @@
 title: Netsh Port or Application Allowed
-id: cd5cfd80-aa5f-44c0-9c20-108c4ae12e3c
 description: Allow Incoming Connections by Port or Application on Windows Firewall
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate administration
+references:
+    - https://attack.mitre.org/software/S0246/ (Lazarus HARDRAIN)
+    - https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-RAT-and-Staging-Report.pdf
+author: Markus Neis, Sander Wiebing
+date: 2019/01/29
 
 logsource:
     category: process_creation
@@ -14,18 +22,10 @@ detection:
             - '*firewall add*'
     condition: selection1 and selection2
 
-references:
-    - https://attack.mitre.org/software/S0246/ (Lazarus HARDRAIN)
-    - https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-RAT-and-Staging-Report.pdf
-date: 2019/01/29
+id: cd5cfd80-aa5f-44c0-9c20-108c4ae12e3c
 modified: 2020/09/01
 tags:
     - attack.defense_evasion
     - attack.t1089 # an old one
     - attack.t1562.004
-author: Markus Neis, Sander Wiebing
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate administration
 

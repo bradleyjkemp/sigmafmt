@@ -1,6 +1,12 @@
 title: Auditing Configuration Changes on Linux Host
-id: 977ef627-4539-4875-adf4-ed8f780c4922
 description: Detect changes in auditd configuration files
+level: high
+status: experimental
+falsepositives:
+    - Legitimate administrative activity
+references:
+    - https://github.com/Neo23x0/auditd/blob/master/audit.rules
+    - self experience
 # Example config for this one (place it at the top of audit.rules)
 # -w /etc/audit/ -p wa -k etc_modify_auditconfig
 # -w /etc/libaudit.conf -p wa -k etc_modify_libauditconfig
@@ -19,20 +25,14 @@ detection:
             - /etc/libaudit.conf
             - /etc/audisp/*
     condition: selection
-
-references:
-    - https://github.com/Neo23x0/auditd/blob/master/audit.rules
-    - self experience
-tags:
-    - attack.defense_evasion
-    - attack.t1054 # an old one
-    - attack.t1562.006
-level: high
-status: experimental
 fields:
     - exe
     - comm
     - key
-falsepositives:
-    - Legitimate administrative activity
+
+id: 977ef627-4539-4875-adf4-ed8f780c4922
+tags:
+    - attack.defense_evasion
+    - attack.t1054 # an old one
+    - attack.t1562.006
 

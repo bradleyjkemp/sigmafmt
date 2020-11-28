@@ -1,6 +1,13 @@
 title: PowerShell ShellCode
-id: 16b37b70-6fcf-4814-a092-c36bd3aafcbd
 description: Detects Base64 encoded Shellcode
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://twitter.com/cyb3rops/status/1063072865992523776
+author: David Ledbetter (shellcode), Florian Roth (rule)
+date: 2018/11/17
 
 logsource:
     product: windows
@@ -16,8 +23,8 @@ detection:
         - '*OiJAAAAYInlM*'
     condition: selection and keyword1 and keyword2
 
-references:
-    - https://twitter.com/cyb3rops/status/1063072865992523776
+id: 16b37b70-6fcf-4814-a092-c36bd3aafcbd
+modified: 2020/08/24
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -25,11 +32,4 @@ tags:
     - attack.t1055
     - attack.t1059.001
     - attack.t1086 #an old one
-author: David Ledbetter (shellcode), Florian Roth (rule)
-date: 2018/11/17
-modified: 2020/08/24
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

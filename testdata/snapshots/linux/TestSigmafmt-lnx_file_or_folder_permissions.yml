@@ -1,6 +1,11 @@
 title: File or Folder Permissions Change
-id: 74c01ace-0152-4094-8ae2-6fd776dd43e5
 description: Detects file and folder permission changes
+level: low
+status: experimental
+falsepositives:
+    - User interracting with files permissions (normal/daily behaviour)
+references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1222.002/T1222.002.yaml
 author: Jakob Weinzettl, oscd.community
 date: 2019/09/23
 
@@ -15,13 +20,8 @@ detection:
             - 'chown'
     condition: selection
 
-references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1222.002/T1222.002.yaml
+id: 74c01ace-0152-4094-8ae2-6fd776dd43e5
 tags:
     - attack.defense_evasion
     - attack.t1222.002
-level: low
-status: experimental
-falsepositives:
-    - User interracting with files permissions (normal/daily behaviour)
 

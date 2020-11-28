@@ -1,6 +1,13 @@
 title: Winnti Malware HK University Campaign
-id: 3121461b-5aa0-4a41-b910-66d25524edbb
 description: Detects specific process characteristics of Winnti malware noticed in Dec/Jan 2020 in a campaign against Honk Kong universities
+level: critical
+status: experimental
+falsepositives:
+    - Unlikely
+references:
+    - https://www.welivesecurity.com/2020/01/31/winnti-group-targeting-universities-hong-kong/
+author: Florian Roth, Markus Neis
+date: 2020/02/01
 
 logsource:
     category: process_creation
@@ -24,17 +31,10 @@ detection:
         Image|endswith: '\SearchFilterHost.exe'
     condition: 1 of them
 
-references:
-    - https://www.welivesecurity.com/2020/01/31/winnti-group-targeting-universities-hong-kong/
+id: 3121461b-5aa0-4a41-b910-66d25524edbb
 tags:
     - attack.defense_evasion
     - attack.g0044
     - attack.t1073 # an old one
     - attack.t1574.002
-author: Florian Roth, Markus Neis
-date: 2020/02/01
-level: critical
-status: experimental
-falsepositives:
-    - Unlikely
 

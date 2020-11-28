@@ -1,6 +1,15 @@
 title: Reconnaissance Activity with Net Command
-id: 2887e914-ce96-435f-8105-593937e90757
 description: Detects a set of commands often used in recon stages by different attack groups
+level: medium
+status: experimental
+falsepositives:
+    - False positives depend on scripts and administrative tools used in the monitored environment
+references:
+    - https://twitter.com/haroonmeer/status/939099379834658817
+    - https://twitter.com/c_APT_ure/status/939475433711722497
+    - https://www.fireeye.com/blog/threat-research/2016/05/targeted_attacksaga.html
+author: Florian Roth, Markus Neis
+date: 2018/08/22
 
 logsource:
     category: process_creation
@@ -28,20 +37,11 @@ detection:
     condition: selection | count() by CommandLine > 4
     timeframe: 15s
 
-references:
-    - https://twitter.com/haroonmeer/status/939099379834658817
-    - https://twitter.com/c_APT_ure/status/939475433711722497
-    - https://www.fireeye.com/blog/threat-research/2016/05/targeted_attacksaga.html
-author: Florian Roth, Markus Neis
-date: 2018/08/22
+id: 2887e914-ce96-435f-8105-593937e90757
 modified: 2018/12/11
 tags:
     - attack.discovery
     - attack.t1082
     - attack.t1087
     - car.2016-03-001
-level: medium
-status: experimental
-falsepositives:
-    - False positives depend on scripts and administrative tools used in the monitored environment
 

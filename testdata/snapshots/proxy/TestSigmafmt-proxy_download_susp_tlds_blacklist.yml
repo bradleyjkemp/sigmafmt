@@ -1,6 +1,14 @@
 title: Download from Suspicious TLD
-id: 00d0b5ab-1f55-4120-8e83-487c0a7baf19
 description: Detects download of certain file types from hosts in suspicious TLDs
+level: low
+status: experimental
+falsepositives:
+    - All kinds of software downloads
+references:
+    - https://www.symantec.com/connect/blogs/shady-tld-research-gdn-and-our-2016-wrap
+    - https://promos.mcafee.com/en-US/PDF/MTMW_Report.pdf
+    - https://www.spamhaus.org/statistics/tlds/
+    - https://krebsonsecurity.com/2018/06/bad-men-at-work-please-dont-click/
 author: Florian Roth
 date: 2017/11/07
 modified: 2020/09/03
@@ -96,12 +104,11 @@ detection:
             # Custom
             - '*.pw'
     condition: selection
+fields:
+    - ClientIP
+    - c-uri
 
-references:
-    - https://www.symantec.com/connect/blogs/shady-tld-research-gdn-and-our-2016-wrap
-    - https://promos.mcafee.com/en-US/PDF/MTMW_Report.pdf
-    - https://www.spamhaus.org/statistics/tlds/
-    - https://krebsonsecurity.com/2018/06/bad-men-at-work-please-dont-click/
+id: 00d0b5ab-1f55-4120-8e83-487c0a7baf19
 tags:
     - attack.execution
     - attack.initial_access
@@ -109,11 +116,4 @@ tags:
     - attack.t1204 # an old one
     - attack.t1204.002
     - attack.t1566
-level: low
-status: experimental
-fields:
-    - ClientIP
-    - c-uri
-falsepositives:
-    - All kinds of software downloads
 

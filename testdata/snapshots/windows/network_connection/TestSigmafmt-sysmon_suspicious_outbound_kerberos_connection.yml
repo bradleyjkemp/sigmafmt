@@ -1,6 +1,13 @@
 title: Suspicious Outbound Kerberos Connection
-id: e54979bd-c5f9-4d6c-967b-a04b19ac4c74
 description: Detects suspicious outbound network activity via kerberos default port indicating possible lateral movement or first stage PrivEsc via delegation.
+level: high
+status: experimental
+falsepositives:
+    - Other browsers
+references:
+    - https://github.com/GhostPack/Rubeus
+author: Ilyas Ochkov, oscd.community
+date: 2019/10/24
 
 logsource:
     category: network_connection
@@ -17,10 +24,7 @@ detection:
             - '\firefox.exe'
     condition: selection and not filter
 
-references:
-    - https://github.com/GhostPack/Rubeus
-author: Ilyas Ochkov, oscd.community
-date: 2019/10/24
+id: e54979bd-c5f9-4d6c-967b-a04b19ac4c74
 modified: 2020/08/24
 tags:
     - attack.credential_access
@@ -29,8 +33,4 @@ tags:
     - attack.t1208 # an old one
     - attack.t1550.003
     - attack.t1558
-level: high
-status: experimental
-falsepositives:
-    - Other browsers
 

@@ -1,6 +1,11 @@
 title: New or Renamed User Account with '$' in Attribute 'SamAccountName'.
-id: cfeed607-6aa4-4bbd-9627-b637deb723c8
 description: Detects possible bypass EDR and SIEM via abnormal user account name.
+level: high
+status: experimental
+falsepositives:
+    - Unkown
+author: Ilyas Ochkov, oscd.community
+date: 2019/10/25
 
 logsource:
     product: windows
@@ -13,18 +18,13 @@ detection:
         UserName|contains: '$' #SamAccountName
     condition: selection
 
-tags:
-    - attack.defense_evasion
-    - attack.t1036
-author: Ilyas Ochkov, oscd.community
-date: 2019/10/25
+id: cfeed607-6aa4-4bbd-9627-b637deb723c8
 modified: 2019/11/13
-level: high
-status: experimental
 fields:
     - EventID
     - UserName
     - SubjectAccountName
-falsepositives:
-    - Unkown
+tags:
+    - attack.defense_evasion
+    - attack.t1036
 

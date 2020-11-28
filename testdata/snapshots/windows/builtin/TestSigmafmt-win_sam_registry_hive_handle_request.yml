@@ -1,9 +1,14 @@
 title: SAM Registry Hive Handle Request
-id: f8748f2c-89dc-4d95-afb0-5a2dfdbad332
 description: Detects handles requested to SAM registry hive
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1012_query_registry/sam_registry_hive_access.md
+author: Roberto Rodriguez @Cyb3rWard0g
 date: 2019/08/12
 modified: 2020/08/23
-author: Roberto Rodriguez @Cyb3rWard0g
 
 logsource:
     product: windows
@@ -15,21 +20,16 @@ detection:
         ObjectName|endswith: '\SAM'
     condition: selection
 
-references:
-    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1012_query_registry/sam_registry_hive_access.md
-tags:
-    - attack.credential_access
-    - attack.discovery
-    - attack.t1012
-    - attack.t1552.002
-level: critical
-status: experimental
+id: f8748f2c-89dc-4d95-afb0-5a2dfdbad332
 fields:
     - ComputerName
     - SubjectDomainName
     - SubjectUserName
     - ProcessName
     - ObjectName
-falsepositives:
-    - Unknown
+tags:
+    - attack.credential_access
+    - attack.discovery
+    - attack.t1012
+    - attack.t1552.002
 

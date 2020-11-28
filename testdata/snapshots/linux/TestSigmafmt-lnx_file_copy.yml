@@ -1,6 +1,11 @@
 title: Remote File Copy
-id: 7a14080d-a048-4de8-ae58-604ce58a795b
 description: Detects the use of tools that copy files from or to remote systems
+level: low
+status: stable
+falsepositives:
+    - Legitimate administration activities
+references:
+    - https://attack.mitre.org/techniques/T1105/
 author: Ömer Günal
 date: 2020/06/18
 
@@ -18,14 +23,9 @@ detection:
             - 'sftp *@*:* *'
     condition: keywords
 
-references:
-    - https://attack.mitre.org/techniques/T1105/
+id: 7a14080d-a048-4de8-ae58-604ce58a795b
 tags:
     - attack.command_and_control
     - attack.lateral_movement
     - attack.t1105
-level: low
-status: stable
-falsepositives:
-    - Legitimate administration activities
 

@@ -1,6 +1,13 @@
 title: Copy from Admin Share
-id: 855bc8b5-2ae8-402e-a9ed-b889e6df1900
 description: Detects a suspicious copy command from a remote C$ or ADMIN$ share
+level: high
+status: experimental
+falsepositives:
+    - Administrative scripts
+references:
+    - https://twitter.com/SBousseaden/status/1211636381086339073
+author: Florian Roth
+date: 2019/12/30
 
 logsource:
     category: process_creation
@@ -12,11 +19,11 @@ detection:
             - 'copy *\ADMIN$'
     condition: selection
 
-references:
-    - https://twitter.com/SBousseaden/status/1211636381086339073
-author: Florian Roth
-date: 2019/12/30
+id: 855bc8b5-2ae8-402e-a9ed-b889e6df1900
 modified: 2020/09/05
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.command_and_control
     - attack.lateral_movement
@@ -24,11 +31,4 @@ tags:
     - attack.t1021.002
     - attack.t1077 # an old one
     - attack.t1105
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - Administrative scripts
 

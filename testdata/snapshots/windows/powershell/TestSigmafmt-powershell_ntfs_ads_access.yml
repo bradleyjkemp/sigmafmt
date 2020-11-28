@@ -1,6 +1,13 @@
 title: NTFS Alternate Data Stream
-id: 8c521530-5169-495d-a199-0a3a881ad24e
 description: Detects writing data into NTFS alternate data streams from powershell. Needs Script Block Logging.
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - http://www.powertheshell.com/ntfsstreams/
+author: Sami Ruohonen
+date: 2018/07/24
 
 logsource:
     product: windows
@@ -14,8 +21,8 @@ detection:
         - "-stream"
     condition: keyword1 and keyword2
 
-references:
-    - http://www.powertheshell.com/ntfsstreams/
+id: 8c521530-5169-495d-a199-0a3a881ad24e
+modified: 2020/08/24
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -23,11 +30,4 @@ tags:
     - attack.t1086 # an old one
     - attack.t1096 # an old one
     - attack.t1564.004
-author: Sami Ruohonen
-date: 2018/07/24
-modified: 2020/08/24
-level: high
-status: experimental
-falsepositives:
-    - unknown
 

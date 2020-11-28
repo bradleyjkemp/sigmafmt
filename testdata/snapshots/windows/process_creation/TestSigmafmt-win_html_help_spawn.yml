@@ -1,6 +1,13 @@
 title: HTML Help Shell Spawn
-id: 52cad028-0ff0-4854-8f67-d25dfcbc78b4
 description: Detects a suspicious child process of a Microsoft HTML Help system when executing compiled HTML files (.chm)
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/chm-badness-delivers-a-banking-trojan/
+author: Maxim Pavlunin
+date: 2020/04/01
 
 logsource:
     category: process_creation
@@ -18,11 +25,11 @@ detection:
             - '\rundll32.exe'
     condition: selection
 
-references:
-    - https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/chm-badness-delivers-a-banking-trojan/
-author: Maxim Pavlunin
-date: 2020/04/01
+id: 52cad028-0ff0-4854-8f67-d25dfcbc78b4
 modified: 2020/09/01
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.defense_evasion
     - attack.execution
@@ -35,11 +42,4 @@ tags:
     - attack.t1218.010
     - attack.t1218.011
     - attack.t1223 # an old one
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - unknown
 

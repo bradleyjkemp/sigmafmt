@@ -1,6 +1,13 @@
 title: TAIDOOR RAT DLL Load
-id: d1aa3382-abab-446f-96ea-4de52908210b
 description: Detects specific process characteristics of Chinese TAIDOOR RAT malware load
+level: critical
+status: experimental
+falsepositives:
+    - Unknown
+references:
+    - https://us-cert.cisa.gov/ncas/analysis-reports/ar20-216a
+author: Florian Roth
+date: 2020/07/30
 
 logsource:
     category: process_creation
@@ -18,16 +25,9 @@ detection:
             - 'rundll32.exe'
     condition: selection1 or ( selection2a and selection2b )
 
-references:
-    - https://us-cert.cisa.gov/ncas/analysis-reports/ar20-216a
-author: Florian Roth
-date: 2020/07/30
+id: d1aa3382-abab-446f-96ea-4de52908210b
 tags:
     - attack.execution
     - attack.t1055 # an old one
     - attack.t1055.001
-level: critical
-status: experimental
-falsepositives:
-    - Unknown
 

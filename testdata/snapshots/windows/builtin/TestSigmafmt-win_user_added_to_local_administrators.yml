@@ -1,9 +1,11 @@
 title: User Added to Local Administrators
-id: c265cf08-3f99-46c1-8d59-328247057d57
 description: This rule triggers on user accounts that are added to the local Administrators group, which could be legitimate activity or a sign of privilege escalation activity
+level: medium
+status: stable
+falsepositives:
+    - Legitimate administrative activity
 author: Florian Roth
 date: 2017/03/14
-modified: 2020/08/23
 
 logsource:
     product: windows
@@ -19,13 +21,11 @@ detection:
         SubjectUserName: '*$'
     condition: selection and (1 of selection_group*) and not filter
 
+id: c265cf08-3f99-46c1-8d59-328247057d57
+modified: 2020/08/23
 tags:
     - attack.persistence
     - attack.privilege_escalation
     - attack.t1078
     - attack.t1098
-level: medium
-status: stable
-falsepositives:
-    - Legitimate administrative activity
 

@@ -1,6 +1,14 @@
 title: Microsoft Office Product Spawning Windows Shell
-id: 438025f9-5856-4663-83f7-52f878a70a50
 description: Detects a Windows command and scripting interpreter executable started from Microsoft Word, Excel, Powerpoint, Publisher and Visio
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://www.hybrid-analysis.com/sample/465aabe132ccb949e75b8ab9c5bda36d80cf2fd503d52b8bad54e295f28bbc21?environmentId=100
+    - https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html
+author: Michael Haag, Florian Roth, Markus Neis
+date: 2018/04/06
 
 logsource:
     category: process_creation
@@ -36,21 +44,13 @@ detection:
             - '*\svchost.exe' # https://www.vmray.com/analyses/2d2fa29185ad/report/overview.html
     condition: selection
 
-references:
-    - https://www.hybrid-analysis.com/sample/465aabe132ccb949e75b8ab9c5bda36d80cf2fd503d52b8bad54e295f28bbc21?environmentId=100
-    - https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html
+id: 438025f9-5856-4663-83f7-52f878a70a50
+modified: 2020/09/01
+fields:
+    - CommandLine
+    - ParentCommandLine
 tags:
     - attack.execution
     - attack.t1204 # an old one
     - attack.t1204.002
-author: Michael Haag, Florian Roth, Markus Neis
-date: 2018/04/06
-modified: 2020/09/01
-level: high
-status: experimental
-fields:
-    - CommandLine
-    - ParentCommandLine
-falsepositives:
-    - unknown
 

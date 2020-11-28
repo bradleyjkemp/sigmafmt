@@ -1,6 +1,13 @@
 title: Disabled IE Security Features
-id: fb50eb7a-5ab1-43ae-bcc9-091818cb8424
 description: Detects command lines that indicate unwanted modifications to registry keys that disable important Internet Explorer security features
+level: high
+status: experimental
+falsepositives:
+    - Unknown, maybe some security software installer disables these features temporarily
+references:
+    - https://unit42.paloaltonetworks.com/operation-ke3chang-resurfaces-with-new-tidepool-malware/
+author: Florian Roth
+date: 2020/06/19
 
 logsource:
     category: process_creation
@@ -20,16 +27,9 @@ detection:
             - ' -value 2 '
     condition: 1 of them
 
-references:
-    - https://unit42.paloaltonetworks.com/operation-ke3chang-resurfaces-with-new-tidepool-malware/
+id: fb50eb7a-5ab1-43ae-bcc9-091818cb8424
 tags:
     - attack.defense_evasion
     - attack.t1089 # an old one
     - attack.t1562.001
-author: Florian Roth
-date: 2020/06/19
-level: high
-status: experimental
-falsepositives:
-    - Unknown, maybe some security software installer disables these features temporarily
 

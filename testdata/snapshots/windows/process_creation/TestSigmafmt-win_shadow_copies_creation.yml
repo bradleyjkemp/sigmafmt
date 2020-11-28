@@ -1,6 +1,12 @@
 title: Shadow Copies Creation Using Operating Systems Utilities
-id: b17ea6f7-6e90-447e-a799-e6c0a493d6ce
 description: Shadow Copies creation using operating systems utilities, possible credential access
+level: medium
+status: experimental
+falsepositives:
+    - Legitimate administrator working with shadow copies, access for backup purposes
+references:
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
+    - https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/tutorial-for-ntds-goodness-vssadmin-wmis-ntdsdit-system/
 author: Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community
 date: 2019/10/22
 
@@ -18,16 +24,10 @@ detection:
             - create
     condition: selection
 
-references:
-    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
-    - https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/tutorial-for-ntds-goodness-vssadmin-wmis-ntdsdit-system/
+id: b17ea6f7-6e90-447e-a799-e6c0a493d6ce
 tags:
     - attack.credential_access
     - attack.t1003
     - attack.t1003.002
     - attack.t1003.003
-level: medium
-status: experimental
-falsepositives:
-    - Legitimate administrator working with shadow copies, access for backup purposes
 

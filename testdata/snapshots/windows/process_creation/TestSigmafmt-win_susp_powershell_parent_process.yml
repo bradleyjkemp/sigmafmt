@@ -1,6 +1,13 @@
 title: Suspicious PowerShell Parent Process
-id: 754ed792-634f-40ae-b3bc-e0448d33f695
 description: Detects a suspicious parents of powershell.exe
+level: medium
+status: experimental
+falsepositives:
+    - Other scripts
+references:
+    - https://speakerdeck.com/heirhabarov/hunting-for-powershell-abuse?slide=26
+author: Teymur Kheirkhabarov, Harish Segar (rule)
+date: 2020/03/20
 
 logsource:
     category: process_creation
@@ -47,16 +54,9 @@ detection:
         - Product: "PowerShell Core 6"
     condition: all of them
 
-references:
-    - https://speakerdeck.com/heirhabarov/hunting-for-powershell-abuse?slide=26
-author: Teymur Kheirkhabarov, Harish Segar (rule)
-date: 2020/03/20
+id: 754ed792-634f-40ae-b3bc-e0448d33f695
 tags:
     - attack.execution
     - attack.t1059.001
     - attack.t1086 # an old one   
-level: medium
-status: experimental
-falsepositives:
-    - Other scripts
 

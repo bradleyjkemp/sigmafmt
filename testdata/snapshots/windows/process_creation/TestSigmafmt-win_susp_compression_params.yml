@@ -1,6 +1,13 @@
 title: Suspicious Compression Tool Parameters
-id: 27a72a60-7e5e-47b1-9d17-909c9abafdcd
 description: Detects suspicious command line arguments of common data compression tools
+level: high
+status: experimental
+falsepositives:
+    - unknown
+references:
+    - https://twitter.com/SBousseaden/status/1184067445612535811
+author: Florian Roth, Samir Bousseaden
+date: 2019/10/15
 
 logsource:
     category: process_creation
@@ -22,19 +29,12 @@ detection:
         ParentImage: 'C:\Program*'
     condition: selection and not falsepositive
 
-references:
-    - https://twitter.com/SBousseaden/status/1184067445612535811
+id: 27a72a60-7e5e-47b1-9d17-909c9abafdcd
+modified: 2020/09/05
 tags:
     - attack.collection
     - attack.exfiltration # an old one
     - attack.t1002 # an old one
     - attack.t1020 # an old one
     - attack.t1560.001
-author: Florian Roth, Samir Bousseaden
-date: 2019/10/15
-modified: 2020/09/05
-level: high
-status: experimental
-falsepositives:
-    - unknown
 

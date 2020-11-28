@@ -1,6 +1,11 @@
 title: Possible Ransomware or Unauthorized MBR Modifications
-id: c9fbe8e9-119d-40a6-9b59-dd58a5d84429
 description: Detects, possibly, malicious unauthorized usage of bcdedit.exe
+level: medium
+status: experimental
+references:
+    - https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set
+author: '@neu5ron'
+date: 2019/02/07
 
 logsource:
     category: process_creation
@@ -14,16 +19,11 @@ detection:
             - '*import*'
     condition: selection
 
-references:
-    - https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set
-author: '@neu5ron'
-date: 2019/02/07
+id: c9fbe8e9-119d-40a6-9b59-dd58a5d84429
 tags:
     - attack.defense_evasion
     - attack.persistence
     - attack.t1067 # an old one
     - attack.t1070
     - attack.t1542.003
-level: medium
-status: experimental
 
