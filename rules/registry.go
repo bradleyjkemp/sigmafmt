@@ -18,6 +18,7 @@ var Rules = []Rule{
 	validLevel,
 	tagsInAlphabeticalOrder,
 	whitespaceBetweenSections,
+	conditionTimeframeOrder,
 
 	// Essential internal cleanup steps:
 	undoPreserveWhitespace,

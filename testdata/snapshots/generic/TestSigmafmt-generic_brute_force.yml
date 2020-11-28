@@ -10,8 +10,8 @@ logsource:
 detection:
     selection:
         action: failure
-    timeframe: 600s
     condition: selection | count(category) by dst_ip > 30
+    timeframe: 600s
 
 tags:
     - attack.credential_access

@@ -17,8 +17,8 @@ detection:
             - SamrLookupNamesInDomain #method translates a set of account names into a set of RIDs
             - SamrQuerySecurityObject #method queries the access control on a server, domain, user, group, or alias object
             - SamrQueryInformationGroup #obtains attributes from a group object
-    timeframe: 30s
     condition: selection | count(operation) by src_ip > 4
+    timeframe: 30s
 
 references:
     - "https://github.com/OTRF/detection-hackathon-apt29"

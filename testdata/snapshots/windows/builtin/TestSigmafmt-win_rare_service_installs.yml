@@ -10,8 +10,8 @@ logsource:
 detection:
     selection:
         EventID: 7045
-    timeframe: 7d
     condition: selection | count() by ServiceFileName < 5
+    timeframe: 7d
 
 tags:
     - attack.persistence

@@ -10,10 +10,10 @@ logsource:
 detection:
     selection:
         action: denied
-    timeframe: 24h
     condition:
         - selection | count(dst_port) by src_ip > 10
         - selection | count(dst_ip) by src_ip > 10
+    timeframe: 24h
 
 tags:
     - attack.discovery

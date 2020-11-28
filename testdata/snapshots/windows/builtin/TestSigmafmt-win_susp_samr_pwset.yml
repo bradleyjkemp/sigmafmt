@@ -15,8 +15,8 @@ detection:
         EventID: 4738
     passwordchanged_filter:
         PasswordLastSet: null
-    timeframe: 15s
     condition: ( passwordchanged and not passwordchanged_filter ) | near samrpipe
+    timeframe: 15s
 
 tags:
     - attack.credential_access

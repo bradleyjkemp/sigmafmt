@@ -46,8 +46,8 @@ detection:
             - wbadmin.exe
             - icacls.exe
             - diskpart.exe
-    timeframe: 5m
     condition: selection | count() by MachineName > 5
+    timeframe: 5m
 
 references:
     - https://car.mitre.org/wiki/CAR-2013-04-002

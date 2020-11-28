@@ -8,8 +8,8 @@ logsource:
 detection:
     selection:
         EventID: 106
-    timeframe: 7d
     condition: selection | count() by TaskName < 5
+    timeframe: 7d
 
 tags:
     - attack.persistence

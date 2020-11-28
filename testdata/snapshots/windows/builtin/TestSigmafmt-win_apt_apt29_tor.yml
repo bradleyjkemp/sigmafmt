@@ -10,8 +10,8 @@ detection:
     service_install:
         EventID: 7045
         ServiceName: 'Google Update'
-    timeframe: 5m
     condition: service_install | near process
+    timeframe: 5m
 
 references:
     - https://www.fireeye.com/blog/threat-research/2017/03/apt29_domain_frontin.html

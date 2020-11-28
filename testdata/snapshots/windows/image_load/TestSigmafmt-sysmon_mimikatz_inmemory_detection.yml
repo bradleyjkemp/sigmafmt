@@ -24,8 +24,8 @@ detection:
             - 'ntasn1.dll'
             - 'cryptdll.dll'
             - 'logoncli.dll'
-    timeframe: 30s
     condition: selector | near dllload1 and dllload2 and not exclusion
+    timeframe: 30s
 
 references:
     - https://securityriskadvisors.com/blog/post/detecting-in-memory-mimikatz/

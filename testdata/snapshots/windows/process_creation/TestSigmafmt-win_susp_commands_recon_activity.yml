@@ -25,8 +25,8 @@ detection:
             - '*\net1 accounts /domain'
             - '*\net1 user net localgroup administrators'
             - netstat -an
-    timeframe: 15s
     condition: selection | count() by CommandLine > 4
+    timeframe: 15s
 
 references:
     - https://twitter.com/haroonmeer/status/939099379834658817

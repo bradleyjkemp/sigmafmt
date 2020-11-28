@@ -15,8 +15,8 @@ detection:
         DestinationPort:
             - 3268
             - 3269
-    timeframe: 1h
     condition: selection | count() by SourceAddress > 2000
+    timeframe: 1h
 
 tags:
     - attack.discovery

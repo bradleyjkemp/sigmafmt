@@ -14,8 +14,8 @@ detection:
         - requestParameters.attribute: userData
     selection_eventname:
         - eventName: DescribeInstanceAttribute
-    timeframe: 30m
     condition: all of them | count() > 10
+    timeframe: 30m
 
 references:
     - https://github.com/RhinoSecurityLabs/pacu/blob/master/modules/ec2__download_userdata/main.py#L24

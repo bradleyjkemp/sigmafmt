@@ -12,8 +12,8 @@ detection:
         pam_message: authentication failure
         pam_user: '*'
         pam_rhost: '*'
-    timeframe: 24h
     condition: selection | count(pam_user) by pam_rhost > 3
+    timeframe: 24h
 
 level: medium
 status: experimental

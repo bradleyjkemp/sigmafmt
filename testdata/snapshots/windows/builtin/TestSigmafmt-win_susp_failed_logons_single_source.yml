@@ -18,10 +18,10 @@ detection:
         EventID: 4776
         UserName: '*'
         Workstation: '*'
-    timeframe: 24h
     condition:
         - selection1 | count(UserName) by WorkstationName > 3
         - selection2 | count(UserName) by Workstation > 3
+    timeframe: 24h
 
 tags:
     - attack.persistence

@@ -11,8 +11,8 @@ logsource:
 detection:
     selection:
         EventID: 4698
-    timeframe: 7d
     condition: selection | count() by TaskName < 5
+    timeframe: 7d
 
 tags:
     - attack.execution
