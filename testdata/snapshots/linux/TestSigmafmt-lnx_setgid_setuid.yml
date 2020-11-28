@@ -1,9 +1,9 @@
 title: Setuid and Setgid
 id: c21c4eaa-ba2e-419a-92b2-8371703cbe21
 description: Detects suspicious change of file privileges with chown and chmod commands
-
 author: Ömer Günal
 date: 2020/06/16
+
 logsource:
     product: linux
 detection:

@@ -1,10 +1,10 @@
 title: CobaltStrike Malleable Amazon Browsing Traffic Profile
 id: 953b895e-5cc9-454b-b183-7f3db555452e
 description: Detects Malleable Amazon Profile
-
 author: Markus Neis
 date: 2019/11/12
 modified: 2020/09/02
+
 logsource:
     category: proxy
 detection:

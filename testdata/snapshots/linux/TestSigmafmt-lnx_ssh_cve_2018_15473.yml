@@ -1,9 +1,9 @@
 title: SSHD Error Message CVE-2018-15473
 id: 4c9d903d-4939-4094-ade0-3cb748f4d7da
 description: Detects exploitation attempt using public exploit code for CVE-2018-15473
-
 author: Florian Roth
 date: 2017/08/24
+
 logsource:
     product: linux
     service: sshd

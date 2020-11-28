@@ -1,9 +1,9 @@
 title: CVE-2020-0688 Exchange Exploitation via Web Log
 id: fce2c2e2-0fb5-41ab-a14c-5391e1fd70a5
 description: Detects the exploitation of Microsoft Exchange vulnerability as described in CVE-2020-0688
-
 author: Florian Roth
 date: 2020/02/29
+
 logsource:
     category: webserver
 detection:

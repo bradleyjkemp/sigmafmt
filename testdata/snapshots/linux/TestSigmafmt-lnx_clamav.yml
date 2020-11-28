@@ -1,9 +1,9 @@
 title: Relevant ClamAV Message
 id: 36aa86ca-fd9d-4456-814e-d3b1b8e1e0bb
 description: Detects relevant ClamAV messages
-
 author: Florian Roth
 date: 2017/03/01
+
 logsource:
     product: linux
     service: clamav

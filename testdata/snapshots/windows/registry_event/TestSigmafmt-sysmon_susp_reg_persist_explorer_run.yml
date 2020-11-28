@@ -1,10 +1,10 @@
 title: Registry Persistence via Explorer Run Key
 id: b7916c2a-fa2f-4795-9477-32b731f70f11
 description: Detects a possible persistence mechanism using RUN key for Windows Explorer and pointing to a suspicious folder
-
 author: Florian Roth
 date: 2018/07/18
 modified: 2020/09/06
+
 logsource:
     category: registry_event
     product: windows

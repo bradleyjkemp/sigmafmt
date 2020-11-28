@@ -1,10 +1,10 @@
 title: Cisco Collect Data
 id: cd072b25-a418-4f98-8ebc-5093fb38fe1a
 description: Collect pertinent data from the configuration files
-
 author: Austin Clark
 date: 2019/08/11
 modified: 2020/09/02
+
 logsource:
     product: cisco
     service: aaa

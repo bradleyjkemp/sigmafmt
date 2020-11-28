@@ -1,10 +1,10 @@
 title: Office Security Settings Changed
 id: a166f74e-bf44-409d-b9ba-ea4b2dd8b3cd
 description: Detects registry changes to Office macro settings
-
 author: Trent Liffick (@tliffick)
 date: 2020/05/22
 modified: 2020/07/01
+
 logsource:
     category: registry_event
     product: windows

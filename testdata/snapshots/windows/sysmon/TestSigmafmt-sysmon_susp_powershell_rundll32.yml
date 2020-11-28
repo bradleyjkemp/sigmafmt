@@ -1,8 +1,8 @@
 title: PowerShell Rundll32 Remote Thread Creation
 id: 99b97608-3e21-4bfe-8217-2a127c396a0e
 description: Detects PowerShell remote thread creation in Rundll32.exe
-
 author: Florian Roth
+
 logsource:
     product: windows
     service: sysmon

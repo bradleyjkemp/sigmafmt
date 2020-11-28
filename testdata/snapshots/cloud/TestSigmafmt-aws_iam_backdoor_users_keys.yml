@@ -1,10 +1,10 @@
 title: AWS IAM Backdoor Users Keys
 id: 0a5177f4-6ca9-44c2-aacf-d3f3d8b6e4d2
 description: Detects AWS API key creation for a user by another user. Backdoored users can be used to obtain persistence in the AWS environment. Also with this alert, you can detect a flow of AWS keys in your org.
-
 author: faloker
 date: 2020/02/12
 modified: 2020/09/01
+
 logsource:
     service: cloudtrail
 detection:

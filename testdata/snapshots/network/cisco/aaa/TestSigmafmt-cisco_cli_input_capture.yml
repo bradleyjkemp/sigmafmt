@@ -1,10 +1,10 @@
 title: Cisco Show Commands Input
 id: b094d9fb-b1ad-4650-9f1a-fb7be9f1d34b
 description: See what commands are being input into the device by other people, full credentials can be in the history
-
 author: Austin Clark
 date: 2019/08/11
 modified: 2020/09/02
+
 logsource:
     product: cisco
     service: aaa

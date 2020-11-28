@@ -1,10 +1,10 @@
 title: Suspicious Keyboard Layout Load
 id: 34aa0252-6039-40ff-951f-939fd6ce47d8
 description: Detects the keyboard preload installation with a suspicious keyboard layout, e.g. Chinese, Iranian or Vietnamese layout load in user session on systems maintained by US staff only
-
 author: Florian Roth
 date: 2019/10/12
 modified: 2019/10/15
+
 logsource:
     category: registry_event
     product: windows

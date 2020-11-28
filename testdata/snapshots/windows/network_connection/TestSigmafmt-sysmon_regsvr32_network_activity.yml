@@ -7,6 +7,7 @@ detection:
     selection:
         Image|endswith: '\regsvr32.exe'
     condition: selection
+
 references:
     - https://pentestlab.blog/2017/05/11/applocker-bypass-regsvr32/
     - https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/

@@ -1,10 +1,10 @@
 title: Suspicious SQL Error Messages
 id: 8a670c6d-7189-4b1c-8017-a417ca84a086
 description: Detects SQL error messages that indicate probing for an injection attack
-
 author: Bjoern Kimminich
 date: 2017/11/27
 modified: 2020/09/01
+
 logsource:
     category: application
     product: sql

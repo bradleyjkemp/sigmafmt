@@ -1,10 +1,10 @@
 title: Control Panel Items
 id: 0ba863e6-def5-4e50-9cea-4dd8c7dc46a4
 description: Detects the malicious use of a control panel item
-
 reference:
     - https://attack.mitre.org/techniques/T1196/
     - https://ired.team/offensive-security/code-execution/code-execution-through-control-panel-add-ins
+
 logsource:
     product: windows
     category: process_creation

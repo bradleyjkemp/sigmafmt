@@ -1,10 +1,10 @@
 title: Turla ComRAT
 id: 7857f021-007f-4928-8b2c-7aedbe64bb82
 description: Detects Turla ComRAT patterns
-
 author: Florian Roth
 date: 2020/05/26
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

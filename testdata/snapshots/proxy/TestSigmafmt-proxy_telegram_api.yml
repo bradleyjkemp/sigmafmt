@@ -1,10 +1,10 @@
 title: Telegram API Access
 id: b494b165-6634-483d-8c47-2026a6c52372
 description: Detects suspicious requests to Telegram API without the usual Telegram User-Agent
-
 author: Florian Roth
 date: 2018/06/05
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

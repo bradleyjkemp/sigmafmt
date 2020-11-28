@@ -1,10 +1,10 @@
 title: Executables Started in Suspicious Folder
 id: 7a38aa19-86a9-4af7-ac51-6bfe4e59f254
 description: Detects process starts of binaries from a suspicious folder
-
 author: Florian Roth
 date: 2017/10/14
 modified: 2019/02/21
+
 logsource:
     category: process_creation
     product: windows

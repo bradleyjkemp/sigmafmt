@@ -1,10 +1,10 @@
 title: Hack Tool User Agent
 id: c42a3073-30fb-48ae-8c99-c23ada84b103
 description: Detects suspicious user agent strings user by hack tools in proxy logs
-
 author: Florian Roth
 date: 2017/07/08
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

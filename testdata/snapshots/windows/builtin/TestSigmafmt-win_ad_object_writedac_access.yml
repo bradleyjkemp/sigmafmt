@@ -1,9 +1,9 @@
 title: AD Object WriteDAC Access
 id: 028c7842-4243-41cd-be6f-12f3cf1a26c7
 description: Detects WRITE_DAC access to a domain object
-
 date: 2019/09/12
 author: Roberto Rodriguez @Cyb3rWard0g
+
 logsource:
     product: windows
     service: security

@@ -1,9 +1,9 @@
 title: WMI Backdoor Exchange Transport Agent
 id: 797011dc-44f4-4e6f-9f10-a8ceefbe566b
 description: Detects a WMi backdoor in Exchange Transport Agents via WMi event filters
-
 author: Florian Roth
 date: 2019/10/11
+
 logsource:
     category: process_creation
     product: windows

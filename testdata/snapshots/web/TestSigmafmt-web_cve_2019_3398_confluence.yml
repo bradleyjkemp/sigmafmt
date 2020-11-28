@@ -1,9 +1,9 @@
 title: Confluence Exploitation CVE-2019-3398
 id: e9bc39ae-978a-4e49-91ab-5bd481fc668b
 description: Detects the exploitation of the Confluence vulnerability described in CVE-2019-3398
-
 author: Florian Roth
 date: 2020/05/26
+
 logsource:
     category: webserver
 detection:

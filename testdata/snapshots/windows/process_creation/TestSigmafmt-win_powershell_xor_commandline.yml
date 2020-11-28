@@ -1,10 +1,10 @@
 title: Suspicious XOR Encoded PowerShell Command Line
 id: bb780e0c-16cf-4383-8383-1e5471db6cf9
 description: Detects suspicious powershell process which includes bxor command, alternative obfuscation method to b64 encoded commands.
-
 author: Sami Ruohonen, Harish Segar (improvement)
 date: 2018/09/05
 modified: 2020/09/06
+
 logsource:
     category: process_creation
     product: windows

@@ -1,9 +1,9 @@
 title: Execution in Outlook Temp Folder
 id: a018fdc3-46a3-44e5-9afb-2cd4af1d4b39
 description: Detects a suspicious program execution in Outlook temp folder
-
 author: Florian Roth
 date: 2019/10/01
+
 logsource:
     category: process_creation
     product: windows

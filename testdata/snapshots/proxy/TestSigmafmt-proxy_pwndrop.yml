@@ -1,10 +1,10 @@
 title: PwnDrp Access
 id: 2b1ee7e4-89b6-4739-b7bb-b811b6607e5e
 description: Detects downloads from PwnDrp web servers developed for red team testing and most likely also used for criminal activity
-
 author: Florian Roth
 date: 2020/04/15
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

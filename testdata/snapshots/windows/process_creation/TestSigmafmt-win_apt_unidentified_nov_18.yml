@@ -5,6 +5,7 @@ description: A sigma rule detecting an unidetefied attacker who used phishing em
 
 detection:
     condition: 1 of them
+
 references:
     - https://twitter.com/DrunkBinary/status/1063075530180886529
 author: '@41thexplorer, Microsoft Defender ATP'

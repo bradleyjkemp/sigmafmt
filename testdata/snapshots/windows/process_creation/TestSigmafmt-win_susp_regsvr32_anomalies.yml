@@ -1,7 +1,6 @@
 title: Regsvr32 Anomaly
 id: 8e2b24c9-4add-46a0-b4bb-0057b4e6187d
 description: Detects various anomalies in relation to regsvr32.exe
-
 author: Florian Roth
 date: 2019/01/16
 modified: 2020/08/28

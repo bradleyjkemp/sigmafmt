@@ -1,10 +1,10 @@
 title: Telegram Bot API Request
 id: c64c5175-5189-431b-a55e-6d9882158251
 description: Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
-
 author: Florian Roth
 date: 2018/06/05
 modified: 2020/08/27
+
 logsource:
     category: dns
 detection:

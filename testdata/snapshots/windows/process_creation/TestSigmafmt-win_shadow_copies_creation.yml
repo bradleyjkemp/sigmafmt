@@ -1,9 +1,9 @@
 title: Shadow Copies Creation Using Operating Systems Utilities
 id: b17ea6f7-6e90-447e-a799-e6c0a493d6ce
 description: Shadow Copies creation using operating systems utilities, possible credential access
-
 author: Teymur Kheirkhabarov, Daniil Yugoslavskiy, oscd.community
 date: 2019/10/22
+
 logsource:
     category: process_creation
     product: windows

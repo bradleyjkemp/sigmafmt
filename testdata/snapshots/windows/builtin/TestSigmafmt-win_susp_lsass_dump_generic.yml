@@ -1,10 +1,10 @@
 title: Generic Password Dumper Activity on LSASS
 id: 4a1b6da0-d94f-4fc3-98fc-2d9cb9e5ee76
 description: Detects process handle on LSASS process with certain access mask
-
 author: Roberto Rodriguez, Teymur Kheirkhabarov, Dimitrios Slamaris, Mark Russinovich, Aleksey Potapov, oscd.community (update)
 date: 2019/11/01
 modified: 2019/11/07
+
 logsource:
     product: windows
     service: security

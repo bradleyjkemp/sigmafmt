@@ -5,6 +5,7 @@ description: Detects the use of various web request methods (including aliases) 
 
 detection:
     condition: selection
+
 references:
     - https://4sysops.com/archives/use-powershell-to-download-a-file-with-http-https-and-ftp/
     - https://blog.jourdant.me/post/3-ways-to-download-files-with-powershell

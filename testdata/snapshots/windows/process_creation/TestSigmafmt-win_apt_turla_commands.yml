@@ -6,6 +6,7 @@ description: Detects automated lateral movement by Turla group
 logsource:
     category: process_creation
     product: windows
+
 references:
     - https://securelist.com/the-epic-turla-operation/65545/
 tags:

@@ -1,8 +1,8 @@
 title: Bloodhound and Sharphound Hack Tool
 id: f376c8a7-a2d0-4ddc-aa0c-16c17236d962
 description: Detects command line parameters used by Bloodhound and Sharphound hack tools
-
 author: Florian Roth
+
 logsource:
     category: process_creation
     product: windows

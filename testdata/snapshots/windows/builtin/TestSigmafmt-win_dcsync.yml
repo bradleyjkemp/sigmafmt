@@ -1,10 +1,10 @@
 title: Mimikatz DC Sync
 id: 611eab06-a145-4dfa-a295-3ccc5c20f59a
 description: Detects Mimikatz DC sync security events
-
 date: 2018/06/03
 modified: 2020/09/11
 author: Benjamin Delpy, Florian Roth, Scott Dermott
+
 logsource:
     product: windows
     service: security

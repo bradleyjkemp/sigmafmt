@@ -1,10 +1,10 @@
 title: Alternate PowerShell Hosts Pipe
 id: 58cb02d5-78ce-4692-b3e1-dce850aae41a
 description: Detects alternate PowerShell hosts potentially bypassing detections looking for powershell.exe
-
 date: 2019/09/12
 modified: 2019/11/10
 author: Roberto Rodriguez @Cyb3rWard0g
+
 logsource:
     product: windows
     service: sysmon

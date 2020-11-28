@@ -1,9 +1,9 @@
 title: Apache Threading Error
 id: e9a2b582-3f6a-48ac-b4a1-6849cdc50b3c
 description: Detects an issue in apache logs that reports threading related errors
-
 author: Florian Roth
 date: 2019/01/22
+
 logsource:
     product: apache
 detection:

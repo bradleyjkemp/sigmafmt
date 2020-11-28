@@ -1,9 +1,9 @@
 title: Possible DC Shadow
 id: 32e19d25-4aed-4860-a55a-be99cb0bf7ed
 description: Detects DCShadow via create new SPN
-
 author: Ilyas Ochkov, oscd.community, Chakib Gzenayi (@Chak092), Hosni Mribah
 date: 2019/10/25
+
 logsource:
     product: windows
     service: security

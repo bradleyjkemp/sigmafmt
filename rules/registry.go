@@ -12,13 +12,13 @@ var Rules = []Rule{
 	yamlRoundtrip,
 
 	// Actual useful rules
-	canonicalKeyOrder,
 	ruleTitle,
 	validStatus,
 	validLevel,
 	tagsInAlphabeticalOrder,
-	whitespaceBetweenSections,
 	conditionTimeframeOrder,
+	canonicalKeyOrder,
+	whitespaceBetweenSections,
 
 	// Essential internal cleanup steps:
 	undoPreserveWhitespace,

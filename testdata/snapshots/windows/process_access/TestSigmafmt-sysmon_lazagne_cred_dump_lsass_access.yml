@@ -1,9 +1,9 @@
 title: Credential Dumping by LaZagne
 id: 4b9a8556-99c4-470b-a40c-9c8d02c77ed0
 description: Detects LSASS process access by LaZagne for credential dumping.
-
 date: 2020/09/09
 author: Bhabesh Raj
+
 logsource:
     category: process_access
     product: windows

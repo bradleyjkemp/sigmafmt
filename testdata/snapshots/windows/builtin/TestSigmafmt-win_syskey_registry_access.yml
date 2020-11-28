@@ -1,10 +1,10 @@
 title: SysKey Registry Keys Access
 id: 9a4ff3b8-6187-4fd2-8e8b-e0eae1129495
 description: Detects handle requests and access operations to specific registry keys to calculate the SysKey
-
 date: 2019/08/12
 modified: 2019/11/10
 author: Roberto Rodriguez @Cyb3rWard0g
+
 logsource:
     product: windows
     service: security

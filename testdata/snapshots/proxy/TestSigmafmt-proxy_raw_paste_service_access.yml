@@ -1,10 +1,10 @@
 title: Raw Paste Service Access
 id: 5468045b-4fcc-4d1a-973c-c9c9578edacb
 description: Detects direct access to raw pastes in different paste services often used by malware in their second stages to download malicious code in encrypted or encoded form
-
 author: Florian Roth
 date: 2019/12/05
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

@@ -1,10 +1,10 @@
 title: Crypto Miner User Agent
 id: fa935401-513b-467b-81f4-f9e77aa0dd78
 description: Detects suspicious user agent strings used by crypto miners in proxy logs
-
 author: Florian Roth
 date: 2019/10/21
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

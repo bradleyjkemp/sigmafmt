@@ -1,10 +1,10 @@
 title: Highly Relevant Renamed Binary
 id: 0ba1da6d-b6ce-4366-828c-18826c9de23e
 description: Detects the execution of a renamed binary often used by attackers or malware leveraging new Sysmon OriginalFileName datapoint.
-
 author: Matthew Green - @mgreen27, Florian Roth
 date: 2019/06/15
 modified: 2020/09/06
+
 logsource:
     category: process_creation
     product: windows

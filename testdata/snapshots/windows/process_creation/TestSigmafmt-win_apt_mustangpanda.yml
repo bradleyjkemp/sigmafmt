@@ -1,9 +1,9 @@
 title: Mustang Panda Dropper
 id: 2d87d610-d760-45ee-a7e6-7a6f2a65de00
 description: Detects specific process parameters as used by Mustang Panda droppers
-
 author: Florian Roth
 date: 2019/10/30
+
 logsource:
     category: process_creation
     product: windows

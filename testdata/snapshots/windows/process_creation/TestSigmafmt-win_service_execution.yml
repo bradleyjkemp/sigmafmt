@@ -1,10 +1,10 @@
 title: Service Execution
 id: 2a072a96-a086-49fa-bcb5-15cc5a619093
 description: Detects manual service execution (start) via system utilities
-
 author: Timur Zinniatullin, Daniil Yugoslavskiy, oscd.community
 date: 2019/10/21
 modified: 2019/11/04
+
 logsource:
     category: process_creation
     product: windows

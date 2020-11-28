@@ -1,10 +1,10 @@
 title: AWS EC2 Startup Shell Script Change
 id: 1ab3c5ed-5baf-417b-bb6b-78ca33f6c3df
 description: Detects changes to the EC2 instance startup script. The shell script will be executed as root/SYSTEM everytime the specific instances are booted up.
-
 author: faloker
 date: 2020/02/12
 modified: 2020/09/01
+
 logsource:
     service: cloudtrail
 detection:

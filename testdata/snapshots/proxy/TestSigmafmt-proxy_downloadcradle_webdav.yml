@@ -1,10 +1,10 @@
 title: Windows WebDAV User Agent
 id: e09aed7a-09e0-4c9a-90dd-f0d52507347e
 description: Detects WebDav DownloadCradle
-
 author: Florian Roth
 date: 2018/04/06
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

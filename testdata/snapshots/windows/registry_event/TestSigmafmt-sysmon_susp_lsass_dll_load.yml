@@ -1,10 +1,10 @@
 title: DLL Load via LSASS
 id: b3503044-60ce-4bf4-bbcb-e3db98788823
 description: Detects a method to load DLL via LSASS process using an undocumented Registry key
-
 author: Florian Roth
 date: 2019/10/16
 modified: 2020/07/01
+
 logsource:
     category: registry_event
     product: windows

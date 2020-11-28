@@ -1,9 +1,9 @@
 title: Suspicious Named Error
 id: c8e35e96-19ce-4f16-aeb6-fd5588dc5365
 description: Detects suspicious DNS error messages that indicate a fatal or suspicious error that could be caused by exploiting attempts
-
 author: Florian Roth
 date: 2018/02/20
+
 logsource:
     product: linux
     service: syslog

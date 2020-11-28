@@ -1,10 +1,10 @@
 title: MMC Spawning Windows Shell
 id: 05a2ab7e-ce11-4b63-86db-ab32e763e11d
 description: Detects a Windows command line executable started from MMC
-
 author: Karneades, Swisscom CSIRT
 date: 2019/08/05
 modified: 2020/09/01
+
 logsource:
     category: process_creation
     product: windows

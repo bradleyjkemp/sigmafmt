@@ -5,6 +5,7 @@ description: Detects EmpireMonkey APT reported Activity
 
 detection:
     condition: 1 of them
+
 references:
     - https://app.any.run/tasks/a4107649-8cb0-41af-ad75-113152d4d57b
 date: 2019/04/02

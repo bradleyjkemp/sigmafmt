@@ -5,6 +5,7 @@ description: Detects NetNTLM downgrade attack
 
 detection:
     condition: 1 of them
+
 references:
     - https://www.optiv.com/blog/post-exploitation-using-netntlm-downgrade-attacks
 author: Florian Roth

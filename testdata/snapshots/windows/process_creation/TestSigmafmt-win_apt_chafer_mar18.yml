@@ -5,6 +5,7 @@ description: Detects Chafer activity attributed to OilRig as reported in Nyotron
 
 detection:
     condition: 1 of them
+
 references:
     - https://nyotron.com/nyotron-discovers-next-generation-oilrig-attacks/
 date: 2018/03/23

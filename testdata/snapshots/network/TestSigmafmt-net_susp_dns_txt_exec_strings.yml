@@ -1,10 +1,10 @@
 title: DNS TXT Answer with Possible Execution Strings
 id: 8ae51330-899c-4641-8125-e39f2e07da72
 description: Detects strings used in command execution in DNS TXT Answer
-
 author: Markus Neis
 date: 2018/08/08
 modified: 2020/08/27
+
 logsource:
     category: dns
 detection:

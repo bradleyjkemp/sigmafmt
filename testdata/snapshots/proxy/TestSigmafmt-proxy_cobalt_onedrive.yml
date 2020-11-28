@@ -1,10 +1,10 @@
 title: CobaltStrike Malleable OneDrive Browsing Traffic Profile
 id: c9b33401-cc6a-4cf6-83bb-57ddcb2407fc
 description: Detects Malleable OneDrive Profile
-
 author: Markus Neis
 date: 2019/11/12
 modified: 2020/09/02
+
 logsource:
     category: proxy
 detection:

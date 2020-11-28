@@ -1,9 +1,9 @@
 title: Cisco File Deletion
 id: 71d65515-c436-43c0-841b-236b1f32c21e
 description: See what files are being deleted from flash file systems
-
 author: Austin Clark
 date: 2019/08/12
+
 logsource:
     product: cisco
     service: aaa

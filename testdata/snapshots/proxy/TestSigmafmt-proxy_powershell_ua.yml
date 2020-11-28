@@ -1,10 +1,10 @@
 title: Windows PowerShell User Agent
 id: c8557060-9221-4448-8794-96320e6f3e74
 description: Detects Windows PowerShell Web Access
-
 author: Florian Roth
 date: 2017/03/13
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

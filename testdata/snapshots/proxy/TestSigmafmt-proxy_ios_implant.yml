@@ -1,10 +1,10 @@
 title: iOS Implant URL Pattern
 id: e06ac91d-b9e6-443d-8e5b-af749e7aa6b6
 description: Detects URL pattern used by iOS Implant
-
 author: Florian Roth
 date: 2019/08/30
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

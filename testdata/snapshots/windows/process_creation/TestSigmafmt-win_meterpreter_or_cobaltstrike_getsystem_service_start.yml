@@ -1,10 +1,10 @@
 title: Meterpreter or Cobalt Strike Getsystem Service Start
 id: 15619216-e993-4721-b590-4c520615a67d
 description: Detects the use of getsystem Meterpreter/Cobalt Strike command by detecting a specific service starting
-
 author: Teymur Kheirkhabarov, Ecco
 date: 2019/10/26
 modified: 2020/09/01
+
 logsource:
     category: process_creation
     product: windows

@@ -1,10 +1,10 @@
 title: Suspicious User Agent
 id: 7195a772-4b3f-43a4-a210-6a003d65caa1
 description: Detects suspicious malformed user agent strings in proxy logs
-
 author: Florian Roth
 date: 2017/07/08
 modified: 2020/09/03
+
 logsource:
     category: proxy
 detection:

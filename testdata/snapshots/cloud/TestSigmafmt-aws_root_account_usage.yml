@@ -1,10 +1,10 @@
 title: AWS Root Credentials
 id: 8ad1600d-e9dc-4251-b0ee-a65268f29add
 description: Detects AWS root account usage
-
 author: vitaliy0x1
 date: 2020/01/21
 modified: 2020/09/01
+
 logsource:
     service: cloudtrail
 detection:

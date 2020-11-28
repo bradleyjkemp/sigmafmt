@@ -1,10 +1,10 @@
 title: Cisco Modify Configuration
 id: 671ffc77-50a7-464f-9e3d-9ea2b493b26b
 description: Modifications to a config that will serve an adversary's impacts or persistence
-
 author: Austin Clark
 date: 2019/08/12
 modified: 2020/09/02
+
 logsource:
     product: cisco
     service: aaa

@@ -8,6 +8,7 @@ description: Detects the deactivation of the Scheduled defragmentation task as s
 
 detection:
     condition: 1 of them
+
 references:
     - https://securelist.com/apt-slingshot/84312/
 tags:

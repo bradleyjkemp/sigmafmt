@@ -1,10 +1,10 @@
 title: Data Compressed - rar.exe
 id: 6f3e2987-db24-4c78-a860-b4f4095a7095
 description: An adversary may compress data (e.g., sensitive documents) that is collected prior to exfiltration in order to make it portable and minimize the amount of data sent over the network
-
 author: Timur Zinniatullin, E.M. Anhaus, oscd.community
 date: 2019/10/21
 modified: 2020/08/29
+
 logsource:
     category: process_creation
     product: windows

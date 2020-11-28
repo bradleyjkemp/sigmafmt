@@ -1,10 +1,10 @@
 title: Registry Persistence Mechanisms
 id: 36803969-5421-41ec-b92f-8500f79c23b0
 description: Detects persistence registry keys
-
 date: 2018/04/11
 modified: 2020/09/06
 author: Karneades
+
 logsource:
     category: registry_event
     product: windows

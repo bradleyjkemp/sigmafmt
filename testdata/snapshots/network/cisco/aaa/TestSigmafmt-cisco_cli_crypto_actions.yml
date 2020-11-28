@@ -1,9 +1,9 @@
 title: Cisco Crypto Commands
 id: 1f978c6a-4415-47fb-aca5-736a44d7ca3d
 description: Show when private keys are being exported from the device, or when new certificates are installed
-
 author: Austin Clark
 date: 2019/08/12
+
 logsource:
     product: cisco
     service: aaa

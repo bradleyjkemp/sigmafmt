@@ -1,8 +1,8 @@
 title: Windows Processes Suspicious Parent Directory
 id: 96036718-71cc-4027-a538-d1587e0006a7
 description: Detect suspicious parent processes of well-known Windows processes
-
 author: vburov
+
 logsource:
     category: process_creation
     product: windows

@@ -1,6 +1,7 @@
 package rules
 
 import (
+	"fmt"
 	"sort"
 	"strings"
 
@@ -89,45 +90,40 @@ var canonicalKeyOrder = nodeRule{"canonical_key_order", func(rule *yaml.Node) ([
 
 // Ensures there's whitespace between the groups of keys (as defined below)
 var whitespaceBetweenSections = nodeRule{"whitespace_between_sections", func(rule *yaml.Node) ([]Message, error) {
-	// We start off looking for the first key in the first group
-	currentGroup := 0
-	currentKey := 0
-	keyNeedsWhitespace := false
+	currentGroup := 1
+	var addedWhitespace bool
 	for i := 0; i < len(rule.Content); i += 2 {
 		key := rule.Content[i]
-		if keyNeedsWhitespace {
-			// Add a single whitespace line before this node (if it doesn't already have one)
-			if !strings.HasPrefix(key.HeadComment, whitespacePreservingComment) {
-				if key.HeadComment == "" {
-					key.HeadComment = whitespacePreservingComment
-				} else {
-					key.HeadComment = whitespacePreservingComment + "\n" + key.HeadComment
-				}
-			}
-			keyNeedsWhitespace = false
-		}
-		if key.Value != canonicalKeyLayout[currentGroup][currentKey] {
+		canonicalGroup := canonicalKeyGroup[key.Value]
+		if canonicalGroup == 0 {
 			// This is a non-canonical key so we leave it in this group
 			continue
 		}
 
-		// This key matches the one we're looking for so move our pointer on to the next one
-		currentKey++
-
-		if currentKey >= len(canonicalKeyLayout[currentGroup]) {
-			// This is the last canonical key in the group
-			currentGroup++
-			currentKey = 0
-			// The next key needs whitespace before it
-			keyNeedsWhitespace = true
-		}
-		if currentGroup >= len(canonicalKeyLayout) {
-			// We've gone through all the canonical keys we expect so we're done
-			break
+		switch {
+		case canonicalGroup < currentGroup:
+			return nil, fmt.Errorf("expected keys to already be in a sorted order")
+		case canonicalGroup == currentGroup:
+			continue
+		case canonicalGroup > currentGroup:
+			currentGroup = canonicalGroup
+			// We've moved onto a new group so this key needs some whitespace above it (if it doesn't already have some)
+			if strings.HasPrefix(key.HeadComment, whitespacePreservingComment) {
+				continue
+			}
+			addedWhitespace = true
+			if key.HeadComment == "" {
+				key.HeadComment = whitespacePreservingComment
+			} else {
+				key.HeadComment = whitespacePreservingComment + "\n" + key.HeadComment
+			}
 		}
 	}
 
-	return []Message{{Message: "YAML keys weren't in the canonical order", AutoFixed: true}}, nil
+	if addedWhitespace {
+		return []Message{{Message: "YAML keys weren't in the canonical order", AutoFixed: true}}, nil
+	}
+	return nil, nil
 }}
 
 var (
@@ -151,14 +147,21 @@ var (
 		},
 	}
 	canonicalKeyOrdering = map[string]int{}
+	canonicalKeyGroup    = map[string]int{}
 )
 
 func init() {
-	var order = 1 // reserve 0 for non-canonical keys
+	var order = 1    // reserve 0 for non-canonical keys
+	var groupNum = 1 // reserve 0 for non-canonical keys
 	for _, group := range canonicalKeyLayout {
 		for _, key := range group {
+			if canonicalKeyOrdering[key] != 0 {
+				panic(fmt.Sprintf("key %s already seen in the canonical key ordering. Is there a duplicate?", key))
+			}
 			canonicalKeyOrdering[key] = order
+			canonicalKeyGroup[key] = groupNum
 			order++
 		}
+		groupNum++
 	}
 }

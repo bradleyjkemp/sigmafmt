@@ -1,10 +1,10 @@
 title: Silence.Downloader V3
 id: 170901d1-de11-4de7-bccb-8fa13678d857
 description: Detects Silence downloader. These commands are hardcoded into the binary.
-
 author: Alina Stepchenkova, Roman Rezvukhin, Group-IB, oscd.community
 date: 2019/11/01
 modified: 2020/09/01
+
 logsource:
     category: process_creation
     product: windows
