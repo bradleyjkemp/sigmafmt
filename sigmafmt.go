@@ -54,7 +54,7 @@ func formatPath(root string, stdout io.Writer) error {
 		}
 		formatted, results, err := formatRule(contents)
 		if err != nil {
-			return err
+			return fmt.Errorf("failed to format %s: %w", path, err)
 		}
 		if len(results) == 0 {
 			// No rules found any issues
@@ -72,9 +72,9 @@ func formatPath(root string, stdout io.Writer) error {
 		if *verbose {
 			for _, result := range results {
 				if result.AutoFixed {
-					fmt.Printf("\t[auto-fixed] %s\n", result.Message)
+					fmt.Fprintf(stdout, "\t[auto-fixed] %s\n", result.Message)
 				} else {
-					fmt.Printf("\t[fix-needed] %s\n", result.Message)
+					fmt.Fprintf(stdout, "\t[fix-needed] %s\n", result.Message)
 				}
 			}
 		}
@@ -108,7 +108,6 @@ func formatRule(contents []byte) ([]byte, []rules.Message, error) {
 		if err != nil {
 			return nil, nil, err
 		}
-		fmt.Printf("After running rule %s, content is %s\n", rule.Name(), string(formatted))
 
 		contents = formatted
 		results = append(results, messages...)

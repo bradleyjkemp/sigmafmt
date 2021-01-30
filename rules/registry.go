@@ -12,6 +12,7 @@ var Rules = []Rule{
 	yamlRoundtrip,
 
 	// Actual useful rules
+	uniqueID,
 	ruleTitle,
 	validStatus,
 	validLevel,
