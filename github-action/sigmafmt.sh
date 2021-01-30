@@ -1,4 +1,4 @@
-set -e
+set -ex
 
 # Pre-download modules so the `go run` output is clean (doesn't include "downloading module X" lines)
 go mod download
