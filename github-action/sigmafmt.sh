@@ -48,14 +48,14 @@ then
     -X POST \
     -H "Accept: application/vnd.github.v3+json" \
     -H "authorization: Bearer ${GITHUB_TOKEN}" \
-    "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/comments" \
+    "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/comments" \
     -d "{\"body\": $(echo "$output" | jq -Rs .) }"
 else
   curl \
     -X PATCH \
     -H "Accept: application/vnd.github.v3+json" \
     -H "authorization: Bearer ${GITHUB_TOKEN}" \
-    "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls/comments/${EXISTING_COMMENT_ID}" \
+    "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/issues/comments/${EXISTING_COMMENT_ID}" \
     -d "{\"body\": $(echo "$output" | jq -Rs .) }"
 fi
 
