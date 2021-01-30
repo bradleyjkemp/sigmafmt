@@ -25,6 +25,7 @@ _main() {
   then
     (
       cd "$GITHUB_WORKSPACE"
+      git fetch --depth=1
       git checkout "$GITHUB_HEAD_REF"
       git add "$RULES_PATH"
       git -c user.name="sigmafmt" -c user.email="actions@github.com" \
@@ -42,6 +43,7 @@ _main() {
     exit 1
   else
     echo "SUCCESS: all files formatted correctly"
+    _remove_pr_comment
     exit 0
   fi
 }
