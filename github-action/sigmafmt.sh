@@ -23,9 +23,12 @@ _main() {
   _run_sigmafmt_autofix
   if _git_is_dirty
   then
-    git add $RULES_PATH
-    git commit --message "sigmafmt auto-fixed"
-    git push origin
+    (
+      cd "$GITHUB_WORKSPACE"
+      git add $RULES_PATH
+      git commit --message "sigmafmt auto-fixed"
+      git push origin
+    )
   fi
 
   # Now run Sigma again to check for any un-fixable errors and add a PR comment
@@ -78,7 +81,7 @@ _run_sigmafmt_autofix() {
 }
 
 _git_is_dirty() {
-    [ -n "$(git status -s -- $INPUT_FILE_PATTERN)" ]
+    [ -n "$(cd "$GITHUB_WORKSPACE" && git status -s -- "$INPUT_PATH")" ]
 }
 
 _upsert_pr_comment() {
