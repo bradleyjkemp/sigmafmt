@@ -26,7 +26,8 @@ _main() {
     (
       cd "$GITHUB_WORKSPACE"
       git add $RULES_PATH
-      git commit --message "sigmafmt auto-fixed"
+      git commit -c user.name="sigmafmt" -c user.email="actions@github.com" \
+        --author="sigmafmt <actions@github.com>" --message "sigmafmt auto-fixed"
       git push origin
     )
   fi
