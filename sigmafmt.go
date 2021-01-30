@@ -80,9 +80,9 @@ func formatPath(root string, stdout io.Writer) error {
 		if *verbose {
 			for _, result := range results {
 				if result.AutoFixed {
-					fmt.Fprintf(stdout, "\t[auto-fixed] %s\n", result.Message)
+					fmt.Fprintf(stdout, "  * [auto-fixed] %s\n", result.Message)
 				} else {
-					fmt.Fprintf(stdout, "\t[fix-needed] %s\n", result.Message)
+					fmt.Fprintf(stdout, "  * [fix-needed] %s\n", result.Message)
 				}
 			}
 		}

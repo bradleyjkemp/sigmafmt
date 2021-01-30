@@ -40,7 +40,7 @@ COMMENTS=$(curl \
   -H "authorization: Bearer ${GITHUB_TOKEN}" \
   "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/comments")
 
-EXISTING_COMMENT_ID=$(echo "$COMMENTS" | jq '[.[]|select(.user.login=="bradleyjkemp")][0].id')
+EXISTING_COMMENT_ID=$(echo "$COMMENTS" | jq '[.[]|select(.user.login=="github-actions[bot]")][0].id')
 
 if [ "$EXISTING_COMMENT_ID" = "null" ]
 then
