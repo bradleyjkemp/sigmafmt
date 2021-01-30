@@ -42,7 +42,7 @@ _main() {
 }
 
 _dont_have_github_token() {
-  [ -n "$GITHUB_TOKEN" ]
+  [ -z "$GITHUB_TOKEN" ]
 }
 
 _sigmafmt_found_issues() {
