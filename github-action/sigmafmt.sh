@@ -21,10 +21,16 @@ fi
 echo "FAILURE: some files need re-formatting"
 echo "${output}"
 
+if [ -z "$GITUB_TOKEN" ]
+then
+  # No GitHub token, so can't leave any comments
+  exit 1
+fi
+
 # If this is a PR, leave a comment
 PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 
-if [ -z "$PR_NUMBER" ]
+if [ "$PR_NUMBER" = "null" ]
 then
   exit 1
 fi
@@ -36,21 +42,21 @@ COMMENTS=$(curl \
 
 EXISTING_COMMENT_ID=$(echo "$COMMENTS" | jq '[.[]|select(.user.login=="bradleyjkemp")][0].id')
 
-if [ -z "$EXISTING_COMMENT_ID" ]
+if [ "$EXISTING_COMMENT_ID" = "null" ]
 then
   curl \
     -X PATCH \
     -H "Accept: application/vnd.github.v3+json" \
     -H "authorization: Bearer ${GITHUB_TOKEN}" \
     "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls/comments/${EXISTING_COMMENT_ID}" \
-    -d "{\"body\":\"$(echo "$output" | jq -Rs .)\"}"
+    -d "{\"body\": $(echo "$output" | jq -Rs .) }"
 else
   curl \
     -X POST \
     -H "Accept: application/vnd.github.v3+json" \
     -H "authorization: Bearer ${GITHUB_TOKEN}" \
     "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/comments" \
-    -d "{\"body\":\"$(echo "$output" | jq -Rs .)\"}"
+    -d "{\"body\": $(echo "$output" | jq -Rs .) }"
 fi
 
 exit 1
