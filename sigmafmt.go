@@ -85,6 +85,7 @@ func formatPath(root string, stdout io.Writer) error {
 					fmt.Fprintf(stdout, "  * [fix-needed] %s\n", result.Message)
 				}
 			}
+			fmt.Fprintln(stdout)
 		}
 		if *displayDiff {
 			diff, err := difflib.GetUnifiedDiffString(difflib.UnifiedDiff{

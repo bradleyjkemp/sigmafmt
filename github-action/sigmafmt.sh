@@ -38,7 +38,7 @@ fi
 COMMENTS=$(curl \
   -H "Accept: application/vnd.github.v3+json" \
   -H "authorization: Bearer ${GITHUB_TOKEN}" \
-  "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/comments")
+  "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/comments")
 
 EXISTING_COMMENT_ID=$(echo "$COMMENTS" | jq '[.[]|select(.user.login=="github-actions[bot]")][0].id')
 
