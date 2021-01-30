@@ -21,7 +21,7 @@ fi
 echo "FAILURE: some files need re-formatting"
 echo "${output}"
 
-if [ -z "$GITUB_TOKEN" ]
+if [ -z "$GITHUB_TOKEN" ]
 then
   # No GitHub token, so can't leave any comments
   exit 1
