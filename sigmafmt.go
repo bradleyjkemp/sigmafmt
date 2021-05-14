@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"flag"
 	"fmt"
 	"io"
@@ -101,7 +102,8 @@ func formatPath(root string, stdout io.Writer) error {
 }
 
 // Takes the contents of a Sigma rule, runs all the linter rules, and returns the formatted output
-func formatRule(contents []byte) ([]byte, []rules.Message, error) {
+func formatRule(originalContents []byte) ([]byte, []rules.Message, error) {
+	contents := originalContents
 	var results []rules.Message
 	for _, rule := range rules.Rules {
 		formatted, messages, err := rule.Apply(contents)
@@ -112,5 +114,12 @@ func formatRule(contents []byte) ([]byte, []rules.Message, error) {
 		contents = formatted
 		results = append(results, messages...)
 	}
+
+	// It's possible for individual steps to result in content layout shifts which cancel out in the end.
+	// If this happens, we ignore the individual messages.
+	if bytes.Equal(originalContents, contents) {
+		return originalContents, nil, nil
+	}
+
 	return contents, results, nil
 }

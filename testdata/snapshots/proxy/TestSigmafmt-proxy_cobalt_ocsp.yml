@@ -16,7 +16,6 @@ detection:
     selection:
         c-uri: '*/oscp/*'
         cs-host: 'ocsp.verisign.com'
-
     condition: selection
 
 id: 37325383-740a-403d-b1a2-b2b4ab7992e7

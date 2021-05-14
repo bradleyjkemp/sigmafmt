@@ -25,7 +25,6 @@ detection:
             - 'C:\\Windows\\addins\\*'
             - 'C:\\Windows\\cursors\\*'
             - 'C:\\Windows\\system32\tasks\\*'
-
     condition: selection
 
 id: 15b75071-74cc-47e0-b4c6-b43744a62a2b

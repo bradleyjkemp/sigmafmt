@@ -16,7 +16,6 @@ logsource:
     product: windows
 detection:
     selection:
-
         TargetObject:
             - '*\Services\DHCPServer\Parameters\CalloutDlls'
             - '*\Services\DHCPServer\Parameters\CalloutEnabled'

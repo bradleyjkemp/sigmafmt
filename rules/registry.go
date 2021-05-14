@@ -8,7 +8,7 @@ import (
 
 var Rules = []Rule{
 	// Essential internal prep steps:
-	preserveWhitespace,
+	// preserveWhitespace, TODO: this step breaks multi-line strings (e.g. long rule descriptions). I'm not sure it's possible without support from the YAML parser.
 	yamlRoundtrip,
 
 	// Actual useful rules

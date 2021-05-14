@@ -23,7 +23,6 @@ detection:
     condition: selection
 
 id: 37222991-11e9-4b6d-8bdf-60fbe48f753e
-
 tags:
     - attack.impact
     - attack.t1485

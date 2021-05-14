@@ -121,7 +121,7 @@ var whitespaceBetweenSections = nodeRule{"whitespace_between_sections", func(rul
 	}
 
 	if addedWhitespace {
-		return []Message{{Message: "YAML keys weren't in the canonical order", AutoFixed: true}}, nil
+		return []Message{{Message: "Missing canonical space between YAML groups", AutoFixed: true}}, nil
 	}
 	return nil, nil
 }}

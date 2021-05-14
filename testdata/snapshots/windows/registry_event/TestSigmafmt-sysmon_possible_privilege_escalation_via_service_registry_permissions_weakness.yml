@@ -15,7 +15,6 @@ logsource:
     category: registry_event
 detection:
     selection:
-
         IntegrityLevel: 'Medium'
         TargetObject|contains: '\services\'
         TargetObject|endswith:
