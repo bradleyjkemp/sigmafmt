@@ -10,6 +10,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/bradleyjkemp/sigma-go"
 	"github.com/bradleyjkemp/sigmafmt/rules"
 	"github.com/pmezard/go-difflib/difflib"
 )
@@ -53,6 +54,12 @@ func formatPath(root string, stdout io.Writer) error {
 		if err != nil {
 			return fmt.Errorf("error reading %s: %w", path, err)
 		}
+
+		if sigma.InferFileType(contents) != sigma.RuleFile {
+			// TODO: support formatting Sigma config files
+			return nil
+		}
+
 		formatted, results, err := formatRule(contents)
 		if err != nil {
 			return fmt.Errorf("failed to format %s: %w", path, err)
