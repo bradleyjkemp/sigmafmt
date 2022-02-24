@@ -15,7 +15,7 @@ var validStatus = nodeRule{"valid_status", func(node *yaml.Node) ([]Message, err
 	}
 
 	switch rule.Status {
-	case "experimental", "testing", "stable":
+	case "unsupported", "deprecated", "experimental", "test", "stable":
 		return nil, nil
 	default:
 		return []Message{{Message: "Unexpected rule status " + rule.Status}}, nil
