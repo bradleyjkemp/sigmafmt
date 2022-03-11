@@ -123,11 +123,20 @@ func formatRule(originalContents []byte) ([]byte, []rules.Message, error) {
 		results = append(results, messages...)
 	}
 
-	// It's possible for individual steps to result in content layout shifts which cancel out in the end.
-	// If this happens, we ignore the individual messages.
-	if bytes.Equal(originalContents, contents) {
-		return originalContents, nil, nil
+	if !bytes.Equal(originalContents, contents) {
+		return contents, results, nil
 	}
 
-	return contents, results, nil
+	// It's possible for individual steps to result in content layout shifts which cancel out in the end.
+	// If this happens, we ignore the individual messages *unless* they're unfixable (in which case it's expected the contents are the same).
+	nonAutoFixed := []rules.Message{}
+	for _, result := range results {
+		if !result.AutoFixed {
+			nonAutoFixed = append(nonAutoFixed, result)
+		}
+	}
+	if len(nonAutoFixed) == 0 {
+		return originalContents, nil, nil
+	}
+	return contents, nonAutoFixed, nil
 }
