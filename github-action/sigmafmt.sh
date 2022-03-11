@@ -1,4 +1,5 @@
-set -ex
+#!/bin/bash
+set -e
 
 if [ -z "$INPUT_PATH" ]
 then
