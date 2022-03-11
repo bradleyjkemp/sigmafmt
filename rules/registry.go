@@ -20,6 +20,7 @@ var Rules = []Rule{
 	conditionTimeframeOrder,
 	canonicalKeyOrder,
 	whitespaceBetweenSections,
+	multilineDescription,
 
 	// Essential internal cleanup steps:
 	undoPreserveWhitespace,
