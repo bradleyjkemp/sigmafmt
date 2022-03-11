@@ -120,7 +120,6 @@ _upsert_pr_comment() {
       "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/issues/comments/${EXISTING_COMMENT_ID}" \
       -d "{\"body\": $(echo "$SIGMAFMT_OUTPUT" | jq -Rs .) }"
   fi
-  exit 1
 }
 
 _remove_pr_comment() {
@@ -147,7 +146,6 @@ _remove_pr_comment() {
       -H "authorization: Bearer ${GITHUB_TOKEN}" \
       "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/issues/comments/${EXISTING_COMMENT_ID}"
   fi
-  exit 1
 }
 
 _main
