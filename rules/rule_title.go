@@ -30,7 +30,9 @@ var ruleTitle = nodeRule{"rule_title_style", func(node *yaml.Node) ([]Message, e
 			Message:   "Rule titles should begin with an upper case letter",
 		})
 	}
-	if lastRune, runeLen := utf8.DecodeLastRuneInString(title.Value); unicode.IsPunct(lastRune) {
+	lastRune, runeLen := utf8.DecodeLastRuneInString(title.Value)
+	switch lastRune {
+	case '.', '!', '?':
 		title.Value = title.Value[:len(title.Value)-runeLen]
 		results = append(results, Message{
 			AutoFixed: true,
