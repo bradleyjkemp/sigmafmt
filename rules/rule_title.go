@@ -32,9 +32,9 @@ var ruleTitle = nodeRule{"rule_title_style", func(node *yaml.Node) ([]Message, e
 		})
 	}
 
-	if len(rule.Title) > 50 {
+	if len(rule.Title) > 120 {
 		results = append(results, Message{
-			Message: "Rule titles should be less than 50 characters so they can be used as an alert name",
+			Message: "Rule titles should be less than 120 characters so they can be used as an alert name. Leave explanation to the description field",
 		})
 	}
 
