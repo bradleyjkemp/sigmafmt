@@ -93,9 +93,10 @@ _upsert_pr_comment() {
   # If this is a PR, leave a comment
   PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 
+# No-op if this isn't a PR
   if [ "$PR_NUMBER" = "null" ]
   then
-    exit 1
+    return
   fi
 
   COMMENTS=$(curl \
@@ -127,9 +128,10 @@ _remove_pr_comment() {
   # If this is a PR, leave a comment
   PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 
+  # No-op if this isn't a PR
   if [ "$PR_NUMBER" = "null" ]
   then
-    exit 1
+    return
   fi
 
   COMMENTS=$(curl \
