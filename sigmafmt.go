@@ -55,7 +55,11 @@ func formatPath(root string, stdout io.Writer) error {
 			return fmt.Errorf("error reading %s: %w", path, err)
 		}
 
-		if sigma.InferFileType(contents) != sigma.RuleFile {
+		switch sigma.InferFileType(contents) {
+		case sigma.RuleFile:
+		case sigma.InvalidFile:
+			return fmt.Errorf("invalid yaml file %s", path)
+		default:
 			// TODO: support formatting Sigma config files
 			return nil
 		}
