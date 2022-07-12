@@ -3,6 +3,7 @@ package rules
 import (
 	"fmt"
 
+	"github.com/bradleyjkemp/sigma-go"
 	"gopkg.in/yaml.v3"
 )
 
@@ -21,6 +22,7 @@ var Rules = []Rule{
 	canonicalKeyOrder,
 	whitespaceBetweenSections,
 	multilineDescription,
+	undefinedSearch,
 
 	// Essential internal cleanup steps:
 	undoPreserveWhitespace,
@@ -81,4 +83,23 @@ func (r rawRule) Name() string {
 
 func (r rawRule) Apply(contents []byte) ([]byte, []Message, error) {
 	return r.apply(contents)
+}
+
+type sigmaRule struct {
+	name  string
+	apply func(rule sigma.Rule) ([]Message, error)
+}
+
+func (r sigmaRule) Name() string {
+	return r.name
+}
+
+func (r sigmaRule) Apply(contents []byte) ([]byte, []Message, error) {
+	rule, err := sigma.ParseRule(contents)
+	if err != nil {
+		return nil, nil, err
+	}
+
+	messages, err := r.apply(rule)
+	return contents, messages, err // this type of rule can't support auto-fixes
 }
