@@ -1,4 +1,4 @@
-title: iOS Implant URL Pattern
+title: IOS Implant URL Pattern
 description: Detects URL pattern used by iOS Implant
 level: critical
 status: experimental

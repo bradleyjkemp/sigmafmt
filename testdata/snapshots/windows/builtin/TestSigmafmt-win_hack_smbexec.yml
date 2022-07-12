@@ -1,4 +1,4 @@
-title: smbexec.py Service Installation
+title: Smbexec.py Service Installation
 description: Detects the use of smbexec.py tool by detecting a specific service installation
 level: critical
 falsepositives:

@@ -1,4 +1,4 @@
-title: New or Renamed User Account with '$' in Attribute 'SamAccountName'.
+title: New or Renamed User Account with '$' in Attribute 'SamAccountName'
 description: Detects possible bypass EDR and SIEM via abnormal user account name.
 level: high
 status: experimental

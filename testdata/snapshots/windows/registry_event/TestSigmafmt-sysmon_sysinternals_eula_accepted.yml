@@ -1,15 +1,1 @@
-action: global
-title: Usage of Sysinternals Tools
-description: Detects the usage of Sysinternals Tools due to accepteula key being added to Registry
-level: low
-status: experimental
-falsepositives:
-    - Legitimate use of SysInternals tools
-    - Programs that use the same Registry Key
-references:
-    - https://twitter.com/Moti_B/status/1008587936735035392
-author: Markus Neis
-date: 2017/08/28
-
-id: 25ffa65d-76d8-4da5-a832-3f2b0136e133
 

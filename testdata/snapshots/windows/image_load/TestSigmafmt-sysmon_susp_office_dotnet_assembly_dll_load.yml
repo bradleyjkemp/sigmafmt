@@ -1,4 +1,4 @@
-title: dotNET DLL Loaded Via Office Applications
+title: DotNET DLL Loaded Via Office Applications
 description: Detects any assembly DLL being loaded by an Office Product
 level: high
 status: experimental
