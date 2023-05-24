@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -14,8 +13,8 @@ import (
 
 func TestSigmafmt(t *testing.T) {
 	err := filepath.Walk("testdata/sigma/rules", func(path string, info os.FileInfo, err error) error {
-		if info.IsDir() {
-			return nil
+		if err != nil || info.IsDir() {
+			return err
 		}
 		pathToRule := strings.TrimPrefix(path, "testdata/sigma/rules")
 		cupaloy := cupaloy.New(
@@ -30,6 +29,9 @@ func TestSigmafmt(t *testing.T) {
 					return
 				}
 				t.Fatal(err)
+			}
+			if len(output.String()) == 0 {
+				t.Fatal("no formatted output")
 			}
 			cupaloy.SnapshotT(t, output.String())
 		})
@@ -49,7 +51,7 @@ func TestIdempotency(t *testing.T) {
 
 		t.Run(pathToRule, func(t *testing.T) {
 			t.Parallel()
-			input, err := ioutil.ReadFile(path)
+			input, err := os.ReadFile(path)
 			if err != nil {
 				t.Fatal(err)
 			}
